@@ -30,7 +30,7 @@
 
  */
 
-static char VERSION[] = "V1.2.";;
+static char VERSION[] = "V1.2.6";;
 
 //Display setup for SSD1351
 //notes SI 11 and CS 9 are used for the audio board and other too.
