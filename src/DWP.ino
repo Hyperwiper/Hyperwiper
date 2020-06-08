@@ -8,6 +8,7 @@
  contact rob@yr-design.biz
  
  revisions:
+ V2.0.0   2010-06-08 reflected hardware changes for Teensy 4
  V1.2.6   2020-06-05 setup for Teensy 4
  V1.2.5   2015-07-26 made setup switchable
  V1.2.4   2015-07-26 enable setup mode 
@@ -30,7 +31,7 @@
 
  */
 
-static char VERSION[] = "V1.2.6";;
+static char VERSION[] = "V2.0.0";;
 
 //Display setup for SSD1351
 //notes SI 11 and CS 9 are used for the audio board and other too.
