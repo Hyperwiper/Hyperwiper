@@ -1,4 +1,4 @@
-(kicad_pcb (version 20200518) (host pcbnew "5.99.0-unknown-40250c4~88~ubuntu18.04.1")
+(kicad_pcb (version 20200518) (host pcbnew "5.99.0-unknown-6083c08~88~ubuntu18.04.1")
 
   (general
     (thickness 1.6)
@@ -286,9 +286,6 @@
     )
     (fp_text value "FRAME-LETTER" (at 0 0) (layer "F.SilkS") hide
       (effects (font (size 1.27 1.27) (thickness 0.15)))
-    )
-    (fp_text user " https://creativecommons.org/licenses/by-sa/3.0/" (at 0 -2.54) (layer "F.SilkS")
-      (effects (font (size 1.2065 1.2065) (thickness 0.1016)) (justify left bottom))
     )
   )
 
@@ -1174,8 +1171,8 @@
   (gr_arc (start 194.824661 68.8086) (end 194.824661 66.2686) (angle 90) (layer "Edge.Cuts") (width 0.4064) (tstamp a29d4cb4-7e6f-4b18-9fda-6c09d64cc845))
   (gr_line (start 197.364661 68.8086) (end 197.364661 139.9286) (layer "Edge.Cuts") (width 0.4064) (tstamp 4660e9e0-50f5-4346-98a2-7649108ded4a))
   (gr_arc (start 194.189661 140.5636) (end 194.824661 143.7386) (angle -90) (layer "Edge.Cuts") (width 0.4064) (tstamp d76be817-724e-4567-bf9c-c8d9a031a765))
-  (gr_text "Dancing Wiper " (at 156.724661 80.2386) (layer "F.SilkS") (tstamp 407b6f46-d27a-4f5e-9357-18dd09b7f01f)
-    (effects (font (size 3.6195 3.6195) (thickness 0.3048)) (justify left bottom))
+  (gr_text "Hyperwiper\nV2.0.0" (at 178.308 137.414) (layer "F.SilkS") (tstamp 407b6f46-d27a-4f5e-9357-18dd09b7f01f)
+    (effects (font (size 2 2) (thickness 0.3048)) (justify left bottom))
   )
 
   (segment (start 118.599261 134.1628) (end 118.624661 134.2136) (width 0.762) (layer "Bottom") (net 32) (tstamp 10befd66-082e-4abf-afda-5fc03383656f))

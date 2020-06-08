@@ -1,8 +1,14 @@
-(kicad_sch (version 20200602) (host eeschema "5.99.0-unknown-40250c4~88~ubuntu18.04.1")
+(kicad_sch (version 20200602) (host eeschema "5.99.0-unknown-6083c08~88~ubuntu18.04.1")
 
   (page 1 1)
 
   (paper "User" 298.221 224.688)
+
+  (title_block
+    (title "Hyperwiper")
+    (date "2020-06-07")
+    (company "YR-Design/University of Aizu")
+  )
 
   (lib_symbols
     (symbol "import-from-eagle-rescue:1N4004-bGeigieNanoKit_V1.1r5a-eagle-import"
@@ -129,152 +135,6 @@
         (pin passive line (at 2.54 -5.08 90) (length 2.54)
           (name "E" (effects (font (size 0 0))))
           (number "E" (effects (font (size 0 0))))
-        )
-      )
-    )
-    (symbol "import-from-eagle-rescue:FRAME-LETTER-bGeigieNanoKit_V1.1r5a-eagle-import"
-      (property "Reference" "FRAME" (id 0) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Value" "FRAME-LETTER-bGeigieNanoKit_V1.1r5a-eagle-import" (id 1) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Footprint" "" (id 2) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "" (id 3) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_locked" "" (id 4) (at 0 0 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (symbol "FRAME-LETTER-bGeigieNanoKit_V1.1r5a-eagle-import_2_0"
-        (text " https://creativecommons.org/licenses/by-sa/3.0/" (at 2.54 24.13 0)
-          (effects (font (size 1.6256 1.6256)) (justify left bottom))
-        )
-        (text ">DRAWING_NAME" (at 15.494 17.78 0)
-          (effects (font (size 2.7432 2.7432)) (justify left bottom))
-        )
-        (text ">LAST_DATE_TIME" (at 12.7 1.27 0)
-          (effects (font (size 2.54 2.54)) (justify left bottom))
-        )
-        (text ">SHEET" (at 86.36 1.27 0)
-          (effects (font (size 2.54 2.54)) (justify left bottom))
-        )
-        (text "Attribution Share-Alike 3.0 License" (at 2.54 27.94 0)
-          (effects (font (size 1.6256 1.6256)) (justify left bottom))
-        )
-        (text "Date:" (at 1.27 1.27 0)
-          (effects (font (size 2.54 2.54)) (justify left bottom))
-        )
-        (text "Design by:" (at 1.27 11.43 0)
-          (effects (font (size 2.159 2.159)) (justify left bottom))
-        )
-        (text "Released under the Creative Commons" (at 2.54 31.75 0)
-          (effects (font (size 1.6256 1.6256)) (justify left bottom))
-        )
-        (text "REV:" (at 88.9 11.43 0)
-          (effects (font (size 2.54 2.54)) (justify left bottom))
-        )
-        (text "Sheet:" (at 72.39 1.27 0)
-          (effects (font (size 2.54 2.54)) (justify left bottom))
-        )
-        (text "TITLE:" (at 1.524 17.78 0)
-          (effects (font (size 2.54 2.54)) (justify left bottom))
-        )
-        (polyline
-          (pts (xy 0 0) (xy 0 5.08))
-          (stroke (width 0)) (fill (type none))
-        )
-        (polyline
-          (pts (xy 0 0) (xy 71.12 0))
-          (stroke (width 0)) (fill (type none))
-        )
-        (polyline
-          (pts (xy 0 5.08) (xy 0 15.24))
-          (stroke (width 0)) (fill (type none))
-        )
-        (polyline
-          (pts (xy 0 5.08) (xy 71.12 5.08))
-          (stroke (width 0)) (fill (type none))
-        )
-        (polyline
-          (pts (xy 0 15.24) (xy 0 22.86))
-          (stroke (width 0)) (fill (type none))
-        )
-        (polyline
-          (pts (xy 0 22.86) (xy 0 35.56))
-          (stroke (width 0)) (fill (type none))
-        )
-        (polyline
-          (pts (xy 0 22.86) (xy 101.6 22.86))
-          (stroke (width 0)) (fill (type none))
-        )
-        (polyline
-          (pts (xy 71.12 0) (xy 101.6 0))
-          (stroke (width 0)) (fill (type none))
-        )
-        (polyline
-          (pts (xy 71.12 5.08) (xy 71.12 0))
-          (stroke (width 0)) (fill (type none))
-        )
-        (polyline
-          (pts (xy 71.12 5.08) (xy 87.63 5.08))
-          (stroke (width 0)) (fill (type none))
-        )
-        (polyline
-          (pts (xy 87.63 5.08) (xy 101.6 5.08))
-          (stroke (width 0)) (fill (type none))
-        )
-        (polyline
-          (pts (xy 87.63 15.24) (xy 0 15.24))
-          (stroke (width 0)) (fill (type none))
-        )
-        (polyline
-          (pts (xy 87.63 15.24) (xy 87.63 5.08))
-          (stroke (width 0)) (fill (type none))
-        )
-        (polyline
-          (pts (xy 101.6 5.08) (xy 101.6 0))
-          (stroke (width 0)) (fill (type none))
-        )
-        (polyline
-          (pts (xy 101.6 15.24) (xy 87.63 15.24))
-          (stroke (width 0)) (fill (type none))
-        )
-        (polyline
-          (pts (xy 101.6 15.24) (xy 101.6 5.08))
-          (stroke (width 0)) (fill (type none))
-        )
-        (polyline
-          (pts (xy 101.6 22.86) (xy 101.6 15.24))
-          (stroke (width 0)) (fill (type none))
-        )
-        (polyline
-          (pts (xy 101.6 35.56) (xy 0 35.56))
-          (stroke (width 0)) (fill (type none))
-        )
-        (polyline
-          (pts (xy 101.6 35.56) (xy 101.6 22.86))
-          (stroke (width 0)) (fill (type none))
-        )
-      )
-      (symbol "FRAME-LETTER-bGeigieNanoKit_V1.1r5a-eagle-import_1_0"
-        (polyline
-          (pts (xy 0 0) (xy 248.92 0))
-          (stroke (width 0)) (fill (type none))
-        )
-        (polyline
-          (pts (xy 0 185.42) (xy 0 0))
-          (stroke (width 0)) (fill (type none))
-        )
-        (polyline
-          (pts (xy 0 185.42) (xy 248.92 185.42))
-          (stroke (width 0)) (fill (type none))
-        )
-        (polyline
-          (pts (xy 248.92 185.42) (xy 248.92 0))
-          (stroke (width 0)) (fill (type none))
         )
       )
     )
@@ -2364,23 +2224,6 @@
     )
   )
 
-  (symbol (lib_id "import-from-eagle-rescue:FRAME-LETTER-bGeigieNanoKit_V1.1r5a-eagle-import") (at 175.26 203.2 0) (unit 2)
-    (in_bom yes)
-    (uuid "f4fc1fc3-1446-4c9c-9172-bc3b85832d6c")
-    (property "Reference" "FRAME1" (id 0) (at 175.26 203.2 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "FRAME-LETTER" (id 1) (at 175.26 203.2 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Footprint" "bGeigieNanoKit V1.1r5a:CREATIVE_COMMONS" (id 2) (at 175.26 203.2 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (id 3) (at 175.26 203.2 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-  )
-
   (symbol_instances
     (path "/469e1efe-1fe2-4e62-a629-b91661ee263e"
       (reference "#GND01") (unit 1)
@@ -2402,9 +2245,6 @@
     )
     (path "/f100c344-1774-4e47-8a72-aef9b06ba07a"
       (reference "F1") (unit 1)
-    )
-    (path "/f4fc1fc3-1446-4c9c-9172-bc3b85832d6c"
-      (reference "FRAME1") (unit 2)
     )
     (path "/b29741e2-aef2-4043-8799-7b3ab7d17fa1"
       (reference "IC2") (unit 1)
