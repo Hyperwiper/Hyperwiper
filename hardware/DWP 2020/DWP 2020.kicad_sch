@@ -1,4 +1,4 @@
-(kicad_sch (version 20200602) (host eeschema "5.99.0-unknown-6083c08~88~ubuntu18.04.1")
+(kicad_sch (version 20200602) (host eeschema "5.99.0-unknown-2401ed5~88~ubuntu18.04.1")
 
   (page 1 1)
 
@@ -2213,7 +2213,7 @@
     (property "Reference" "U$1" (id 0) (at 112.268 52.07 0)
       (effects (font (size 1.27 1.27) bold) (justify left bottom))
     )
-    (property "Value" "TEENSY_3.1" (id 1) (at 112.014 106.68 0)
+    (property "Value" "TEENSY_4" (id 1) (at 112.014 106.68 0)
       (effects (font (size 1.27 1.27) bold) (justify left bottom))
     )
     (property "Footprint" "bGeigieNanoKit V1.1r5a:TEENSY_3.0+4" (id 2) (at 109.22 78.74 0)

@@ -1,4 +1,4 @@
-(kicad_pcb (version 20200518) (host pcbnew "5.99.0-unknown-6083c08~88~ubuntu18.04.1")
+(kicad_pcb (version 20200518) (host pcbnew "5.99.0-unknown-2401ed5~88~ubuntu18.04.1")
 
   (general
     (thickness 1.6)
@@ -549,7 +549,7 @@
     (fp_text reference "U$1" (at -3.81 -13.97) (layer "F.SilkS")
       (effects (font (size 1.2065 1.2065) (thickness 0.1016)) (justify left bottom))
     )
-    (fp_text value "TEENSY_3.1" (at -3.81 13.97) (layer "F.Fab")
+    (fp_text value "TEENSY_4" (at -3.81 13.97) (layer "F.Fab")
       (effects (font (size 1.2065 1.2065) (thickness 0.1016)) (justify left bottom))
     )
     (fp_line (start -8.89 -17.78) (end 8.89 -17.78) (layer "F.Fab") (width 0.127))

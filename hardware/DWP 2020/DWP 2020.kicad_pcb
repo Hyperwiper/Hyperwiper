@@ -1,4 +1,4 @@
-(kicad_pcb (version 20200518) (host pcbnew "5.99.0-unknown-6083c08~88~ubuntu18.04.1")
+(kicad_pcb (version 20200518) (host pcbnew "5.99.0-unknown-1973153~88~ubuntu18.04.1")
 
   (general
     (thickness 1.6)
@@ -549,7 +549,7 @@
     (fp_text reference "U$1" (at -3.81 -13.97) (layer "F.SilkS")
       (effects (font (size 1.2065 1.2065) (thickness 0.1016)) (justify left bottom))
     )
-    (fp_text value "TEENSY_3.1" (at -3.81 13.97) (layer "F.Fab")
+    (fp_text value "TEENSY_4" (at -3.81 13.97) (layer "F.Fab")
       (effects (font (size 1.2065 1.2065) (thickness 0.1016)) (justify left bottom))
     )
     (fp_line (start -8.89 -17.78) (end 8.89 -17.78) (layer "F.Fab") (width 0.127))
@@ -638,6 +638,11 @@
       (solder_mask_margin 0.1016) (tstamp 7f0bcfef-01f7-4a8a-b467-fef57d36b7df))
     (pad "A11" thru_hole circle (at 5.08 -3.81) (size 1.4732 1.4732) (drill 0.9652) (layers *.Cu *.Mask)
       (solder_mask_margin 0.1016) (tstamp e0d4a834-86c3-4735-b254-39c94ffbd5e6))
+    (model "/usr/share/kicad/modules/Teensy.pretty/Teensy_4.0_Assembly.STEP"
+      (offset (xyz 9.5 -32.5 -11.5))
+      (scale (xyz 1 1 1))
+      (rotate (xyz -90 0 90))
+    )
   )
 
   (module "AXIAL-0.3EZ" (layer "Top") (tedit 0) (tstamp bdd5e6f0-b03d-4ef4-a869-2b22adca58e8)
