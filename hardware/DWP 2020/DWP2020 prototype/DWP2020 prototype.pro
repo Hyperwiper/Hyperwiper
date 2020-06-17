@@ -1,4 +1,4 @@
-update=Wed 17 Jun 2020 08:20:26 PM JST
+update=Wed 17 Jun 2020 08:55:15 PM JST
 version=1
 last_client=kicad
 [general]
@@ -12,8 +12,12 @@ NetIExt=net
 version=1
 LibDir=
 [eeschema/libraries]
-[sheetnames]
-1=77a94c34-78d0-4526-b08c-02d3217dc51b:
+[LibeditFrame]
+version=1
+[SchematicFrame]
+version=1
+[ModEditFrame]
+version=1
 [pcbnew]
 version=1
 PageLayoutDescrFile=
@@ -134,12 +138,12 @@ OthersTextItalic=0
 OthersTextUpright=0
 DimensionUnits=0
 DimensionPrecision=1
-SolderMaskClearance=0.05
+SolderMaskClearance=0
 SolderMaskMinWidth=0
 SolderPasteClearance=0
 SolderPasteRatio=0
 [pcbnew/Layer.F.Cu]
-Name=Top
+Name=F.Cu
 Type=0
 Enabled=1
 [pcbnew/Layer.In1.Cu]
@@ -263,7 +267,7 @@ Name=In30.Cu
 Type=0
 Enabled=0
 [pcbnew/Layer.B.Cu]
-Name=Bottom
+Name=B.Cu
 Type=0
 Enabled=1
 [pcbnew/Layer.B.Adhes]
@@ -316,29 +320,5 @@ uViaDrill=0.1
 dPairWidth=0.2
 dPairGap=0.25
 dPairViaGap=0.25
-[schematic_editor]
-version=1
-PageLayoutDescrFile=
-PlotDirectoryName=
-NetFmtName=
-SpiceAjustPassiveValues=0
-SubpartIdSeparator=0
-SubpartFirstId=65
-LabSize=50
-TextOffsetRatio=0.3
-LineThickness=6
-BusThickness=12
-WireThickness=6
-PinSymbolSize=25
-JunctionSize=0
-FieldNameTemplates=(templatefields)
-ERC_TestSimilarLabels=1
-ERC_CheckUniqueGlobalLabels=1
-ERC_CheckBusDriverConflicts=1
-ERC_CheckBusEntryConflicts=1
-ERC_CheckBusToBusConflicts=1
-ERC_CheckBusToNetConflicts=1
-[LibeditFrame]
-version=1
-[SchematicFrame]
-version=1
+[sheetnames]
+1=ac478636-a851-4865-911b-928404369e04:
