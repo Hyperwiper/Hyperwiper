@@ -1,4 +1,4 @@
-update=Wed 17 Jun 2020 08:55:15 PM JST
+update=Thu 18 Jun 2020 03:10:22 PM JST
 version=1
 last_client=kicad
 [general]
@@ -18,6 +18,28 @@ version=1
 version=1
 [ModEditFrame]
 version=1
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=
+NetFmtName=
+SpiceAjustPassiveValues=0
+SubpartIdSeparator=0
+SubpartFirstId=65
+LabSize=50
+TextOffsetRatio=0.3
+LineThickness=6
+BusThickness=12
+WireThickness=6
+PinSymbolSize=25
+JunctionSize=0
+FieldNameTemplates=(templatefields)
+ERC_TestSimilarLabels=1
+ERC_CheckUniqueGlobalLabels=1
+ERC_CheckBusDriverConflicts=1
+ERC_CheckBusEntryConflicts=1
+ERC_CheckBusToBusConflicts=1
+ERC_CheckBusToNetConflicts=1
 [pcbnew]
 version=1
 PageLayoutDescrFile=
@@ -321,4 +343,4 @@ dPairWidth=0.2
 dPairGap=0.25
 dPairViaGap=0.25
 [sheetnames]
-1=ac478636-a851-4865-911b-928404369e04:
+1=d90208b2-818a-44fc-b975-242508e17403:

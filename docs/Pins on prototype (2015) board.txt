@@ -1,0 +1,15 @@
+
+//setup Teensy 3.2 to ssd1351 display on prototype 1 board 2015 version
+
+Software pins:
+	//Display setup for SSD1351
+	//notes SI 11 and CS 9 are used for the audio board and other too.
+	  // #define sclk 10
+	  // #define mosi 7
+	  // #define cs   3
+	  // #define rst  14
+	  // #define dc   12
+
+Hardware pins checked 2010-06-18:
+Teensy  	Digital		displaylabel
+pin 9   	7			SI

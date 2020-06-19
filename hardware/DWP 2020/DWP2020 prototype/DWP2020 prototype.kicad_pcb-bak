@@ -1,4 +1,4 @@
-(kicad_pcb (version 20200614) (host pcbnew "5.99.0-unknown-0bfe413~88~ubuntu18.04.1")
+(kicad_pcb (version 20200614) (host pcbnew "5.99.0-unknown-0dd34d1~88~ubuntu18.04.1")
 
   (general
     (thickness 1.6)
@@ -224,13 +224,13 @@
     (add_net "Net-(U2-PadJP1$9)")
   )
 
-  (module "DWP2020 prototype:SSD1351_128X128_LCD" (layer "F.Cu") (tedit 0) (tstamp e34ffc34-849d-4fc5-b5bf-107149c7aa30)
-    (at 1013.46 22.86)
-    (path "/620b6ebe-1873-4600-987b-50cce9a7f2c9")
+  (module "DWP2020 prototype:SSD1351_128X128_LCD" (layer "F.Cu") (tedit 0) (tstamp cdfc9b4a-8d53-43ff-a603-ccf03989ce57)
+    (at 1008.38 35.56)
+    (path "/c2fe866b-0538-436e-a065-5c65dd070b82")
     (fp_text reference "U2" (at 6.35 20.32) (layer "F.SilkS")
       (effects (font (size 1.6891 1.6891) (thickness 0.135128)) (justify left bottom))
     )
-    (fp_text value "SSD1351_128X128_LCD-bGeigieNanoKit_V1.1r5a-eagle-import" (at 0 0) (layer "F.SilkS") hide
+    (fp_text value "SSD1351_128X128" (at 0 0) (layer "F.SilkS") hide
       (effects (font (size 1.27 1.27) (thickness 0.15)))
     )
     (fp_line (start -19.05 18.860009) (end -19.05 -16.760012) (layer "F.SilkS") (width 0.080009))

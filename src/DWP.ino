@@ -8,7 +8,7 @@
  contact rob@yr-design.biz
  
  revisions:
- V2.0.0   2010-06-08 reflected hardware changes for Teensy 4
+ V2.0.0   2020-06-08 reflected hardware changes for Teensy 4
  V1.2.6   2020-06-05 setup for Teensy 4
  V1.2.5   2015-07-26 made setup switchable
  V1.2.4   2015-07-26 enable setup mode 
@@ -40,9 +40,6 @@ static char VERSION[] = "V2.0.0";;
   // #define cs   3
   // #define rst  14
   // #define dc   12
-
-
-
 
 
 // Color definitions
