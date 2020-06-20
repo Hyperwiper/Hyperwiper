@@ -34,12 +34,18 @@
 static char VERSION[] = "V2.0.0";;
 
 //Display setup for SSD1351
-//notes SI 11 and CS 9 are used for the audio board and other too.
-  // #define sclk 10
-  // #define mosi 7
-  // #define cs   3
-  // #define rst  14
-  // #define dc   12
+  //notes For Teensy 3.1/3.2 SI 11 and CS 9 are used for the audio board and other too.
+    // #define sclk 10
+    // #define mosi 7
+    // #define cs   3 
+    // #define rst  14
+    // #define dc   12
+    //notes For Teensy 4 
+    // #define sclk 10
+    // #define mosi 8
+    // #define cs   3 
+    // #define rst  14
+    // #define dc   12
 
 
 // Color definitions
@@ -72,7 +78,7 @@ static char VERSION[] = "V2.0.0";;
   #include <EEPROMex.h>
 
   // Adafruit_SSD1351 tft = Adafruit_SSD1351(cs, dc, mosi, sclk, rst); 
-  Adafruit_SSD1351 tft = Adafruit_SSD1351(3, 12, 7, 10, 14); 
+  Adafruit_SSD1351 tft = Adafruit_SSD1351(3, 12, 8, 10, 14); 
 
 
 //audio setup
@@ -84,7 +90,7 @@ static char VERSION[] = "V2.0.0";;
 //Pins setup
 
         int outputPin = 4;
-        // int magnetPin = 5;
+        int magnetPin = A1;
         int ledRedPin = 6;
         int ledGreenPin = 8;
 

@@ -1,0 +1,1183 @@
+EESchema Schematic File Version 5
+EELAYER 34 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+Comment5 ""
+Comment6 ""
+Comment7 ""
+Comment8 ""
+Comment9 ""
+$EndDescr
+Connection ~ 1500 6400
+Connection ~ 1600 5700
+Connection ~ 1800 5200
+Connection ~ 2200 5100
+Connection ~ 2400 6400
+Connection ~ 2500 6600
+Connection ~ 2800 5100
+Connection ~ 2800 6600
+Connection ~ 4600 2900
+Connection ~ 6000 6000
+Connection ~ 6200 2800
+Connection ~ 6500 3700
+Connection ~ 6500 4500
+Connection ~ 6500 6000
+Connection ~ 6700 3700
+Connection ~ 6800 3200
+Connection ~ 7000 1900
+Connection ~ 7000 2500
+Connection ~ 7100 4200
+Connection ~ 7200 2800
+Connection ~ 7200 3700
+Connection ~ 7800 4300
+Entry Wire Line
+	2800 4100 2900 4200
+Entry Wire Line
+	2800 4100 2900 4000
+Entry Wire Line
+	2800 4300 2900 4400
+Entry Wire Line
+	2800 4300 2900 4200
+Entry Wire Line
+	2800 4500 2900 4400
+Entry Wire Line
+	2800 4700 2900 4600
+Entry Wire Line
+	2800 4900 2900 4800
+Entry Wire Line
+	2800 4000 2900 4100
+Entry Wire Line
+	2800 4200 2900 4300
+Entry Wire Line
+	2800 4300 2900 4400
+Entry Wire Line
+	2800 4900 2900 5000
+Entry Wire Line
+	2800 4900 2900 5000
+Entry Wire Line
+	3100 3800 3200 3900
+Entry Wire Line
+	3100 3900 3200 4000
+Entry Wire Line
+	3100 4000 3200 4100
+Entry Wire Line
+	3100 4100 3200 4200
+Entry Wire Line
+	3100 4200 3200 4300
+Entry Wire Line
+	3100 4300 3200 4400
+Entry Wire Line
+	3100 4400 3200 4300
+Entry Wire Line
+	4700 3300 4800 3200
+Entry Wire Line
+	4700 3400 4800 3300
+Entry Wire Line
+	4700 3500 4800 3400
+Entry Wire Line
+	4700 3600 4800 3500
+Entry Wire Line
+	4700 3700 4800 3600
+Entry Wire Line
+	4700 3800 4800 3700
+Entry Wire Line
+	4700 3900 4800 3800
+Entry Wire Line
+	4700 3400 4800 3500
+Entry Wire Line
+	4700 3800 4800 3900
+Entry Wire Line
+	5000 4000 5100 3900
+Entry Wire Line
+	5000 4100 5100 4000
+Entry Wire Line
+	5000 4200 5100 4100
+Entry Wire Line
+	5000 4300 5100 4200
+Entry Wire Line
+	5000 3700 5100 3600
+Entry Wire Line
+	5000 3800 5100 3900
+Entry Wire Line
+	5000 3900 5100 4000
+Wire Wire Line
+	1300 5700 1600 5700
+Wire Wire Line
+	1300 5800 1300 5700
+Wire Wire Line
+	1400 4900 1400 6400
+Wire Wire Line
+	1400 4900 2200 4100
+Wire Wire Line
+	1400 6400 1500 6400
+Wire Wire Line
+	1500 6400 1800 6400
+Wire Wire Line
+	1600 5000 1600 5700
+Wire Wire Line
+	1600 5000 2300 4300
+Wire Wire Line
+	1600 5700 1600 6100
+Wire Wire Line
+	1600 6100 1800 6100
+Wire Wire Line
+	1800 5100 1800 5200
+Wire Wire Line
+	1800 5100 2400 4500
+Wire Wire Line
+	1800 5200 1800 5800
+Wire Wire Line
+	1900 5200 1800 5200
+Wire Wire Line
+	2200 5000 2200 5100
+Wire Wire Line
+	2200 5000 2500 4700
+Wire Wire Line
+	2200 5100 2200 5500
+Wire Wire Line
+	2200 5500 2300 5600
+Wire Wire Line
+	2300 5600 2500 5600
+Wire Wire Line
+	2400 5100 2200 5100
+Wire Wire Line
+	2400 5800 2500 5800
+Wire Wire Line
+	2400 6100 2600 6100
+Wire Wire Line
+	2400 6400 2500 6400
+Wire Wire Line
+	2500 5600 2500 5800
+Wire Wire Line
+	2500 6400 2500 6600
+Wire Wire Line
+	2600 4900 2600 6100
+Wire Wire Line
+	2800 4100 2200 4100
+Wire Wire Line
+	2800 4300 2300 4300
+Wire Wire Line
+	2800 4500 2400 4500
+Wire Wire Line
+	2800 4700 2500 4700
+Wire Wire Line
+	2800 4900 2600 4900
+Wire Wire Line
+	2800 5100 2800 5300
+Wire Wire Line
+	2800 5700 2800 5800
+Wire Wire Line
+	2800 6600 2500 6600
+Wire Wire Line
+	2800 6600 2800 6100
+Wire Wire Line
+	2800 6600 3200 6600
+Wire Wire Line
+	2800 4000 2800 4100
+Wire Wire Line
+	2800 4200 2800 4300
+Wire Wire Line
+	2800 4300 3000 4300
+Wire Wire Line
+	2800 4900 3000 4900
+Wire Wire Line
+	2800 4900 2800 5100
+Wire Wire Line
+	3000 4300 3000 4700
+Wire Wire Line
+	3000 4700 3900 5600
+Wire Wire Line
+	3000 4900 3200 5100
+Wire Wire Line
+	3000 5100 2800 5100
+Wire Wire Line
+	3000 5600 3000 5400
+Wire Wire Line
+	3100 3800 3300 3800
+Wire Wire Line
+	3100 3900 3300 3900
+Wire Wire Line
+	3100 4000 3300 4000
+Wire Wire Line
+	3100 4100 3300 4100
+Wire Wire Line
+	3100 4200 3300 4200
+Wire Wire Line
+	3100 4300 3300 4300
+Wire Wire Line
+	3200 5100 3200 5300
+Wire Wire Line
+	3200 5800 3200 5700
+Wire Wire Line
+	3200 6600 3200 6100
+Wire Wire Line
+	3300 4400 3100 4400
+Wire Wire Line
+	3900 5600 4700 5600
+Wire Wire Line
+	4500 2700 4800 2700
+Wire Wire Line
+	4500 2800 4600 2800
+Wire Wire Line
+	4500 2900 4600 2900
+Wire Wire Line
+	4700 3300 4500 3300
+Wire Wire Line
+	4700 3400 4500 3400
+Wire Wire Line
+	4700 3500 4500 3500
+Wire Wire Line
+	4700 3600 4500 3600
+Wire Wire Line
+	4700 3700 4500 3700
+Wire Wire Line
+	4700 3800 4500 3800
+Wire Wire Line
+	4700 3900 4500 3900
+Wire Wire Line
+	4700 3400 4800 3400
+Wire Wire Line
+	4700 3800 4900 3800
+Wire Wire Line
+	4800 2700 4900 2600
+Wire Wire Line
+	4800 3400 5000 3600
+Wire Wire Line
+	4900 2600 5000 2600
+Wire Wire Line
+	4900 3800 4930 3770
+Wire Wire Line
+	4930 3650 5060 3650
+Wire Wire Line
+	4930 3770 4930 3650
+Wire Wire Line
+	5000 4000 4500 4000
+Wire Wire Line
+	5000 4100 4500 4100
+Wire Wire Line
+	5000 4200 4500 4200
+Wire Wire Line
+	5000 4300 4500 4300
+Wire Wire Line
+	5000 2900 4600 2900
+Wire Wire Line
+	5000 3600 5300 3600
+Wire Wire Line
+	5000 3700 5300 3700
+Wire Wire Line
+	5000 3800 5300 3800
+Wire Wire Line
+	5000 3900 5300 3900
+Wire Wire Line
+	5060 3650 5060 3950
+Wire Wire Line
+	5060 3950 5070 3960
+Wire Wire Line
+	5070 3960 5070 3970
+Wire Wire Line
+	5070 3970 5100 4000
+Wire Wire Line
+	5100 4000 5300 4000
+Wire Wire Line
+	5100 5600 5300 5600
+Wire Wire Line
+	5200 3000 5300 3000
+Wire Wire Line
+	5200 3100 5300 3100
+Wire Wire Line
+	5400 1600 5700 1600
+Wire Wire Line
+	5500 5400 5700 5400
+Wire Wire Line
+	5500 6000 5500 5800
+Wire Wire Line
+	5700 1600 5800 1800
+Wire Wire Line
+	5700 5400 5700 5200
+Wire Wire Line
+	5800 2200 5800 2500
+Wire Wire Line
+	5800 2500 7000 2500
+Wire Wire Line
+	6000 6000 5500 6000
+Wire Wire Line
+	6000 6000 6000 6100
+Wire Wire Line
+	6100 5200 6300 5200
+Wire Wire Line
+	6200 2000 6000 2000
+Wire Wire Line
+	6200 2800 6100 2800
+Wire Wire Line
+	6200 2900 6200 2800
+Wire Wire Line
+	6200 3200 6800 3200
+Wire Wire Line
+	6200 3700 6200 3900
+Wire Wire Line
+	6200 3700 6500 3700
+Wire Wire Line
+	6200 4500 6200 4100
+Wire Wire Line
+	6200 4500 6500 4500
+Wire Wire Line
+	6500 2800 6200 2800
+Wire Wire Line
+	6500 3700 6700 3700
+Wire Wire Line
+	6500 3900 6500 3700
+Wire Wire Line
+	6500 4300 6500 4500
+Wire Wire Line
+	6500 4900 6500 5000
+Wire Wire Line
+	6500 5400 6500 6000
+Wire Wire Line
+	6500 6000 6000 6000
+Wire Wire Line
+	6500 6000 7800 6000
+Wire Wire Line
+	6700 3700 6700 4000
+Wire Wire Line
+	6700 3700 7200 3700
+Wire Wire Line
+	6800 1900 6800 2000
+Wire Wire Line
+	6800 2000 6600 2000
+Wire Wire Line
+	6800 3200 6800 3100
+Wire Wire Line
+	6800 3300 6800 3200
+Wire Wire Line
+	7000 1400 7000 1300
+Wire Wire Line
+	7000 1900 6800 1900
+Wire Wire Line
+	7000 1900 7000 1800
+Wire Wire Line
+	7000 1900 7000 2000
+Wire Wire Line
+	7000 3800 7100 3800
+Wire Wire Line
+	7100 3800 7100 4200
+Wire Wire Line
+	7100 4200 7100 5000
+Wire Wire Line
+	7100 5000 7200 5000
+Wire Wire Line
+	7100 5400 7200 5400
+Wire Wire Line
+	7100 5600 8800 5600
+Wire Wire Line
+	7200 2800 7100 2800
+Wire Wire Line
+	7200 2800 7200 3700
+Wire Wire Line
+	7200 2800 7400 2800
+Wire Wire Line
+	7200 4700 7200 3700
+Wire Wire Line
+	7200 5000 7200 5400
+Wire Wire Line
+	7300 1900 7000 1900
+Wire Wire Line
+	7300 2500 7000 2500
+Wire Wire Line
+	7300 4200 7100 4200
+Wire Wire Line
+	7300 4300 7300 4200
+Wire Wire Line
+	7300 4700 7200 4700
+Wire Wire Line
+	7400 2800 7400 2900
+Wire Wire Line
+	7400 3300 7400 3200
+Wire Wire Line
+	7600 4300 7800 4300
+Wire Wire Line
+	7600 4500 7600 4300
+Wire Wire Line
+	7800 4100 7800 4300
+Wire Wire Line
+	7800 4500 7800 4300
+Wire Wire Line
+	7800 5000 7800 4900
+Wire Wire Line
+	7800 6000 7800 5200
+Wire Wire Line
+	8200 4100 7800 4100
+Wire Wire Line
+	8800 4100 8600 4100
+Wire Wire Line
+	8800 5600 8800 4100
+Wire Bus Line
+	2800 2400 2900 2300
+Wire Bus Line
+	2800 3300 2800 2400
+Wire Bus Line
+	2800 3300 3100 3300
+Wire Bus Line
+	2800 4900 2800 3300
+Wire Bus Line
+	2900 2300 4600 2300
+Wire Bus Line
+	3100 3300 3100 4300
+Wire Bus Line
+	3100 4600 3100 4400
+Wire Bus Line
+	3200 4700 3100 4600
+Wire Bus Line
+	4600 2300 4700 2200
+Wire Bus Line
+	4600 2300 4700 2400
+Wire Bus Line
+	4700 1700 4800 1600
+Wire Bus Line
+	4700 2200 4700 1700
+Wire Bus Line
+	4700 2400 4700 3900
+Wire Bus Line
+	4800 1600 5500 1600
+Wire Bus Line
+	4900 4700 3200 4700
+Wire Bus Line
+	5000 3700 5000 4600
+Wire Bus Line
+	5000 4600 4900 4700
+Wire Notes Line
+	6660 4100 6900 4100
+Wire Notes Line
+	6900 4100 6900 4030
+Wire Notes Line
+	7400 4700 7400 4470
+Wire Notes Line
+	7640 4700 7400 4700
+Text Notes 6900 5500 2    60   ~ 0
+fuse to wipermotor
+Text Notes 7100 2100 2    60   ~ 0
+Blue
+Text Notes 7100 2400 2    60   ~ 0
+White
+Text Notes 7600 6800 2    60   ~ 0
+notes:\nreplace relay labeling K4 switch and K3 switches are revered..
+Text Notes 7900 5100 2    60   ~ 0
+goto on/off switch
+Text Label 2800 4100 2    10   ~ 0
+D2
+Text Label 2800 4100 0    70   ~ 0
+D16
+Text Label 2800 4300 2    10   ~ 0
+D3
+Text Label 2800 4300 0    70   ~ 0
+D17
+Text Label 2800 4500 0    70   ~ 0
+D20
+Text Label 2800 4700 0    70   ~ 0
+D2
+Text Label 2800 4900 0    70   ~ 0
+D15
+Text Label 2800 5100 0    70   ~ 0
+D6
+Text Label 2800 6600 2    10   ~ 0
+GND
+Text Label 2800 4300 0    70   ~ 0
+D4
+Text Label 2800 4900 0    70   ~ 0
+D8
+Text Label 3000 5600 2    10   ~ 0
+GND
+Text Label 3100 3800 0    70   ~ 0
+D20
+Text Label 3100 3900 0    70   ~ 0
+D19
+Text Label 3100 4000 0    70   ~ 0
+D18
+Text Label 3100 4100 0    70   ~ 0
+D17
+Text Label 3100 4200 0    70   ~ 0
+D16
+Text Label 3100 4300 0    70   ~ 0
+D15
+Text Label 3100 4400 0    70   ~ 0
+D14
+Text Label 4500 2700 0    70   ~ 0
+VDD
+Text Label 4500 2800 0    70   ~ 0
+VCC
+Text Label 4500 2900 2    10   ~ 0
+GND
+Text Label 4700 3300 0    70   ~ 0
+D2
+Text Label 4700 3400 0    70   ~ 0
+D3
+Text Label 4700 3500 0    70   ~ 0
+D4
+Text Label 4700 3600 0    70   ~ 0
+D5
+Text Label 4700 3700 0    70   ~ 0
+D6
+Text Label 4700 3800 0    70   ~ 0
+D7
+Text Label 4700 3900 0    70   ~ 0
+D8
+Text Label 5000 4000 0    70   ~ 0
+D9
+Text Label 5000 4100 0    70   ~ 0
+D10
+Text Label 5000 4200 0    70   ~ 0
+D11
+Text Label 5000 4300 0    70   ~ 0
+D12
+Text Label 5000 3700 0    70   ~ 0
+D14
+Text Label 5000 3800 0    70   ~ 0
+D12
+Text Label 5000 3900 0    70   ~ 0
+D10
+Text Label 5100 3600 0    70   ~ 0
+D3
+Text Label 5200 3000 0    70   ~ 0
+GND
+Text Label 5200 3100 0    70   ~ 0
+VCC
+Text Label 5225 4000 0    70   ~ 0
+D7
+Text Label 5600 1600 0    70   ~ 0
+D17
+Text Label 6100 2800 0    70   ~ 0
+VDD
+Text Label 6500 5400 2    10   ~ 0
+GND
+Text Label 6800 3300 2    10   ~ 0
+GND
+Text Label 7000 1300 0    70   ~ 0
+VDD
+Text Label 7300 1900 2    10   ~ 0
+D5
+Text Label 7300 2500 2    10   ~ 0
+GND
+Text Label 7400 3300 2    10   ~ 0
+GND
+Text GLabel 3300 2800 0    10   BiDi ~ 0
+VBAT
+Text GLabel 3300 3000 0    10   BiDi ~ 0
+AREF
+Text GLabel 3300 3100 0    10   BiDi ~ 0
+AGND
+Text GLabel 4500 2600 0    10   BiDi ~ 0
+VUSB
+Text GLabel 5300 3200 0    10   BiDi ~ 0
+3.3V
+$Comp
+L DWP_2015-eagle-import:W237-3E X1
+U 1 1 00000000
+P 6900 5400
+AR Path="/00000000" Ref="X1"  Part="1" 
+AR Path="/00000000" Ref="X1"  Part="1" 
+F 0 "X1" H 6850 5435 60  0000 R TNN
+F 1 "W237-3E" H 6900 5500 60  0000 L BNN
+F 2 "DWP 2015:W237-3E" H 6900 5400 50  0001 C CNN
+F 3 "" H 6900 5400 50  0001 C CNN
+	1    6900 5400
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:W237-3E X1
+U 3 1 00000000
+P 6900 5600
+AR Path="/00000000" Ref="X1"  Part="3" 
+AR Path="/00000000" Ref="X1"  Part="3" 
+F 0 "X1" H 6850 5635 60  0000 R TNN
+F 1 "W237-3E" H 6900 5700 60  0000 L BNN
+F 2 "DWP 2015:W237-3E" H 6900 5600 50  0001 C CNN
+F 3 "" H 6900 5600 50  0001 C CNN
+	3    6900 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:W237-3E X1
+U 2 1 00000000
+P 7500 1900
+AR Path="/00000000" Ref="X1"  Part="2" 
+AR Path="/00000000" Ref="X1"  Part="2" 
+F 0 "X1" H 7450 1935 60  0000 R TNN
+F 1 "W237-3E" H 7500 2000 60  0000 L BNN
+F 2 "DWP 2015:W237-3E" H 7500 1900 50  0001 C CNN
+F 3 "" H 7500 1900 50  0001 C CNN
+	2    7500 1900
+	-1   0    0    1   
+$EndComp
+$Comp
+L DWP_2015-eagle-import:W237-3E X2
+U 2 1 00000000
+P 7500 2500
+AR Path="/00000000" Ref="X2"  Part="2" 
+AR Path="/00000000" Ref="X2"  Part="2" 
+F 0 "X2" H 7450 2535 60  0000 R TNN
+F 1 "W237-3E" H 7500 2600 60  0000 L BNN
+F 2 "DWP 2015:W237-3E" H 7500 2500 50  0001 C CNN
+F 3 "" H 7500 2500 50  0001 C CNN
+	2    7500 2500
+	-1   0    0    1   
+$EndComp
+$Comp
+L DWP_2015-eagle-import:W237-3E X2
+U 1 1 00000000
+P 7600 5000
+AR Path="/00000000" Ref="X2"  Part="1" 
+AR Path="/00000000" Ref="X2"  Part="1" 
+F 0 "X2" H 7550 5035 60  0000 R TNN
+F 1 "W237-3E" H 7600 5100 60  0000 L BNN
+F 2 "DWP 2015:W237-3E" H 7600 5000 50  0001 C CNN
+F 3 "" H 7600 5000 50  0001 C CNN
+	1    7600 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:W237-3E X2
+U 3 1 00000000
+P 7600 5200
+AR Path="/00000000" Ref="X2"  Part="3" 
+AR Path="/00000000" Ref="X2"  Part="3" 
+F 0 "X2" H 7550 5235 60  0000 R TNN
+F 1 "W237-3E" H 7600 5300 60  0000 L BNN
+F 2 "DWP 2015:W237-3E" H 7600 5200 50  0001 C CNN
+F 3 "" H 7600 5200 50  0001 C CNN
+	3    7600 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:1N4004 D1
+U 1 1 00000000
+P 6200 4000
+AR Path="/00000000" Ref="D1"  Part="1" 
+AR Path="/00000000" Ref="D1"  Part="1" 
+F 0 "D1" H 6300 4019 60  0000 L BNN
+F 1 "1N4004" H 6300 3909 60  0000 L BNN
+F 2 "DWP 2015:DO41-10" H 6200 4000 50  0001 C CNN
+F 3 "" H 6200 4000 50  0001 C CNN
+	1    6200 4000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L DWP_2015-eagle-import:GND #GND12
+U 1 1 00000000
+P 1300 6200
+F 0 "#GND12" H 1300 6200 50  0001 C CNN
+F 1 "GND" H 1200 6100 60  0000 L BNN
+F 2 "" H 1300 6200 50  0001 C CNN
+F 3 "" H 1300 6200 50  0001 C CNN
+	1    1300 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:GND #GND5
+U 1 1 00000000
+P 1500 6800
+F 0 "#GND5" H 1500 6800 50  0001 C CNN
+F 1 "GND" H 1400 6700 60  0000 L BNN
+F 2 "" H 1500 6800 50  0001 C CNN
+F 3 "" H 1500 6800 50  0001 C CNN
+	1    1500 6800
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:GND #GND6
+U 1 1 00000000
+P 1900 5600
+F 0 "#GND6" H 1900 5600 50  0001 C CNN
+F 1 "GND" H 1800 5500 60  0000 L BNN
+F 2 "" H 1900 5600 50  0001 C CNN
+F 3 "" H 1900 5600 50  0001 C CNN
+	1    1900 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:GND #GND7
+U 1 1 00000000
+P 2400 5500
+F 0 "#GND7" H 2400 5500 50  0001 C CNN
+F 1 "GND" H 2300 5400 60  0000 L BNN
+F 2 "" H 2400 5500 50  0001 C CNN
+F 3 "" H 2400 5500 50  0001 C CNN
+	1    2400 5500
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:GND #GND11
+U 1 1 00000000
+P 2500 6700
+F 0 "#GND11" H 2500 6700 50  0001 C CNN
+F 1 "GND" H 2400 6600 60  0000 L BNN
+F 2 "" H 2500 6700 50  0001 C CNN
+F 3 "" H 2500 6700 50  0001 C CNN
+	1    2500 6700
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:GND #GND9
+U 1 1 00000000
+P 3000 5700
+F 0 "#GND9" H 3000 5700 50  0001 C CNN
+F 1 "GND" H 2900 5600 60  0000 L BNN
+F 2 "" H 3000 5700 50  0001 C CNN
+F 3 "" H 3000 5700 50  0001 C CNN
+	1    3000 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:GND #SUPPLY5
+U 1 1 00000000
+P 4600 3000
+F 0 "#SUPPLY5" H 4600 3000 50  0001 C CNN
+F 1 "GND" H 4500 2900 60  0000 L BNN
+F 2 "" H 4600 3000 50  0001 C CNN
+F 3 "" H 4600 3000 50  0001 C CNN
+	1    4600 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:GND #GND1
+U 1 1 00000000
+P 6000 6200
+F 0 "#GND1" H 6000 6200 50  0001 C CNN
+F 1 "GND" H 5900 6100 60  0000 L BNN
+F 2 "" H 6000 6200 50  0001 C CNN
+F 3 "" H 6000 6200 50  0001 C CNN
+	1    6000 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:GND #GND2
+U 1 1 00000000
+P 6800 3400
+F 0 "#GND2" H 6800 3400 50  0001 C CNN
+F 1 "GND" H 6700 3300 60  0000 L BNN
+F 2 "" H 6800 3400 50  0001 C CNN
+F 3 "" H 6800 3400 50  0001 C CNN
+	1    6800 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:GND #GND3
+U 1 1 00000000
+P 7000 2600
+F 0 "#GND3" H 7000 2600 50  0001 C CNN
+F 1 "GND" H 6900 2500 60  0000 L BNN
+F 2 "" H 7000 2600 50  0001 C CNN
+F 3 "" H 7000 2600 50  0001 C CNN
+	1    7000 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:GND #GND4
+U 1 1 00000000
+P 7400 3400
+F 0 "#GND4" H 7400 3400 50  0001 C CNN
+F 1 "GND" H 7300 3300 60  0000 L BNN
+F 2 "" H 7400 3400 50  0001 C CNN
+F 3 "" H 7400 3400 50  0001 C CNN
+	1    7400 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:FUSEBLANK_5X20MM F1
+U 1 1 00000000
+P 8400 4100
+AR Path="/00000000" Ref="F1"  Part="1" 
+AR Path="/00000000" Ref="F1"  Part="1" 
+F 0 "F1" H 8250 4155 60  0000 L BNN
+F 1 "FUSE" H 8250 3985 60  0000 L BNN
+F 2 "DWP 2015:FUSE_HOLDER_5X20MM" H 8400 4100 50  0001 C CNN
+F 3 "" H 8400 4100 50  0001 C CNN
+	1    8400 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:RESISTOREZ R5
+U 1 1 00000000
+P 2800 5500
+AR Path="/00000000" Ref="R5"  Part="1" 
+AR Path="/00000000" Ref="R5"  Part="1" 
+F 0 "R5" H 2650 5559 60  0000 L BNN
+F 1 "470" H 2650 5370 60  0000 L BNN
+F 2 "DWP 2015:AXIAL-0.3EZ" H 2800 5500 50  0001 C CNN
+F 3 "" H 2800 5500 50  0001 C CNN
+	1    2800 5500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L DWP_2015-eagle-import:RESISTOREZ R10
+U 1 1 00000000
+P 3200 5500
+AR Path="/00000000" Ref="R10"  Part="1" 
+AR Path="/00000000" Ref="R10"  Part="1" 
+F 0 "R10" H 3150 5359 60  0000 L BNN
+F 1 "1k" H 3150 5570 60  0000 L BNN
+F 2 "DWP 2015:AXIAL-0.3EZ" H 3200 5500 50  0001 C CNN
+F 3 "" H 3200 5500 50  0001 C CNN
+	1    3200 5500
+	0    1    1    0   
+$EndComp
+$Comp
+L DWP_2015-eagle-import:RESISTOREZ R4
+U 1 1 00000000
+P 4900 5600
+AR Path="/00000000" Ref="R4"  Part="1" 
+AR Path="/00000000" Ref="R4"  Part="1" 
+F 0 "R4" H 4750 5659 60  0000 L BNN
+F 1 "10k" H 4750 5470 60  0000 L BNN
+F 2 "DWP 2015:AXIAL-0.3EZ" H 4900 5600 50  0001 C CNN
+F 3 "" H 4900 5600 50  0001 C CNN
+	1    4900 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:RESISTOREZ R3
+U 1 1 00000000
+P 5900 5200
+AR Path="/00000000" Ref="R3"  Part="1" 
+AR Path="/00000000" Ref="R3"  Part="1" 
+F 0 "R3" H 5750 5259 60  0000 L BNN
+F 1 "1k" H 5750 5070 60  0000 L BNN
+F 2 "DWP 2015:AXIAL-0.3EZ" H 5900 5200 50  0001 C CNN
+F 3 "" H 5900 5200 50  0001 C CNN
+	1    5900 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:RESISTOREZ R1
+U 1 1 00000000
+P 6400 2000
+AR Path="/00000000" Ref="R1"  Part="1" 
+AR Path="/00000000" Ref="R1"  Part="1" 
+F 0 "R1" H 6250 2059 60  0000 L BNN
+F 1 "10k" H 6250 1870 60  0000 L BNN
+F 2 "DWP 2015:AXIAL-0.3EZ" H 6400 2000 50  0001 C CNN
+F 3 "" H 6400 2000 50  0001 C CNN
+	1    6400 2000
+	-1   0    0    1   
+$EndComp
+$Comp
+L DWP_2015-eagle-import:RESISTORPTH-1_2W R2
+U 1 1 00000000
+P 6500 4700
+AR Path="/00000000" Ref="R2"  Part="1" 
+AR Path="/00000000" Ref="R2"  Part="1" 
+F 0 "R2" H 6350 4759 60  0000 L BNN
+F 1 "33" H 6350 4570 60  0000 L BNN
+F 2 "DWP 2015:AXIAL-0.5" H 6500 4700 50  0001 C CNN
+F 3 "" H 6500 4700 50  0001 C CNN
+	1    6500 4700
+	0    1    1    0   
+$EndComp
+$Comp
+L DWP_2015-eagle-import:RESISTOREZ R6
+U 1 1 00000000
+P 7000 1600
+AR Path="/00000000" Ref="R6"  Part="1" 
+AR Path="/00000000" Ref="R6"  Part="1" 
+F 0 "R6" V 7090 1699 60  0000 L BNN
+F 1 "100k" V 6850 1560 60  0000 R TNN
+F 2 "DWP 2015:AXIAL-0.3EZ" H 7000 1600 50  0001 C CNN
+F 3 "" H 7000 1600 50  0001 C CNN
+	1    7000 1600
+	0    1    1    0   
+$EndComp
+$Comp
+L DWP_2015-eagle-import:C-EU025-024X044 C5
+U 1 1 00000000
+P 1300 5900
+AR Path="/00000000" Ref="C5"  Part="1" 
+AR Path="/00000000" Ref="C5"  Part="1" 
+F 0 "C5" H 1360 5915 60  0000 L BNN
+F 1 "0.1uF" H 1360 5715 60  0000 L BNN
+F 2 "DWP 2015:C025-024X044" H 1300 5900 50  0001 C CNN
+F 3 "" H 1300 5900 50  0001 C CNN
+	1    1300 5900
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:C-EU025-024X044 C4
+U 1 1 00000000
+P 1500 6500
+AR Path="/00000000" Ref="C4"  Part="1" 
+AR Path="/00000000" Ref="C4"  Part="1" 
+F 0 "C4" H 1560 6515 60  0000 L BNN
+F 1 "0.1uF" H 1560 6315 60  0000 L BNN
+F 2 "DWP 2015:C025-024X044" H 1500 6500 50  0001 C CNN
+F 3 "" H 1500 6500 50  0001 C CNN
+	1    1500 6500
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:C-EU025-024X044 C6
+U 1 1 00000000
+P 1900 5300
+AR Path="/00000000" Ref="C6"  Part="1" 
+AR Path="/00000000" Ref="C6"  Part="1" 
+F 0 "C6" H 1960 5315 60  0000 L BNN
+F 1 "0.1uF" H 1960 5115 60  0000 L BNN
+F 2 "DWP 2015:C025-024X044" H 1900 5300 50  0001 C CNN
+F 3 "" H 1900 5300 50  0001 C CNN
+	1    1900 5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:C-EU025-024X044 C7
+U 1 1 00000000
+P 2400 5200
+AR Path="/00000000" Ref="C7"  Part="1" 
+AR Path="/00000000" Ref="C7"  Part="1" 
+F 0 "C7" H 2460 5215 60  0000 L BNN
+F 1 "0.1uF" H 2460 5015 60  0000 L BNN
+F 2 "DWP 2015:C025-024X044" H 2400 5200 50  0001 C CNN
+F 3 "" H 2400 5200 50  0001 C CNN
+	1    2400 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:C-EU025-024X044 C8
+U 1 1 00000000
+P 3000 5200
+AR Path="/00000000" Ref="C8"  Part="1" 
+AR Path="/00000000" Ref="C8"  Part="1" 
+F 0 "C8" H 3060 5215 60  0000 L BNN
+F 1 "0.1uF" H 3060 5015 60  0000 L BNN
+F 2 "DWP 2015:C025-024X044" H 3000 5200 50  0001 C CNN
+F 3 "" H 3000 5200 50  0001 C CNN
+	1    3000 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:C-EU025-024X044 C1
+U 1 1 00000000
+P 5000 2700
+AR Path="/00000000" Ref="C1"  Part="1" 
+AR Path="/00000000" Ref="C1"  Part="1" 
+F 0 "C1" H 5060 2715 60  0000 L BNN
+F 1 "0.1uF" H 5060 2515 60  0000 L BNN
+F 2 "DWP 2015:C025-024X044" H 5000 2700 50  0001 C CNN
+F 3 "" H 5000 2700 50  0001 C CNN
+	1    5000 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:LED5MM LED_RED
+U 1 1 00000000
+P 2800 5900
+AR Path="/00000000" Ref="LED_RED"  Part="1" 
+AR Path="/00000000" Ref="LED_RED"  Part="1" 
+F 0 "LED_RED" V 2940 5520 60  0000 L BNN
+F 1 "LED5MM" V 3025 5720 60  0000 L BNN
+F 2 "DWP 2015:LED5MM" H 2800 5900 50  0001 C CNN
+F 3 "" H 2800 5900 50  0001 C CNN
+	1    2800 5900
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:LED5MM LED_GREEN
+U 1 1 00000000
+P 3200 5900
+AR Path="/00000000" Ref="LED_GREEN"  Part="1" 
+AR Path="/00000000" Ref="LED_GREEN"  Part="1" 
+F 0 "LED_GREEN" V 3340 5520 60  0000 L BNN
+F 1 "LED5MM" V 3425 5720 60  0000 L BNN
+F 2 "DWP 2015:LED5MM" H 3200 5900 50  0001 C CNN
+F 3 "" H 3200 5900 50  0001 C CNN
+	1    3200 5900
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:CAP_POLPTH2 C3
+U 1 1 00000000
+P 6200 3000
+AR Path="/00000000" Ref="C3"  Part="1" 
+AR Path="/00000000" Ref="C3"  Part="1" 
+F 0 "C3" H 6240 3025 60  0000 L BNN
+F 1 "1200uF" H 6240 2835 60  0000 L BNN
+F 2 "DWP 2015:CPOL-RADIAL-10UF-25V" H 6200 3000 50  0001 C CNN
+F 3 "" H 6200 3000 50  0001 C CNN
+	1    6200 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:CAP_POLPTH2 C2
+U 1 1 00000000
+P 7400 3000
+AR Path="/00000000" Ref="C2"  Part="1" 
+AR Path="/00000000" Ref="C2"  Part="1" 
+F 0 "C2" H 7440 3025 60  0000 L BNN
+F 1 "1000uF" H 7440 2835 60  0000 L BNN
+F 2 "DWP 2015:CPOL-RADIAL-10UF-25V" H 7400 3000 50  0001 C CNN
+F 3 "" H 7400 3000 50  0001 C CNN
+	1    7400 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:2SC1815 T2
+U 1 1 00000000
+P 5400 5600
+AR Path="/00000000" Ref="T2"  Part="1" 
+AR Path="/00000000" Ref="T2"  Part="1" 
+F 0 "T2" H 5000 5900 60  0000 L BNN
+F 1 "2SC1815" H 5000 5800 60  0000 L BNN
+F 2 "DWP 2015:TO92-ECB" H 5400 5600 50  0001 C CNN
+F 3 "" H 5400 5600 50  0001 C CNN
+	1    5400 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:2SC1815 T3
+U 1 1 00000000
+P 5900 2000
+AR Path="/00000000" Ref="T3"  Part="1" 
+AR Path="/00000000" Ref="T3"  Part="1" 
+F 0 "T3" H 5500 2300 60  0000 L BNN
+F 1 "2SC1815" H 5500 2200 60  0000 L BNN
+F 2 "DWP 2015:TO92-ECB" H 5900 2000 50  0001 C CNN
+F 3 "" H 5900 2000 50  0001 C CNN
+	1    5900 2000
+	-1   0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:TIP32 T1
+U 1 1 00000000
+P 6400 5200
+AR Path="/00000000" Ref="T1"  Part="1" 
+AR Path="/00000000" Ref="T1"  Part="1" 
+F 0 "T1" H 6000 5500 60  0000 L BNN
+F 1 "TIP32" H 6000 5400 60  0000 L BNN
+F 2 "DWP 2015:TO220" H 6400 5200 50  0001 C CNN
+F 3 "" H 6400 5200 50  0001 C CNN
+	1    6400 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:REED-SWITCH-CT10-A2 S1
+U 1 1 00000000
+P 7000 2200
+AR Path="/00000000" Ref="S1"  Part="1" 
+AR Path="/00000000" Ref="S1"  Part="1" 
+F 0 "S1" H 7100 2300 60  0000 L BNN
+F 1 "REED-Switch" H 7100 2200 60  0000 L BNN
+F 2 "DWP 2015:CT10-A2" H 7000 2200 50  0001 C CNN
+F 3 "" H 7000 2200 50  0001 C CNN
+	1    7000 2200
+	-1   0    0    1   
+$EndComp
+$Comp
+L DWP_2015-eagle-import:SNR?0 K4
+U 2 1 00000000
+P 6800 4000
+AR Path="/00000000" Ref="K4"  Part="2" 
+AR Path="/00000000" Ref="K4"  Part="2" 
+F 0 "K4" H 6800 4000 50  0001 C CNN
+F 1 "SNR?0" H 6850 4115 60  0001 L BNN
+F 2 "DWP 2015:SNR-V" H 6800 4000 50  0001 C CNN
+F 3 "" H 6800 4000 50  0001 C CNN
+	2    6800 4000
+	0    1    1    0   
+$EndComp
+$Comp
+L DWP_2015-eagle-import:SNR?0 K3
+U 2 1 00000000
+P 7500 4500
+AR Path="/00000000" Ref="K3"  Part="2" 
+AR Path="/00000000" Ref="K3"  Part="2" 
+F 0 "K3" H 7500 4500 50  0001 C CNN
+F 1 "SNR?0" H 7550 4615 60  0001 L BNN
+F 2 "DWP 2015:SNR-V" H 7500 4500 50  0001 C CNN
+F 3 "" H 7500 4500 50  0001 C CNN
+	2    7500 4500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L DWP_2015-eagle-import:SNR?0 K4
+U 1 1 00000000
+P 6500 4100
+AR Path="/00000000" Ref="K4"  Part="1" 
+AR Path="/00000000" Ref="K4"  Part="1" 
+F 0 "K4" H 6500 4100 50  0001 C CNN
+F 1 "SNR?0" H 6590 4555 60  0001 L BNN
+F 2 "DWP 2015:SNR-V" H 6500 4100 50  0001 C CNN
+F 3 "" H 6500 4100 50  0001 C CNN
+	1    6500 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:SNR?0 K3
+U 1 1 00000000
+P 7800 4700
+AR Path="/00000000" Ref="K3"  Part="1" 
+AR Path="/00000000" Ref="K3"  Part="1" 
+F 0 "K3" H 7800 4700 50  0001 C CNN
+F 1 "SNR?0" H 7980 4675 60  0001 L BNN
+F 2 "DWP 2015:SNR-V" H 7800 4700 50  0001 C CNN
+F 3 "" H 7800 4700 50  0001 C CNN
+	1    7800 4700
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:V_REG_78XX-TO-220 IC2
+U 1 1 00000000
+P 6800 2800
+AR Path="/00000000" Ref="IC2"  Part="1" 
+AR Path="/00000000" Ref="IC2"  Part="1" 
+F 0 "IC2" H 6900 2500 60  0000 L BNN
+F 1 "V_REG_78XX-TO-220" H 6900 2400 60  0000 L BNN
+F 2 "DWP 2015:TO-220-ALT" H 6800 2800 50  0001 C CNN
+F 3 "" H 6800 2800 50  0001 C CNN
+	1    6800 2800
+	-1   0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:SKQUAAA010 JOYSWITCH
+U 1 1 00000000
+P 2100 6100
+AR Path="/00000000" Ref="JOYSWITCH"  Part="1" 
+AR Path="/00000000" Ref="JOYSWITCH"  Part="1" 
+F 0 "JOYSWITCH" H 2300 5600 50  0000 R TNN
+F 1 "JoySwitch" H 2100 6100 50  0001 C CNN
+F 2 "DWP 2015:SKQU" H 2100 6100 50  0001 C CNN
+F 3 "" H 2100 6100 50  0001 C CNN
+	1    2100 6100
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:SSD1351_128X128_LCD SSD1351
+U 1 1 00000000
+P 5900 3700
+AR Path="/00000000" Ref="SSD1351"  Part="1" 
+AR Path="/00000000" Ref="SSD1351"  Part="1" 
+F 0 "SSD1351" H 5520 4530 60  0000 L BNN
+F 1 "SSD1351_128X128_LCD" H 5110 2900 60  0000 L BNN
+F 2 "DWP 2015:SSD1351_128X128_LCD" H 5900 3700 50  0001 C CNN
+F 3 "" H 5900 3700 50  0001 C CNN
+	1    5900 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L DWP_2015-eagle-import:TEENSY_3.0+4 U$1
+U 1 1 00000000
+P 3900 3500
+AR Path="/00000000" Ref="U$1"  Part="1" 
+AR Path="/00000000" Ref="U$1"  Part="1" 
+F 0 "U$1" H 3780 4550 50  0000 L BNB
+F 1 "TEENSY_3.1" H 3790 2400 50  0000 L BNB
+F 2 "DWP 2015:TEENSY_3.0+4" H 3900 3500 50  0001 C CNN
+F 3 "" H 3900 3500 50  0001 C CNN
+	1    3900 3500
+	-1   0    0    -1  
+$EndComp
+$EndSCHEMATC
