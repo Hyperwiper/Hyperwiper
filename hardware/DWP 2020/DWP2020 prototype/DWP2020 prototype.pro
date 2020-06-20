@@ -1,4 +1,4 @@
-update=Thu 18 Jun 2020 03:10:22 PM JST
+update=Sat 20 Jun 2020 10:18:21 PM JST
 version=1
 last_client=kicad
 [general]
@@ -12,12 +12,6 @@ NetIExt=net
 version=1
 LibDir=
 [eeschema/libraries]
-[LibeditFrame]
-version=1
-[SchematicFrame]
-version=1
-[ModEditFrame]
-version=1
 [schematic_editor]
 version=1
 PageLayoutDescrFile=
@@ -40,6 +34,14 @@ ERC_CheckBusDriverConflicts=1
 ERC_CheckBusEntryConflicts=1
 ERC_CheckBusToBusConflicts=1
 ERC_CheckBusToNetConflicts=1
+[LibeditFrame]
+version=1
+[SchematicFrame]
+version=1
+[ModEditFrame]
+version=1
+[sheetnames]
+1=c0c25ce2-bc98-459d-862f-6e05eeb8da75:
 [pcbnew]
 version=1
 PageLayoutDescrFile=
@@ -47,7 +49,7 @@ LastNetListRead=
 LastSTEPExportPath=
 LastIDFExportPath=
 LastVRMLExportPath=
-LastSpecctraDSNExportPath=
+LastSpecctraDSNExportPath=DWP2020 prototype.dsn
 LastGenCADExportPath=
 CopperLayerCount=2
 BoardThickness=1.6
@@ -342,5 +344,14 @@ uViaDrill=0.1
 dPairWidth=0.2
 dPairGap=0.25
 dPairViaGap=0.25
-[sheetnames]
-1=d90208b2-818a-44fc-b975-242508e17403:
+[pcbnew/Netclasses/1]
+Name=Power
+Clearance=0.2
+TrackWidth=0.5
+ViaDiameter=0.8
+ViaDrill=0.4
+uViaDiameter=0.3
+uViaDrill=0.1
+dPairWidth=0.2
+dPairGap=0.25
+dPairViaGap=0.25

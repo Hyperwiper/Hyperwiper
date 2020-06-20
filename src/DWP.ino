@@ -40,7 +40,7 @@ static char VERSION[] = "V2.0.0";;
     // #define cs   3 
     // #define rst  14
     // #define dc   12
-    //notes For Teensy 4 
+  //notes For Teensy 4 
     // #define sclk 10
     // #define mosi 8
     // #define cs   3 
@@ -90,9 +90,10 @@ static char VERSION[] = "V2.0.0";;
 //Pins setup
 
         int outputPin = 4;
-        int magnetPin = A1;
+        int magnetPin = 5;
         int ledRedPin = 6;
-        int ledGreenPin = 8;
+        // int ledGreenPin = 8; Teensy 3.1
+        int ledGreenPin = 2; //Teensy 4
 
         //joystick pins setup
         const int JOY_A_PIN = 15;
@@ -211,7 +212,7 @@ void setup() {
       tft.println("");  
       tft.setCursor(0, 120);
       tft.setTextColor(ORANGE);
-      tft.println("U-Aizu/YR-Design 2015");
+      tft.println("U-Aizu/YR-Design 2020");
       tft.setCursor(0, 20);
       tft.setTextColor(WHITE);
       tft.println("setup");
