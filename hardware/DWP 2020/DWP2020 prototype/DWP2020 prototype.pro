@@ -1,4 +1,4 @@
-update=Sat 20 Jun 2020 10:18:21 PM JST
+update=Sun 21 Jun 2020 11:46:46 AM JST
 version=1
 last_client=kicad
 [general]
@@ -40,8 +40,6 @@ version=1
 version=1
 [ModEditFrame]
 version=1
-[sheetnames]
-1=c0c25ce2-bc98-459d-862f-6e05eeb8da75:
 [pcbnew]
 version=1
 PageLayoutDescrFile=
@@ -355,3 +353,5 @@ uViaDrill=0.1
 dPairWidth=0.2
 dPairGap=0.25
 dPairViaGap=0.25
+[sheetnames]
+1=90c5655c-ad94-48cc-a1be-55cd0b8c7374:

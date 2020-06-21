@@ -1,8 +1,8 @@
-(kicad_pcb (version 20200614) (host pcbnew "5.99.0-unknown-aa7ce74~88~ubuntu18.04.1")
+(kicad_pcb (version 20200614) (host pcbnew "5.99.0-unknown-09cb75b~88~ubuntu18.04.1")
 
   (general
     (thickness 1.6)
-    (drawings 4)
+    (drawings 9)
     (tracks 16)
     (modules 2)
     (nets 45)
@@ -390,7 +390,7 @@
   (module "DWP2020 prototype:SSD1351_128X128_LCD Waveshare" (layer "F.Cu") (tedit 5EEE05CA) (tstamp 2c088d78-a7f8-42f8-979b-24cc79aaf06c)
     (at 921.385 37.465)
     (path "/74572b16-3584-4479-b044-a465da731b08")
-    (fp_text reference "U2" (at 6.35 20.32) (layer "F.SilkS")
+    (fp_text reference "U2" (at -8.89 -16.51) (layer "F.SilkS")
       (effects (font (size 1.6891 1.6891) (thickness 0.135128)) (justify left bottom))
     )
     (fp_text value "SSD1351_128X128_Waveshare" (at 0 0) (layer "F.SilkS") hide
@@ -476,10 +476,17 @@
       (net 43 "Net-(U1-Pad21)") (pinfunction "RST") (solder_mask_margin 0.1016) (tstamp ec75275a-9617-40c7-810b-5a4f8bcbe3d8))
   )
 
-  (gr_line (start 899.16 65.405) (end 899.16 13.335) (layer "Edge.Cuts") (width 0.05) (tstamp 720884e2-bdcb-44b9-9eee-f8cdc357e539))
-  (gr_line (start 986.79 65.405) (end 899.16 65.405) (layer "Edge.Cuts") (width 0.05) (tstamp 658e607b-aaed-49b8-b536-b62423519848))
-  (gr_line (start 986.79 13.335) (end 986.79 65.405) (layer "Edge.Cuts") (width 0.05) (tstamp 16f10557-75ae-40f3-8594-de21794e11e0))
-  (gr_line (start 899.16 13.335) (end 986.79 13.335) (layer "Edge.Cuts") (width 0.05) (tstamp 1897c2b1-6b7c-451f-9cd0-fb333cdd0f85))
+  (gr_text "SSD1351 Waveshare 1.5 \"" (at 922.02 22.225) (layer "F.SilkS") (tstamp 0d5edf67-c445-4965-bf31-9477bcd76d91)
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (gr_arc (start 985.52 14.605) (end 986.79 14.605) (angle -90) (layer "Edge.Cuts") (width 0.05) (tstamp 6cba5782-a058-4efb-bcac-3bfe314fb4b1))
+  (gr_arc (start 985.52 64.135) (end 985.52 65.405) (angle -90) (layer "Edge.Cuts") (width 0.05) (tstamp 2d72d6fd-27d9-4aad-8c07-7158a9c5440e))
+  (gr_arc (start 901.065 63.5) (end 899.16 63.5) (angle -90) (layer "Edge.Cuts") (width 0.05) (tstamp 9eedfe24-7e8d-429d-a0aa-1af82560f387))
+  (gr_arc (start 900.43 14.605) (end 900.43 13.335) (angle -90) (layer "Edge.Cuts") (width 0.05) (tstamp cb1aef47-eb67-4fac-97c6-b33cc69de9d7))
+  (gr_line (start 899.16 63.5) (end 899.16 14.605) (layer "Edge.Cuts") (width 0.05) (tstamp 720884e2-bdcb-44b9-9eee-f8cdc357e539))
+  (gr_line (start 985.52 65.405) (end 901.065 65.405) (layer "Edge.Cuts") (width 0.05) (tstamp 658e607b-aaed-49b8-b536-b62423519848))
+  (gr_line (start 986.79 14.605) (end 986.79 64.135) (layer "Edge.Cuts") (width 0.05) (tstamp 16f10557-75ae-40f3-8594-de21794e11e0))
+  (gr_line (start 900.43 13.335) (end 985.52 13.335) (layer "Edge.Cuts") (width 0.05) (tstamp 1897c2b1-6b7c-451f-9cd0-fb333cdd0f85))
 
   (segment (start 949.96 52.705) (end 964.565 52.705) (width 0.25) (layer "B.Cu") (net 44) (tstamp 18c0317f-d603-4351-b29a-caa13aa7f5b2))
   (segment (start 941.705 44.45) (end 949.96 52.705) (width 0.25) (layer "B.Cu") (net 44) (tstamp 790a945d-cffc-43da-a003-67ce3f5869e9))
