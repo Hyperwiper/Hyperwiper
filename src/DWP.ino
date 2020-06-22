@@ -8,6 +8,7 @@
  contact rob@yr-design.biz
  
  revisions:
+ V2.0.1   2020-06-22 rotate the screen 180 degree
  V2.0.0   2020-06-08 reflected hardware changes for Teensy 4
  V1.2.6   2020-06-05 setup for Teensy 4
  V1.2.5   2015-07-26 made setup switchable
@@ -31,7 +32,7 @@
 
  */
 
-static char VERSION[] = "V2.0.0";;
+static char VERSION[] = "V2.0.1";;
 
 //Display setup for SSD1351
   //notes For Teensy 3.1/3.2 SI 11 and CS 9 are used for the audio board and other too.
@@ -201,6 +202,7 @@ void setup() {
 
       //display setup
       tft.begin();
+      tft.setRotation(2);
       tft.fillScreen(BLACK);
       tft.setTextColor(ORANGE);
       tft.setTextSize(1);
