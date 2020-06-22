@@ -206,7 +206,7 @@ void setup() {
       tft.fillScreen(BLACK);
       tft.setTextColor(ORANGE);
       tft.setTextSize(1);
-      tft.print("Dancing Wiper  ");
+      tft.print("HyperWiper  ");
       tft.setTextColor(ORANGE);
       tft.setTextSize(1);
       tft.println(VERSION);
