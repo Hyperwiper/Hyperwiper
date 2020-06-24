@@ -327,8 +327,6 @@ uViaDrill=0.1
 dPairWidth=0.2
 dPairGap=0.25
 dPairViaGap=0.25
-[sheetnames]
-1=90c5655c-ad94-48cc-a1be-55cd0b8c7374:
 [schematic_editor]
 version=1
 PageLayoutDescrFile=
@@ -355,3 +353,5 @@ ERC_CheckBusToNetConflicts=1
 version=1
 [LibeditFrame]
 version=1
+[sheetnames]
+1=6cd225da-86ec-4c90-bc6e-fc09ca5d9420:
