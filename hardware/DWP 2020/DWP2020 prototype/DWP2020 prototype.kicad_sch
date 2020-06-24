@@ -1,12 +1,12 @@
-(kicad_sch (version 20200608) (host eeschema "5.99.0-unknown-09cb75b~88~ubuntu18.04.1")
+(kicad_sch (version 20200608) (host eeschema "5.99.0-unknown-18ab3c4~88~ubuntu18.04.1")
 
-  (page 2 1)
+  (page 1 1)
 
   (paper "A4")
 
   (title_block
     (title "Simple Prototype board")
-    (date "2020-06-17")
+    (date "2020-06-23")
   )
 
   (lib_symbols
@@ -453,7 +453,7 @@
     (effects (font (size 2.5 2.5)) (justify right bottom))
   )
 
-  (symbol (lib_id "import_from_eagle-rescue:SSD1351_128X128_Waveshare") (at 138.43 55.88 0)
+  (symbol (lib_id "import_from_eagle-rescue:SSD1351_128X128_Waveshare") (at 138.43 55.88 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid "74572b16-3584-4479-b044-a465da731b08")
     (property "Reference" "U2" (id 0) (at 130.81 31.75 0)
@@ -470,7 +470,7 @@
     )
   )
 
-  (symbol (lib_id "Teensy4:Teensy4.0") (at 85.09 72.39 0)
+  (symbol (lib_id "Teensy4:Teensy4.0") (at 85.09 72.39 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid "6616c3fb-93b5-47a8-bfa7-91ec7bef9974")
     (property "Reference" "U1" (id 0) (at 85.09 31.4768 0))
