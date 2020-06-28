@@ -232,7 +232,7 @@ void setup() {
      pinMode(outputPin, OUTPUT);   //wiper motor pin
      pinMode(ledRedPin, OUTPUT);  //red led 
      pinMode(ledGreenPin, OUTPUT); //green led
-     // pinMode(magnetPin, INPUT_PULLUP);
+     // pinMode(magnetPin, INPUT_PULLUP); // needs to be checked
 
       // attachInterrupt(magnetPin, onMagnet, FALLING);
       delay(1000);
