@@ -9,7 +9,38 @@ Software pins:
 	  // #define cs   3
 	  // #define rst  14
 	  // #define dc   12
+-----------------------------------------------------------------------------------------------
 
 Hardware pins checked 2010-06-18:
-Teensy  	Digital		displaylabel
-pin 9   	7			SI
+	Teensy  	Digital		displaylabel
+	pin 9   	8			SI
+
+
+
+
+Function		Teensy 4.x Pins 		Teensy 3.x Pins
+
+Audio Data		7, 8, 20, 21, 23		9, 11, 13, 22, 23	
+Audio Control	18, 19					18, 19	SDA, SCL (other I2C chips)
+
+
+Volume Pot		15 (A1)					15 (A1)	-
+SD Card			10, 11, 12, 13			7, 10, 12, 14	MOSI, MISO, SCK (other SPI chips)
+Memory Chip		6, 11, 12, 13			6, 7, 12, 14	MOSI, MISO, SCK (other SPI chips)
+
+-----------------------------------------------------------------------------------------------
+
+From code 2020-06-23
+
+        int outputPin = 4;
+        int magnetPin = 5;
+        int ledRedPin = 6;
+        // int ledGreenPin = 8; Teensy 3.1
+        int ledGreenPin = 2; //Teensy 4
+
+        //joystick pins setup
+        const int JOY_A_PIN = 15;
+        const int JOY_B_PIN = 16;
+        const int JOY_C_PIN = 17;
+        const int JOY_D_PIN = 20;
+        const int JOY_E_PIN = 2;
