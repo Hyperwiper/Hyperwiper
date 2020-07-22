@@ -1,9 +1,9 @@
-(pcb "/home/rob/Documents/Kicad/Hyperwiper/Hyperwiper 2020/Hyperwiper 2020.dsn"
+(pcb "/home/rob/Documents/PlatformIO/Projects/hyperwiper/hardware/Hyperwiper 2020/Hyperwiper 2020.dsn"
   (parser
     (string_quote ")
     (space_in_quoted_tokens on)
     (host_cad "KiCad's Pcbnew")
-    (host_version "5.99.0-unknown-bcb29b6~89~ubuntu20.04.1")
+    (host_version "5.99.0-unknown-9a801d8~89~ubuntu20.04.1")
   )
   (resolution um 10)
   (unit um)
@@ -47,6 +47,10 @@
     )
   )
   (placement
+    (component "DWP 2020:SNR-V"
+      (place K2 111887 -113030 front 90 (PN "SNR?0-bGeigieNanoKit_V1.1r5a-eagle-import"))
+      (place K1 105410 -113030 front 90 (PN "SNR?0-bGeigieNanoKit_V1.1r5a-eagle-import"))
+    )
     (component "DWP 2020:SKQU"
       (place JOYSWITCH1 186690 -131445 front 0 (PN JoySwitch))
     )
@@ -69,15 +73,11 @@
       (place T2 149860 -117475 front 180 (PN 2SC1815))
     )
     (component TEENSY_3.0+4
-      (place U$1 132595 -85318.6 front 0 (PN TEENSY_3.1))
+      (place U$1 132595 -85318.6 front 0 (PN "TEENSY 4"))
     )
     (component LED5MM
       (place LED1 161805 -117069 front 180 (PN LED5MM))
       (place LED2 169425 -117069 front 0 (PN LED5MM))
-    )
-    (component "SNR-V"
-      (place K3 111760 -113030 front 90 (PN SNR?0))
-      (place K4 105410 -113030 front 90 (PN SNR?0))
     )
     (component "DO41-10"
       (place D2 149225 -121920 front 0 (PN 1N4004))
@@ -91,6 +91,17 @@
     )
   )
   (library
+    (image "DWP 2020:SNR-V"
+      (outline (path signal 203.2  -13900 -2450  -13900 2400))
+      (outline (path signal 203.2  13900 -2450  -13900 -2450))
+      (outline (path signal 203.2  13900 2400  13900 -2450))
+      (outline (path signal 203.2  -13900 2400  13900 2400))
+      (pin Round[A]Pad_1508_um A1 -12700 1270)
+      (pin Round[A]Pad_1508_um A2 -8890 1270)
+      (pin Round[A]Pad_1950_um 14 12700 1270)
+      (pin Round[A]Pad_1950_um 11 7620 1270)
+      (pin Round[A]Pad_1950_um 12 2540 1270)
+    )
     (image "DWP 2020:SKQU"
       (outline (path signal 127  -4771.63 -1422.4  -4771.63 -2159))
       (outline (path signal 127  4416.29 4822.39  -4340.15 4822.39))
@@ -364,17 +375,6 @@
       (pin RoundRect[A]Pad_1676.4x1676.4_420.695_um A -1270 0)
       (pin RoundRect[A]Pad_1676.4x1676.4_420.695_um K 1270 0)
     )
-    (image "SNR-V"
-      (outline (path signal 203.2  -13900 2400  13900 2400))
-      (outline (path signal 203.2  13900 2400  13900 -2450))
-      (outline (path signal 203.2  13900 -2450  -13900 -2450))
-      (outline (path signal 203.2  -13900 -2450  -13900 2400))
-      (pin Round[A]Pad_1950_um 12 2540 1270)
-      (pin Round[A]Pad_1950_um 11 7620 1270)
-      (pin Round[A]Pad_1950_um 14 12700 1270)
-      (pin Round[A]Pad_1508_um A2 -8890 1270)
-      (pin Round[A]Pad_1508_um A1 -12700 1270)
-    )
     (image "DO41-10"
       (outline (path signal 152.4  2032 -1270  -2032 -1270))
       (outline (path signal 152.4  2032 -1270  2032 1270))
@@ -614,29 +614,20 @@
     )
   )
   (network
-    (net "Net-(D2-PadA)"
-      (pins T2-C K3-A2 D2-A)
+    (net "Net-(D2-Pad1)"
+      (pins K2-14 K1-A1 K1-11 IC2-IN)
     )
-    (net "Net-(D2-PadC)"
-      (pins IC2-IN K3-14 K3-A1 K4-11 D2-C)
+    (net "Net-(D2-Pad2)"
+      (pins K1-A2 T2-C)
     )
     (net "Net-(F1-Pad1)"
-      (pins F1-1 K3-11 K4-A1)
+      (pins K2-A1 K2-11 F1-1)
     )
     (net "Net-(F1-Pad2)"
       (pins F1-2 X1-3)
     )
     (net /VDD
       (pins IC2-OUT U$1-VIN R1-P$2)
-    )
-    (net "Net-(K3-Pad12)"
-      (pins K3-12 K4-14 X1-1)
-    )
-    (net "Net-(K4-Pad12)"
-      (pins K4-12)
-    )
-    (net "Net-(K4-PadA2)"
-      (pins K4-A2 X2-1)
     )
     (net "Net-(LED1-PadA)"
       (pins R5-P$1 LED1-A)
@@ -722,28 +713,28 @@
     (net "Net-(U$1-Pad13)"
       (pins U$1-13)
     )
-    (net "Net-(U$1-Pad16/A2)"
+    (net "/A2)"
       (pins U$1-16/A2)
     )
-    (net "Net-(U$1-Pad17/A3)"
+    (net "/A3)"
       (pins U$1-17/A3)
     )
-    (net "Net-(U$1-Pad18/A4)"
+    (net "/A4)"
       (pins U$1-18/A4)
     )
-    (net "Net-(U$1-Pad19/A5)"
+    (net "/A5)"
       (pins U$1-19/A5)
     )
-    (net "Net-(U$1-Pad20/A6)"
+    (net "/A6)"
       (pins U$1-20/A6)
     )
-    (net "Net-(U$1-Pad21/A7)"
+    (net "/A7)"
       (pins U$1-21/A7)
     )
-    (net "Net-(U$1-Pad22/A8)"
+    (net "/A8)"
       (pins U$1-22/A8)
     )
-    (net "Net-(U$1-Pad23/A9)"
+    (net "/A9)"
       (pins U$1-23/A9)
     )
     (net "Net-(U$1-PadA10)"
@@ -774,6 +765,15 @@
     (net /D5
       (pins JOYSWITCH1-RIGHT)
     )
+    (net "Net-(K1-Pad14)"
+      (pins K2-12 K1-14 X1-1)
+    )
+    (net "Net-(K1-Pad12)"
+      (pins K1-12)
+    )
+    (net "Net-(K2-PadA2)"
+      (pins K2-A2 X2-1)
+    )
     (class kicad_default
       (circuit
         (use_via Via[0-1]_800:400_um)
@@ -783,9 +783,9 @@
         (clearance 200.1)
       )
     )
-    (class Power 3.3V "A2)" "A3)" "A4)" "A5)" "A6)" "A7)" "A8)" "A9)" AGND
-      AREF D10 D2 D3 D4 D5 D6 D7 D8 GND "Net-(F1-Pad1)" "Net-(F1-Pad2)" "Net-(K3-Pad12)"
-      "Net-(K4-Pad12)" "Net-(K4-PadA2)" VBAT VCC VDD VUSB
+    (class Power 3.3V AGND AREF D10 D2 D3 D4 D5 D6 D7 D8 GND "Net-(D2-Pad1)"
+      "Net-(D2-Pad2)" "Net-(F1-Pad1)" "Net-(F1-Pad2)" "Net-(K1-Pad12)" "Net-(K1-Pad14)"
+      "Net-(K2-PadA2)" VBAT VCC VDD VUSB
       (circuit
         (use_via Via[0-1]_800:400_um)
       )
