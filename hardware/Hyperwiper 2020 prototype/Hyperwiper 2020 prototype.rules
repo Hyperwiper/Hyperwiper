@@ -1,5 +1,5 @@
 
-(rules PCB Hyperwiper 2020
+(rules PCB DWP2020 prototype
   (snap_angle 
     fortyfive_degree
   )
@@ -11,36 +11,32 @@
     (via_costs 50)
     (plane_via_costs 5)
     (start_ripup_costs 100)
-    (start_pass_no 914)
-    (layer_rule Top
+    (start_pass_no 16)
+    (layer_rule F.Cu
       (active on)
       (preferred_direction horizontal)
       (preferred_direction_trace_costs 1.0)
-      (against_preferred_direction_trace_costs 2.3)
+      (against_preferred_direction_trace_costs 2.8)
     )
-    (layer_rule Bottom
+    (layer_rule B.Cu
       (active on)
       (preferred_direction vertical)
       (preferred_direction_trace_costs 1.0)
-      (against_preferred_direction_trace_costs 1.8)
+      (against_preferred_direction_trace_costs 1.5)
     )
   )
   (rule
     (width 250.0)
-    (clear 200.2)
+    (clear 200.0)
     (clear 125.0 (type smd_to_turn_gap))
-    (clear 500.2 (type default_Power))
     (clear 50.0 (type smd_smd))
-    (clear 500.2 (type smd_Power))
-    (clear 500.2 (type "kicad_default"_Power))
-    (clear 500.2 (type Power_Power))
   )
   (padstack "Via[0-1]_800:400_um"
     (shape
-      (circle Top 800.0 0.0 0.0)
+      (circle F.Cu 800.0 0.0 0.0)
     )
     (shape
-      (circle Bottom 800.0 0.0 0.0)
+      (circle B.Cu 800.0 0.0 0.0)
     )
     (attach off)
   )
@@ -63,40 +59,40 @@
     Power "Via[0-1]_800:400_um-Power"
   )
   (class default
-    /VDD "Net-(LED2-PadA)" /D8 "Net-(R4-PadP$1)" "Net-(R4-PadP$2)" /D6 /D7 "Net-(SSD1351-PadJP1$1)"
-    "Net-(SSD1351-PadJP1$2)" "Net-(SSD1351-PadJP1$3)" "Net-(SSD1351-PadJP1$4)" "Net-(SSD1351-PadJP1$5)" /VCC "Net-(SSD1351-PadJP1$9)" /D10 "Net-(SSD1351-PadJP1$11)"
-    "Net-(U$1-Pad0)" "Net-(U$1-Pad1)" /D2 /D3 /D4 "Net-(U$1-Pad11)" "Net-(U$1-PadPGM)" "Net-(U$1-PadRESET)"
-    "Net-(U$1-Pad13)" "/A2)" "/A3)" "/A4)" "/A5)" "/A6)" "/A7)" "/A8)"
-    "/A9)" "Net-(U$1-PadA10)" "Net-(U$1-PadA11)" /D5
     (clearance_class default)
     (via_rule default)
     (rule
       (width 250.0)
     )
     (circuit 
-      (use_layer Top Bottom)
+      (use_layer F.Cu B.Cu)
     )
   )
   (class "kicad_default"
+    "Net-(U1-Pad44)" "Net-(U1-Pad43)" "Net-(U1-Pad42)" "Net-(U1-Pad41)" "Net-(U1-Pad40)" "Net-(U1-Pad39)" "Net-(U1-Pad38)" "Net-(U1-Pad37)"
+    "Net-(U1-Pad36)" "Net-(U1-Pad35)" "Net-(U1-Pad2)" "Net-(U1-Pad3)" "Net-(U1-Pad4)" "Net-(U1-Pad6)" "Net-(U1-Pad7)" "Net-(U1-Pad8)"
+    "Net-(U1-Pad9)" "Net-(U1-Pad11)" "Net-(U1-Pad13)" "Net-(U1-Pad32)" "Net-(U1-Pad31)" "Net-(U1-Pad30)" "Net-(U1-Pad29)" "Net-(U1-Pad28)"
+    "Net-(U1-Pad27)" "Net-(U1-Pad26)" "Net-(U1-Pad25)" "Net-(U1-Pad24)" "Net-(U1-Pad23)" "Net-(U1-Pad22)" "Net-(U1-Pad15)" "Net-(U1-Pad16)"
+    "Net-(U1-Pad20)" "Net-(U1-Pad19)" "Net-(U1-Pad18)" "Net-(U1-Pad17)" "Net-(U1-Pad5)" "Net-(U1-Pad10)" "Net-(U1-Pad12)" "Net-(U1-Pad34)"
+    "Net-(U1-Pad21)" "Net-(U1-Pad14)"
     (clearance_class "kicad_default")
     (via_rule kicad_default)
     (rule
       (width 250.0)
     )
     (circuit 
-      (use_layer Top Bottom)
+      (use_layer F.Cu B.Cu)
     )
   )
   (class Power
-    "Net-(D2-Pad1)" "Net-(D2-Pad2)" "Net-(F1-Pad1)" "Net-(F1-Pad2)" "Net-(LED1-PadA)" GND VBAT AGND
-    VUSB AREF 3.3V "Net-(K3-Pad4)" "Net-(K1-Pad4)" "Net-(K1-Pad5)"
+    "Net-(U1-Pad33)" "Net-(U1-Pad1)"
     (clearance_class Power)
     (via_rule Power)
     (rule
-      (width 2000.0)
+      (width 500.0)
     )
     (circuit 
-      (use_layer Top Bottom)
+      (use_layer F.Cu B.Cu)
     )
   )
 )

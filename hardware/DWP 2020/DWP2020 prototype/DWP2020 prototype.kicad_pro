@@ -96,10 +96,10 @@
         "min_track_width": 0.19999999999999998,
         "min_via_annulus": 0.049999999999999996,
         "min_via_diameter": 0.39999999999999997,
-        "solder_mask_clearance": 0.049999999999999996,
+        "solder_mask_clearance": 0.0,
         "solder_mask_min_width": 0.0,
         "solder_paste_clearance": 0.0,
-        "solder_paste_margin_ratio": -0.0
+        "solder_paste_margin_ratio": 0.0
       },
       "track_widths": [
         0.25
@@ -294,7 +294,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "Hyperwiper 2020.kicad_pro",
+    "filename": "DWP2020 prototype.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -312,7 +312,7 @@
         "via_drill": 0.4
       },
       {
-        "clearance": 0.5,
+        "clearance": 0.2,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
@@ -320,18 +320,10 @@
         "microvia_drill": 0.1,
         "name": "Power",
         "nets": [
-          "3.3V",
-          "AGND",
-          "AREF",
-          "D10",
-          "D2",
-          "GND",
-          "VBAT",
-          "VCC",
-          "VDD",
-          "VUSB"
+          "Net-(U1-Pad1)",
+          "Net-(U1-Pad33)"
         ],
-        "track_width": 2.0,
+        "track_width": 0.5,
         "via_diameter": 0.8,
         "via_drill": 0.4
       }
@@ -345,8 +337,8 @@
     "last_paths": {
       "gencad": "",
       "idf": "",
-      "netlist": "Hyperwiper 2020.net",
-      "specctra_dsn": "Hyperwiper 2020.dsn",
+      "netlist": "",
+      "specctra_dsn": "DWP2020 prototype.dsn",
       "step": "",
       "vmrl": ""
     },
@@ -368,7 +360,7 @@
     "meta": {
       "version": 0
     },
-    "net_format_name": "Pcbnew",
+    "net_format_name": "",
     "page_layout_descr_file": "",
     "plot_directory": "",
     "spice_adjust_passive_values": false,
@@ -377,7 +369,7 @@
   },
   "sheets": [
     [
-      "b48668c9-2205-488b-8218-3d37b578a0f6",
+      "9675335c-e8bc-40c2-be87-e4feb42760b2",
       ""
     ]
   ],
