@@ -14,8 +14,8 @@
         "dimension_units": 0,
         "fab_line_width": 0.09999999999999999,
         "fab_text_italic": false,
-        "fab_text_size_h": 1.0,
-        "fab_text_size_v": 1.0,
+        "fab_text_size_h": 0.75,
+        "fab_text_size_v": 0.75,
         "fab_text_thickness": 0.15,
         "fab_text_upright": false,
         "other_line_width": 0.09999999999999999,
@@ -99,7 +99,7 @@
         "solder_mask_clearance": 0.0,
         "solder_mask_min_width": 0.0,
         "solder_paste_clearance": 0.0,
-        "solder_paste_margin_ratio": 0.0
+        "solder_paste_margin_ratio": -0.0
       },
       "track_widths": [
         0.25
@@ -366,7 +366,7 @@
   },
   "sheets": [
     [
-      "0e737a50-0f43-4a67-83fa-a26b508868d1",
+      "9c314b77-083c-4daa-9a6f-2aed1a30e3ee",
       ""
     ]
   ],

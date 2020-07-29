@@ -11,18 +11,18 @@
     (via_costs 50)
     (plane_via_costs 5)
     (start_ripup_costs 100)
-    (start_pass_no 325)
+    (start_pass_no 688)
     (layer_rule F.Cu
       (active on)
       (preferred_direction horizontal)
       (preferred_direction_trace_costs 1.0)
-      (against_preferred_direction_trace_costs 2.7)
+      (against_preferred_direction_trace_costs 2.5)
     )
     (layer_rule B.Cu
       (active on)
       (preferred_direction vertical)
       (preferred_direction_trace_costs 1.0)
-      (against_preferred_direction_trace_costs 1.6)
+      (against_preferred_direction_trace_costs 1.7)
     )
   )
   (rule
@@ -63,7 +63,8 @@
     /9 /10 /11 /12 /13 /34 /33 /32
     /31 /30 /29 /28 /27 /26 /25 /24
     /23 /22 /21 /14 /15 /16 /20 /19
-    /18 /17
+    /18 /17 "Net-(K1-Pad4)" "Net-(K1-Pad3)" "Net-(K2-Pad2)" GND "Net-(Q1-Pad2)" "Net-(D1-Pad4)"
+    "Net-(D1-Pad3)" "Net-(D1-Pad2)" "Net-(D2-Pad4)" "Net-(D2-Pad3)" "Net-(D2-Pad2)" "Net-(D3-Pad2)" "Net-(K1-Pad1)"
     (clearance_class default)
     (via_rule default)
     (rule
