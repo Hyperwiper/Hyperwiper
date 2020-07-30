@@ -8,6 +8,7 @@
  contact rob@yr-design.biz
  
  revisions:
+ V2.0.2    2020-07-29 disabled joy swtices, disable screen
  V2.0.1   2020-06-22 rotate the screen 180 degree
  V2.0.0   2020-06-08 reflected hardware changes for Teensy 4
  V1.2.6   2020-06-05 setup for Teensy 4
@@ -32,54 +33,11 @@
 
  */
 
-static char VERSION[] = "V2.0.1";;
-
-//Display setup for SSD1351
-  //notes For Teensy 3.1/3.2 SI 11 and CS 9 are used for the audio board and other too.
-    // #define sclk 10
-    // #define mosi 7
-    // #define cs   3 
-    // #define rst  14
-    // #define dc   12
-  //notes For Teensy 4 
-    // #define sclk 10
-    // #define mosi 8
-    // #define cs   3 
-    // #define rst  14
-    // #define dc   12
-
-
-// Color definitions
-  /* some RGB color definitions                                                 */
-  #define BLACK           0x0000      /*   0,   0,   0 */
-  #define NAVY            0x000F      /*   0,   0, 128 */
-  #define DARKGREEN       0x03E0      /*   0, 128,   0 */
-  #define DARKCYAN        0x03EF      /*   0, 128, 128 */
-  #define MAROON          0x7800      /* 128,   0,   0 */
-  #define PURPLE          0x780F      /* 128,   0, 128 */
-  #define OLIVE           0x7BE0      /* 128, 128,   0 */
-  #define LIGHTGREY       0xC618      /* 192, 192, 192 */
-  #define DARKGREY        0x7BEF      /* 128, 128, 128 */
-  #define BLUE            0x001F      /*   0,   0, 255 */
-  #define GREEN           0x07E0      /*   0, 255,   0 */
-  #define CYAN            0x07FF      /*   0, 255, 255 */
-  #define RED             0xF800      /* 255,   0,   0 */
-  #define MAGENTA         0xF81F      /* 255,   0, 255 */
-  #define YELLOW          0xFFE0      /* 255, 255,   0 */
-  #define WHITE           0xFFFF      /* 255, 255, 255 */
-  #define ORANGE          0xFD20      /* 255, 165,   0 */
-  #define GREENYELLOW     0xAFE5      /* 173, 255,  47 */
-  #define PINK            0xF81F
-
+static char VERSION[] = "V2.0.2";;
 
 //set drivers 
-  #include <Adafruit_GFX.h>
-  #include <Adafruit_SSD1351.h>
   #include <SPI.h>
   #include <EEPROMex.h>
-
-  // Adafruit_SSD1351 tft = Adafruit_SSD1351(cs, dc, mosi, sclk, rst); 
-  Adafruit_SSD1351 tft = Adafruit_SSD1351(3, 12, 8, 10, 14); 
 
 
 //audio setup
@@ -95,13 +53,6 @@ static char VERSION[] = "V2.0.1";;
         int ledRedPin = 6;
         // int ledGreenPin = 8; Teensy 3.1
         int ledGreenPin = 2; //Teensy 4
-
-        //joystick pins setup
-        const int JOY_A_PIN = 15;
-        const int JOY_B_PIN = 16;
-        const int JOY_C_PIN = 17;
-        const int JOY_D_PIN = 20;
-        const int JOY_E_PIN = 2;        
 
 
 //init variables setup
@@ -121,38 +72,7 @@ static char VERSION[] = "V2.0.1";;
         int addressLong;
         int runpassed_interval= 180;
         boolean setupmode = false;
-
-
-
-//Joy Switch setup             
-        volatile boolean joyCntA = false;
-        volatile boolean joyCntB = false;
-        volatile boolean joyCntC = false;
-        volatile boolean joyCntD = false;
-        volatile boolean joyCntE = false;
     
-            void joyA_Callback()
-            {
-                joyCntA = true;
-            }
-            void joyB_Callback()
-            {
-                joyCntB = true;
-            }
-            void joyC_Callback()
-            {
-                joyCntC = true;
-            }
-            void joyD_Callback()
-            {
-                joyCntD = true;
-            }
-            void joyE_Callback()
-            {
-                joyCntE = true;
-            }
-       
-
         //audio hardware setup
         const int myInput = AUDIO_INPUT_LINEIN;
         AudioInputI2S       audioInput; 
@@ -184,42 +104,7 @@ void setup() {
         EEPROM.setMaxAllowedWrites(maxAllowedWrites);    
         addressLong      = EEPROM.getAddress(sizeof(long));
         trigger_level = EEPROM.readLong(addressLong);
-
- 
-     //Joy Switch setup     
-        pinMode(JOY_A_PIN, INPUT_PULLUP);
-        pinMode(JOY_B_PIN, INPUT_PULLUP);
-        pinMode(JOY_C_PIN, INPUT_PULLUP);
-        pinMode(JOY_D_PIN, INPUT_PULLUP);
-        pinMode(JOY_E_PIN, INPUT_PULLUP);
-        
-        attachInterrupt(JOY_A_PIN, joyA_Callback, RISING);     
-        attachInterrupt(JOY_B_PIN, joyB_Callback, RISING);     
-        attachInterrupt(JOY_C_PIN, joyC_Callback, RISING);     
-        attachInterrupt(JOY_D_PIN, joyD_Callback, RISING); 
-        attachInterrupt(JOY_E_PIN, joyE_Callback, RISING);     
-
-
-      //display setup
-      tft.begin();
-      tft.setRotation(2);
-      tft.fillScreen(BLACK);
-      tft.setTextColor(ORANGE);
-      tft.setTextSize(1);
-      tft.print("HyperWiper  ");
-      tft.setTextColor(ORANGE);
-      tft.setTextSize(1);
-      tft.println(VERSION);
-      tft.setTextSize(1);
-      tft.println("");  
-      tft.setCursor(0, 120);
-      tft.setTextColor(ORANGE);
-      tft.println("U-Aizu/YR-Design 2020");
-      tft.setCursor(0, 20);
-      tft.setTextColor(WHITE);
-      tft.println("setup");
-      tft.println("-----");
-      tft.println("Power         :OK");
+  
 
     //display status on serial
     Serial.print("Setup Mode=");
@@ -236,7 +121,6 @@ void setup() {
 
       // attachInterrupt(magnetPin, onMagnet, FALLING);
       delay(1000);
-      tft.println("Magnet switch :OK");
       Serial.println("Magnet switch :OK");
 
 
@@ -261,16 +145,8 @@ void setup() {
       monoMix.gain(1, 0.2);
       
       delay(1000);
-      tft.println("Audio board   :OK");
       Serial.println("Audio setup finished");
-
       Serial.println("Init finished");
-
-      //display status
-      tft.setCursor(0,70);
-      tft.setTextColor(WHITE);
-      tft.println("Status:");
-  
 
   run_motor();
 }
@@ -285,89 +161,11 @@ void loop() {
       //sets minimum time for wiper for 
        unsigned long currentT = millis();
 
-      //Joy switch setup
-        if (joyCntA){ 
-          Serial.println ("Right");
-          joyCntA=!joyCntA;
-          joyCntB=false;
-          joyCntC=false;
-          joyCntD=false;
-          joyCntE=false;
-          run_motor();
-        }
-      
-        if (joyCntB){ 
-          Serial.println ("Down");
-          joyCntB=!joyCntB;
-          joyCntA=false;
-          joyCntC=false;
-          joyCntD=false;
-          joyCntE=false;
-          if(setupmode){
-            trigger_level--;
-            EEPROM.writeLong(addressLong,trigger_level);
-            Serial.print("trigger_level=");  
-            Serial.println((trigger_level)*10000);
-          }
-        }
-      
-          if (joyCntC){ 
-          Serial.println ("Left");
-          joyCntC=!joyCntC;
-          joyCntA=false;
-          joyCntB=false;
-          joyCntD=false;
-          joyCntE=false;         
-          if (motorOn) {
-               previousMillis=millis() ;
-                while ((unsigned long)(millis() - previousMillis) <= runpassed_interval) {
-                }
-                magnetOn=true;
-                stop_motor();
-            }
-        }
-      
-          if (joyCntD){ 
-          Serial.println ("Up");
-          joyCntD=!joyCntD;
-          joyCntA=false;
-          joyCntB=false;
-          joyCntC=false;
-          joyCntE=false;
-          if(setupmode){
-            trigger_level++;
-            EEPROM.writeLong(addressLong,trigger_level);
-            Serial.print("trigger_level=");
-            Serial.println((trigger_level)*10000);
-          }
-        }
-        
-
-        if (joyCntE){ 
-          Serial.println ("Enter");
-          joyCntE=!joyCntE;
-          joyCntA=false;
-          joyCntB=false;
-          joyCntC=false;
-          joyCntD=false;
-          if(setupmode){
-            trigger_level=0;
-            EEPROM.writeLong(addressLong,trigger_level);
-            Serial.print("trigger_level=");
-            Serial.println((trigger_level)*10000);
-          }
-        }
-         
-
-
 // Main loop
    if(magnetOn){
         int minTimeSet=6000;
         minloop(minTimeSet);
         magnetOn= true;
-        // if(motorOn) {
-        //     stop_motor();
-        //   }
        }else{        
         minloop(minTimeSet);
        } 
@@ -410,12 +208,6 @@ void run_motor() {
       digitalWrite(ledRedPin, HIGH);
          motorOn= true;
          magnetOn=false;
-         tft.setCursor(9,80);
-         tft.setTextColor(BLACK);
-         tft.println("motor stopped");
-         tft.setCursor(9,80);
-         tft.setTextColor(YELLOW);
-         tft.println("motor running"); 
          Serial.println("motor running");
 
 }
@@ -424,14 +216,7 @@ void stop_motor() {
 
           digitalWrite(outputPin, LOW);
           digitalWrite(ledRedPin, LOW);
-          motorOn= false;
-          //magnetOn=false;
-           tft.setCursor(9,80);
-           tft.setTextColor(BLACK);
-           tft.println("motor running");
-           tft.setCursor(9,80);
-           tft.setTextColor(YELLOW);
-           tft.println("motor stopped");   
+          motorOn= false; 
            Serial.println("motor stopped");
 }
 
