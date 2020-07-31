@@ -8,7 +8,7 @@
  contact rob@yr-design.biz
  
  revisions:
- V2.0.2    2020-07-29 disabled joy swtices, disable screen
+ V2.0.2   2020-07-29 disabled joy swtices, disable screen
  V2.0.1   2020-06-22 rotate the screen 180 degree
  V2.0.0   2020-06-08 reflected hardware changes for Teensy 4
  V1.2.6   2020-06-05 setup for Teensy 4
@@ -41,9 +41,9 @@ static char VERSION[] = "V2.0.2";;
 
 
 //audio setup
-        #include <Audio.h>
-        #include <Wire.h>
-        #include <SD.h>
+  #include <Audio.h>
+  #include <Wire.h>
+  #include <SD.h>
 
 
 //Pins setup
@@ -51,7 +51,6 @@ static char VERSION[] = "V2.0.2";;
         int outputPin = 4;
         int magnetPin = 5;
         int ledRedPin = 6;
-        // int ledGreenPin = 8; Teensy 3.1
         int ledGreenPin = 2; //Teensy 4
 
 
@@ -93,16 +92,14 @@ static char VERSION[] = "V2.0.2";;
 
 
    
-
 void setup() {
       //serial start 
        Serial.begin(9600);
-
       
       //EEPROM setup
         EEPROM.setMemPool(memBase, EEPROMSizeTeensy3);
         EEPROM.setMaxAllowedWrites(maxAllowedWrites);    
-        addressLong      = EEPROM.getAddress(sizeof(long));
+        addressLong   = EEPROM.getAddress(sizeof(long));
         trigger_level = EEPROM.readLong(addressLong);
   
 
