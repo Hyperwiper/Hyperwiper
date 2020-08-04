@@ -806,7 +806,7 @@
       (scale (xyz 1 1 1))
       (rotate (xyz -90 0 0))
     )
-    (model "/home/rob/Documents/PlatformIO/Projects/hyperwiper/hardware/Hyperwiper 2020/TeensyAudiBoard-FreeCAD+WRL/audioboard.wrl"
+    (model "/home/rob/Documents/PlatformIO/Projects/hyperwiper/hardware/Hyperwiper 2020/TeensyAudiBoard-FreeCAD+WRL/audioboard.wrl" hide
       (offset (xyz -17.5 -21 2.5))
       (scale (xyz 0.4 0.4 0.4))
       (rotate (xyz 0 0 0))
@@ -815,6 +815,11 @@
       (offset (xyz 6 9.5 4))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 90))
+    )
+    (model "${KIPRJMOD}/TeensyAudiBoard-FreeCAD+WRL/export test with text shape.wrl"
+      (offset (xyz -17.5 -20.5 2.5))
+      (scale (xyz 0.4 0.4 0.4))
+      (rotate (xyz 0 0 0))
     )
   )
 
@@ -953,10 +958,15 @@
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
     )
-    (model "/home/rob/Documents/PlatformIO/Projects/hyperwiper/hardware/Hyperwiper 2020/SRD-05VDC-SL-C--3DModel-STEP-184599.STEP"
+    (model "/home/rob/Documents/PlatformIO/Projects/hyperwiper/hardware/Hyperwiper 2020/SRD-05VDC-SL-C--3DModel-STEP-184599.STEP" hide
       (offset (xyz 18 7.5 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 180))
+    )
+    (model "/home/rob/Documents/PlatformIO/Projects/hyperwiper/hardware/Hyperwiper 2020/SDR-12VDC-SL-C.wrl"
+      (offset (xyz 17.5 7.5 0))
+      (scale (xyz 0.4 0.4 0.4))
+      (rotate (xyz 0 0 -180))
     )
   )
 
@@ -1021,10 +1031,15 @@
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
     )
-    (model "/home/rob/Documents/PlatformIO/Projects/hyperwiper/hardware/Hyperwiper 2020/SRD-05VDC-SL-C--3DModel-STEP-184599.STEP"
+    (model "/home/rob/Documents/PlatformIO/Projects/hyperwiper/hardware/Hyperwiper 2020/SRD-05VDC-SL-C--3DModel-STEP-184599.STEP" hide
       (offset (xyz 18 7.5 0))
-      (scale (xyz 1 1 1))
+      (scale (xyz 0.4 0.5 0.3))
       (rotate (xyz 0 0 -180))
+    )
+    (model "/home/rob/Documents/PlatformIO/Projects/hyperwiper/hardware/Hyperwiper 2020/SDR-12VDC-SL-C.wrl"
+      (offset (xyz 17.5 8 0))
+      (scale (xyz 0.4 0.4 0.4))
+      (rotate (xyz 0 0 180))
     )
   )
 
