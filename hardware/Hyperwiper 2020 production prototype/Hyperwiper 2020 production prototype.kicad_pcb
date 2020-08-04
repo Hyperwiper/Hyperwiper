@@ -806,19 +806,14 @@
       (scale (xyz 1 1 1))
       (rotate (xyz -90 0 0))
     )
-    (model "/home/rob/Documents/PlatformIO/Projects/hyperwiper/hardware/Hyperwiper 2020/TeensyAudiBoard-FreeCAD+WRL/audioboard.wrl" hide
-      (offset (xyz -17.5 -21 2.5))
-      (scale (xyz 0.4 0.4 0.4))
-      (rotate (xyz 0 0 0))
-    )
     (model "${KISYS3DMOD}/Connector_PinSocket_2.54mm.3dshapes/PinSocket_2x05_P2.54mm_Horizontal.wrl"
-      (offset (xyz 6 9.5 4))
+      (offset (xyz 7 12.5 6))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 90))
     )
-    (model "${KIPRJMOD}/TeensyAudiBoard-FreeCAD+WRL/export test with text shape.wrl"
-      (offset (xyz -17.5 -20.5 2.5))
-      (scale (xyz 0.4 0.4 0.4))
+    (model "${KIPRJMOD}/TeensyAudiBoard-FreeCAD+WRL/export test with text shape and lines and audio header.wrl"
+      (offset (xyz -17 -20.5 4))
+      (scale (xyz 0.4 0.4 0.5))
       (rotate (xyz 0 0 0))
     )
   )
