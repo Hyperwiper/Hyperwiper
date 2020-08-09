@@ -11,7 +11,7 @@
     (via_costs 50)
     (plane_via_costs 5)
     (start_ripup_costs 100)
-    (start_pass_no 245)
+    (start_pass_no 115)
     (layer_rule F.Cu
       (active on)
       (preferred_direction horizontal)
@@ -29,7 +29,11 @@
     (width 250.0)
     (clear 200.0)
     (clear 125.0 (type smd_to_turn_gap))
+    (clear 400.0 (type default_Power))
     (clear 50.0 (type smd_smd))
+    (clear 400.0 (type smd_Power))
+    (clear 400.0 (type "kicad_default"_Power))
+    (clear 400.0 (type Power_Power))
   )
   (padstack "Via[0-1]_800:400_um"
     (shape
@@ -40,14 +44,32 @@
     )
     (attach off)
   )
+  (padstack "Via[0-1]_1200:800_um"
+    (shape
+      (circle F.Cu 1200.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 1200.0 0.0 0.0)
+    )
+    (attach off)
+  )
   (via 
     "Via[0-1]_800:400_um" "Via[0-1]_800:400_um" default
+  )
+  (via 
+    "Via[0-1]_1200:800_um" "Via[0-1]_1200:800_um" default
   )
   (via 
     "Via[0-1]_800:400_um-kicad_default" "Via[0-1]_800:400_um" "kicad_default"
   )
   (via 
+    "Via[0-1]_1200:800_um-kicad_default" "Via[0-1]_1200:800_um" "kicad_default"
+  )
+  (via 
     "Via[0-1]_800:400_um-Power" "Via[0-1]_800:400_um" Power
+  )
+  (via 
+    "Via[0-1]_1200:800_um-Power" "Via[0-1]_1200:800_um" Power
   )
   (via_rule
     default "Via[0-1]_800:400_um"
@@ -56,11 +78,17 @@
     "kicad_default" "Via[0-1]_800:400_um-kicad_default"
   )
   (via_rule
-    Power "Via[0-1]_800:400_um-Power"
+    Power "Via[0-1]_1200:800_um-Power"
   )
   (class default
-    /5V "Net-(K1-Pad4)" "Net-(K1-Pad3)" "Net-(K2-Pad2)" GND "Net-(Q1-Pad2)" "Net-(D1-Pad4)" "Net-(D1-Pad3)"
-    "Net-(D1-Pad2)" "Net-(D2-Pad4)" "Net-(D2-Pad3)" "Net-(D2-Pad2)" "Net-(D3-Pad2)" "Net-(K1-Pad1)" /reed
+    /5V "Net-(Q1-Pad2)" "Net-(D1-Pad4)" "Net-(D2-Pad4)" "Net-(D2-Pad3)" "Net-(D2-Pad2)" "Net-(D3-Pad2)" "Net-(K1-Pad1)"
+    /reed "/motor_start" "/M_LED_b" "/M_LED_g" "/M_LED_r" "/B_LED_b" "/B_LED_g" "/B_LED_r"
+    /Pot "Net-(U1-Pad1)" "Net-(U1-Pad2)" "Net-(U1-Pad3)" "Net-(U1-Pad4)" "Net-(U1-Pad5)" "Net-(U1-Pad6)" "Net-(U1-Pad7)"
+    "Net-(U1-Pad8)" "Net-(U1-Pad9)" "Net-(U1-Pad10)" "Net-(U1-Pad11)" "Net-(U1-Pad12)" "Net-(U1-Pad13)" "Net-(U1-Pad14)" "Net-(U1-Pad15)"
+    "Net-(U1-Pad16)" "Net-(U1-Pad17)" "Net-(U1-Pad18)" "Net-(U1-Pad19)" "Net-(U1-Pad20)" "Net-(U1-Pad21)" "Net-(U1-Pad22)" "Net-(U1-Pad23)"
+    "Net-(U1-Pad24)" "Net-(U1-Pad25)" "Net-(U1-Pad26)" "Net-(U1-Pad27)" "Net-(U1-Pad28)" "Net-(U1-Pad29)" "Net-(U1-Pad30)" "Net-(U1-Pad31)"
+    "Net-(U1-Pad34)" "Net-(U1-Pad35)" "Net-(U1-Pad36)" "Net-(U1-Pad37)" "Net-(U1-Pad38)" "Net-(U1-Pad39)" "Net-(U1-Pad40)" "Net-(U1-Pad41)"
+    "Net-(U1-Pad42)" "Net-(U1-Pad43)" "Net-(U1-Pad44)"
     (clearance_class default)
     (via_rule default)
     (rule
@@ -71,6 +99,7 @@
     )
   )
   (class "kicad_default"
+    "Net-(D1-Pad3)" "Net-(D1-Pad2)"
     (clearance_class "kicad_default")
     (via_rule kicad_default)
     (rule
@@ -81,10 +110,11 @@
     )
   )
   (class Power
+    "Net-(K1-Pad4)" "Net-(K1-Pad3)" "Net-(K2-Pad2)" GND "Net-(K1-Pad2)" "Net-(K2-Pad4)"
     (clearance_class Power)
     (via_rule Power)
     (rule
-      (width 500.0)
+      (width 750.0)
     )
     (circuit 
       (use_layer F.Cu B.Cu)
