@@ -29,7 +29,7 @@
  V1.00    2015-02-16 setup for output control relay on D4
  V0.99    2015-02-13 switch keys detecting 
  V0.98    2015-02-12 added LED controls and setup pins for Teensy
- V0.90    2015-02-05 inti for hardware pins changes.
+ V0.90    2015-02-05 init for hardware pins changes.
 
  */
 
