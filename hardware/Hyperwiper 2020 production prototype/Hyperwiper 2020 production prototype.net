@@ -1,8 +1,8 @@
 (export (version "D")
   (design
     (source "/home/rob/Documents/PlatformIO/Projects/hyperwiper/hardware/Hyperwiper 2020 production prototype/Hyperwiper 2020 production prototype.kicad_sch")
-    (date "Sat 08 Aug 2020 06:26:57 PM JST")
-    (tool "Eeschema 5.99.0-unknown-27d319b2d~89~ubuntu20.04.1")
+    (date "Sat 15 Aug 2020 05:39:18 PM JST")
+    (tool "Eeschema 5.99.0-unknown-8c94d88c7~89~ubuntu20.04.1")
     (sheet (number "1") (name "/") (tstamps "/")
       (title_block
         (title "Prototype board")

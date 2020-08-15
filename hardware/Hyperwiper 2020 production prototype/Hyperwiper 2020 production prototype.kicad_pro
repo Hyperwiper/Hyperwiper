@@ -326,14 +326,7 @@
         "microvia_drill": 0.1,
         "name": "Power",
         "nets": [
-          "5V",
-          "GND",
-          "Net-(K1-Pad1)",
-          "Net-(K1-Pad2)",
-          "Net-(K1-Pad3)",
-          "Net-(K1-Pad4)",
-          "Net-(K2-Pad2)",
-          "Net-(K2-Pad4)"
+          "5V"
         ],
         "track_width": 0.75,
         "via_diameter": 1.2,
@@ -383,7 +376,7 @@
   },
   "sheets": [
     [
-      "464bd115-1462-40cb-8789-52d26ad710b1",
+      "ad8d0244-5080-4cb0-8ec0-c625976f01b8",
       ""
     ]
   ],

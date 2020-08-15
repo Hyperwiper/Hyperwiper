@@ -1,4 +1,4 @@
-(kicad_sch (version 20200714) (host eeschema "5.99.0-unknown-27d319b2d~89~ubuntu20.04.1")
+(kicad_sch (version 20200714) (host eeschema "5.99.0-unknown-8c94d88c7~89~ubuntu20.04.1")
 
   (page 1 1)
 
@@ -88,11 +88,11 @@
         )
       )
     )
-    (symbol "Device:LED_CRGB" (pin_names (offset 0) hide)
+    (symbol "Device:LED_RCBG" (pin_names (offset 0) hide)
       (property "Reference" "D" (id 0) (at 0 9.398 0)
         (effects (font (size 1.27 1.27)))
       )
-      (property "Value" "LED_CRGB" (id 1) (at 0 -8.89 0)
+      (property "Value" "LED_RCBG" (id 1) (at 0 -8.89 0)
         (effects (font (size 1.27 1.27)))
       )
       (property "Footprint" "" (id 2) (at 0 -1.27 0)
@@ -104,16 +104,42 @@
       (property "ki_keywords" "LED RGB diode" (id 4) (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (property "ki_description" "RGB LED, cathode/red/green/blue" (id 5) (at 0 0 0)
+      (property "ki_description" "RGB LED, red/cathode/blue/green" (id 5) (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
       (property "ki_fp_filters" "LED*\nLED_SMD:*\nLED_THT:*" (id 6) (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (symbol "LED_CRGB_0_1"
+      (symbol "LED_RCBG_0_1"
         (circle (center -2.159 0) (radius 0.254) (stroke (width 0)) (fill (type outline)))
+        (rectangle (start 1.27 -1.27) (end 1.27 1.27)
+          (stroke (width 0)) (fill (type none))
+        )
+        (rectangle (start 1.27 1.27) (end 1.27 1.27)
+          (stroke (width 0)) (fill (type none))
+        )
+        (rectangle (start 1.27 3.81) (end 1.27 6.35)
+          (stroke (width 0)) (fill (type none))
+        )
+        (rectangle (start 1.27 6.35) (end 1.27 6.35)
+          (stroke (width 0)) (fill (type none))
+        )
         (rectangle (start 2.794 8.382) (end -2.794 -7.62)
           (stroke (width 0.254)) (fill (type background))
+        )
+        (polyline
+          (pts
+            (xy -1.27 -5.08)
+            (xy 1.27 -5.08)
+          )
+          (stroke (width 0)) (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy -1.27 -3.81)
+            (xy -1.27 -6.35)
+          )
+          (stroke (width 0)) (fill (type none))
         )
         (polyline
           (pts
@@ -124,10 +150,24 @@
         )
         (polyline
           (pts
+            (xy -1.27 0)
+            (xy -2.54 0)
+          )
+          (stroke (width 0)) (fill (type none))
+        )
+        (polyline
+          (pts
             (xy -1.27 1.27)
             (xy -1.27 -1.27)
           )
           (stroke (width 0.2032)) (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy -1.27 5.08)
+            (xy 1.27 5.08)
+          )
+          (stroke (width 0)) (fill (type none))
         )
         (polyline
           (pts
@@ -146,7 +186,7 @@
         (polyline
           (pts
             (xy 1.27 0)
-            (xy -2.54 0)
+            (xy -1.27 0)
           )
           (stroke (width 0)) (fill (type none))
         )
@@ -161,6 +201,31 @@
           (pts
             (xy 1.27 5.08)
             (xy 2.54 5.08)
+          )
+          (stroke (width 0)) (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy -1.27 1.27)
+            (xy -1.27 -1.27)
+            (xy -1.27 -1.27)
+          )
+          (stroke (width 0)) (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy -1.27 6.35)
+            (xy -1.27 3.81)
+            (xy -1.27 3.81)
+          )
+          (stroke (width 0)) (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy -1.27 5.08)
+            (xy -2.159 5.08)
+            (xy -2.159 -5.08)
+            (xy -1.016 -5.08)
           )
           (stroke (width 0)) (fill (type none))
         )
@@ -181,15 +246,6 @@
             (xy 1.27 1.27)
           )
           (stroke (width 0.2032)) (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 1.27 5.08)
-            (xy -2.159 5.08)
-            (xy -2.159 -5.08)
-            (xy 1.27 -5.08)
-          )
-          (stroke (width 0)) (fill (type none))
         )
         (polyline
           (pts
@@ -261,7 +317,7 @@
           (stroke (width 0)) (fill (type none))
         )
       )
-      (symbol "LED_CRGB_0_0"
+      (symbol "LED_RCBG_0_0"
         (text "B" (at 1.905 -6.35 0)
           (effects (font (size 1.27 1.27)))
         )
@@ -272,21 +328,21 @@
           (effects (font (size 1.27 1.27)))
         )
       )
-      (symbol "LED_CRGB_1_1"
-        (pin passive line (at -5.08 0 0) (length 2.54)
-          (name "K" (effects (font (size 1.27 1.27))))
-          (number "1" (effects (font (size 1.27 1.27))))
-        )
+      (symbol "LED_RCBG_1_1"
         (pin passive line (at 5.08 5.08 180) (length 2.54)
           (name "RA" (effects (font (size 1.27 1.27))))
-          (number "2" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
         )
-        (pin passive line (at 5.08 0 180) (length 2.54)
-          (name "GA" (effects (font (size 1.27 1.27))))
-          (number "3" (effects (font (size 1.27 1.27))))
+        (pin passive line (at -5.08 0 0) (length 2.54)
+          (name "K" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
         )
         (pin passive line (at 5.08 -5.08 180) (length 2.54)
           (name "BA" (effects (font (size 1.27 1.27))))
+          (number "3" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 5.08 0 180) (length 2.54)
+          (name "GA" (effects (font (size 1.27 1.27))))
           (number "4" (effects (font (size 1.27 1.27))))
         )
       )
@@ -1822,7 +1878,7 @@
     (uuid "6e5562bb-d6bd-49b3-9172-56158780e0f2")
     (property "Reference" "SW1" (id 0) (at 238.76 88.9 0))
     (property "Value" "ON-OFF" (id 1) (at 250.19 88.9 90))
-    (property "Footprint" "" (id 2) (at 245.11 88.9 0)
+    (property "Footprint" "Button_Switch_THT:SW_Tactile_SPST_Angled_PTS645Vx83-2LFS" (id 2) (at 245.11 88.9 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 245.11 88.9 0)
@@ -1833,7 +1889,7 @@
   (symbol (lib_id "Device:R_POT_TRIM") (at 161.29 160.02 180) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid "3c75595d-bef3-4439-a823-4b03a4737025")
-    (property "Reference" "RV1" (id 0) (at 163.83 158.75 0)
+    (property "Reference" "RV1" (id 0) (at 163.83 156.845 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "R_POT_TRIM" (id 1) (at 163.83 160.02 0)
@@ -1867,7 +1923,7 @@
   (symbol (lib_id "Transistor_BJT:PN2222A") (at 189.23 82.55 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid "33d73d81-9a59-421e-853e-603a76a5a74f")
-    (property "Reference" "Q1" (id 0) (at 194.31 81.28 0)
+    (property "Reference" "Q1" (id 0) (at 194.4624 79.6544 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "PN2222A" (id 1) (at 194.31 82.55 0)
@@ -1894,11 +1950,11 @@
     )
   )
 
-  (symbol (lib_id "Device:LED_CRGB") (at 182.88 116.84 180) (unit 1)
+  (symbol (lib_id "Device:LED_RCBG") (at 182.88 116.84 180) (unit 1)
     (in_bom yes) (on_board yes)
-    (uuid "3e7c7f71-990b-4b23-8faa-21bc92ed5e62")
-    (property "Reference" "D1" (id 0) (at 182.88 104.14 0))
-    (property "Value" "Motor LED" (id 1) (at 182.88 106.68 0))
+    (uuid "2723ac12-21fb-4eb0-b91d-4ea3a28c8ae0")
+    (property "Reference" "D1" (id 0) (at 187.96 109.855 0))
+    (property "Value" "Motor LED" (id 1) (at 183.515 126.365 0))
     (property "Footprint" "LED_THT:LED_D5.0mm-4_RGB" (id 2) (at 182.88 115.57 0)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -1907,11 +1963,11 @@
     )
   )
 
-  (symbol (lib_id "Device:LED_CRGB") (at 182.88 137.16 180) (unit 1)
+  (symbol (lib_id "Device:LED_RCBG") (at 182.88 137.16 180) (unit 1)
     (in_bom yes) (on_board yes)
-    (uuid "83ccb75b-41e2-4da1-b59a-2bb55bc93cc7")
-    (property "Reference" "D2" (id 0) (at 182.88 124.46 0))
-    (property "Value" "Beat LED" (id 1) (at 182.88 127 0))
+    (uuid "a626228a-9c73-4fcc-9148-d4b02f6a1a48")
+    (property "Reference" "D2" (id 0) (at 187.96 130.81 0))
+    (property "Value" "Beat LED" (id 1) (at 183.515 147.32 0))
     (property "Footprint" "LED_THT:LED_D5.0mm-4_RGB" (id 2) (at 182.88 135.89 0)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -1998,10 +2054,10 @@
     (path "/8e8791e7-f5c8-46ac-8494-bdb46b4d3074"
       (reference "#PWR0110") (unit 1)
     )
-    (path "/3e7c7f71-990b-4b23-8faa-21bc92ed5e62"
+    (path "/2723ac12-21fb-4eb0-b91d-4ea3a28c8ae0"
       (reference "D1") (unit 1)
     )
-    (path "/83ccb75b-41e2-4da1-b59a-2bb55bc93cc7"
+    (path "/a626228a-9c73-4fcc-9148-d4b02f6a1a48"
       (reference "D2") (unit 1)
     )
     (path "/27d8698b-ef2a-4f2d-a4de-518ead2637c2"
