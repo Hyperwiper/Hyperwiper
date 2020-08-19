@@ -1,4 +1,4 @@
-(kicad_sch (version 20200714) (host eeschema "5.99.0-unknown-8c94d88c7~89~ubuntu20.04.1")
+(kicad_sch (version 20200714) (host eeschema "5.99.0-unknown-96f4e8f6f~89~ubuntu20.04.1")
 
   (page 1 1)
 
@@ -6,7 +6,7 @@
 
   (title_block
     (title "Prototype board")
-    (date "2020-07-25")
+    (date "2020-08-19")
   )
 
   (lib_symbols
@@ -1481,6 +1481,10 @@
     (stroke (width 0) (type solid) (color 0 0 0 0))
   )
 
+  (text "Pins:\n\nOUT:\nMotor on/off	=\nMotor LED B 	=\nMotor LED G 	=\nMotor LED R 	=\nBeat B 			=\nBeat G			=\nBeat R			=\n\nIN:\nReed-switch	=\nPotentMeter		=\n\n\n\n"
+    (at 53.975 149.86 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+  )
   (text "Notes:\n" (at 179.07 179.07 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
   )

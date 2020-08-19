@@ -1,13 +1,13 @@
 /*
   Beats for DWP (University of Aizu and YR-Design) beat detection done by Julian Villagas
 
- - uses Ada fruit ssd1351 display and Teensy 3.1
+ - uses Teensy 4.0
  - custom board for controlling car windshield wipers.
- - instructions can be found at:
- - 
+ - instructions can be found at: Github...
  contact rob@yr-design.biz
  
  revisions:
+ V2.0.3   2020-08-19 chnaged pins for production prototype setup.
  V2.0.2   2020-07-29 disabled joy swtices, disable screen
  V2.0.1   2020-06-22 rotate the screen 180 degree
  V2.0.0   2020-06-08 reflected hardware changes for Teensy 4
@@ -33,7 +33,7 @@
 
  */
 
-static char VERSION[] = "V2.0.2";;
+static char VERSION[] = "V2.0.3";;
 
 //set drivers 
   #include <SPI.h>
