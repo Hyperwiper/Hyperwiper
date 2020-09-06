@@ -7,7 +7,7 @@
  contact rob@yr-design.biz
  
  revisions:
- V2.0.3   2020-08-19 chnaged pins for production prototype setup.
+ V2.0.3   2020-08-19 changed pins for production prototype setup.
  V2.0.2   2020-07-29 disabled joy swtices, disable screen
  V2.0.1   2020-06-22 rotate the screen 180 degree
  V2.0.0   2020-06-08 reflected hardware changes for Teensy 4

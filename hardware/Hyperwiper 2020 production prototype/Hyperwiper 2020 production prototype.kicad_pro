@@ -111,6 +111,7 @@
           "drill": 0.4
         }
       ],
+      "zones_allow_external_fillets": false,
       "zones_use_no_outline": false
     },
     "layer_presets": []
@@ -287,7 +288,8 @@
       "pin_not_driven": "error",
       "pin_to_pin": "warning",
       "similar_labels": "error",
-      "unresolved_variable": "error"
+      "unresolved_variable": "error",
+      "wire_dangling": "error"
     }
   },
   "libraries": {
@@ -310,6 +312,8 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "Default",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.25,
         "via_diameter": 0.8,
         "via_drill": 0.4,
@@ -326,8 +330,11 @@
         "microvia_drill": 0.1,
         "name": "Power",
         "nets": [
-          "5V"
+          "Net-(J1-Pad1)",
+          "Net-(J1-Pad2)"
         ],
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.75,
         "via_diameter": 1.2,
         "via_drill": 0.8,
@@ -376,7 +383,7 @@
   },
   "sheets": [
     [
-      "b4a6af84-9ec2-4034-af42-f1cdb986539d",
+      "8e3549c5-f282-4d30-949d-4cee745f573f",
       ""
     ]
   ],
