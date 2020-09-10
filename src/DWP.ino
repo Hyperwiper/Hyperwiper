@@ -1,5 +1,5 @@
 /*
-  Beats for DWP (University of Aizu and YR-Design) beat detection done by Julian Villagas
+  Beats for Hyperwiper(University of Aizu and YR-Design) beat detection done by Julian Villagas
 
  - uses Teensy 4.0
  - custom board for controlling car windshield wipers.

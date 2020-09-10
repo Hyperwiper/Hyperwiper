@@ -1417,7 +1417,7 @@
     (stroke (width 0) (type solid) (color 0 0 0 0))
   )
 
-  (text "Pins:\n\nOUT:\nMotor on/off	=\nMotor LED B 	=\nMotor LED G 	=\nMotor LED R 	=\nBeat B 			=\nBeat G			=\nBeat R			=\n\nIN:\nReed-switch	=\nPotentMeter		=\n\n\n\n"
+  (text "Teensy4 Pins (not digital in/outs):\n\nOUT:\nMotor on/off	=\nMotor LED B 	=11\nMotor LED G 	=10\nMotor LED R 	=9\nBeat B 			=6\nBeat G			=5\nBeat R			=4\n\nIN:\nReed-switch	=\nPotentMeter		=\n\n\n\n"
     (at 53.975 149.86 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
   )
