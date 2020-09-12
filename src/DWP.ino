@@ -4,9 +4,11 @@
  - uses Teensy 4.0
  - custom board for controlling car windshield wipers.
  - instructions can be found at: Github...
+ 
  contact rob@yr-design.biz
  
  revisions:
+ V2.0.4   2020-09-11 pin assigned for RGB LEDs
  V2.0.3   2020-08-19 changed pins for production prototype setup.
  V2.0.2   2020-07-29 disabled joy swtices, disable screen
  V2.0.1   2020-06-22 rotate the screen 180 degree
@@ -33,7 +35,7 @@
 
  */
 
-static char VERSION[] = "V2.0.3";;
+static char VERSION[] = "V2.0.4";;
 
 //set drivers 
   #include <SPI.h>
@@ -48,16 +50,42 @@ static char VERSION[] = "V2.0.3";;
 
 //Pins setup
 
-        int outputPin = 4;
+        int outputPin = 6;
         int magnetPin = 5;
-        int ledRedPin = 6;
+        int beatRedPin = 2;
+        int beatGreenPin = 3;
+        int beatBluePin = 4;
         int ledGreenPin = 2; //Teensy 4
 
 
+//temp ins setup for keeping compiler working
+        int ledRedPin = 6;
+
+
+
+/*New pins setup for Prototype board
+Teensy4 digital in/outs:
+
+OUT:
+Motor on/off	=
+Motor LED B 	=9
+Motor LED G 	=8
+Motor LED R 	=7
+Beat B 			=4
+Beat G			=3
+Beat R			=2
+
+IN:
+Reed-switch	=
+PotentMeter		=
+
+*/
+
+
 //init variables setup
-        boolean redOn;
-        boolean greenOn;
-        boolean dotOn;
+        // boolean redOn;
+        // boolean greenOn;
+        // boolean dotOn;
         boolean beatPulse;
         boolean motorOn= false;
         boolean magnetOn= false;
@@ -95,6 +123,7 @@ static char VERSION[] = "V2.0.3";;
 void setup() {
       //serial start 
        Serial.begin(9600);
+       delay(100);
       
       //EEPROM setup
         EEPROM.setMemPool(memBase, EEPROMSizeTeensy3);
@@ -102,13 +131,6 @@ void setup() {
         addressLong   = EEPROM.getAddress(sizeof(long));
         trigger_level = EEPROM.readLong(addressLong);
   
-
-    //display status on serial
-    Serial.print("Setup Mode=");
-    Serial.println(setupmode);
-    Serial.print("Trigger_level=");
-    Serial.println((trigger_level)*10000);
-
 
      // setup pins for switches
      pinMode(outputPin, OUTPUT);   //wiper motor pin
@@ -119,7 +141,13 @@ void setup() {
       // attachInterrupt(magnetPin, onMagnet, FALLING);
       delay(1000);
       Serial.println("Magnet switch :OK");
-
+    //display status on serial
+    Serial.print("Version=");
+    Serial.println(VERSION);
+    Serial.print("Setup Mode=");
+    Serial.println(setupmode);
+    Serial.print("Trigger_level=");
+    Serial.println((trigger_level)*10000);
 
     // Turn off the LEDs.
   
