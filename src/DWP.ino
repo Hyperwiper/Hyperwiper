@@ -50,16 +50,17 @@ static char VERSION[] = "V2.0.4";;
 
 //Pins setup
 
-        int outputPin = 6;
-        int magnetPin = 5;
+        // int outputPin = 2;
+        // int magnetPin = 5;
+
         int beatRedPin = 2;
         int beatGreenPin = 3;
         int beatBluePin = 4;
-        int ledGreenPin = 2; //Teensy 4
+  
+        int motorRedPin = 5;
+        int motorGreenPin = 6;
+        int motorBluePin = 9;
 
-
-//temp ins setup for keeping compiler working
-        int ledRedPin = 6;
 
 
 
@@ -67,10 +68,9 @@ static char VERSION[] = "V2.0.4";;
 Teensy4 digital in/outs:
 
 OUT:
-Motor on/off	=
 Motor LED B 	=9
-Motor LED G 	=8
-Motor LED R 	=7
+Motor LED G 	=6
+Motor LED R 	=5
 Beat B 			=4
 Beat G			=3
 Beat R			=2
@@ -83,9 +83,7 @@ PotentMeter		=
 
 
 //init variables setup
-        // boolean redOn;
-        // boolean greenOn;
-        // boolean dotOn;
+
         boolean beatPulse;
         boolean motorOn= false;
         boolean magnetOn= false;
@@ -133,10 +131,14 @@ void setup() {
   
 
      // setup pins for switches
-     pinMode(outputPin, OUTPUT);   //wiper motor pin
-     pinMode(ledRedPin, OUTPUT);  //red led 
-     pinMode(ledGreenPin, OUTPUT); //green led
-     // pinMode(magnetPin, INPUT_PULLUP); // needs to be checked
+  pinMode(beatRedPin, OUTPUT);
+  pinMode(beatGreenPin, OUTPUT);
+  pinMode(beatBluePin, OUTPUT);
+
+  pinMode(motorRedPin, OUTPUT);
+  pinMode(motorGreenPin, OUTPUT);
+  pinMode(motorBluePin, OUTPUT);
+
 
       // attachInterrupt(magnetPin, onMagnet, FALLING);
       delay(1000);
@@ -149,13 +151,6 @@ void setup() {
     Serial.print("Trigger_level=");
     Serial.println((trigger_level)*10000);
 
-    // Turn off the LEDs.
-  
-    digitalWrite(ledRedPin, LOW);
-    digitalWrite(ledGreenPin, LOW);
-    digitalWrite(outputPin, LOW);
-
-      Serial.println("LED off");
   
     // Audio connections require memory to work.  For more
       AudioMemory(100); // the analysis frame (2048 samples) + 1 block (128 samples)
@@ -204,11 +199,11 @@ void loop() {
                   Serial.println(ac);
                   Serial.print("ac_triggerlevel=");
                   Serial.println(ac_triggerlevel);
-                  digitalWrite(ledGreenPin,HIGH);
+                  // digitalWrite(ledGreenPin,HIGH);
                   run_motor();
                   beatPulse = true;
                 }else{
-                  digitalWrite(ledGreenPin,LOW);
+                  // digitalWrite(ledGreenPin,LOW);
                   beatPulse = false;
                 }
           }
@@ -229,8 +224,7 @@ void minloop(long minTime)
       }
 
 void run_motor() {
-      digitalWrite(outputPin, HIGH);
-      digitalWrite(ledRedPin, HIGH);
+      digitalWrite(motorGreenPin, HIGH);
          motorOn= true;
          magnetOn=false;
          Serial.println("motor running");
@@ -238,9 +232,7 @@ void run_motor() {
 }
 
 void stop_motor() {
-
-          digitalWrite(outputPin, LOW);
-          digitalWrite(ledRedPin, LOW);
+          digitalWrite(motorGreenPin, LOW);
           motorOn= false; 
            Serial.println("motor stopped");
 }

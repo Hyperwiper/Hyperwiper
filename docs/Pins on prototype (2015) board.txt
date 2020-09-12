@@ -44,3 +44,25 @@ From code 2020-06-23
         const int JOY_C_PIN = 17;
         const int JOY_D_PIN = 20;
         const int JOY_E_PIN = 2;
+
+ -----------------------------------------------------------------------------------------------       
+
+From Kicad 2020-09-10
+
+	Teensy4 Pins (not digital in/outs):
+
+	OUT:
+	Motor on/off	=
+	Motor LED B 	=11
+	Motor LED G 	=8
+	Motor LED R 	=7
+	Beat B 			=6
+	Beat G			=5
+	Beat R			=4
+
+	IN:
+	Reed-switch	=
+	PotentMeter		=
+
+
+

@@ -36,8 +36,8 @@ PotentMeter		=
         int beatGreenPin = 3;
         int beatBluePin = 4;
   
-        int motorRedPin = 7;
-        int motorGreenPin = 8;
+        int motorRedPin = 5;
+        int motorGreenPin = 6;
         int motorBluePin = 9;
 
 
@@ -54,6 +54,25 @@ void setup() {
   pinMode(motorRedPin, OUTPUT);
   pinMode(motorGreenPin, OUTPUT);
   pinMode(motorBluePin, OUTPUT);
+
+
+  //  //audio hardware setup
+        const int myInput = AUDIO_INPUT_LINEIN;
+        AudioInputI2S       audioInput; 
+        // don't know why this is necessary, but without it the program doesn't run
+        AudioOutputI2S     audioOutput;
+        AudioMixer4 monoMix;
+        AudioAnalyzeBeatEstimation  beat;
+
+        // Create Audio connections 
+        AudioConnection c0(audioInput, 0, monoMix, 0);
+        AudioConnection c1(audioInput, 1, monoMix, 1);
+        AudioConnection c2(monoMix, 0, beat, 0); 
+        AudioConnection c3(audioInput, 0, audioOutput, 0);
+        AudioConnection c4(audioInput, 0, audioOutput, 1);
+
+        // Create an object to control the audio shield.
+        AudioControlSGTL5000 audioShield;
 
 }
 
