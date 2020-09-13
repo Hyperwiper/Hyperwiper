@@ -8,6 +8,7 @@
  contact rob@yr-design.biz
  
  revisions:
+ V2.0.5   2020-13-09 pin assigned for other pins
  V2.0.4   2020-09-11 pin assigned for RGB LEDs
  V2.0.3   2020-08-19 changed pins for production prototype setup.
  V2.0.2   2020-07-29 disabled joy swtices, disable screen
@@ -35,12 +36,11 @@
 
  */
 
-static char VERSION[] = "V2.0.4";;
+static char VERSION[] = "V2.0.5";;
 
 //set drivers 
   #include <SPI.h>
   #include <EEPROMex.h>
-
 
 //audio setup
   #include <Audio.h>
@@ -49,10 +49,6 @@ static char VERSION[] = "V2.0.4";;
 
 
 //Pins setup
-
-        // int outputPin = 2;
-        // int magnetPin = 5;
-
         int beatRedPin = 2;
         int beatGreenPin = 3;
         int beatBluePin = 4;
@@ -61,24 +57,27 @@ static char VERSION[] = "V2.0.4";;
         int motorGreenPin = 6;
         int motorBluePin = 9;
 
-
+        int magnetPin = 14;
+        int outputPin = 16;
+        int potPin=17;
 
 
 /*New pins setup for Prototype board
 Teensy4 digital in/outs:
 
 OUT:
-Motor LED B 	=9
-Motor LED G 	=6
-Motor LED R 	=5
-Beat B 			=4
-Beat G			=3
-Beat R			=2
+Beat R			    =2
+Beat G			    =3
+Beat B 			    =4
+
+Motor LED R 	  =5
+Motor LED G 	  =6
+Motor LED B 	  =9
 
 IN:
-Reed-switch	=
-PotentMeter		=
-
+Reed-switch	    =14
+motor start:		=16
+PotentMeter		  =17
 */
 
 
@@ -139,10 +138,16 @@ void setup() {
   pinMode(motorGreenPin, OUTPUT);
   pinMode(motorBluePin, OUTPUT);
 
+  pinMode(outputPin, OUTPUT);
+  pinMode(magnetPin, INPUT_PULLUP);
+  pinMode(potPin, INPUT);
 
-      // attachInterrupt(magnetPin, onMagnet, FALLING);
+
+  attachInterrupt(magnetPin, onMagnet, FALLING);
+  attachInterrupt(magnetPin, offMagnet, RISING);
+
       delay(1000);
-      Serial.println("Magnet switch :OK");
+      Serial.println("Magnet switch setup done");
     //display status on serial
     Serial.print("Version=");
     Serial.println(VERSION);
@@ -179,7 +184,7 @@ void loop() {
  
        int ac_triggerlevel=((trigger_level)*10000);
       //sets minimum time for wiper for 
-       unsigned long currentT = millis();
+      // unsigned long currentT = millis();
 
 // Main loop
    if(magnetOn){
@@ -194,7 +199,7 @@ void loop() {
     if(beat.available()){  
        uint32_t ac = beat.ac();//2000;
  
-        if (ac >(ac_triggerlevel)){
+        if (ac >(unsigned)(ac_triggerlevel)){
                   Serial.print("ac=");
                   Serial.println(ac);
                   Serial.print("ac_triggerlevel=");
@@ -210,14 +215,13 @@ void loop() {
       }
 
 
-
 void minloop(long minTime)
       {
       // create the minimum timing for the wiper motor to wait for next beat
       
          unsigned long currentMillis = millis();
           
-        if(currentMillis - previousMillis > minTime) {
+        if(currentMillis - previousMillis > (unsigned)minTime) {
           previousMillis = currentMillis;  
             run_motor();
         }
@@ -237,3 +241,12 @@ void stop_motor() {
            Serial.println("motor stopped");
 }
 
+void onMagnet(){
+ Serial.println("Wiper arrives at home position triggered");
+
+}
+
+void offMagnet(){
+ Serial.println("Wiper leaves home positiontriggered");
+
+}

@@ -10,8 +10,14 @@
         "copper_text_thickness": 0.3,
         "copper_text_upright": false,
         "courtyard_line_width": 0.049999999999999996,
-        "dimension_precision": 1,
+        "dimension_precision": 4,
         "dimension_units": 0,
+        "dimensions": {
+          "arrow_length": 1270000,
+          "keep_text_aligned": true,
+          "text_position": 0,
+          "units_format": 1
+        },
         "fab_line_width": 0.09999999999999999,
         "fab_text_italic": false,
         "fab_text_size_h": 0.75,
@@ -49,15 +55,17 @@
       ],
       "drc_exclusions": [],
       "meta": {
-        "version": 0
+        "version": 1
       },
       "rule_severities": {
+        "annulus": "error",
         "clearance": "error",
         "copper_edge_clearance": "error",
         "courtyards_overlap": "error",
         "drill_too_small": "error",
         "duplicate_footprints": "warning",
         "extra_footprint": "warning",
+        "hole_clearance": "error",
         "hole_near_hole": "error",
         "invalid_outline": "error",
         "item_on_disabled_layer": "error",
@@ -68,6 +76,7 @@
         "microvia_too_small": "error",
         "missing_courtyard": "ignore",
         "missing_footprint": "warning",
+        "net_conflict": "warning",
         "npth_inside_courtyard": "ignore",
         "padstack": "error",
         "pth_inside_courtyard": "ignore",
@@ -77,7 +86,6 @@
         "tracks_crossing": "error",
         "unconnected_items": "error",
         "unresolved_variable": "error",
-        "via_annulus": "error",
         "via_dangling": "warning",
         "via_hole_larger_than_pad": "error",
         "via_too_small": "error",
@@ -383,7 +391,7 @@
   },
   "sheets": [
     [
-      "55f7d8c3-417d-45aa-a41b-eeb0440a638f",
+      "0484cd59-8094-4ee7-b374-c121f70da301",
       ""
     ]
   ],

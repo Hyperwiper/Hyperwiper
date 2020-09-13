@@ -1417,7 +1417,7 @@
     (stroke (width 0) (type solid) (color 0 0 0 0))
   )
 
-  (text "Teensy4 digital in/outs:\n\nOUT:\nMotor LED B 	=9\nMotor LED G 	=6\nMotor LED R 	=5\nBeat B 			=4\nBeat G			=3\nBeat R			=2\n\nIN:\nReed-switch	=\nPotentMeter		="
+  (text "Teensy4 digital in/outs:\n\nmotor start:		=16\nMotor LED B 	=9\nMotor LED G 	=6\nMotor LED R 	=5\nBeat B 			=4\nBeat G			=3\nBeat R			=2\n\nIN:\nReed-switch	=14\nPotentMeter		=17"
     (at 53.975 149.86 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
   )
@@ -1453,6 +1453,15 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
   )
   (label "M_LED_b" (at 52.07 50.8 180)
+    (effects (font (size 1.27 1.27)) (justify right bottom))
+  )
+  (label "reed" (at 52.07 76.2 180)
+    (effects (font (size 1.27 1.27)) (justify right bottom))
+  )
+  (label "motor_start" (at 52.07 81.28 180)
+    (effects (font (size 1.27 1.27)) (justify right bottom))
+  )
+  (label "Pot" (at 52.07 83.82 180)
     (effects (font (size 1.27 1.27)) (justify right bottom))
   )
   (label "M_LED_b" (at 153.67 111.76 180)
