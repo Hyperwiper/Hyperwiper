@@ -143,11 +143,11 @@ void setup() {
   pinMode(potPin, INPUT);
 
 
-  attachInterrupt(magnetPin, onMagnet, FALLING);
-  attachInterrupt(magnetPin, offMagnet, RISING);
+  attachInterrupt(magnetPin, onMagnet, RISING);
+  // attachInterrupt(magnetPin, offMagnet, RISING);
 
-      delay(1000);
-      Serial.println("Magnet switch setup done");
+    delay(1000);
+    Serial.println("Magnet switch setup done");
     //display status on serial
     Serial.print("Version=");
     Serial.println(VERSION);
@@ -155,6 +155,8 @@ void setup() {
     Serial.println(setupmode);
     Serial.print("Trigger_level=");
     Serial.println((trigger_level)*10000);
+    Serial.print("magnetOn=");
+    Serial.println(magnetOn);
 
   
     // Audio connections require memory to work.  For more
@@ -173,7 +175,7 @@ void setup() {
       Serial.println("Audio setup finished");
       Serial.println("Init finished");
 
-  run_motor();
+  //run_motor();
 }
 
 elapsedMillis fps;
@@ -189,10 +191,10 @@ void loop() {
 // Main loop
    if(magnetOn){
         int minTimeSet=6000;
-        minloop(minTimeSet);
+        // minloop(minTimeSet);
         magnetOn= true;
        }else{        
-        minloop(minTimeSet);
+        // minloop(minTimeSet);
        } 
        
     
@@ -205,7 +207,7 @@ void loop() {
                   Serial.print("ac_triggerlevel=");
                   Serial.println(ac_triggerlevel);
                   // digitalWrite(ledGreenPin,HIGH);
-                  run_motor();
+                  // run_motor();
                   beatPulse = true;
                 }else{
                   // digitalWrite(ledGreenPin,LOW);
