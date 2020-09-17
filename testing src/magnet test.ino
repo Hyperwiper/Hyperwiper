@@ -18,7 +18,7 @@ const int buttonPin = 14;    // the number of the pushbutton pin
 const int ledPin = 2;      // the number of the LED pin
 
 //Pins setup
-        int beatRedPin = 2;
+        // int beatRedPin = 2;
         int beatGreenPin = 3;
         int beatBluePin = 4;
   
@@ -36,12 +36,12 @@ int buttonState;             // the current reading from the input pin
 int lastButtonState = HIGH;   // the previous reading from the input pin
 
 unsigned long lastDebounceTime = 0;  // the last time the output pin was toggled
-unsigned long debounceDelay = 20;    // the debounce time; increase if the output flickers
+unsigned long debounceDelay = 50;    // the debounce time; increase if the output flickers
 
 void setup() {
   //serial start 
 
-  pinMode(beatRedPin, OUTPUT);
+  // pinMode(beatRedPin, OUTPUT);
   pinMode(beatGreenPin, OUTPUT);
   pinMode(beatBluePin, OUTPUT);
 
@@ -74,9 +74,10 @@ void loop() {
   }
 
   if ((millis() - lastDebounceTime) > debounceDelay) {
+    Serial.println(ledState);
     if (reading != buttonState) {
       buttonState = reading;
-      if (buttonState ==LOW) {
+      if (buttonState ==HIGH) {
         ledState = !ledState;
       }
     }
