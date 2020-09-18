@@ -8,6 +8,7 @@
  contact rob@yr-design.biz
  
  revisions:
+ V2.0.6   2020-17-09 added debouncer for cleaner signal of red switch
  V2.0.5   2020-13-09 pin assigned for other pins
  V2.0.4   2020-09-11 pin assigned for RGB LEDs
  V2.0.3   2020-08-19 changed pins for production prototype setup.
@@ -36,11 +37,12 @@
 
  */
 
-static char VERSION[] = "V2.0.5";;
+static char VERSION[] = "V2.0.6";;
 
 //set drivers 
   #include <SPI.h>
   #include <EEPROMex.h>
+  #include <Bounce.h>
 
 //audio setup
   #include <Audio.h>
@@ -62,27 +64,8 @@ static char VERSION[] = "V2.0.5";;
         int potPin=17;
 
 
-/*New pins setup for Prototype board
-Teensy4 digital in/outs:
-
-OUT:
-Beat R			    =2
-Beat G			    =3
-Beat B 			    =4
-
-Motor LED R 	  =5
-Motor LED G 	  =6
-Motor LED B 	  =9
-
-IN:
-Reed-switch	    =14
-motor start:		=16
-PotentMeter		  =17
-*/
-
-
 //init variables setup
-
+        Bounce pushbutton = Bounce(magnetPin, 5);  
         boolean beatPulse;
         boolean motorOn= false;
         boolean magnetOn= false;
@@ -116,47 +99,52 @@ PotentMeter		  =17
         AudioControlSGTL5000 audioShield;
 
 
+        elapsedMillis fps;
+        uint8_t cnt=0;
+
+        //display magnet info  setup 
+        byte previousState = HIGH;         // what state was the button last time
+        unsigned int count = 0;            // how many times has it changed to low
+        unsigned long countAt = 0;         // when count changed
+        unsigned int countPrinted = 0;     // last count printed
    
 void setup() {
-      //serial start 
-       Serial.begin(9600);
-       delay(100);
-      
-      //EEPROM setup
-        EEPROM.setMemPool(memBase, EEPROMSizeTeensy3);
-        EEPROM.setMaxAllowedWrites(maxAllowedWrites);    
-        addressLong   = EEPROM.getAddress(sizeof(long));
-        trigger_level = EEPROM.readLong(addressLong);
+  //serial start 
+    Serial.begin(9600);
+    delay(100);
   
-
-     // setup pins for switches
-  pinMode(beatRedPin, OUTPUT);
-  pinMode(beatGreenPin, OUTPUT);
-  pinMode(beatBluePin, OUTPUT);
-
-  pinMode(motorRedPin, OUTPUT);
-  pinMode(motorGreenPin, OUTPUT);
-  pinMode(motorBluePin, OUTPUT);
-
-  pinMode(outputPin, OUTPUT);
-  pinMode(magnetPin, INPUT_PULLUP);
-  pinMode(potPin, INPUT);
+  //EEPROM setup
+    EEPROM.setMemPool(memBase, EEPROMSizeTeensy3);
+    EEPROM.setMaxAllowedWrites(maxAllowedWrites);    
+    addressLong   = EEPROM.getAddress(sizeof(long));
+    trigger_level = EEPROM.readLong(addressLong);
 
 
-  attachInterrupt(magnetPin, onMagnet, RISING);
-  // attachInterrupt(magnetPin, offMagnet, RISING);
+  // setup pins for switches
+    // beatleds
+      pinMode(beatRedPin, OUTPUT);
+      pinMode(beatGreenPin, OUTPUT);
+      pinMode(beatBluePin, OUTPUT);
+    // motorleds
+      pinMode(motorRedPin, OUTPUT);
+      pinMode(motorGreenPin, OUTPUT);
+      pinMode(motorBluePin, OUTPUT);
+    // misc pins
+      pinMode(outputPin, OUTPUT);
+      pinMode(magnetPin, INPUT_PULLUP);
+      pinMode(potPin, INPUT);
 
     delay(1000);
     Serial.println("Magnet switch setup done");
     //display status on serial
-    Serial.print("Version=");
-    Serial.println(VERSION);
-    Serial.print("Setup Mode=");
-    Serial.println(setupmode);
-    Serial.print("Trigger_level=");
-    Serial.println((trigger_level)*10000);
-    Serial.print("magnetOn=");
-    Serial.println(magnetOn);
+      Serial.print("Version=");
+      Serial.println(VERSION);
+      Serial.print("Setup Mode=");
+      Serial.println(setupmode);
+      Serial.print("Trigger_level=");
+      Serial.println((trigger_level)*10000);
+      Serial.print("magnetOn=");
+      Serial.println(magnetOn);
 
   
     // Audio connections require memory to work.  For more
@@ -167,10 +155,11 @@ void setup() {
       audioShield.volume(0.5);
   
       
-      // reduce the gain on mixer channels
+    // reduce the gain on mixer channels
       monoMix.gain(0, 0.2);
       monoMix.gain(1, 0.2);
-      
+    
+    //display end of setup
       delay(1000);
       Serial.println("Audio setup finished");
       Serial.println("Init finished");
@@ -178,8 +167,6 @@ void setup() {
   //run_motor();
 }
 
-elapsedMillis fps;
-uint8_t cnt=0;
 
 
 void loop() {
@@ -188,33 +175,60 @@ void loop() {
       //sets minimum time for wiper for 
       // unsigned long currentT = millis();
 
-// Main loop
-   if(magnetOn){
-        int minTimeSet=6000;
-        // minloop(minTimeSet);
-        magnetOn= true;
-       }else{        
-        // minloop(minTimeSet);
-       } 
-       
-    
-    if(beat.available()){  
-       uint32_t ac = beat.ac();//2000;
- 
-        if (ac >(unsigned)(ac_triggerlevel)){
-                  Serial.print("ac=");
-                  Serial.println(ac);
-                  Serial.print("ac_triggerlevel=");
-                  Serial.println(ac_triggerlevel);
-                  // digitalWrite(ledGreenPin,HIGH);
-                  // run_motor();
-                  beatPulse = true;
-                }else{
-                  // digitalWrite(ledGreenPin,LOW);
-                  beatPulse = false;
-                }
-          }
+  // display magnet status
+  if (pushbutton.update()) {
+    if (pushbutton.risingEdge()) {
+      count = count + 1;
+    Serial.println("magnet is leaving");
+      digitalWrite( beatGreenPin, LOW);
+      digitalWrite( beatBluePin, HIGH);
+      countAt = millis();
+    }
+    if (pushbutton.fallingEdge()) {
+    Serial.println("magnet is arrived");
+      digitalWrite( beatGreenPin, HIGH);
+      digitalWrite( beatBluePin, LOW);
+      countAt = millis();
+    }
+  } else {
+    if (count != countPrinted) {
+      unsigned long nowMillis = millis();
+      if (nowMillis - countAt > 50) {
+        Serial.print("count: ");
+        Serial.println(count);
+        countPrinted = count;
       }
+    }
+  }
+
+
+  // Main loop
+  if(magnetOn){
+      //int minTimeSet=6000;
+      // minloop(minTimeSet);
+      magnetOn= true;
+      }else{        
+      // minloop(minTimeSet);
+      } 
+      
+  
+  if(beat.available()){  
+      uint32_t ac = beat.ac();//2000;
+
+  if (ac >(unsigned)(ac_triggerlevel)){
+            Serial.print("ac=");
+            Serial.println(ac);
+            Serial.print("ac_triggerlevel=");
+            Serial.println(ac_triggerlevel);
+            // digitalWrite(ledGreenPin,HIGH);
+            // run_motor();
+            beatPulse = true;
+          }else{
+            // digitalWrite(ledGreenPin,LOW);
+            beatPulse = false;
+          }
+    }
+}
 
 
 void minloop(long minTime)
@@ -241,14 +255,4 @@ void stop_motor() {
           digitalWrite(motorGreenPin, LOW);
           motorOn= false; 
            Serial.println("motor stopped");
-}
-
-void onMagnet(){
- Serial.println("Wiper arrives at home position triggered");
-
-}
-
-void offMagnet(){
- Serial.println("Wiper leaves home positiontriggered");
-
 }
