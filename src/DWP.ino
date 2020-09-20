@@ -180,14 +180,14 @@ void loop() {
     if (pushbutton.risingEdge()) {
       count = count + 1;
     Serial.println("magnet is leaving");
-      digitalWrite( beatGreenPin, LOW);
-      digitalWrite( beatBluePin, HIGH);
+      digitalWrite( motorRedPin, LOW);
+      digitalWrite( motorGreenPin, HIGH);
       countAt = millis();
     }
     if (pushbutton.fallingEdge()) {
     Serial.println("magnet is arrived");
-      digitalWrite( beatGreenPin, HIGH);
-      digitalWrite( beatBluePin, LOW);
+      digitalWrite( motorRedPin, HIGH);
+      digitalWrite( motorGreenPin, LOW);
       countAt = millis();
     }
   } else {

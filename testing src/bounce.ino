@@ -15,10 +15,11 @@ email rob@yr-design.biz
 #include <Bounce.h>
 
 //Pins setup
-
+        int beatRedPin = 2;
         int beatGreenPin = 3;
         int beatBluePin = 4;
   
+        int motorRedPin = 5;
         int motorGreenPin = 6;
         int motorBluePin = 9;
 
@@ -38,8 +39,10 @@ unsigned int countPrinted = 0;     // last count printed
 
 void setup() {
   pinMode(buttonPin, INPUT_PULLUP);
+  pinMode(beatRedPin, OUTPUT);
   pinMode(beatGreenPin, OUTPUT);
   pinMode(beatBluePin, OUTPUT);
+  pinMode(motorRedPin, OUTPUT);
   pinMode(motorGreenPin, OUTPUT);
   pinMode(motorBluePin, OUTPUT);
   pinMode(outputPin, OUTPUT);
@@ -57,14 +60,14 @@ void loop() {
     if (pushbutton.risingEdge()) {
       count = count + 1;
     Serial.println("magnet is leaving");
-      digitalWrite( beatGreenPin, LOW);
-      digitalWrite( beatBluePin, HIGH);
+      digitalWrite( beatRedPin, LOW);
+      digitalWrite( beatGreenPin, HIGH);
       countAt = millis();
     }
     if (pushbutton.fallingEdge()) {
     Serial.println("magnet is arrived");
-      digitalWrite( beatGreenPin, HIGH);
-      digitalWrite( beatBluePin, LOW);
+      digitalWrite( beatRedPin, HIGH);
+      digitalWrite( beatGreenPin, LOW);
       countAt = millis();
     }
   } else {
