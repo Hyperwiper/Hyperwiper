@@ -43,6 +43,7 @@ static char VERSION[] = "V2.0.6";;
   #include <SPI.h>
   #include <EEPROMex.h>
   #include <Bounce.h>
+  #include <RGBLED.h>
 
 //audio setup
   #include <Audio.h>
@@ -51,13 +52,13 @@ static char VERSION[] = "V2.0.6";;
 
 
 //Pins setup
-        int beatRedPin = 2;
-        int beatGreenPin = 3;
-        int beatBluePin = 4;
+        // int beatRedPin = 2;
+        // int beatGreenPin = 3;
+        // int beatBluePin = 4;
   
-        int motorRedPin = 5;
-        int motorGreenPin = 6;
-        int motorBluePin = 9;
+        // int motorRedPin = 5;
+        // int motorGreenPin = 6;
+        // int motorBluePin = 9;
 
         int magnetPin = 14;
         int outputPin = 16;
@@ -79,7 +80,9 @@ static char VERSION[] = "V2.0.6";;
         int addressLong;
         int runpassed_interval= 180;
         boolean setupmode = false;
-    
+        //LED pins setup
+        RGBLED rgbLedBeat(2,3,4,COMMON_CATHODE);
+        RGBLED rgbLedMotor(5,6,9,COMMON_CATHODE);
         //audio hardware setup
         const int myInput = AUDIO_INPUT_LINEIN;
         AudioInputI2S       audioInput; 
@@ -121,14 +124,14 @@ void setup() {
 
 
   // setup pins for switches
-    // beatleds
-      pinMode(beatRedPin, OUTPUT);
-      pinMode(beatGreenPin, OUTPUT);
-      pinMode(beatBluePin, OUTPUT);
-    // motorleds
-      pinMode(motorRedPin, OUTPUT);
-      pinMode(motorGreenPin, OUTPUT);
-      pinMode(motorBluePin, OUTPUT);
+    // // beatleds
+    //   pinMode(beatRedPin, OUTPUT);
+    //   pinMode(beatGreenPin, OUTPUT);
+    //   pinMode(beatBluePin, OUTPUT);
+    // // motorleds
+    //   pinMode(motorRedPin, OUTPUT);
+    //   pinMode(motorGreenPin, OUTPUT);
+    //   pinMode(motorBluePin, OUTPUT);
     // misc pins
       pinMode(outputPin, OUTPUT);
       pinMode(magnetPin, INPUT_PULLUP);
@@ -180,14 +183,12 @@ void loop() {
     if (pushbutton.risingEdge()) {
       count = count + 1;
     Serial.println("magnet is leaving");
-      digitalWrite( motorRedPin, LOW);
-      digitalWrite( motorGreenPin, HIGH);
+      rgbLedMotor.writeRGB(255,60,0);
       countAt = millis();
     }
     if (pushbutton.fallingEdge()) {
     Serial.println("magnet is arrived");
-      digitalWrite( motorRedPin, HIGH);
-      digitalWrite( motorGreenPin, LOW);
+      rgbLedMotor.writeRGB(0,128,0);
       countAt = millis();
     }
   } else {
@@ -244,7 +245,7 @@ void minloop(long minTime)
       }
 
 void run_motor() {
-      digitalWrite(motorGreenPin, HIGH);
+        rgbLedMotor.writeRGB(0,255,0);
          motorOn= true;
          magnetOn=false;
          Serial.println("motor running");
@@ -252,7 +253,7 @@ void run_motor() {
 }
 
 void stop_motor() {
-          digitalWrite(motorGreenPin, LOW);
+          rgbLedMotor.writeRGB(255,0,0);
           motorOn= false; 
            Serial.println("motor stopped");
 }
