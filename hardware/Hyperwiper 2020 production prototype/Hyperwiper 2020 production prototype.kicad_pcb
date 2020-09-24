@@ -1,4 +1,4 @@
-(kicad_pcb (version 20200913) (generator pcbnew)
+(kicad_pcb (version 20200921) (generator pcbnew)
 
   (general
     (thickness 1.6)
@@ -1389,7 +1389,9 @@
   (segment (start 105.697 58.7725) (end 157.411 58.7725) (width 0.25) (layer "F.Cu") (net 1) (tstamp a9f89f65-cf7a-453d-9b59-044c166b8276))
   (segment (start 159.308 60.6695) (end 163.516 64.8775) (width 0.25) (layer "B.Cu") (net 1) (tstamp 6951550b-a27f-4fb0-868f-0bac86fa327f))
   (segment (start 157.969 86.8375) (end 157.969 62.0085) (width 0.25) (layer "B.Cu") (net 1) (tstamp 93c8b205-1de9-4b5f-b059-9abf366e687e))
+  (segment (start 157.969 98.273) (end 160.07 100.374) (width 0.25) (layer "B.Cu") (net 1) (tstamp 9e2b9fef-8928-4b26-8685-5011ffe30eea))
   (segment (start 163.516 64.8775) (end 163.516 65.1145) (width 0.25) (layer "B.Cu") (net 1) (tstamp d1538bd9-54ea-4277-9ca7-34c7828ee679))
+  (segment (start 157.969 86.8375) (end 157.969 98.273) (width 0.25) (layer "B.Cu") (net 1) (tstamp e4c1ac0e-f7e9-4384-a3ee-730b2c940d02))
   (segment (start 163.516 65.1145) (end 164.642 65.1145) (width 0.25) (layer "B.Cu") (net 1) (tstamp f75cfb46-00b7-4ced-a428-d400b656a289))
   (segment (start 157.969 62.0085) (end 159.308 60.6695) (width 0.25) (layer "B.Cu") (net 1) (tstamp ff0cb397-7d47-4aaf-8450-8ee64aba119d))
   (segment (start 118.045 72.8425) (end 123.83 72.8425) (width 0.75) (layer "F.Cu") (net 3) (tstamp 00ee4713-a508-4702-b2db-14f2cc91d32e))
