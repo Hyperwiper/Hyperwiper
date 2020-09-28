@@ -68,10 +68,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.2470791"
-     inkscape:cx="532.0967"
-     inkscape:cy="252.4626"
+     inkscape:cx="512.45079"
+     inkscape:cy="797.73675"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer2"
      showgrid="false"
      inkscape:window-width="1680"
      inkscape:window-height="990"
@@ -122,6 +122,24 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccc"
        inkscape:label="path883-5" />
+    <path
+       style="opacity:0.784;fill:none;stroke:#0c8117;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 80.990515,237.81133 5.248576,0 v -13.22917 l 152.542469,0 v 13.1878 l 8.17792,0"
+       id="path883-5-5"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccc"
+       inkscape:label="path883-5" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="33.741066"
+       y="238.32539"
+       id="text858-3"><tspan
+         sodipodi:role="line"
+         id="tspan856-5"
+         x="33.741066"
+         y="238.32539"
+         style="font-size:4.9389px;stroke-width:0.264583">6 seconds pulse</tspan></text>
   </g>
   <g
      inkscape:label="Layer 1"

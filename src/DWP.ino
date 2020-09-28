@@ -177,6 +177,16 @@ void loop() {
        int ac_triggerlevel=((trigger_level)*10000);
       //sets minimum time for wiper for 
       // unsigned long currentT = millis();
+      if(magnetOn){
+              int minTimeSet=6000;
+              minloop(minTimeSet);
+              magnetOn= true;
+              // if(motorOn) {
+              //     stop_motor();
+              //   }
+            }else{        
+              minloop(minTimeSet);
+            } 
 
   // display magnet status
   if (pushbutton.update()) {
@@ -185,11 +195,14 @@ void loop() {
     Serial.println("magnet is leaving");
       rgbLedMotor.writeRGB(255,60,0);
       countAt = millis();
+      magnetOn= true;
     }
     if (pushbutton.fallingEdge()) {
     Serial.println("magnet is arrived");
       rgbLedMotor.writeRGB(0,128,0);
       countAt = millis();
+      magnetOn= false;
+
     }
   } else {
     if (count != countPrinted) {
