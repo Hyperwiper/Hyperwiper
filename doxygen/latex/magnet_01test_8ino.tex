@@ -1,0 +1,208 @@
+\hypertarget{magnet_01test_8ino}{}\doxysection{testing src/magnet test.\+ino File Reference}
+\label{magnet_01test_8ino}\index{testing src/magnet test.ino@{testing src/magnet test.ino}}
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include $<$S\+P\+I.\+h$>$}\newline
+{\ttfamily \#include $<$E\+E\+P\+R\+O\+Mex.\+h$>$}\newline
+{\ttfamily \#include $<$Audio.\+h$>$}\newline
+{\ttfamily \#include $<$Wire.\+h$>$}\newline
+{\ttfamily \#include $<$S\+D.\+h$>$}\newline
+Include dependency graph for magnet test.\+ino\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{magnet_01test_8ino__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{magnet_01test_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup}} ()
+\item 
+void \mbox{\hyperlink{magnet_01test_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{magnet_01test_8ino_a4ddb8b6ae564eb22f7c74f2683a63b8e}{button\+Pin}} = 14
+\item 
+const int \mbox{\hyperlink{magnet_01test_8ino_a2cd9f0d96c9cd0637798de3baa7aee60}{led\+Pin}} = 2
+\item 
+int \mbox{\hyperlink{magnet_01test_8ino_ad1479bccf19245c7b5d61a1a3083a91c}{beat\+Green\+Pin}} = 3
+\item 
+int \mbox{\hyperlink{magnet_01test_8ino_af91f961cb3dba3e48e12e5f9d146b354}{beat\+Blue\+Pin}} = 4
+\item 
+int \mbox{\hyperlink{magnet_01test_8ino_a4f28933f784c4c6d3f949dc677220c7f}{motor\+Green\+Pin}} = 6
+\item 
+int \mbox{\hyperlink{magnet_01test_8ino_a6d6321b60f4e2b55ede175db6d6312aa}{motor\+Blue\+Pin}} = 9
+\item 
+int \mbox{\hyperlink{magnet_01test_8ino_a2d65409efad03913d766df6b0d1f8d3e}{output\+Pin}} = 16
+\item 
+int \mbox{\hyperlink{magnet_01test_8ino_a03a5093d3b18a90d2e000cdd972f180d}{pot\+Pin}} =17
+\item 
+int \mbox{\hyperlink{magnet_01test_8ino_a6bca96572a37f9b51ccae0fa72f57aba}{led\+State}} = L\+OW
+\item 
+int \mbox{\hyperlink{magnet_01test_8ino_a5002611f83f5a861df12917dd5651db8}{button\+State}}
+\item 
+int \mbox{\hyperlink{magnet_01test_8ino_a66f761d0471e843051f3c49af5a1cb82}{last\+Button\+State}} = H\+I\+GH
+\item 
+unsigned long \mbox{\hyperlink{magnet_01test_8ino_a025a85b33749fd5dde5cb7edd7aea941}{last\+Debounce\+Time}} = 0
+\item 
+unsigned long \mbox{\hyperlink{magnet_01test_8ino_a77d7d18f51343feebbe6d0eea7b4ac57}{debounce\+Delay}} = 50
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{magnet_01test_8ino_afe461d27b9c48d5921c00d521181f12f}\label{magnet_01test_8ino_afe461d27b9c48d5921c00d521181f12f}} 
+\index{magnet test.ino@{magnet test.ino}!loop@{loop}}
+\index{loop@{loop}!magnet test.ino@{magnet test.ino}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily void loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 68 of file magnet test.\+ino.
+
+\mbox{\Hypertarget{magnet_01test_8ino_a4fc01d736fe50cf5b977f755b675f11d}\label{magnet_01test_8ino_a4fc01d736fe50cf5b977f755b675f11d}} 
+\index{magnet test.ino@{magnet test.ino}!setup@{setup}}
+\index{setup@{setup}!magnet test.ino@{magnet test.ino}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 41 of file magnet test.\+ino.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{magnet_01test_8ino_af91f961cb3dba3e48e12e5f9d146b354}\label{magnet_01test_8ino_af91f961cb3dba3e48e12e5f9d146b354}} 
+\index{magnet test.ino@{magnet test.ino}!beatBluePin@{beatBluePin}}
+\index{beatBluePin@{beatBluePin}!magnet test.ino@{magnet test.ino}}
+\doxysubsubsection{\texorpdfstring{beatBluePin}{beatBluePin}}
+{\footnotesize\ttfamily int beat\+Blue\+Pin = 4}
+
+
+
+Definition at line 23 of file magnet test.\+ino.
+
+\mbox{\Hypertarget{magnet_01test_8ino_ad1479bccf19245c7b5d61a1a3083a91c}\label{magnet_01test_8ino_ad1479bccf19245c7b5d61a1a3083a91c}} 
+\index{magnet test.ino@{magnet test.ino}!beatGreenPin@{beatGreenPin}}
+\index{beatGreenPin@{beatGreenPin}!magnet test.ino@{magnet test.ino}}
+\doxysubsubsection{\texorpdfstring{beatGreenPin}{beatGreenPin}}
+{\footnotesize\ttfamily int beat\+Green\+Pin = 3}
+
+
+
+Definition at line 22 of file magnet test.\+ino.
+
+\mbox{\Hypertarget{magnet_01test_8ino_a4ddb8b6ae564eb22f7c74f2683a63b8e}\label{magnet_01test_8ino_a4ddb8b6ae564eb22f7c74f2683a63b8e}} 
+\index{magnet test.ino@{magnet test.ino}!buttonPin@{buttonPin}}
+\index{buttonPin@{buttonPin}!magnet test.ino@{magnet test.ino}}
+\doxysubsubsection{\texorpdfstring{buttonPin}{buttonPin}}
+{\footnotesize\ttfamily const int button\+Pin = 14}
+
+
+
+Definition at line 17 of file magnet test.\+ino.
+
+\mbox{\Hypertarget{magnet_01test_8ino_a5002611f83f5a861df12917dd5651db8}\label{magnet_01test_8ino_a5002611f83f5a861df12917dd5651db8}} 
+\index{magnet test.ino@{magnet test.ino}!buttonState@{buttonState}}
+\index{buttonState@{buttonState}!magnet test.ino@{magnet test.ino}}
+\doxysubsubsection{\texorpdfstring{buttonState}{buttonState}}
+{\footnotesize\ttfamily int button\+State}
+
+
+
+Definition at line 35 of file magnet test.\+ino.
+
+\mbox{\Hypertarget{magnet_01test_8ino_a77d7d18f51343feebbe6d0eea7b4ac57}\label{magnet_01test_8ino_a77d7d18f51343feebbe6d0eea7b4ac57}} 
+\index{magnet test.ino@{magnet test.ino}!debounceDelay@{debounceDelay}}
+\index{debounceDelay@{debounceDelay}!magnet test.ino@{magnet test.ino}}
+\doxysubsubsection{\texorpdfstring{debounceDelay}{debounceDelay}}
+{\footnotesize\ttfamily unsigned long debounce\+Delay = 50}
+
+
+
+Definition at line 39 of file magnet test.\+ino.
+
+\mbox{\Hypertarget{magnet_01test_8ino_a66f761d0471e843051f3c49af5a1cb82}\label{magnet_01test_8ino_a66f761d0471e843051f3c49af5a1cb82}} 
+\index{magnet test.ino@{magnet test.ino}!lastButtonState@{lastButtonState}}
+\index{lastButtonState@{lastButtonState}!magnet test.ino@{magnet test.ino}}
+\doxysubsubsection{\texorpdfstring{lastButtonState}{lastButtonState}}
+{\footnotesize\ttfamily int last\+Button\+State = H\+I\+GH}
+
+
+
+Definition at line 36 of file magnet test.\+ino.
+
+\mbox{\Hypertarget{magnet_01test_8ino_a025a85b33749fd5dde5cb7edd7aea941}\label{magnet_01test_8ino_a025a85b33749fd5dde5cb7edd7aea941}} 
+\index{magnet test.ino@{magnet test.ino}!lastDebounceTime@{lastDebounceTime}}
+\index{lastDebounceTime@{lastDebounceTime}!magnet test.ino@{magnet test.ino}}
+\doxysubsubsection{\texorpdfstring{lastDebounceTime}{lastDebounceTime}}
+{\footnotesize\ttfamily unsigned long last\+Debounce\+Time = 0}
+
+
+
+Definition at line 38 of file magnet test.\+ino.
+
+\mbox{\Hypertarget{magnet_01test_8ino_a2cd9f0d96c9cd0637798de3baa7aee60}\label{magnet_01test_8ino_a2cd9f0d96c9cd0637798de3baa7aee60}} 
+\index{magnet test.ino@{magnet test.ino}!ledPin@{ledPin}}
+\index{ledPin@{ledPin}!magnet test.ino@{magnet test.ino}}
+\doxysubsubsection{\texorpdfstring{ledPin}{ledPin}}
+{\footnotesize\ttfamily const int led\+Pin = 2}
+
+
+
+Definition at line 18 of file magnet test.\+ino.
+
+\mbox{\Hypertarget{magnet_01test_8ino_a6bca96572a37f9b51ccae0fa72f57aba}\label{magnet_01test_8ino_a6bca96572a37f9b51ccae0fa72f57aba}} 
+\index{magnet test.ino@{magnet test.ino}!ledState@{ledState}}
+\index{ledState@{ledState}!magnet test.ino@{magnet test.ino}}
+\doxysubsubsection{\texorpdfstring{ledState}{ledState}}
+{\footnotesize\ttfamily int led\+State = L\+OW}
+
+
+
+Definition at line 34 of file magnet test.\+ino.
+
+\mbox{\Hypertarget{magnet_01test_8ino_a6d6321b60f4e2b55ede175db6d6312aa}\label{magnet_01test_8ino_a6d6321b60f4e2b55ede175db6d6312aa}} 
+\index{magnet test.ino@{magnet test.ino}!motorBluePin@{motorBluePin}}
+\index{motorBluePin@{motorBluePin}!magnet test.ino@{magnet test.ino}}
+\doxysubsubsection{\texorpdfstring{motorBluePin}{motorBluePin}}
+{\footnotesize\ttfamily int motor\+Blue\+Pin = 9}
+
+
+
+Definition at line 27 of file magnet test.\+ino.
+
+\mbox{\Hypertarget{magnet_01test_8ino_a4f28933f784c4c6d3f949dc677220c7f}\label{magnet_01test_8ino_a4f28933f784c4c6d3f949dc677220c7f}} 
+\index{magnet test.ino@{magnet test.ino}!motorGreenPin@{motorGreenPin}}
+\index{motorGreenPin@{motorGreenPin}!magnet test.ino@{magnet test.ino}}
+\doxysubsubsection{\texorpdfstring{motorGreenPin}{motorGreenPin}}
+{\footnotesize\ttfamily int motor\+Green\+Pin = 6}
+
+
+
+Definition at line 26 of file magnet test.\+ino.
+
+\mbox{\Hypertarget{magnet_01test_8ino_a2d65409efad03913d766df6b0d1f8d3e}\label{magnet_01test_8ino_a2d65409efad03913d766df6b0d1f8d3e}} 
+\index{magnet test.ino@{magnet test.ino}!outputPin@{outputPin}}
+\index{outputPin@{outputPin}!magnet test.ino@{magnet test.ino}}
+\doxysubsubsection{\texorpdfstring{outputPin}{outputPin}}
+{\footnotesize\ttfamily int output\+Pin = 16}
+
+
+
+Definition at line 30 of file magnet test.\+ino.
+
+\mbox{\Hypertarget{magnet_01test_8ino_a03a5093d3b18a90d2e000cdd972f180d}\label{magnet_01test_8ino_a03a5093d3b18a90d2e000cdd972f180d}} 
+\index{magnet test.ino@{magnet test.ino}!potPin@{potPin}}
+\index{potPin@{potPin}!magnet test.ino@{magnet test.ino}}
+\doxysubsubsection{\texorpdfstring{potPin}{potPin}}
+{\footnotesize\ttfamily int pot\+Pin =17}
+
+
+
+Definition at line 31 of file magnet test.\+ino.
+

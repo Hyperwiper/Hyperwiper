@@ -1,0 +1,77 @@
+\hypertarget{_audio_8h}{}\doxysection{lib/old\+\_\+libs/\+Audio.h File Reference}
+\label{_audio_8h}\index{lib/old\_libs/Audio.h@{lib/old\_libs/Audio.h}}
+{\ttfamily \#include \char`\"{}analyze\+\_\+fft256.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}analyze\+\_\+fft1024.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}analyze\+\_\+print.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}analyze\+\_\+tonedetect.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}analyze\+\_\+peakdetect.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}analyze\+\_\+frame\+Energy\+\_\+128.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}analyze\+\_\+frame\+Energy\+\_\+256.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}analyze\+\_\+frame\+Energy\+\_\+2048.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}analyze\+\_\+peaks.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}analyze\+\_\+beat\+Estimation.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}control\+\_\+sgtl5000.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}control\+\_\+wm8731.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}effect\+\_\+chorus.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}effect\+\_\+fade.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}effect\+\_\+flange.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}filter\+\_\+biquad.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}filter\+\_\+fir.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}input\+\_\+adc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}input\+\_\+i2s.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mixer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}output\+\_\+dac.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}output\+\_\+i2s.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}output\+\_\+pwm.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}play\+\_\+memory.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}play\+\_\+queue.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}play\+\_\+sd\+\_\+raw.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}play\+\_\+sd\+\_\+wav.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}synth\+\_\+tonesweep.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}synth\+\_\+sine.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}synth\+\_\+waveform.\+h\char`\"{}}\newline
+Include dependency graph for Audio.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_audio_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_audio_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_audio_8h_aa7aebda9de34886c4ea6c8899349e05d}{Audio\+No\+Interrupts}}()~(N\+V\+I\+C\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+I\+RQ(I\+R\+Q\+\_\+\+S\+O\+F\+T\+W\+A\+RE))
+\item 
+\#define \mbox{\hyperlink{_audio_8h_a77ee4cb93af83acbbb88e13f86c10d8c}{Audio\+Interrupts}}()~(N\+V\+I\+C\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+I\+RQ(I\+R\+Q\+\_\+\+S\+O\+F\+T\+W\+A\+RE))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_audio_8h_a77ee4cb93af83acbbb88e13f86c10d8c}\label{_audio_8h_a77ee4cb93af83acbbb88e13f86c10d8c}} 
+\index{Audio.h@{Audio.h}!AudioInterrupts@{AudioInterrupts}}
+\index{AudioInterrupts@{AudioInterrupts}!Audio.h@{Audio.h}}
+\doxysubsubsection{\texorpdfstring{AudioInterrupts}{AudioInterrupts}}
+{\footnotesize\ttfamily \#define Audio\+Interrupts(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(N\+V\+I\+C\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+I\+RQ(I\+R\+Q\+\_\+\+S\+O\+F\+T\+W\+A\+RE))}
+
+
+
+Definition at line 42 of file Audio.\+h.
+
+\mbox{\Hypertarget{_audio_8h_aa7aebda9de34886c4ea6c8899349e05d}\label{_audio_8h_aa7aebda9de34886c4ea6c8899349e05d}} 
+\index{Audio.h@{Audio.h}!AudioNoInterrupts@{AudioNoInterrupts}}
+\index{AudioNoInterrupts@{AudioNoInterrupts}!Audio.h@{Audio.h}}
+\doxysubsubsection{\texorpdfstring{AudioNoInterrupts}{AudioNoInterrupts}}
+{\footnotesize\ttfamily \#define Audio\+No\+Interrupts(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(N\+V\+I\+C\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+I\+RQ(I\+R\+Q\+\_\+\+S\+O\+F\+T\+W\+A\+RE))}
+
+
+
+Definition at line 41 of file Audio.\+h.
+

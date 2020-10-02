@@ -1,0 +1,469 @@
+\hypertarget{_beat___detection2020_8ino}{}\doxysection{Beat\+\_\+\+Detection2020/\+Beat\+\_\+\+Detection2020.ino File Reference}
+\label{_beat___detection2020_8ino}\index{Beat\_Detection2020/Beat\_Detection2020.ino@{Beat\_Detection2020/Beat\_Detection2020.ino}}
+{\ttfamily \#include $<$Audio.\+h$>$}\newline
+{\ttfamily \#include $<$Wire.\+h$>$}\newline
+{\ttfamily \#include $<$S\+P\+I.\+h$>$}\newline
+Include dependency graph for Beat\+\_\+\+Detection2020.\+ino\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_beat___detection2020_8ino__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Audio\+Connection \mbox{\hyperlink{_beat___detection2020_8ino_a1848249c9d18c890d80ad9ec28256fd3}{c0}} (\mbox{\hyperlink{_d_w_p_8ino_abe978cb6d947ed91841d2719423c2659}{audio\+Input}}, 0, \mbox{\hyperlink{_d_w_p_8ino_a15ac4fdb961f3efba6c261383130a5e8}{mono\+Mix}}, 0)
+\item 
+Audio\+Connection \mbox{\hyperlink{_beat___detection2020_8ino_a3ee79254057a02af0ca4b9100ec7daaa}{c1}} (\mbox{\hyperlink{_d_w_p_8ino_abe978cb6d947ed91841d2719423c2659}{audio\+Input}}, 1, \mbox{\hyperlink{_d_w_p_8ino_a15ac4fdb961f3efba6c261383130a5e8}{mono\+Mix}}, 1)
+\item 
+Audio\+Connection \mbox{\hyperlink{_beat___detection2020_8ino_a9a067c9d20358b0231bf116eb054f556}{c2}} (\mbox{\hyperlink{_d_w_p_8ino_a15ac4fdb961f3efba6c261383130a5e8}{mono\+Mix}}, 0, \mbox{\hyperlink{_beat___detection2020_8ino_a8dc1d29cdedb047521c7053ab49e9484}{L\+Pfilter}}, 0)
+\item 
+Audio\+Connection \mbox{\hyperlink{_beat___detection2020_8ino_acd4bcc6e09a3f7f5772088df929b0cf0}{c3}} (\mbox{\hyperlink{_beat___detection2020_8ino_a8dc1d29cdedb047521c7053ab49e9484}{L\+Pfilter}}, 0, \mbox{\hyperlink{_beat___detection2020_8ino_a78d4d4019d081a08d0679bd67e78eb8d}{my\+F\+FT}}, 0)
+\item 
+Audio\+Connection \mbox{\hyperlink{_beat___detection2020_8ino_a60f2c06cc794e3b4831a991eebceb998}{c4}} (\mbox{\hyperlink{_d_w_p_8ino_abe978cb6d947ed91841d2719423c2659}{audio\+Input}}, 0, \mbox{\hyperlink{_beat___detection2020_8ino_a2c67c7a4608292748a5e2d380206ee1d}{delay\+ForL}}, 0)
+\item 
+Audio\+Connection \mbox{\hyperlink{_beat___detection2020_8ino_ad39d67e888544f2be7ea9d6491240dba}{c5}} (\mbox{\hyperlink{_d_w_p_8ino_abe978cb6d947ed91841d2719423c2659}{audio\+Input}}, 1, \mbox{\hyperlink{_beat___detection2020_8ino_a66b98bd0ef5443a4f1154ef9dc3d5975}{delay\+ForR}}, 1)
+\item 
+Audio\+Connection \mbox{\hyperlink{_beat___detection2020_8ino_ae7e8c0c09102d47dd8c519a6dafbfe6b}{c6}} (\mbox{\hyperlink{_beat___detection2020_8ino_a2c67c7a4608292748a5e2d380206ee1d}{delay\+ForL}}, 0, \mbox{\hyperlink{_beat___detection2020_8ino_aafe21461d9ae0e382d6707472049b2d9}{headphones}}, 0)
+\item 
+Audio\+Connection \mbox{\hyperlink{_beat___detection2020_8ino_abad33543a6f917f9549a977f2af2467d}{c7}} (\mbox{\hyperlink{_beat___detection2020_8ino_a66b98bd0ef5443a4f1154ef9dc3d5975}{delay\+ForR}}, 0, \mbox{\hyperlink{_beat___detection2020_8ino_aafe21461d9ae0e382d6707472049b2d9}{headphones}}, 1)
+\item 
+void \mbox{\hyperlink{_beat___detection2020_8ino_abf22a96fde2fc4313c5089b111d66b0d}{lp}} (int k)
+\item 
+void \mbox{\hyperlink{_beat___detection2020_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup}} ()
+\item 
+void \mbox{\hyperlink{_beat___detection2020_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Audio\+Input\+I2S \mbox{\hyperlink{_beat___detection2020_8ino_abe978cb6d947ed91841d2719423c2659}{audio\+Input}}
+\item 
+Audio\+Output\+I2S \mbox{\hyperlink{_beat___detection2020_8ino_aafe21461d9ae0e382d6707472049b2d9}{headphones}}
+\item 
+Audio\+Mixer4 \mbox{\hyperlink{_beat___detection2020_8ino_a15ac4fdb961f3efba6c261383130a5e8}{mono\+Mix}}
+\item 
+Audio\+Filter\+Biquad \mbox{\hyperlink{_beat___detection2020_8ino_a8dc1d29cdedb047521c7053ab49e9484}{L\+Pfilter}}
+\item 
+Audio\+Analyze\+F\+F\+T1024 \mbox{\hyperlink{_beat___detection2020_8ino_a78d4d4019d081a08d0679bd67e78eb8d}{my\+F\+FT}}
+\item 
+Audio\+Effect\+Delay \mbox{\hyperlink{_beat___detection2020_8ino_a2c67c7a4608292748a5e2d380206ee1d}{delay\+ForL}}
+\item 
+Audio\+Effect\+Delay \mbox{\hyperlink{_beat___detection2020_8ino_a66b98bd0ef5443a4f1154ef9dc3d5975}{delay\+ForR}}
+\item 
+Audio\+Control\+S\+G\+T\+L5000 \mbox{\hyperlink{_beat___detection2020_8ino_aa361fe9284eb67c4914b9d96c49e66a1}{audio\+Shield}}
+\item 
+const int \mbox{\hyperlink{_beat___detection2020_8ino_a54e7dc86a87e30c7cd281ee87c1fe6d6}{my\+Input}} = A\+U\+D\+I\+O\+\_\+\+I\+N\+P\+U\+T\+\_\+\+L\+I\+N\+E\+IN
+\item 
+const int \mbox{\hyperlink{_beat___detection2020_8ino_a6e87dc4f50c99331c8eea4a016d5b3c8}{num\+Readings}} = 7
+\item 
+const int \mbox{\hyperlink{_beat___detection2020_8ino_afc2045e394455f3435c278ada62d6468}{no\+Bins}} = 512
+\item 
+const int \mbox{\hyperlink{_beat___detection2020_8ino_a47dbf1d8c55c60b3db50154417e44ba0}{L\+Porder}} = 7
+\item 
+const int \mbox{\hyperlink{_beat___detection2020_8ino_aa6565effcd86b61e6ab132971ff14438}{led}} = 13
+\item 
+const int \mbox{\hyperlink{_beat___detection2020_8ino_afd4564cee7e032963b8e534c69266688}{O\+Ntime}} = 10
+\item 
+unsigned long \mbox{\hyperlink{_beat___detection2020_8ino_a5e8e02747584eea67a13042da5a06d17}{cur\+Del}} = 0
+\item 
+double \mbox{\hyperlink{_beat___detection2020_8ino_a39157653ac5420f5b40cf7b4590fcd92}{avg\+Delay}} = 0.\+0
+\item 
+float \mbox{\hyperlink{_beat___detection2020_8ino_a11023c3405a56be76ff9327231a8e2ec}{prev\+Mags}} \mbox{[}\mbox{\hyperlink{_beat___detection2020_8ino_afc2045e394455f3435c278ada62d6468}{no\+Bins}}\mbox{]}\mbox{[}\mbox{\hyperlink{_beat___detection2020_8ino_a47dbf1d8c55c60b3db50154417e44ba0}{L\+Porder}}\mbox{]}
+\item 
+double \mbox{\hyperlink{_beat___detection2020_8ino_a19655adf7d8537e6f41a3dc00ff2cf5f}{ks}} \mbox{[}\mbox{\hyperlink{_beat___detection2020_8ino_a47dbf1d8c55c60b3db50154417e44ba0}{L\+Porder}}\mbox{]}
+\item 
+float \mbox{\hyperlink{_beat___detection2020_8ino_aca9bfa326d632d067fff0390169be41b}{min\+Level}} = 10
+\item 
+unsigned int \mbox{\hyperlink{_beat___detection2020_8ino_a0c0535739f5c846959262a77a929455b}{min\+Delay}} = 29
+\item 
+double \mbox{\hyperlink{_beat___detection2020_8ino_a3db359547eed8cfd48ca821d95f577af}{lambda}} = .\+6
+\item 
+double \mbox{\hyperlink{_beat___detection2020_8ino_a20f4c4490bc8ecbdd1ffcb79acce6035}{alpha}} = .\+6
+\item 
+double \mbox{\hyperlink{_beat___detection2020_8ino_a5175b356eac1d83a42608b42a25d00b9}{m}} = 0.\+0
+\item 
+double \mbox{\hyperlink{_beat___detection2020_8ino_a5875453a3de38cab915ed96031184e11}{median}} = 0.\+0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_beat___detection2020_8ino_a1848249c9d18c890d80ad9ec28256fd3}\label{_beat___detection2020_8ino_a1848249c9d18c890d80ad9ec28256fd3}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!c0@{c0}}
+\index{c0@{c0}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{c0()}{c0()}}
+{\footnotesize\ttfamily Audio\+Connection c0 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_d_w_p_8ino_abe978cb6d947ed91841d2719423c2659}{audio\+Input}}}]{,  }\item[{0}]{,  }\item[{\mbox{\hyperlink{_d_w_p_8ino_a15ac4fdb961f3efba6c261383130a5e8}{mono\+Mix}}}]{,  }\item[{0}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{_beat___detection2020_8ino_a1848249c9d18c890d80ad9ec28256fd3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_beat___detection2020_8ino_a3ee79254057a02af0ca4b9100ec7daaa}\label{_beat___detection2020_8ino_a3ee79254057a02af0ca4b9100ec7daaa}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!c1@{c1}}
+\index{c1@{c1}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{c1()}{c1()}}
+{\footnotesize\ttfamily Audio\+Connection c1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_d_w_p_8ino_abe978cb6d947ed91841d2719423c2659}{audio\+Input}}}]{,  }\item[{1}]{,  }\item[{\mbox{\hyperlink{_d_w_p_8ino_a15ac4fdb961f3efba6c261383130a5e8}{mono\+Mix}}}]{,  }\item[{1}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{_beat___detection2020_8ino_a3ee79254057a02af0ca4b9100ec7daaa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_beat___detection2020_8ino_a9a067c9d20358b0231bf116eb054f556}\label{_beat___detection2020_8ino_a9a067c9d20358b0231bf116eb054f556}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!c2@{c2}}
+\index{c2@{c2}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{c2()}{c2()}}
+{\footnotesize\ttfamily Audio\+Connection c2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_d_w_p_8ino_a15ac4fdb961f3efba6c261383130a5e8}{mono\+Mix}}}]{,  }\item[{0}]{,  }\item[{\mbox{\hyperlink{_beat___detection2020_8ino_a8dc1d29cdedb047521c7053ab49e9484}{L\+Pfilter}}}]{,  }\item[{0}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{_beat___detection2020_8ino_a9a067c9d20358b0231bf116eb054f556_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_beat___detection2020_8ino_acd4bcc6e09a3f7f5772088df929b0cf0}\label{_beat___detection2020_8ino_acd4bcc6e09a3f7f5772088df929b0cf0}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!c3@{c3}}
+\index{c3@{c3}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{c3()}{c3()}}
+{\footnotesize\ttfamily Audio\+Connection c3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_beat___detection2020_8ino_a8dc1d29cdedb047521c7053ab49e9484}{L\+Pfilter}}}]{,  }\item[{0}]{,  }\item[{\mbox{\hyperlink{_beat___detection2020_8ino_a78d4d4019d081a08d0679bd67e78eb8d}{my\+F\+FT}}}]{,  }\item[{0}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{_beat___detection2020_8ino_acd4bcc6e09a3f7f5772088df929b0cf0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_beat___detection2020_8ino_a60f2c06cc794e3b4831a991eebceb998}\label{_beat___detection2020_8ino_a60f2c06cc794e3b4831a991eebceb998}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!c4@{c4}}
+\index{c4@{c4}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{c4()}{c4()}}
+{\footnotesize\ttfamily Audio\+Connection c4 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_d_w_p_8ino_abe978cb6d947ed91841d2719423c2659}{audio\+Input}}}]{,  }\item[{0}]{,  }\item[{\mbox{\hyperlink{_beat___detection2020_8ino_a2c67c7a4608292748a5e2d380206ee1d}{delay\+ForL}}}]{,  }\item[{0}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{_beat___detection2020_8ino_a60f2c06cc794e3b4831a991eebceb998_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_beat___detection2020_8ino_ad39d67e888544f2be7ea9d6491240dba}\label{_beat___detection2020_8ino_ad39d67e888544f2be7ea9d6491240dba}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!c5@{c5}}
+\index{c5@{c5}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{c5()}{c5()}}
+{\footnotesize\ttfamily Audio\+Connection c5 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_d_w_p_8ino_abe978cb6d947ed91841d2719423c2659}{audio\+Input}}}]{,  }\item[{1}]{,  }\item[{\mbox{\hyperlink{_beat___detection2020_8ino_a66b98bd0ef5443a4f1154ef9dc3d5975}{delay\+ForR}}}]{,  }\item[{1}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_beat___detection2020_8ino_ae7e8c0c09102d47dd8c519a6dafbfe6b}\label{_beat___detection2020_8ino_ae7e8c0c09102d47dd8c519a6dafbfe6b}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!c6@{c6}}
+\index{c6@{c6}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{c6()}{c6()}}
+{\footnotesize\ttfamily Audio\+Connection c6 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_beat___detection2020_8ino_a2c67c7a4608292748a5e2d380206ee1d}{delay\+ForL}}}]{,  }\item[{0}]{,  }\item[{\mbox{\hyperlink{_beat___detection2020_8ino_aafe21461d9ae0e382d6707472049b2d9}{headphones}}}]{,  }\item[{0}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_beat___detection2020_8ino_abad33543a6f917f9549a977f2af2467d}\label{_beat___detection2020_8ino_abad33543a6f917f9549a977f2af2467d}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!c7@{c7}}
+\index{c7@{c7}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{c7()}{c7()}}
+{\footnotesize\ttfamily Audio\+Connection c7 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_beat___detection2020_8ino_a66b98bd0ef5443a4f1154ef9dc3d5975}{delay\+ForR}}}]{,  }\item[{0}]{,  }\item[{\mbox{\hyperlink{_beat___detection2020_8ino_aafe21461d9ae0e382d6707472049b2d9}{headphones}}}]{,  }\item[{1}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_beat___detection2020_8ino_afe461d27b9c48d5921c00d521181f12f}\label{_beat___detection2020_8ino_afe461d27b9c48d5921c00d521181f12f}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!loop@{loop}}
+\index{loop@{loop}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily void loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 116 of file Beat\+\_\+\+Detection2020.\+ino.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{_beat___detection2020_8ino_afe461d27b9c48d5921c00d521181f12f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_beat___detection2020_8ino_abf22a96fde2fc4313c5089b111d66b0d}\label{_beat___detection2020_8ino_abf22a96fde2fc4313c5089b111d66b0d}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!lp@{lp}}
+\index{lp@{lp}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{lp()}{lp()}}
+{\footnotesize\ttfamily void lp (\begin{DoxyParamCaption}\item[{int}]{k }\end{DoxyParamCaption})}
+
+
+
+Definition at line 51 of file Beat\+\_\+\+Detection2020.\+ino.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{_beat___detection2020_8ino_abf22a96fde2fc4313c5089b111d66b0d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_beat___detection2020_8ino_a4fc01d736fe50cf5b977f755b675f11d}\label{_beat___detection2020_8ino_a4fc01d736fe50cf5b977f755b675f11d}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!setup@{setup}}
+\index{setup@{setup}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 88 of file Beat\+\_\+\+Detection2020.\+ino.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_beat___detection2020_8ino_a20f4c4490bc8ecbdd1ffcb79acce6035}\label{_beat___detection2020_8ino_a20f4c4490bc8ecbdd1ffcb79acce6035}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!alpha@{alpha}}
+\index{alpha@{alpha}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{alpha}{alpha}}
+{\footnotesize\ttfamily double alpha = .\+6}
+
+
+
+Definition at line 47 of file Beat\+\_\+\+Detection2020.\+ino.
+
+\mbox{\Hypertarget{_beat___detection2020_8ino_abe978cb6d947ed91841d2719423c2659}\label{_beat___detection2020_8ino_abe978cb6d947ed91841d2719423c2659}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!audioInput@{audioInput}}
+\index{audioInput@{audioInput}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{audioInput}{audioInput}}
+{\footnotesize\ttfamily Audio\+Input\+I2S audio\+Input}
+
+
+
+Definition at line 9 of file Beat\+\_\+\+Detection2020.\+ino.
+
+\mbox{\Hypertarget{_beat___detection2020_8ino_aa361fe9284eb67c4914b9d96c49e66a1}\label{_beat___detection2020_8ino_aa361fe9284eb67c4914b9d96c49e66a1}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!audioShield@{audioShield}}
+\index{audioShield@{audioShield}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{audioShield}{audioShield}}
+{\footnotesize\ttfamily Audio\+Control\+S\+G\+T\+L5000 audio\+Shield}
+
+
+
+Definition at line 27 of file Beat\+\_\+\+Detection2020.\+ino.
+
+\mbox{\Hypertarget{_beat___detection2020_8ino_a39157653ac5420f5b40cf7b4590fcd92}\label{_beat___detection2020_8ino_a39157653ac5420f5b40cf7b4590fcd92}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!avgDelay@{avgDelay}}
+\index{avgDelay@{avgDelay}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{avgDelay}{avgDelay}}
+{\footnotesize\ttfamily double avg\+Delay = 0.\+0}
+
+
+
+Definition at line 39 of file Beat\+\_\+\+Detection2020.\+ino.
+
+\mbox{\Hypertarget{_beat___detection2020_8ino_a5e8e02747584eea67a13042da5a06d17}\label{_beat___detection2020_8ino_a5e8e02747584eea67a13042da5a06d17}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!curDel@{curDel}}
+\index{curDel@{curDel}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{curDel}{curDel}}
+{\footnotesize\ttfamily unsigned long cur\+Del = 0}
+
+
+
+Definition at line 38 of file Beat\+\_\+\+Detection2020.\+ino.
+
+\mbox{\Hypertarget{_beat___detection2020_8ino_a2c67c7a4608292748a5e2d380206ee1d}\label{_beat___detection2020_8ino_a2c67c7a4608292748a5e2d380206ee1d}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!delayForL@{delayForL}}
+\index{delayForL@{delayForL}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{delayForL}{delayForL}}
+{\footnotesize\ttfamily Audio\+Effect\+Delay delay\+ForL}
+
+
+
+Definition at line 14 of file Beat\+\_\+\+Detection2020.\+ino.
+
+\mbox{\Hypertarget{_beat___detection2020_8ino_a66b98bd0ef5443a4f1154ef9dc3d5975}\label{_beat___detection2020_8ino_a66b98bd0ef5443a4f1154ef9dc3d5975}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!delayForR@{delayForR}}
+\index{delayForR@{delayForR}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{delayForR}{delayForR}}
+{\footnotesize\ttfamily Audio\+Effect\+Delay delay\+ForR}
+
+
+
+Definition at line 15 of file Beat\+\_\+\+Detection2020.\+ino.
+
+\mbox{\Hypertarget{_beat___detection2020_8ino_aafe21461d9ae0e382d6707472049b2d9}\label{_beat___detection2020_8ino_aafe21461d9ae0e382d6707472049b2d9}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!headphones@{headphones}}
+\index{headphones@{headphones}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{headphones}{headphones}}
+{\footnotesize\ttfamily Audio\+Output\+I2S headphones}
+
+
+
+Definition at line 10 of file Beat\+\_\+\+Detection2020.\+ino.
+
+\mbox{\Hypertarget{_beat___detection2020_8ino_a19655adf7d8537e6f41a3dc00ff2cf5f}\label{_beat___detection2020_8ino_a19655adf7d8537e6f41a3dc00ff2cf5f}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!ks@{ks}}
+\index{ks@{ks}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{ks}{ks}}
+{\footnotesize\ttfamily double ks\mbox{[}\mbox{\hyperlink{_beat___detection2020_8ino_a47dbf1d8c55c60b3db50154417e44ba0}{L\+Porder}}\mbox{]}}
+
+
+
+Definition at line 41 of file Beat\+\_\+\+Detection2020.\+ino.
+
+\mbox{\Hypertarget{_beat___detection2020_8ino_a3db359547eed8cfd48ca821d95f577af}\label{_beat___detection2020_8ino_a3db359547eed8cfd48ca821d95f577af}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!lambda@{lambda}}
+\index{lambda@{lambda}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{lambda}{lambda}}
+{\footnotesize\ttfamily double lambda = .\+6}
+
+
+
+Definition at line 46 of file Beat\+\_\+\+Detection2020.\+ino.
+
+\mbox{\Hypertarget{_beat___detection2020_8ino_aa6565effcd86b61e6ab132971ff14438}\label{_beat___detection2020_8ino_aa6565effcd86b61e6ab132971ff14438}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!led@{led}}
+\index{led@{led}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{led}{led}}
+{\footnotesize\ttfamily const int led = 13}
+
+
+
+Definition at line 34 of file Beat\+\_\+\+Detection2020.\+ino.
+
+\mbox{\Hypertarget{_beat___detection2020_8ino_a8dc1d29cdedb047521c7053ab49e9484}\label{_beat___detection2020_8ino_a8dc1d29cdedb047521c7053ab49e9484}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!LPfilter@{LPfilter}}
+\index{LPfilter@{LPfilter}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{LPfilter}{LPfilter}}
+{\footnotesize\ttfamily Audio\+Filter\+Biquad L\+Pfilter}
+
+
+
+Definition at line 12 of file Beat\+\_\+\+Detection2020.\+ino.
+
+\mbox{\Hypertarget{_beat___detection2020_8ino_a47dbf1d8c55c60b3db50154417e44ba0}\label{_beat___detection2020_8ino_a47dbf1d8c55c60b3db50154417e44ba0}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!LPorder@{LPorder}}
+\index{LPorder@{LPorder}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{LPorder}{LPorder}}
+{\footnotesize\ttfamily const int L\+Porder = 7}
+
+
+
+Definition at line 33 of file Beat\+\_\+\+Detection2020.\+ino.
+
+\mbox{\Hypertarget{_beat___detection2020_8ino_a5175b356eac1d83a42608b42a25d00b9}\label{_beat___detection2020_8ino_a5175b356eac1d83a42608b42a25d00b9}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!m@{m}}
+\index{m@{m}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{m}{m}}
+{\footnotesize\ttfamily double m = 0.\+0}
+
+
+
+Definition at line 48 of file Beat\+\_\+\+Detection2020.\+ino.
+
+\mbox{\Hypertarget{_beat___detection2020_8ino_a5875453a3de38cab915ed96031184e11}\label{_beat___detection2020_8ino_a5875453a3de38cab915ed96031184e11}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!median@{median}}
+\index{median@{median}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{median}{median}}
+{\footnotesize\ttfamily double median = 0.\+0}
+
+
+
+Definition at line 49 of file Beat\+\_\+\+Detection2020.\+ino.
+
+\mbox{\Hypertarget{_beat___detection2020_8ino_a0c0535739f5c846959262a77a929455b}\label{_beat___detection2020_8ino_a0c0535739f5c846959262a77a929455b}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!minDelay@{minDelay}}
+\index{minDelay@{minDelay}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{minDelay}{minDelay}}
+{\footnotesize\ttfamily unsigned int min\+Delay = 29}
+
+
+
+Definition at line 45 of file Beat\+\_\+\+Detection2020.\+ino.
+
+\mbox{\Hypertarget{_beat___detection2020_8ino_aca9bfa326d632d067fff0390169be41b}\label{_beat___detection2020_8ino_aca9bfa326d632d067fff0390169be41b}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!minLevel@{minLevel}}
+\index{minLevel@{minLevel}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{minLevel}{minLevel}}
+{\footnotesize\ttfamily float min\+Level = 10}
+
+
+
+Definition at line 42 of file Beat\+\_\+\+Detection2020.\+ino.
+
+\mbox{\Hypertarget{_beat___detection2020_8ino_a15ac4fdb961f3efba6c261383130a5e8}\label{_beat___detection2020_8ino_a15ac4fdb961f3efba6c261383130a5e8}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!monoMix@{monoMix}}
+\index{monoMix@{monoMix}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{monoMix}{monoMix}}
+{\footnotesize\ttfamily Audio\+Mixer4 mono\+Mix}
+
+
+
+Definition at line 11 of file Beat\+\_\+\+Detection2020.\+ino.
+
+\mbox{\Hypertarget{_beat___detection2020_8ino_a78d4d4019d081a08d0679bd67e78eb8d}\label{_beat___detection2020_8ino_a78d4d4019d081a08d0679bd67e78eb8d}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!myFFT@{myFFT}}
+\index{myFFT@{myFFT}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{myFFT}{myFFT}}
+{\footnotesize\ttfamily Audio\+Analyze\+F\+F\+T1024 my\+F\+FT}
+
+
+
+Definition at line 13 of file Beat\+\_\+\+Detection2020.\+ino.
+
+\mbox{\Hypertarget{_beat___detection2020_8ino_a54e7dc86a87e30c7cd281ee87c1fe6d6}\label{_beat___detection2020_8ino_a54e7dc86a87e30c7cd281ee87c1fe6d6}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!myInput@{myInput}}
+\index{myInput@{myInput}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{myInput}{myInput}}
+{\footnotesize\ttfamily const int my\+Input = A\+U\+D\+I\+O\+\_\+\+I\+N\+P\+U\+T\+\_\+\+L\+I\+N\+E\+IN}
+
+
+
+Definition at line 30 of file Beat\+\_\+\+Detection2020.\+ino.
+
+\mbox{\Hypertarget{_beat___detection2020_8ino_afc2045e394455f3435c278ada62d6468}\label{_beat___detection2020_8ino_afc2045e394455f3435c278ada62d6468}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!noBins@{noBins}}
+\index{noBins@{noBins}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{noBins}{noBins}}
+{\footnotesize\ttfamily const int no\+Bins = 512}
+
+
+
+Definition at line 32 of file Beat\+\_\+\+Detection2020.\+ino.
+
+\mbox{\Hypertarget{_beat___detection2020_8ino_a6e87dc4f50c99331c8eea4a016d5b3c8}\label{_beat___detection2020_8ino_a6e87dc4f50c99331c8eea4a016d5b3c8}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!numReadings@{numReadings}}
+\index{numReadings@{numReadings}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{numReadings}{numReadings}}
+{\footnotesize\ttfamily const int num\+Readings = 7}
+
+
+
+Definition at line 31 of file Beat\+\_\+\+Detection2020.\+ino.
+
+\mbox{\Hypertarget{_beat___detection2020_8ino_afd4564cee7e032963b8e534c69266688}\label{_beat___detection2020_8ino_afd4564cee7e032963b8e534c69266688}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!ONtime@{ONtime}}
+\index{ONtime@{ONtime}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{ONtime}{ONtime}}
+{\footnotesize\ttfamily const int O\+Ntime = 10}
+
+
+
+Definition at line 35 of file Beat\+\_\+\+Detection2020.\+ino.
+
+\mbox{\Hypertarget{_beat___detection2020_8ino_a11023c3405a56be76ff9327231a8e2ec}\label{_beat___detection2020_8ino_a11023c3405a56be76ff9327231a8e2ec}} 
+\index{Beat\_Detection2020.ino@{Beat\_Detection2020.ino}!prevMags@{prevMags}}
+\index{prevMags@{prevMags}!Beat\_Detection2020.ino@{Beat\_Detection2020.ino}}
+\doxysubsubsection{\texorpdfstring{prevMags}{prevMags}}
+{\footnotesize\ttfamily float prev\+Mags\mbox{[}\mbox{\hyperlink{_beat___detection2020_8ino_afc2045e394455f3435c278ada62d6468}{no\+Bins}}\mbox{]}\mbox{[}\mbox{\hyperlink{_beat___detection2020_8ino_a47dbf1d8c55c60b3db50154417e44ba0}{L\+Porder}}\mbox{]}}
+
+
+
+Definition at line 40 of file Beat\+\_\+\+Detection2020.\+ino.
+

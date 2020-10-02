@@ -1,0 +1,36 @@
+\hypertarget{ticks__generator_8py}{}\doxysection{ticks\+\_\+generator/ticks\+\_\+generator.py File Reference}
+\label{ticks__generator_8py}\index{ticks\_generator/ticks\_generator.py@{ticks\_generator/ticks\_generator.py}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceticks__generator}{ticks\+\_\+generator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+list \mbox{\hyperlink{namespaceticks__generator_a8c1f4dd1ea6d1870b083f525cabdf3c6}{ticks\+\_\+generator.\+rythms}} = \mbox{[}\mbox{[}0,0.\+33,0.\+33\mbox{]},\mbox{[}0,0.\+5\mbox{]},\mbox{[}0,0.\+25,0.\+25,0.\+25\mbox{]}\mbox{]}
+\item 
+list \mbox{\hyperlink{namespaceticks__generator_ae820f8b0374beb7098b46716b936829e}{ticks\+\_\+generator.\+measures}} = \mbox{[}4,4,4,4\mbox{]}
+\item 
+list \mbox{\hyperlink{namespaceticks__generator_af6757798ef71e1233a28c6e37e531eb3}{ticks\+\_\+generator.\+names}} = \mbox{[}\char`\"{}ternary\char`\"{},\char`\"{}binary\char`\"{},\char`\"{}quaternary\char`\"{}\mbox{]}
+\item 
+list \mbox{\hyperlink{namespaceticks__generator_a939fe05b3d893bf4fedef465676e88de}{ticks\+\_\+generator.\+bpm}} = \mbox{[}60,120,240\mbox{]}
+\item 
+int \mbox{\hyperlink{namespaceticks__generator_a371af27d0d3da0c6e10c0b96a4aea007}{ticks\+\_\+generator.\+sr}} = 44100
+\item 
+int \mbox{\hyperlink{namespaceticks__generator_a146e6c93608e3b81b5540eeb781c9959}{ticks\+\_\+generator.\+i}} = 0
+\item 
+list \mbox{\hyperlink{namespaceticks__generator_a7e26ad9b354bb5cb1812765cae275b67}{ticks\+\_\+generator.\+beat\+\_\+times}} = \mbox{[}$\,$\mbox{]}
+\item 
+int \mbox{\hyperlink{namespaceticks__generator_ad434db040ed485f5f9eea1c3c602a938}{ticks\+\_\+generator.\+c}} = 0
+\item 
+list \mbox{\hyperlink{namespaceticks__generator_ac272c17f22708aa56329395b89d01224}{ticks\+\_\+generator.\+measure}} = measures\mbox{[}i\mbox{]}$\ast$(60/j)
+\item 
+\mbox{\hyperlink{namespaceticks__generator_a54cf3cf800395e5a04dd0f6e1556f9ed}{ticks\+\_\+generator.\+click}} = librosa.\+clicks(times=beat\+\_\+times\mbox{[}0\mbox{]},click\+\_\+freq=1000, sr=sr,length=round(sr$\ast$measure))
+\item 
+\mbox{\hyperlink{namespaceticks__generator_aa87817a997ff4cde75e4578b3333397b}{ticks\+\_\+generator.\+clicks}} = librosa.\+clicks(times=beat\+\_\+times\mbox{[}1\+:len(beat\+\_\+times)\mbox{]},click\+\_\+freq=500, sr=sr,length=round(sr$\ast$measure))
+\item 
+\mbox{\hyperlink{namespaceticks__generator_a9b4373133cc51d97ff94dab97bbc10e0}{ticks\+\_\+generator.\+s}} = click+clicks
+\item 
+list \mbox{\hyperlink{namespaceticks__generator_a23748fdeeff1479732c6e07245d4e3a1}{ticks\+\_\+generator.\+signal}} = \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
