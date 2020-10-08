@@ -14,7 +14,10 @@
    version="1.1"
    id="svg8"
    inkscape:version="1.0.1 (3bc2e81, 2020-09-07)"
-   sodipodi:docname="timing plots.svg">
+   sodipodi:docname="timing plots.svg"
+   inkscape:export-filename="/home/rob/Documents/PlatformIO/Projects/hyperwiper/docs/timing plots.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
   <defs
      id="defs2">
     <marker
@@ -123,9 +126,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.2470791"
-     inkscape:cx="703.14427"
-     inkscape:cy="920.55506"
+     inkscape:zoom="0.44090904"
+     inkscape:cx="183.4106"
+     inkscape:cy="907.58092"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"

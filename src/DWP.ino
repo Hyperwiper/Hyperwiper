@@ -8,6 +8,7 @@
  contact rob@yr-design.biz
  
  revisions:
+ V2.0.7   2020-10-08 added test for startup calculating the startup deley ansd storing in EEPROM
  V2.0.6   2020-17-09 added debouncer for cleaner signal of red switch
  V2.0.5   2020-13-09 pin assigned for other pins
  V2.0.4   2020-09-11 pin assigned for RGB LEDs
@@ -37,7 +38,7 @@
 
 
 
-To be done:
+To be done (2020-10-08):
 
     Variables needed for storage:
       - Pot timing
@@ -49,9 +50,13 @@ To be done:
     setup test for getting delay of start morot and activity on magnet
     setup marker for reading the variables storage to and from eeprom and init the memory used.
 
+    EEPROMex.h modified:
+      #define EEPROMSize1k8        1080
+      #define EEPROMSizeTeensy40    EEPROMSize1k8
+
  */
 
-static char VERSION[] = "V2.0.6";;
+static char VERSION[] = "V2.0.7";;
 
 //set drivers 
   #include <SPI.h>
@@ -66,6 +71,7 @@ static char VERSION[] = "V2.0.6";;
 
 
 //Pins setup
+        //old data
         // int beatRedPin = 2;
         // int beatGreenPin = 3;
         // int beatBluePin = 4;
@@ -78,7 +84,6 @@ static char VERSION[] = "V2.0.6";;
         int outputPin = 16;
         int potPin=17;
 
-
 //init variables setup
         Bounce pushbutton = Bounce(magnetPin, 5);  
         boolean beatPulse;
@@ -88,15 +93,18 @@ static char VERSION[] = "V2.0.6";;
         int ledState = LOW;  
         long minTimeSet=6000;
         int trigger_level = 0;
+
         //EEPROM setup
         const int maxAllowedWrites = 80;
         const int memBase          = 120;
         int addressLong;
         int runpassed_interval= 180;
         boolean setupmode = false;
-        //LED pins setup
+
+        //RGB LED pins setup
         RGBLED rgbLedBeat(2,3,4,COMMON_CATHODE);
         RGBLED rgbLedMotor(5,6,9,COMMON_CATHODE);
+
         //audio hardware setup
         const int myInput = AUDIO_INPUT_LINEIN;
         AudioInputI2S       audioInput; 
