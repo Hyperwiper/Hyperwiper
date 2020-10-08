@@ -35,6 +35,20 @@
  V0.98    2015-02-12 added LED controls and setup pins for Teensy
  V0.90    2015-02-05 init for hardware pins changes.
 
+
+
+To be done:
+
+    Variables needed for storage:
+      - Pot timing
+      - one wipe pluse lengh
+      - windows beats number for sliding window
+      - start time pulse and actual reed relay signal recieving
+      - aquired reed relay signal and stoptime
+
+    setup test for getting delay of start morot and activity on magnet
+    setup marker for reading the variables storage to and from eeprom and init the memory used.
+
  */
 
 static char VERSION[] = "V2.0.6";;
@@ -100,8 +114,6 @@ static char VERSION[] = "V2.0.6";;
 
         // Create an object to control the audio shield.
         AudioControlSGTL5000 audioShield;
-
-
         elapsedMillis fps;
         uint8_t cnt=0;
 
@@ -116,8 +128,8 @@ void setup() {
     Serial.begin(9600);
     delay(100);
   
-  //EEPROM setup
-    EEPROM.setMemPool(memBase, EEPROMSizeTeensy3);
+  //EEPROM setup for Teensy4
+    EEPROM.setMemPool(memBase, EEPROMSizeTeensy40);
     EEPROM.setMaxAllowedWrites(maxAllowedWrites);    
     addressLong   = EEPROM.getAddress(sizeof(long));
     trigger_level = EEPROM.readLong(addressLong);
