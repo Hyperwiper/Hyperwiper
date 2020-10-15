@@ -33,6 +33,9 @@ const int noBins = 512; // number of real bins used in the FFT (total number of 
 const int LPorder = 7; // Linear predictor order
 const int led = 13;
 const int ONtime = 10;
+const int ONtime_mills = 10;   // time for better delay function
+int ledState = LOW;
+unsigned long ledStarted = 0;
 
 // Specifty global variables here
 unsigned long curDel = 0;     // Current delay
@@ -40,6 +43,7 @@ double avgDelay = 0.0;  // Average delay
 float prevMags[noBins][LPorder]; // Previous magnitudes for LP prediction
 double ks[LPorder]; // weigths of the previous samples in the prediction of the current
 float minLevel = 10; //signal must be higher that 1% to report a beat
+
 
 
 unsigned int minDelay = 29;   // How long should we wait at least before the next beat?
@@ -120,6 +124,7 @@ void loop() {
   int guess = 0;
 
   double n;         // a float for reading each FFT bin magnitude
+  unsigned long currentMillis = millis();
 
   // is the FFT available?
   if (myFFT.available()) {
@@ -164,17 +169,33 @@ void loop() {
     if ((sum > thr) && (curDel >= minDelay) && (sum >= minLevel)) { // There's a beat
       avgDelay += ( curDel - avgDelay) / numReadings;
       curDel = 0; // restart the counter when the delay is at least the average
-      digitalWrite(led, HIGH);   // turn the LED on (HIGH is the voltage level)
-      delay(ONtime);               // wait for a second
-      digitalWrite(led, LOW);    // turn the LED off by making the voltage LOW
+
+      //better delay function, so we do not miss any beats (rob)
+      if (currentMillis - ledStarted >= ONtime_mills) {
+        ledStarted = currentMillis;
+        if (ledState == LOW) {
+          digitalWrite(led, HIGH);   // turn the LED on (HIGH is the voltage level)
+        } else {
+          digitalWrite(led, LOW);    // turn the LED off by making the voltage LOW
+        }
+        digitalWrite(LED_BUILTIN, ledState);
+      }
     }
 
     if ((curDel >= 2.0 * round(avgDelay)) && (curDel > minDelay) && (sum >= minLevel)) { // There's a beat
       curDel = 0;
       guess = 1;
-      digitalWrite(led, HIGH);   // turn the LED on (HIGH is the voltage level)
-      delay(ONtime);               // wait for a second
-      digitalWrite(led, LOW);    // turn the LED off by making the voltage LOW
+
+      //better delay function, so we do not miss any beats (commented by rob)
+      if (currentMillis - ledStarted >= ONtime_mills) {
+        ledStarted = currentMillis;
+        if (ledState == LOW) {
+          digitalWrite(led, HIGH);   // turn the LED on (HIGH is the voltage level)
+        } else {
+          digitalWrite(led, LOW);    // turn the LED off by making the voltage LOW
+        }
+        digitalWrite(LED_BUILTIN, ledState);
+      }
     }
     Serial.print(sum, 5);
     Serial.print("\t");
