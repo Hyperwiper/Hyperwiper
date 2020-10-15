@@ -32,7 +32,6 @@ const int numReadings = 7; // How many ODFs are we using for average?
 const int noBins = 512; // number of real bins used in the FFT (total number of bins should be double this)
 const int LPorder = 7; // Linear predictor order
 const int led = 13;
-const int ONtime = 10;
 const int ONtime_mills = 10;   // time for better delay function
 int ledState = LOW;
 unsigned long ledStarted = 0;
