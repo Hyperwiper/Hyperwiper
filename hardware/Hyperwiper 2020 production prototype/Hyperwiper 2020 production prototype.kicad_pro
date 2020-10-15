@@ -85,8 +85,8 @@
         "padstack": "error",
         "pth_inside_courtyard": "ignore",
         "shorting_items": "error",
-        "silk_clearance": "error",
-        "silk_over_pad": "error",
+        "silk_over_copper": "error",
+        "silk_overlap": "error",
         "skew_out_of_range": "error",
         "too_many_vias": "error",
         "track_dangling": "warning",
@@ -296,6 +296,7 @@
       "global_label_dangling": "error",
       "hier_label_mismatch": "error",
       "label_dangling": "error",
+      "lib_symbol_issues": "warning",
       "multiple_net_names": "error",
       "net_not_bus_member": "error",
       "no_connect_connected": "error",
@@ -353,7 +354,7 @@
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.75,
         "via_diameter": 1.2,
-        "via_drill": 0.8,
+        "via_drill": 0.4,
         "wire_width": 6.0
       }
     ],
@@ -382,6 +383,10 @@
       "default_text_size": 50.0,
       "default_wire_thickness": 6.0,
       "field_names": [],
+      "intersheets_ref_prefix": "",
+      "intersheets_ref_short": false,
+      "intersheets_ref_show": false,
+      "intersheets_ref_suffix": "",
       "pin_symbol_size": 25.0,
       "text_offset_ratio": 0.3
     },

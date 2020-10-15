@@ -47,7 +47,7 @@ To be done (2020-10-08):
       - start time pulse and actual reed relay signal recieving
       - aquired reed relay signal and stoptime
 
-    setup test for getting delay of start morot and activity on magnet
+    setup test for getting delay of start motor and activity on magnet
     setup marker for reading the variables storage to and from eeprom and init the memory used.
 
     EEPROMex.h modified:
@@ -182,6 +182,10 @@ void setup() {
       monoMix.gain(0, 0.2);
       monoMix.gain(1, 0.2);
     
+
+    //test for collecting time for dlay start_motor and reed_read (new name for reed activity.)
+
+
     //display end of setup
       delay(1000);
       Serial.println("Audio setup finished");
