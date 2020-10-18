@@ -13,6 +13,10 @@ email rob@yr-design.biz
 
 #include <Arduino.h>
 #include <Bounce.h>
+#include <Wire.h>
+#include <SPI.h>
+#include <SD.h>
+
 
 //Pins setup
         int beatRedPin = 2;

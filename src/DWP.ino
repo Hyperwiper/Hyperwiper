@@ -78,7 +78,7 @@ static char VERSION[] = "V2.0.8";;
 
 
 //init variables setup
-        Bounce pushbutton = Bounce(magnetPin, 5);  
+        Bounce pushbutton = Bounce(magnetPin, 10);  
         boolean beatPulse;
         boolean motorOn= false;
         boolean magnetOn= false;
@@ -86,6 +86,7 @@ static char VERSION[] = "V2.0.8";;
         int ledState = LOW;  
         long minTimeSet=6000;
         int trigger_level = 0;
+        int run_reed_leave_time = 0;
 
         //EEPROM setup
         const int maxAllowedWrites = 80;
@@ -127,7 +128,7 @@ static char VERSION[] = "V2.0.8";;
         const int numReadings = 7; // How many ODFs are we using for average?
         const int noBins = 512; // number of real bins used in the FFT (total number of bins should be double this)
         const int LPorder = 7; // Linear predictor order
-        const int led = 13;
+        // const int led = 13;
         const int ONtime_mills = 10;   // time for better delay function
         unsigned long ledStarted = 0;
 
@@ -203,11 +204,26 @@ static char VERSION[] = "V2.0.8";;
                   digitalWrite(motorPin, HIGH);
               Serial.println("motor stopped");
     }
+
+    void minloop(long minTime)
+      {
+      // create the minimum timing for the wiper motor to wait for next beat
+         unsigned long currentMillis = millis();  
+        if(currentMillis - previousMillis > (unsigned)minTime) {
+          previousMillis = currentMillis;  
+          // run motor
+            rgbLedMotor.writeRGB(0,255,0);
+            motorOn= true;
+                digitalWrite(motorPin, LOW);
+            // magnetOn=false;
+            Serial.println("motor running");
+        }
+      }
           
    void setup() {
           //serial start 
             Serial.begin(9600);
-            delay(100);
+            delay(1000);
           
           //EEPROM setup for Teensy4
             EEPROM.setMemPool(memBase, EEPROMSizeTeensy40);
@@ -215,25 +231,10 @@ static char VERSION[] = "V2.0.8";;
             addressLong   = EEPROM.getAddress(sizeof(long));
             trigger_level = EEPROM.readLong(addressLong);
 
-
           // setup pins for switches
               pinMode(motorPin, OUTPUT);
               pinMode(magnetPin, INPUT_PULLUP);
               pinMode(potPin, INPUT);
-
-          //for giving serial time to initialize
-              delay(200);
-
-          //display status on serial
-            Serial.print("Version=");
-            Serial.println(VERSION);
-            Serial.print("Setup Mode=");
-            Serial.println(setupmode);
-            Serial.print("Trigger_level=");
-            Serial.println((trigger_level)*10000);
-            Serial.print("magnetOn=");
-            Serial.println(magnetOn);
-
 
           // Audio connections require memory to work.
           AudioMemory(150); // To Do: check the actual memory used and free the rest
@@ -261,48 +262,67 @@ static char VERSION[] = "V2.0.8";;
     
 
     //test for collecting time for delay start_motor and reed_read (new name for reed activity.)
-      run_motor();
+            //run motor
+            rgbLedMotor.writeRGB(0,255,0);
+            motorOn= true;
+                digitalWrite(motorPin, LOW);
+            //calculate time for reaching reedswitch
+            while (digitalRead(magnetPin)==1){
+              run_reed_leave_time=millis();
+            }
+
+      //display status on serial
+          Serial.print("Version=");
+          Serial.println(VERSION);
+          Serial.print("Setup Mode=");
+          Serial.println(setupmode);
+          Serial.print("Trigger_level=");
+          Serial.println((trigger_level)*10000);
+          Serial.print("magnetOn=");
+          Serial.println(magnetOn);
+          Serial.print("Time from startpulse to reaching magnet is:");
+          Serial.println (run_reed_leave_time);
+          rgbLedMotor.writeRGB(255,0,0);//red for motor passed reed switch
+      
+      delay(5000);
 
 
     //display end of setup
-      delay(1000);
       Serial.println("Audio setup finished");
       Serial.println("Init finished");
-
-
 }
 
 
 
 void loop() {
  
-     //sets minimum time for wiper for 
-    // unsigned long currentT = millis();
-      if(magnetOn){
-              int minTimeSet=6000;
-              minloop(minTimeSet);
-              magnetOn= true;
-              // if(motorOn) {
-              //     stop_motor();
-              //   }
-            }else{        
-              minloop(minTimeSet);
-            } 
+//sets minimum time for wiper for 
+// unsigned long currentT = millis();
+  // if(magnetOn){
+  //     int minTimeSet=6000;
+  //     minloop(minTimeSet);
+  //     magnetOn= true;
+  //     // if(motorOn) {
+  //     //     stop_motor();
+  //     //   }
+  //   }else{        
+  //     minloop(minTimeSet);
+  //   } 
 
   // display magnet status
   if (pushbutton.update()) {
     if (pushbutton.risingEdge()) {
       count = count + 1;
     Serial.println("magnet is leaving");
-      rgbLedMotor.writeRGB(255,60,0);
+      // rgbLedMotor.writeRGB(255,60,0);
       countAt = millis();
       magnetOn= true;
     }
     if (pushbutton.fallingEdge()) {
     Serial.println("magnet is arrived");
-      rgbLedMotor.writeRGB(0,128,0);
+      // rgbLedMotor.writeRGB(0,128,0);
       countAt = millis();
-      magnetOn= false;
+      magnetOn= true;
 
     }
   } else {
@@ -383,28 +403,26 @@ void loop() {
       if (currentMillis - ledStarted >= ONtime_mills) {
         ledStarted = currentMillis;
         if (ledState == LOW) {
-          digitalWrite(led, HIGH);   // turn the LED on (HIGH is the voltage level)
+          rgbLedBeat.writeRGB(255,255,255);   // turn the LED on (HIGH is the voltage level)
         } else {
-          digitalWrite(led, LOW);    // turn the LED off by making the voltage LOW
+           rgbLedBeat.writeRGB(0,0,0);    // turn the LED off by making the voltage LOW
         }
-        digitalWrite(LED_BUILTIN, ledState);
-      }
+     }
     }
 
     if ((curDel >= 2.0 * round(avgDelay)) && (curDel > minDelay) && (sum >= minLevel)) { // There's a beat
       curDel = 0;
       guess = 1;
 
-      //better delay function, so we do not miss any beats (commented by rob)
+      //better delay function, so we do not miss any beats (rob)
       if (currentMillis - ledStarted >= ONtime_mills) {
         ledStarted = currentMillis;
         if (ledState == LOW) {
-          digitalWrite(led, HIGH);   // turn the LED on (HIGH is the voltage level)
+          rgbLedBeat.writeRGB(255,255,255);   // turn the LED on (HIGH is the voltage level)
         } else {
-          digitalWrite(led, LOW);    // turn the LED off by making the voltage LOW
+           rgbLedBeat.writeRGB(0,0,0);    // turn the LED off by making the voltage LOW
         }
-        digitalWrite(LED_BUILTIN, ledState);
-      }
+     }
     }
     Serial.print(sum, 5);
     Serial.print("\t");
@@ -417,16 +435,6 @@ void loop() {
 }
 
 
-void minloop(long minTime)
-      {
-      // create the minimum timing for the wiper motor to wait for next beat
-      
-         unsigned long currentMillis = millis();
-          
-        if(currentMillis - previousMillis > (unsigned)minTime) {
-          previousMillis = currentMillis;  
-            run_motor();
-        }
-      }
+
 
 
