@@ -39,14 +39,15 @@
 
 
 
-To be done (2020-10-08):
+To be done (2020-10-18):
 
     Variables needed for storage:
-      - Pot timing
-      - one wipe pluse lengh
-      - windows beats number for sliding window
-      - start time pulse and actual reed relay signal recieving
-      - aquired reed relay signal and stoptime
+      - Pot timing -                                                  pot_time
+      - one wipe pluse lengh                                          one_wipe_time
+      - windows beats number for sliding window                       
+      - start time pulse and actual reed relay signal recieving       run_reed_leave_time
+      - aquired reed relay signal and stoptime                        return_reed_rest_time
+
 
     setup test for getting delay of start motor and activity on magnet
     setup marker for reading the variables storage to and from eeprom and init the memory used.
@@ -70,20 +71,11 @@ static char VERSION[] = "V2.0.8";;
   #include <Wire.h>
   #include <SD.h>
 
-
 //Pins setup
-        //old data
-        // int beatRedPin = 2;
-        // int beatGreenPin = 3;
-        // int beatBluePin = 4;
-  
-        // int motorRedPin = 5;
-        // int motorGreenPin = 6;
-        // int motorBluePin = 9;
-
         int magnetPin = 14;
-        int outputPin = 16;
+        int motorPin = 16;
         int potPin=17;
+
 
 //init variables setup
         Bounce pushbutton = Bounce(magnetPin, 5);  
@@ -105,6 +97,9 @@ static char VERSION[] = "V2.0.8";;
         //RGB LED pins setup
         RGBLED rgbLedBeat(2,3,4,COMMON_CATHODE);
         RGBLED rgbLedMotor(5,6,9,COMMON_CATHODE);
+
+        //Setup motor pin and reed pins
+
 
         //Audio setup
         AudioInputI2S       audioInput;
@@ -142,8 +137,6 @@ static char VERSION[] = "V2.0.8";;
         float prevMags[noBins][LPorder]; // Previous magnitudes for LP prediction
         double ks[LPorder]; // weigths of the previous samples in the prediction of the current
         float minLevel = 10; //signal must be higher that 1% to report a beat
-
-
 
         unsigned int minDelay = 29;   // How long should we wait at least before the next beat?
         double lambda = .6; // weight of the median
@@ -188,13 +181,30 @@ static char VERSION[] = "V2.0.8";;
           }
         }
 
-                //display magnet info  setup 
-                byte previousState = HIGH;         // what state was the button last time
-                unsigned int count = 0;            // how many times has it changed to low
-                unsigned long countAt = 0;         // when count changed
-                unsigned int countPrinted = 0;     // last count printed
+            //display magnet info  setup 
+            byte previousState = HIGH;         // what state was the button last time
+            unsigned int count = 0;            // how many times has it changed to low
+            unsigned long countAt = 0;         // when count changed
+            unsigned int countPrinted = 0;     // last count printed
+
+
+    void run_motor() {
+            rgbLedMotor.writeRGB(0,255,0);
+            motorOn= true;
+                digitalWrite(motorPin, LOW);
+            // magnetOn=false;
+            Serial.println("motor running");
+
+    }
+
+    void stop_motor() {
+              rgbLedMotor.writeRGB(255,0,0);
+              motorOn= false; 
+                  digitalWrite(motorPin, HIGH);
+              Serial.println("motor stopped");
+    }
           
-        void setup() {
+   void setup() {
           //serial start 
             Serial.begin(9600);
             delay(100);
@@ -207,32 +217,23 @@ static char VERSION[] = "V2.0.8";;
 
 
           // setup pins for switches
-            // // beatleds
-            //   pinMode(beatRedPin, OUTPUT);
-            //   pinMode(beatGreenPin, OUTPUT);
-            //   pinMode(beatBluePin, OUTPUT);
-            // // motorleds
-            //   pinMode(motorRedPin, OUTPUT);
-            //   pinMode(motorGreenPin, OUTPUT);
-            //   pinMode(motorBluePin, OUTPUT);
-            // misc pins
-              pinMode(outputPin, OUTPUT);
+              pinMode(motorPin, OUTPUT);
               pinMode(magnetPin, INPUT_PULLUP);
               pinMode(potPin, INPUT);
 
-            delay(1000);
-            Serial.println("Magnet switch setup done");
-            //display status on serial
-              Serial.print("Version=");
-              Serial.println(VERSION);
-              Serial.print("Setup Mode=");
-              Serial.println(setupmode);
-              Serial.print("Trigger_level=");
-              Serial.println((trigger_level)*10000);
-              Serial.print("magnetOn=");
-              Serial.println(magnetOn);
+          //for giving serial time to initialize
+              delay(200);
 
-          
+          //display status on serial
+            Serial.print("Version=");
+            Serial.println(VERSION);
+            Serial.print("Setup Mode=");
+            Serial.println(setupmode);
+            Serial.print("Trigger_level=");
+            Serial.println((trigger_level)*10000);
+            Serial.print("magnetOn=");
+            Serial.println(magnetOn);
+
 
           // Audio connections require memory to work.
           AudioMemory(150); // To Do: check the actual memory used and free the rest
@@ -260,6 +261,7 @@ static char VERSION[] = "V2.0.8";;
     
 
     //test for collecting time for delay start_motor and reed_read (new name for reed activity.)
+      run_motor();
 
 
     //display end of setup
@@ -267,7 +269,7 @@ static char VERSION[] = "V2.0.8";;
       Serial.println("Audio setup finished");
       Serial.println("Init finished");
 
-  //run_motor();
+
 }
 
 
@@ -427,16 +429,4 @@ void minloop(long minTime)
         }
       }
 
-void run_motor() {
-        rgbLedMotor.writeRGB(0,255,0);
-         motorOn= true;
-         magnetOn=false;
-         Serial.println("motor running");
 
-}
-
-void stop_motor() {
-          rgbLedMotor.writeRGB(255,0,0);
-          motorOn= false; 
-           Serial.println("motor stopped");
-}
