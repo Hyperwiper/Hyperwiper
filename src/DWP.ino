@@ -195,7 +195,7 @@ static char VERSION[] = "V2.0.9";;
             motorOn= true;
                 digitalWrite(motorPin, LOW);
             // magnetOn=false;
-            Serial.println("motor running");
+            Serial.println("motor_running");
 
     }
 
@@ -203,7 +203,7 @@ static char VERSION[] = "V2.0.9";;
               rgbLedMotor.writeRGB(255,0,0);
               motorOn= false; 
                   digitalWrite(motorPin, HIGH);
-              Serial.println("motor stopped");
+              Serial.println("motor_stopped");
     }
 
     void minloop(long minTime)
@@ -217,7 +217,7 @@ static char VERSION[] = "V2.0.9";;
             motorOn= true;
                 digitalWrite(motorPin, LOW);
             // magnetOn=false;
-            Serial.println("motor running by minloop");
+            Serial.println("minloop");
         }
       }
           
@@ -297,7 +297,7 @@ static char VERSION[] = "V2.0.9";;
 void loop() {
  
 //sets minimum time for wiper for 
-unsigned long currentT = millis();
+// unsigned long currentT = millis();
   if(magnetOn){
       int minTimeSet=6000;
       minloop(minTimeSet);
@@ -313,13 +313,13 @@ unsigned long currentT = millis();
   if (pushbutton.update()) {
     if (pushbutton.risingEdge()) {
       count = count + 1;
-    Serial.println("magnet is leaving");
+    Serial.println("magnet_leaving");
       rgbLedMotor.writeRGB(255,60,0);
       countAt = millis();
       magnetOn= true;
     }
     if (pushbutton.fallingEdge()) {
-    Serial.println("magnet is arrived");
+    Serial.println("magnet_arrived");
       rgbLedMotor.writeRGB(0,0,255);
       countAt = millis();
       magnetOn= false;
@@ -329,8 +329,6 @@ unsigned long currentT = millis();
     if (count != countPrinted) {
       unsigned long nowMillis = millis();
       if (nowMillis - countAt > 50) {
-        Serial.print("count: ");
-        Serial.println(count);
         countPrinted = count;
       }
     }
@@ -342,7 +340,7 @@ unsigned long currentT = millis();
       int minTimeSet=6000;
       minloop(minTimeSet);
       magnetOn= true;
-            rgbLedMotor.writeRGB(0,60,0);
+      rgbLedMotor.writeRGB(0,60,0);
       }else{        
       minloop(minTimeSet);
       } 
@@ -425,13 +423,20 @@ unsigned long currentT = millis();
         }
      }
     }
+    int magnet_show =(!magnetOn*10)+5;
     Serial.print(sum, 5);
     Serial.print("\t");
     Serial.print(thr, 5);
     Serial.print("\t");
     Serial.print(guess == 1 ? -200 : 0);
     Serial.print("\t");
-    Serial.println(curDel == 0 ? 200 : 0);
+    Serial.print(curDel == 0 ? 200 : 0);
+    Serial.print("\t");
+    Serial.print("count: ");
+    Serial.print(count);
+    Serial.print("\t");
+    Serial.print("magnet: ");
+    Serial.println(magnet_show);
   }
 }
 
