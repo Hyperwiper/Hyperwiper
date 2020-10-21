@@ -8,6 +8,7 @@
  contact rob@yr-design.biz
  
  revisions:
+ V2.0.9   2020-10-20 Updated for tests for magnet timing/leaving variables.
  V2.0.8   2020-10-17 intergrated lastest beat detection from Julian and Camilo
  V2.0.7   2020-10-08 added test for startup calculating the startup deley ansd storing in EEPROM
  V2.0.6   2020-17-09 added debouncer for cleaner signal of red switch
@@ -58,7 +59,7 @@ To be done (2020-10-18):
 
  */
 
-static char VERSION[] = "V2.0.8";;
+static char VERSION[] = "V2.0.9";;
 
 //set drivers 
   #include <SPI.h>
