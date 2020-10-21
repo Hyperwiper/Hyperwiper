@@ -213,11 +213,11 @@ static char VERSION[] = "V2.0.9";;
         if(currentMillis - previousMillis > (unsigned)minTime) {
           previousMillis = currentMillis;  
           // run motor
-            rgbLedMotor.writeRGB(0,255,0);
+            rgbLedMotor.writeRGB(255,255,0);
             motorOn= true;
                 digitalWrite(motorPin, LOW);
             // magnetOn=false;
-            Serial.println("motor running");
+            Serial.println("motor running by minloop");
         }
       }
           
@@ -263,7 +263,7 @@ static char VERSION[] = "V2.0.9";;
     
 
     //test for collecting time for delay start_motor and reed_read (new name for reed activity.)
-            //run motor
+            run_motor();
             rgbLedMotor.writeRGB(0,255,0);
             motorOn= true;
                 digitalWrite(motorPin, LOW);
@@ -291,10 +291,7 @@ static char VERSION[] = "V2.0.9";;
               //display end of setup
       delay(1000);
 
-
-
 }
-
 
 
 void loop() {
@@ -342,11 +339,12 @@ unsigned long currentT = millis();
 
   // Main loop
   if(magnetOn){
-      //int minTimeSet=6000;
-      // minloop(minTimeSet);
+      int minTimeSet=6000;
+      minloop(minTimeSet);
       magnetOn= true;
+            rgbLedMotor.writeRGB(0,60,0);
       }else{        
-      // minloop(minTimeSet);
+      minloop(minTimeSet);
       } 
       
   //Main audio beat detection
@@ -406,7 +404,7 @@ unsigned long currentT = millis();
       if (currentMillis - ledStarted >= ONtime_mills) {
         ledStarted = currentMillis;
         if (ledState == LOW) {
-          rgbLedBeat.writeRGB(255,255,255);   // turn the LED on (HIGH is the voltage level)
+          rgbLedBeat.writeRGB(255,255,0);   // turn the LED on (HIGH is the voltage level)
         } else {
            rgbLedBeat.writeRGB(0,0,0);    // turn the LED off by making the voltage LOW
         }
@@ -421,7 +419,7 @@ unsigned long currentT = millis();
       if (currentMillis - ledStarted >= ONtime_mills) {
         ledStarted = currentMillis;
         if (ledState == LOW) {
-          rgbLedBeat.writeRGB(255,255,255);   // turn the LED on (HIGH is the voltage level)
+          rgbLedBeat.writeRGB(255,0,255);   // turn the LED on (HIGH is the voltage level)
         } else {
            rgbLedBeat.writeRGB(0,0,0);    // turn the LED off by making the voltage LOW
         }
