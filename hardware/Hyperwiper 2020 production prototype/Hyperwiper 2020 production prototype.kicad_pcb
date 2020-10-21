@@ -44,6 +44,7 @@
     )
     (pcbplotparams
       (layerselection 0x00010fc_ffffffff)
+      (disableapertmacros false)
       (usegerberextensions false)
       (usegerberattributes true)
       (usegerberadvancedattributes true)
@@ -567,11 +568,6 @@
       (net 16 "Net-(K2-Pad4)") (tstamp bf2da09c-8d3b-41f4-b7df-48a44165eff7))
     (pad "5" thru_hole circle (at 1.95 -5.95 270) (size 2.5 2.5) (drill 1) (layers *.Cu *.Mask)
       (net 3 "Net-(K1-Pad3)") (tstamp 3a2bf155-e47c-4737-9360-8f5337665306))
-    (model "${KISYS3DMOD}/Relay_THT.3dshapes/Relay_SPDT_SANYOU_SRD_Series_Form_C.wrl"
-      (offset (xyz 0 0 0))
-      (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
-    )
     (model "${KIPRJMOD}/Songle SRD 12Volt black.wrl"
       (offset (xyz 17.5 8 0))
       (scale (xyz 0.4 0.41 0.4))
@@ -736,11 +732,6 @@
       (net 14 "Net-(J1-Pad2)") (tstamp 68b1fe59-22ec-424c-8023-aeae681eb092))
     (pad "5" thru_hole circle (at 1.95 -5.95 270) (size 2.5 2.5) (drill 1) (layers *.Cu *.Mask)
       (net 59 "Net-(J1-Pad1)") (tstamp 305c4256-a4ca-4591-9569-933ae6176c39))
-    (model "${KISYS3DMOD}/Relay_THT.3dshapes/Relay_SPDT_SANYOU_SRD_Series_Form_C.wrl"
-      (offset (xyz 0 0 0))
-      (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
-    )
     (model "${KIPRJMOD}/Songle SRD 12Volt black.wrl"
       (offset (xyz 17.5 8 0))
       (scale (xyz 0.4 0.41 0.4))

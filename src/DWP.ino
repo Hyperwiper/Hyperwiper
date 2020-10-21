@@ -137,7 +137,7 @@ static char VERSION[] = "V2.0.8";;
         double avgDelay = 0.0;  // Average delay
         float prevMags[noBins][LPorder]; // Previous magnitudes for LP prediction
         double ks[LPorder]; // weigths of the previous samples in the prediction of the current
-        float minLevel = 10; //signal must be higher that 1% to report a beat
+        float minLevel = 20; //signal must be higher that 1% to report a beat
 
         unsigned int minDelay = 29;   // How long should we wait at least before the next beat?
         double lambda = .6; // weight of the median
@@ -282,14 +282,16 @@ static char VERSION[] = "V2.0.8";;
           Serial.println(magnetOn);
           Serial.print("Time from startpulse to reaching magnet is:");
           Serial.println (run_reed_leave_time);
-          rgbLedMotor.writeRGB(255,0,0);//red for motor passed reed switch
+          Serial.println("Audio setup finished");
+          Serial.println("Init finished");
       
-      delay(5000);
+
+          rgbLedMotor.writeRGB(255,0,0);//red for motor passed reed switch
+              //display end of setup
+      delay(1000);
 
 
-    //display end of setup
-      Serial.println("Audio setup finished");
-      Serial.println("Init finished");
+
 }
 
 
@@ -297,33 +299,33 @@ static char VERSION[] = "V2.0.8";;
 void loop() {
  
 //sets minimum time for wiper for 
-// unsigned long currentT = millis();
-  // if(magnetOn){
-  //     int minTimeSet=6000;
-  //     minloop(minTimeSet);
-  //     magnetOn= true;
-  //     // if(motorOn) {
-  //     //     stop_motor();
-  //     //   }
-  //   }else{        
-  //     minloop(minTimeSet);
-  //   } 
+unsigned long currentT = millis();
+  if(magnetOn){
+      int minTimeSet=6000;
+      minloop(minTimeSet);
+      magnetOn= true;
+      // if(motorOn) {
+      //     stop_motor();
+      //   }
+    }else{        
+      minloop(minTimeSet);
+    } 
 
   // display magnet status
   if (pushbutton.update()) {
     if (pushbutton.risingEdge()) {
       count = count + 1;
     Serial.println("magnet is leaving");
-      // rgbLedMotor.writeRGB(255,60,0);
+      rgbLedMotor.writeRGB(255,60,0);
       countAt = millis();
       magnetOn= true;
     }
     if (pushbutton.fallingEdge()) {
     Serial.println("magnet is arrived");
-      // rgbLedMotor.writeRGB(0,128,0);
+      rgbLedMotor.writeRGB(0,0,255);
       countAt = millis();
-      magnetOn= true;
-
+      magnetOn= false;
+      stop_motor();
     }
   } else {
     if (count != countPrinted) {
