@@ -271,6 +271,8 @@ static char VERSION[] = "V2.0.9";;
             while (digitalRead(magnetPin)==1){
               run_reed_leave_time=millis();
             }
+            //display motor passed reed switch
+            rgbLedMotor.writeRGB(255,0,0);
 
       //display status on serial
           Serial.print("Version=");
@@ -285,10 +287,6 @@ static char VERSION[] = "V2.0.9";;
           Serial.println (run_reed_leave_time);
           Serial.println("Audio setup finished");
           Serial.println("Init finished");
-      
-
-          rgbLedMotor.writeRGB(255,0,0);//red for motor passed reed switch
-              //display end of setup
       delay(1000);
 
 }
