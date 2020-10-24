@@ -8,6 +8,7 @@
  contact rob@yr-design.biz
  
  revisions:
+ V2.1.0   2020-10-24 Made minloop longer for easier checking and 
  V2.0.9   2020-10-20 Updated for tests for magnet timing/leaving variables.
  V2.0.8   2020-10-17 intergrated lastest beat detection from Julian and Camilo
  V2.0.7   2020-10-08 added test for startup calculating the startup deley ansd storing in EEPROM
@@ -59,7 +60,7 @@ To be done (2020-10-18):
 
  */
 
-static char VERSION[] = "V2.0.9";;
+static char VERSION[] = "V2.1.0";;
 
 //set drivers 
   #include <SPI.h>
@@ -85,7 +86,7 @@ static char VERSION[] = "V2.0.9";;
         boolean magnetOn= false;
         long previousMillis = 0;
         int ledState = LOW;  
-        long minTimeSet=6000;
+        long minTimeSet=12000;
         int trigger_level = 0;
         int run_reed_leave_time = 0;
 
@@ -193,17 +194,15 @@ static char VERSION[] = "V2.0.9";;
     void run_motor() {
             rgbLedMotor.writeRGB(0,255,0);
             motorOn= true;
-                digitalWrite(motorPin, LOW);
-            // magnetOn=false;
+            digitalWrite(motorPin, LOW);
             Serial.println("motor_running");
-
     }
 
     void stop_motor() {
-              rgbLedMotor.writeRGB(255,0,0);
-              motorOn= false; 
-                  digitalWrite(motorPin, HIGH);
-              Serial.println("motor_stopped");
+            rgbLedMotor.writeRGB(255,0,0);
+            motorOn= false; 
+            digitalWrite(motorPin, HIGH);
+            Serial.println("motor_stopped");
     }
 
     void minloop(long minTime)
@@ -215,15 +214,14 @@ static char VERSION[] = "V2.0.9";;
           // run motor
             rgbLedMotor.writeRGB(255,255,0);
             motorOn= true;
-                digitalWrite(motorPin, LOW);
-            // magnetOn=false;
+            digitalWrite(motorPin, LOW);
             Serial.println("minloop");
         }
       }
           
    void setup() {
           //serial start 
-            Serial.begin(9600);
+            Serial.begin(115200);
             delay(1000);
           
           //EEPROM setup for Teensy4
@@ -263,16 +261,16 @@ static char VERSION[] = "V2.0.9";;
     
 
     //test for collecting time for delay start_motor and reed_read (new name for reed activity.)
-            run_motor();
-            rgbLedMotor.writeRGB(0,255,0);
-            motorOn= true;
-                digitalWrite(motorPin, LOW);
+              rgbLedMotor.writeRGB(0,255,0);
+              motorOn= true;
+              digitalWrite(motorPin, LOW);
             //calculate time for reaching reedswitch
             while (digitalRead(magnetPin)==1){
               run_reed_leave_time=millis();
             }
-            //display motor passed reed switch
-            rgbLedMotor.writeRGB(255,0,0);
+            //display motor passed reed switch and stop motor
+              rgbLedMotor.writeRGB(255,0,0);
+             digitalWrite(motorPin, HIGH);
 
       //display status on serial
           Serial.print("Version=");
@@ -294,19 +292,6 @@ static char VERSION[] = "V2.0.9";;
 
 void loop() {
  
-//sets minimum time for wiper for 
-// unsigned long currentT = millis();
-  if(magnetOn){
-      int minTimeSet=6000;
-      minloop(minTimeSet);
-      magnetOn= true;
-      // if(motorOn) {
-      //     stop_motor();
-      //   }
-    }else{        
-      minloop(minTimeSet);
-    } 
-
   // display magnet status
   if (pushbutton.update()) {
     if (pushbutton.risingEdge()) {
@@ -335,10 +320,9 @@ void loop() {
 
   // Main loop
   if(magnetOn){
-      int minTimeSet=6000;
       minloop(minTimeSet);
       magnetOn= true;
-      rgbLedMotor.writeRGB(0,60,0);
+      rgbLedMotor.writeRGB(0,255,0);
       }else{        
       minloop(minTimeSet);
       } 
@@ -404,6 +388,7 @@ void loop() {
         } else {
            rgbLedBeat.writeRGB(0,0,0);    // turn the LED off by making the voltage LOW
         }
+        run_motor();
      }
     }
 
@@ -419,9 +404,11 @@ void loop() {
         } else {
            rgbLedBeat.writeRGB(0,0,0);    // turn the LED off by making the voltage LOW
         }
+        run_motor();
      }
     }
     int magnet_show =(!magnetOn*10)+5;
+    int motor_show =(motorOn*20)+10;
     Serial.print(sum, 5);
     Serial.print("\t");
     Serial.print(thr, 5);
@@ -434,7 +421,10 @@ void loop() {
     Serial.print(count);
     Serial.print("\t");
     Serial.print("magnet: ");
-    Serial.println(magnet_show);
+    Serial.print(magnet_show);
+    Serial.print("\t");
+    Serial.print("motor: ");
+    Serial.println(motor_show);
   }
 }
 
