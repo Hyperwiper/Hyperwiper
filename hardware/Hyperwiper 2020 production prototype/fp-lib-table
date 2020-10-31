@@ -1,3 +1,4 @@
 (fp_lib_table
   (lib (name "Hyperwiper 2020 production prototype all")(type "KiCad")(uri "${KIPRJMOD}/Hyperwiper 2020 production prototype all.pretty")(options "")(descr ""))
+  (lib (name "Library")(type "KiCad")(uri "${KIPRJMOD}/Library.pretty")(options "")(descr ""))
 )

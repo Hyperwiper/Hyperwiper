@@ -1,4 +1,4 @@
-19008317392816684
+19011384196034583
 BK-53
 BAT_BK-53
 
@@ -52849,6 +52849,13 @@ Fuse Fuseholder TR5 Littelfuse/Wickmann No. 460 No560
 0
 2
 2
+HC-SR501
+HC-SR501
+
+
+0
+3
+3
 Heatsink
 Heatsink_35x26mm_1xFixation3mm_Fischer-SK486-35
 Heatsink, 35mm x 26mm, 1x Fixation 3mm, Fischer SK486-35
@@ -52947,6 +52954,69 @@ heatsink
 0
 2
 1
+Hyperwiper 2020 production prototype all
+LED_D5.0mm-4_RGB
+LED, diameter 5.0mm, 2 pins, diameter 5.0mm, 3 pins, diameter 5.0mm, 4 pins, http://www.kingbright.com/attachments/file/psearch/000/00/00/L-154A4SUREQBFZGEW(Ver.9A).pdf
+LED diameter 5.0mm 2 pins diameter 5.0mm 3 pins diameter 5.0mm 4 pins RGB RGBLED
+0
+4
+4
+Hyperwiper 2020 production prototype all
+LED_D5.0mm_Clear
+LED, diameter 5.0mm, 2 pins, http://cdn-reichelt.de/documents/datenblatt/A500/LL-504BC2E-009.pdf
+LED diameter 5.0mm 2 pins
+0
+2
+2
+Hyperwiper 2020 production prototype all
+Potentiometer_Piher_PT-10-V05_Vertical
+Potentiometer, vertical, Piher PT-10-V05, http://www.piher-nacesa.com/pdf/12-PT10v03.pdf
+Potentiometer vertical Piher PT-10-V05
+0
+3
+3
+Hyperwiper 2020 production prototype all
+R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal
+Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=10.16mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf
+Resistor Axial_DIN0207 series Axial Horizontal pin pitch 10.16mm 0.25W = 1/4W length 6.3mm diameter 2.5mm
+0
+2
+2
+Hyperwiper 2020 production prototype all
+Relay_SPDT_SANYOU_SRD_Series_Form_C
+relay Sanyou SRD series Form C http://www.sanyourelay.ca/public/products/pdf/SRD.pdf
+relay Sanyu SRD form C
+0
+5
+5
+Hyperwiper 2020 production prototype all
+TO-92_Inline
+TO-92 leads in-line, narrow, oval pads, drill 0.75mm (see NXP sot054_po.pdf)
+to-92 sc-43 sc-43a sot54 PA33 transistor
+0
+3
+3
+Hyperwiper 2020 production prototype all
+TO-220-3_Vertical
+TO-220-3, Vertical, RM 2.54mm, see https://www.vishay.com/docs/66542/to-220-1.pdf
+TO-220-3 Vertical RM 2.54mm
+0
+3
+3
+Hyperwiper 2020 production prototype all
+Teensy40
+
+
+0
+44
+44
+Hyperwiper 2020 production prototype all
+W237-3E
+<b>WAGO SREW CLAMP</b>
+
+0
+3
+3
 Inductor_SMD
 L_6.3x6.3_H3
 Choke, SMD, 6.3x6.3mm 3mm height
@@ -73912,62 +73982,6 @@ TO-264-5 Vertical RM 3.81mm
 0
 5
 5
-Plasma speaker Library
-C_1812_4532Metric
-Capacitor SMD 1812 (4532 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://www.nikhef.nl/pub/departments/mt/projects/detectorR_D/dtddice/ERJ2G.pdf), generated with kicad-footprint-generator
-capacitor
-0
-2
-2
-Plasma speaker Library
-ESP32-WROOM-32
-Single 2.4 GHz Wi-Fi and Bluetooth combo chip https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf
-Single 2.4 GHz Wi-Fi and Bluetooth combo  chip
-0
-39
-39
-Plasma speaker Library
-L_1812_4532Metric
-Inductor SMD 1812 (4532 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://www.nikhef.nl/pub/departments/mt/projects/detectorR_D/dtddice/ERJ2G.pdf), generated with kicad-footprint-generator
-inductor
-0
-2
-2
-Plasma speaker Library
-PinHeader_1x08_P2.54mm_Vertical
-Through hole straight pin header, 1x08, 2.54mm pitch, single row
-Through hole pin header THT 1x08 2.54mm single row
-0
-8
-8
-Plasma speaker Library
-Pin_D1.0mm_L10.0mm
-solder Pin_ diameter 1.0mm, hole diameter 1.0mm (press fit), length 10.0mm
-solder Pin_ press fit
-0
-1
-1
-Plasma speaker Library
-R_0201_0603Metric
-Resistor SMD 0201 (0603 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://www.vishay.com/docs/20052/crcw0201e3.pdf), generated with kicad-footprint-generator
-resistor
-0
-4
-2
-Plasma speaker Library
-SOT-23
-SOT-23, Standard
-SOT-23
-0
-3
-3
-Plasma speaker Library
-SolderWirePad_1x01_SMD_1x2mm
-Wire Pad, Square, SMD Pad,  5mm x 10mm,
-MesurementPoint Square SMDPad 5mmx10mm 
-0
-1
-1
 Potentiometer_SMD
 Potentiometer_ACP_CA6-VSMD_Vertical
 Potentiometer, vertical, ACP CA6-VSMD, http://www.acptechnologies.com/wp-content/uploads/2017/06/01-ACP-CA6.pdf

@@ -80,72 +80,69 @@ static char VERSION[] = "V2.1.0";;
 
 
 //init variables setup
-        Bounce pushbutton = Bounce(magnetPin, 10);  
-        boolean beatPulse;
-        boolean motorOn= false;
-        boolean magnetOn= false;
-        long previousMillis = 0;
-        int ledState = LOW;  
-        long minTimeSet=12000;
-        int trigger_level = 0;
-        int run_reed_leave_time = 0;
+          Bounce pushbutton = Bounce(magnetPin, 10);  
+          boolean motorOn= false;
+          boolean magnetOn= false;
+          long previousMillis = 0;
+          int ledState = LOW;  
+          int beatPulse=0;
+          int trigger_level = 0;
+          int run_reed_leave_time = 0;
+          long minTimeSet=12000;
 
         //EEPROM setup
-        const int maxAllowedWrites = 80;
-        const int memBase          = 120;
-        int addressLong;
-        int runpassed_interval= 180;
-        boolean setupmode = false;
+          const int maxAllowedWrites = 80;
+          const int memBase          = 120;
+          int addressLong;
+          int runpassed_interval= 180;
+          boolean setupmode = false;
 
         //RGB LED pins setup
-        RGBLED rgbLedBeat(2,3,4,COMMON_CATHODE);
-        RGBLED rgbLedMotor(5,6,9,COMMON_CATHODE);
-
-        //Setup motor pin and reed pins
-
+          RGBLED rgbLedBeat(2,3,4,COMMON_CATHODE);
+          RGBLED rgbLedMotor(5,6,9,COMMON_CATHODE);
 
         //Audio setup
-        AudioInputI2S       audioInput;
-        AudioOutputI2S      headphones;
-        AudioMixer4         monoMix;
-        AudioFilterBiquad   LPfilter;
-        AudioAnalyzeFFT1024  myFFT;
-        AudioEffectDelay    delayForL;
-        AudioEffectDelay    delayForR;
+          AudioInputI2S       audioInput;
+          AudioOutputI2S      headphones;
+          AudioMixer4         monoMix;
+          AudioFilterBiquad   LPfilter;
+          AudioAnalyzeFFT1024  myFFT;
+          AudioEffectDelay    delayForL;
+          AudioEffectDelay    delayForR;
 
-        AudioConnection c0(audioInput, 0, monoMix, 0);
-        AudioConnection c1(audioInput, 1, monoMix, 1);
-        AudioConnection c2(monoMix, 0, LPfilter, 0);
-        AudioConnection c3(LPfilter, 0, myFFT, 0);
-        AudioConnection c4(audioInput, 0, delayForL, 0);
-        AudioConnection c5(audioInput, 1, delayForR, 1);
-        AudioConnection c6(delayForL, 0, headphones, 0);
-        AudioConnection c7(delayForR, 0, headphones, 1);
+          AudioConnection c0(audioInput, 0, monoMix, 0);
+          AudioConnection c1(audioInput, 1, monoMix, 1);
+          AudioConnection c2(monoMix, 0, LPfilter, 0);
+          AudioConnection c3(LPfilter, 0, myFFT, 0);
+          AudioConnection c4(audioInput, 0, delayForL, 0);
+          AudioConnection c5(audioInput, 1, delayForR, 1);
+          AudioConnection c6(delayForL, 0, headphones, 0);
+          AudioConnection c7(delayForR, 0, headphones, 1);
 
-        // Specify which audio card we're using
-        AudioControlSGTL5000 audioShield;
+          // Specify which audio card we're using
+          AudioControlSGTL5000 audioShield;
 
         // Define global constants here
-        const int myInput = AUDIO_INPUT_LINEIN; // Are we using mic or line?
-        const int numReadings = 7; // How many ODFs are we using for average?
-        const int noBins = 512; // number of real bins used in the FFT (total number of bins should be double this)
-        const int LPorder = 7; // Linear predictor order
-        // const int led = 13;
-        const int ONtime_mills = 10;   // time for better delay function
-        unsigned long ledStarted = 0;
+          const int myInput = AUDIO_INPUT_LINEIN; // Are we using mic or line?
+          const int numReadings = 7; // How many ODFs are we using for average?
+          const int noBins = 512; // number of real bins used in the FFT (total number of bins should be double this)
+          const int LPorder = 7; // Linear predictor order
+          // const int led = 13;
+          const int ONtime_mills = 10;   // time for better delay function
+          unsigned long ledStarted = 0;
 
-        // Specifty global variables here
-        unsigned long curDel = 0;     // Current delay
-        double avgDelay = 0.0;  // Average delay
-        float prevMags[noBins][LPorder]; // Previous magnitudes for LP prediction
-        double ks[LPorder]; // weigths of the previous samples in the prediction of the current
-        float minLevel = 20; //signal must be higher that 1% to report a beat
+          // Specifty global variables here
+          unsigned long curDel = 0;     // Current delay
+          double avgDelay = 0.0;  // Average delay
+          float prevMags[noBins][LPorder]; // Previous magnitudes for LP prediction
+          double ks[LPorder]; // weigths of the previous samples in the prediction of the current
+          float minLevel = 20; //signal must be higher that 1% to report a beat
 
-        unsigned int minDelay = 29;   // How long should we wait at least before the next beat?
-        double lambda = .6; // weight of the median
-        double alpha = .6;  // weight of the mean
-        double m = 0.0;     // the mean of the previous ODFs
-        double median = 0.0;     // the median of the previous ODFs
+          unsigned int minDelay = 29;   // How long should we wait at least before the next beat?
+          double lambda = .6; // weight of the median
+          double alpha = .6;  // weight of the mean
+          double m = 0.0;     // the mean of the previous ODFs
+          double median = 0.0;     // the median of the previous ODFs
 
         void lp(int k) {
           // Computes the linear prediction weights for the previous values of a given bin k
@@ -185,10 +182,10 @@ static char VERSION[] = "V2.1.0";;
         }
 
             //display magnet info  setup 
-            byte previousState = HIGH;         // what state was the button last time
-            unsigned int count = 0;            // how many times has it changed to low
-            unsigned long countAt = 0;         // when count changed
-            unsigned int countPrinted = 0;     // last count printed
+              byte previousState = HIGH;         // what state was the button last time
+              unsigned int count = 0;            // how many times has it changed to low
+              unsigned long countAt = 0;         // when count changed
+              unsigned int countPrinted = 0;     // last count printed
 
 
     void run_motor() {
@@ -318,7 +315,7 @@ void loop() {
   }
 
 
-  // Main loop
+  // Main loop 
   if(magnetOn){
       minloop(minTimeSet);
       magnetOn= true;
@@ -388,7 +385,8 @@ void loop() {
         } else {
            rgbLedBeat.writeRGB(0,0,0);    // turn the LED off by making the voltage LOW
         }
-        run_motor();
+        beatPulse+1;
+        // run_motor();
      }
     }
 
@@ -404,7 +402,8 @@ void loop() {
         } else {
            rgbLedBeat.writeRGB(0,0,0);    // turn the LED off by making the voltage LOW
         }
-        run_motor();
+        beatPulse+1;
+        // run_motor();
      }
     }
     int magnet_show =(!magnetOn*10)+5;
