@@ -1,4 +1,4 @@
-19011384196034583
+19030632796022583
 BK-53
 BAT_BK-53
 
@@ -57707,6 +57707,90 @@ Yellow 5381 Series LED
 0
 2
 2
+Library
+C_Rect_L7.0mm_W2.5mm_P5.00mm
+C, Rect series, Radial, pin pitch=5.00mm, , length*width=7*2.5mm^2, Capacitor
+C Rect series Radial pin pitch 5.00mm  length 7mm width 2.5mm Capacitor
+0
+2
+2
+Library
+LED_D5.0mm-4_RGB
+LED, diameter 5.0mm, 2 pins, diameter 5.0mm, 3 pins, diameter 5.0mm, 4 pins, http://www.kingbright.com/attachments/file/psearch/000/00/00/L-154A4SUREQBFZGEW(Ver.9A).pdf
+LED diameter 5.0mm 2 pins diameter 5.0mm 3 pins diameter 5.0mm 4 pins RGB RGBLED
+0
+4
+4
+Library
+LED_D5.0mm_Clear
+LED, diameter 5.0mm, 2 pins, http://cdn-reichelt.de/documents/datenblatt/A500/LL-504BC2E-009.pdf
+LED diameter 5.0mm 2 pins
+0
+2
+2
+Library
+Potentiometer_Piher_PT-10-V05_Vertical
+Potentiometer, vertical, Piher PT-10-V05, http://www.piher-nacesa.com/pdf/12-PT10v03.pdf
+Potentiometer vertical Piher PT-10-V05
+0
+3
+3
+Library
+R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal
+Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=10.16mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf
+Resistor Axial_DIN0207 series Axial Horizontal pin pitch 10.16mm 0.25W = 1/4W length 6.3mm diameter 2.5mm
+0
+2
+2
+Library
+Relay_SPDT_SANYOU_SRD_Series_Form_C
+relay Sanyou SRD series Form C http://www.sanyourelay.ca/public/products/pdf/SRD.pdf
+relay Sanyu SRD form C
+0
+5
+5
+Library
+SW_NKK_GW12LJP
+Switch, single pole double throw, illuminated paddle, http://www.nkkswitches.com/pdf/gwillum.pdf
+switch single-pole double-throw spdt ON-ON illuminated LED
+0
+6
+6
+Library
+SW_SPST_REED_CT10-XXXX-G1
+Coto Technologies SPST Reed Switch CT10-XXXX-G1
+Coto Reed SPST Switch
+0
+2
+2
+Library
+TO-92_Inline
+TO-92 leads in-line, narrow, oval pads, drill 0.75mm (see NXP sot054_po.pdf)
+to-92 sc-43 sc-43a sot54 PA33 transistor
+0
+3
+3
+Library
+TO-220-3_Vertical
+TO-220-3, Vertical, RM 2.54mm, see https://www.vishay.com/docs/66542/to-220-1.pdf
+TO-220-3 Vertical RM 2.54mm
+0
+3
+3
+Library
+Teensy40
+
+
+0
+44
+44
+Library
+TerminalBlock_MetzConnect_Type011_RT05505HBWC_1x05_P5.00mm_Horizontal
+terminal block Metz Connect Type011_RT05505HBWC, 5 pins, pitch 5mm, size 25x10.5mm^2, drill diamater 1.4mm, pad diameter 2.8mm, see http://www.metz-connect.com/de/system/files/productfiles/Datenblatt_310111_RT055xxHBLC_OFF-022717S.pdf, script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_MetzConnect
+THT terminal block Metz Connect Type011_RT05505HBWC pitch 5mm size 25x10.5mm^2 drill 1.4mm pad 2.8mm
+0
+5
+5
 Logos Opensource
 Logo_copper_CC-BY-NC-SA_5x2mm
 CC BY-NC-SA logo, 5x2mm

@@ -44,11 +44,14 @@
 To be done (2020-10-18):
 
     Variables needed for storage:
-      - Pot timing -                                                  pot_time
+     
       - one wipe pluse lengh                                          one_wipe_time
       - windows beats number for sliding window                       
       - start time pulse and actual reed relay signal recieving       run_reed_leave_time
+
+      Done:
       - aquired reed relay signal and stoptime                        return_reed_rest_time
+      - Pot timing -                                                  pot_time
 
 
     setup test for getting delay of start motor and activity on magnet
@@ -77,6 +80,8 @@ static char VERSION[] = "V2.1.0";;
         int magnetPin = 14;
         int motorPin = 16;
         int potPin=17;
+        int potRead;
+        int potTime;
 
 
 //init variables setup
@@ -89,6 +94,7 @@ static char VERSION[] = "V2.1.0";;
           int trigger_level = 0;
           int run_reed_leave_time = 0;
           long minTimeSet=12000;
+          int beatPulseArray[4]={0,0,0,0};
 
         //EEPROM setup
           const int maxAllowedWrites = 80;
@@ -215,6 +221,16 @@ static char VERSION[] = "V2.1.0";;
             Serial.println("minloop");
         }
       }
+
+      void checkBeat(int bp){
+        Serial.print("beat count =");
+        Serial.println(bp);
+        Serial.print("value =");
+        Serial.println(beatPulseArray[bp]);
+      }
+
+
+
           
    void setup() {
           //serial start 
@@ -288,7 +304,10 @@ static char VERSION[] = "V2.1.0";;
 
 
 void loop() {
- 
+ if (beatPulseArray[1]>0){
+     //first beat detected 
+  }
+
   // display magnet status
   if (pushbutton.update()) {
     if (pushbutton.risingEdge()) {
@@ -313,7 +332,8 @@ void loop() {
       }
     }
   }
-
+  // read potmeter value for setup delay of beat in main loop
+  potRead = analogRead(potPin);
 
   // Main loop 
   if(magnetOn){
@@ -385,7 +405,8 @@ void loop() {
         } else {
            rgbLedBeat.writeRGB(0,0,0);    // turn the LED off by making the voltage LOW
         }
-        beatPulse+1;
+       beatPulse+1;
+       checkBeat(beatPulse);
         // run_motor();
      }
     }
@@ -403,6 +424,7 @@ void loop() {
            rgbLedBeat.writeRGB(0,0,0);    // turn the LED off by making the voltage LOW
         }
         beatPulse+1;
+        checkBeat(beatPulse);
         // run_motor();
      }
     }

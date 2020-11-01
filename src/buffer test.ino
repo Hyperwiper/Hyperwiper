@@ -1,34 +1,49 @@
 #include <Wire.h>
 #include <SPI.h>
 #include <SD.h>
-#include <CircularBuffer.h>
-
-CircularBuffer<int, 4> buffer;
 
 unsigned long time = 0;
-
-#define SAMPLE_PIN A0
+int beatPulseArray[4]={0,0,0,0};
+int beatPulse=0;
 
 void setup() {
 	Serial.begin(9600);
-	pinMode(SAMPLE_PIN, INPUT);
-	time = millis();
 }
 
-void loop() {
-	// samples A0 and prints the average of the latest hundred samples to console every 500ms
-	int reading = analogRead(A0);
-	buffer.push(reading);
+void missedBeat(int beatPulse){
+}
 
-	if (millis() - time >= 500) {
+void checkBeat(int bp){
+	Serial.print("beat count =");
+	Serial.println(bp);
+	Serial.print("value =");
+	Serial.println(beatPulseArray[bp]);
+}
+
+
+void loop() {
+	for (int i = 0; i < 3; i++) {
 		time = millis();
-		float avg = 0.0;
-		// the following ensures using the right type for the index variable
-		using index_t = decltype(buffer)::index_t;
-		for (index_t i = 0; i < buffer.size(); i++) {
-			avg += buffer[i] / (float)buffer.size();
-		}
-		Serial.print("Average is ");
-		Serial.println(avg);
+		beatPulseArray[i]=time;
+		delay(100);
 	}
+for (int i = 0; i < 3; i++) Serial.print(beatPulseArray[i]);
+Serial.println();
+
+delay(2000);
+
+
+
+//beat detected read current time 
+//store time beatPulse[x]
+//wait for next beat
+//store time in beatPulse[x+1]
+//subtract first beat time from second beat time
+//store difference
+//add difference to current time to calculate next beeat
+//wait for next beat
+//store time in beatPulse[x+2]
+//if next beat comes within half of the time between first and second beat and half after we do not have missed 
+//       a beat so we can calculate next beat and prepare for it.
+ //
 }
