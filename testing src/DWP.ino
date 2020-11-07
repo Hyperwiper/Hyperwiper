@@ -45,12 +45,12 @@ To be done (2020-10-18):
 
     Variables needed for storage:
      
-      - one wipe pluse lengh                                          one_wipe_time
+      - one wipe pluse length                                          one_wipe_time
       - windows beats number for sliding window                       
-      - start time pulse and actual reed relay signal recieving       run_reed_leave_time
+      - start time pulse and actual reed relay signal receiving       run_reed_leave_time
 
       Done:
-      - aquired reed relay signal and stoptime                        return_reed_rest_time
+      - acquired reed relay signal and stoptime                        return_reed_rest_time
       - Pot timing -                                                  pot_time
 
 
@@ -137,11 +137,11 @@ static char VERSION[] = "V2.1.0";;
           const int ONtime_mills = 10;   // time for better delay function
           unsigned long ledStarted = 0;
 
-          // Specifty global variables here
+          // Specify global variables here
           unsigned long curDel = 0;     // Current delay
           double avgDelay = 0.0;  // Average delay
           float prevMags[noBins][LPorder]; // Previous magnitudes for LP prediction
-          double ks[LPorder]; // weigths of the previous samples in the prediction of the current
+          double ks[LPorder]; // weights of the previous samples in the prediction of the current
           float minLevel = 20; //signal must be higher that 1% to report a beat
 
           unsigned int minDelay = 29;   // How long should we wait at least before the next beat?
@@ -308,6 +308,7 @@ void loop() {
      //first beat detected 
   }
 
+
   // display magnet status
   if (pushbutton.update()) {
     if (pushbutton.risingEdge()) {
@@ -334,6 +335,9 @@ void loop() {
   }
   // read potmeter value for setup delay of beat in main loop
   potRead = analogRead(potPin);
+
+  //convert posRead to half of one_wipe_time
+  //subtract from calculated expected beat
 
   // Main loop 
   if(magnetOn){

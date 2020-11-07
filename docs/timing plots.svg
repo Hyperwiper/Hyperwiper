@@ -126,16 +126,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.44090904"
-     inkscape:cx="183.4106"
-     inkscape:cy="907.58092"
+     inkscape:zoom="1.2470791"
+     inkscape:cx="723.87352"
+     inkscape:cy="966.22763"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1140"
+     inkscape:window-height="1142"
      inkscape:window-x="0"
-     inkscape:window-y="34"
+     inkscape:window-y="32"
      inkscape:window-maximized="1"
      showguides="false"
      inkscape:document-rotation="0"
@@ -516,5 +516,22 @@
        d="m 194.82849,117.27674 v 59.2925"
        id="path1366-36-9-2"
        inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.465;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.395, 1.395;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 261.38363,-56.397313 V 179.8378"
+       id="path2714"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;opacity:0.750347;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="56.95853"
+       y="263.27161"
+       id="text2718"
+       transform="rotate(-90)"><tspan
+         sodipodi:role="line"
+         id="tspan2716"
+         x="56.95853"
+         y="263.27161"
+         style="font-size:4.93889px;stroke-width:0.264583">third beat</tspan></text>
   </g>
 </svg>

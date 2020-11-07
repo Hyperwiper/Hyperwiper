@@ -11,18 +11,18 @@
     (via_costs 50)
     (plane_via_costs 5)
     (start_ripup_costs 100)
-    (start_pass_no 16)
+    (start_pass_no 374)
     (layer_rule F.Cu
       (active on)
       (preferred_direction horizontal)
       (preferred_direction_trace_costs 1.0)
-      (against_preferred_direction_trace_costs 2.4)
+      (against_preferred_direction_trace_costs 2.9)
     )
     (layer_rule B.Cu
       (active on)
       (preferred_direction vertical)
       (preferred_direction_trace_costs 1.0)
-      (against_preferred_direction_trace_costs 1.7)
+      (against_preferred_direction_trace_costs 1.5)
     )
   )
   (rule
@@ -44,7 +44,7 @@
     )
     (attach off)
   )
-  (padstack "Via[0-1]_1200:800_um"
+  (padstack "Via[0-1]_1200:400_um"
     (shape
       (circle F.Cu 1200.0 0.0 0.0)
     )
@@ -57,19 +57,19 @@
     "Via[0-1]_800:400_um" "Via[0-1]_800:400_um" default
   )
   (via 
-    "Via[0-1]_1200:800_um" "Via[0-1]_1200:800_um" default
+    "Via[0-1]_1200:400_um" "Via[0-1]_1200:400_um" default
   )
   (via 
     "Via[0-1]_800:400_um-kicad_default" "Via[0-1]_800:400_um" "kicad_default"
   )
   (via 
-    "Via[0-1]_1200:800_um-kicad_default" "Via[0-1]_1200:800_um" "kicad_default"
+    "Via[0-1]_1200:400_um-kicad_default" "Via[0-1]_1200:400_um" "kicad_default"
   )
   (via 
     "Via[0-1]_800:400_um-Power" "Via[0-1]_800:400_um" Power
   )
   (via 
-    "Via[0-1]_1200:800_um-Power" "Via[0-1]_1200:800_um" Power
+    "Via[0-1]_1200:400_um-Power" "Via[0-1]_1200:400_um" Power
   )
   (via_rule
     default "Via[0-1]_800:400_um"
@@ -78,10 +78,10 @@
     "kicad_default" "Via[0-1]_800:400_um-kicad_default"
   )
   (via_rule
-    Power "Via[0-1]_1200:800_um-Power"
+    Power "Via[0-1]_1200:400_um-Power"
   )
   (class default
-    /5V "Net-(J1-Pad4)" "Net-(K1-Pad3)" "Net-(K2-Pad2)" GND "Net-(Q1-Pad2)" "Net-(D1-Pad4)" "Net-(D1-Pad3)"
+    GND /5V "Net-(J1-Pad4)" "Net-(K1-Pad3)" "Net-(K2-Pad2)" "Net-(Q1-Pad2)" "Net-(D1-Pad4)" "Net-(D1-Pad3)"
     "Net-(D2-Pad4)" "Net-(D2-Pad3)" "Net-(D2-Pad1)" "Net-(D3-Pad2)" /reed "Net-(K1-Pad2)" "Net-(K2-Pad4)" "/motor_start"
     "/M_LED_b" "/M_LED_g" "/M_LED_r" "/B_LED_b" "/B_LED_g" "/B_LED_r" /Pot "Net-(U1-Pad1)"
     "Net-(U1-Pad2)" "Net-(U1-Pad3)" "Net-(U1-Pad9)" "Net-(U1-Pad10)" "Net-(U1-Pad12)" "Net-(U1-Pad13)" "Net-(U1-Pad14)" "Net-(U1-Pad15)"

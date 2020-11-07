@@ -22,6 +22,7 @@ void checkBeat(int bp){
 
 
 void loop() {
+	if (beatPulseArray[0]=0) Serial.print(" first beat");
 	for (int i = 0; i < 3; i++) {
 		time = millis();
 		beatPulseArray[i]=time;
@@ -40,7 +41,7 @@ delay(2000);
 //store time in beatPulse[x+1]
 //subtract first beat time from second beat time
 //store difference
-//add difference to current time to calculate next beeat
+//add difference to current time to calculate next beat
 //wait for next beat
 //store time in beatPulse[x+2]
 //if next beat comes within half of the time between first and second beat and half after we do not have missed 

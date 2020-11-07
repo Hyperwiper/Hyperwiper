@@ -1,0 +1,15 @@
+<!DOCTYPE MeshLabDocument>
+<MeshLabProject>
+ <MeshGroup>
+  <MLMesh filename="Hyperwiper 2020 production prototype.dae" label="Hyperwiper 2020 production prototype.dae" visible="1">
+   <MLMatrix44>
+1 0 0 0 
+0 1 0 0 
+0 0 1 0 
+0 0 0 1 
+</MLMatrix44>
+   <RenderingOption boxColor="234 234 234 255" solidColor="192 192 192 255" pointSize="3" wireColor="64 64 64 255" pointColor="131 149 69 255" wireWidth="1">100001010000000000000000000001011010001010100000000100111010100000001001</RenderingOption>
+  </MLMesh>
+ </MeshGroup>
+ <RasterGroup/>
+</MeshLabProject>
