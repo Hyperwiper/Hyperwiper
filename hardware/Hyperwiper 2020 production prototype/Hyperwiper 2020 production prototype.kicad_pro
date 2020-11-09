@@ -305,6 +305,7 @@
       "pin_not_connected": "error",
       "pin_not_driven": "error",
       "pin_to_pin": "warning",
+      "power_pin_not_driven": "error",
       "similar_labels": "error",
       "unresolved_variable": "error",
       "wire_dangling": "error"
@@ -347,10 +348,7 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "Power",
-        "nets": [
-          "Net-(J1-Pad1)",
-          "Net-(J1-Pad2)"
-        ],
+        "nets": [],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.75,
@@ -372,7 +370,7 @@
       "specctra_dsn": "Hyperwiper 2020 production prototype.dsn",
       "step": "Hyperwiper 2020 production prototype.step",
       "vmrl": "Hyperwiper 2020 production prototype.wrl",
-      "vrml": "Hyperwiper 2020 production prototype.wrl"
+      "vrml": "../../../../../../Downloads/temp/test.wrl"
     },
     "page_layout_descr_file": ""
   },
@@ -388,6 +386,7 @@
       "intersheets_ref_short": false,
       "intersheets_ref_show": false,
       "intersheets_ref_suffix": "",
+      "junction_size_choice": 3,
       "pin_symbol_size": 25.0,
       "text_offset_ratio": 0.3
     },
@@ -398,7 +397,7 @@
     },
     "net_format_name": "Pcbnew",
     "page_layout_descr_file": "",
-    "plot_directory": "",
+    "plot_directory": "./",
     "spice_adjust_passive_values": false,
     "spice_external_command": "spice \"%I\"",
     "subpart_first_id": 65,
@@ -406,7 +405,7 @@
   },
   "sheets": [
     [
-      "7b21c9bd-6508-4b38-9880-a682fbc480de",
+      "3b6b368f-81d8-4714-bab1-938a47e227b7",
       ""
     ]
   ],

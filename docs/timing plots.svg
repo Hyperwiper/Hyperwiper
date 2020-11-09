@@ -126,9 +126,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.2470791"
-     inkscape:cx="723.87352"
-     inkscape:cy="966.22763"
+     inkscape:zoom="0.88181808"
+     inkscape:cx="856.55394"
+     inkscape:cy="507.10468"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -533,5 +533,16 @@
          x="56.95853"
          y="263.27161"
          style="font-size:4.93889px;stroke-width:0.264583">third beat</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="292.60721"
+       y="199.6378"
+       id="text2790"><tspan
+         sodipodi:role="line"
+         id="tspan2788"
+         x="292.60721"
+         y="199.6378"
+         style="stroke-width:0.264583" /></text>
   </g>
 </svg>

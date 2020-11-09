@@ -11,7 +11,7 @@
     (via_costs 50)
     (plane_via_costs 5)
     (start_ripup_costs 100)
-    (start_pass_no 374)
+    (start_pass_no 274)
     (layer_rule F.Cu
       (active on)
       (preferred_direction horizontal)
@@ -82,13 +82,13 @@
   )
   (class default
     GND /5V "Net-(J1-Pad4)" "Net-(K1-Pad3)" "Net-(K2-Pad2)" "Net-(Q1-Pad2)" "Net-(D1-Pad4)" "Net-(D1-Pad3)"
-    "Net-(D2-Pad4)" "Net-(D2-Pad3)" "Net-(D2-Pad1)" "Net-(D3-Pad2)" /reed "Net-(K1-Pad2)" "Net-(K2-Pad4)" "/motor_start"
-    "/M_LED_b" "/M_LED_g" "/M_LED_r" "/B_LED_b" "/B_LED_g" "/B_LED_r" /Pot "Net-(U1-Pad1)"
-    "Net-(U1-Pad2)" "Net-(U1-Pad3)" "Net-(U1-Pad9)" "Net-(U1-Pad10)" "Net-(U1-Pad12)" "Net-(U1-Pad13)" "Net-(U1-Pad14)" "Net-(U1-Pad15)"
-    "Net-(U1-Pad16)" "Net-(U1-Pad17)" "Net-(U1-Pad18)" "Net-(U1-Pad19)" "Net-(U1-Pad20)" "Net-(U1-Pad22)" "Net-(U1-Pad25)" "Net-(U1-Pad26)"
-    "Net-(U1-Pad27)" "Net-(U1-Pad28)" "Net-(U1-Pad29)" "Net-(U1-Pad30)" "Net-(U1-Pad31)" "Net-(U1-Pad34)" "Net-(U1-Pad35)" "Net-(U1-Pad36)"
-    "Net-(U1-Pad37)" "Net-(U1-Pad38)" "Net-(U1-Pad39)" "Net-(U1-Pad40)" "Net-(U1-Pad41)" "Net-(U1-Pad42)" "Net-(U1-Pad43)" "Net-(U1-Pad44)"
-    "Net-(D1-Pad1)"
+    "Net-(D2-Pad4)" "Net-(D2-Pad3)" "Net-(D2-Pad1)" "Net-(D3-Pad2)" /reed "Net-(J1-Pad2)" "Net-(K1-Pad2)" "Net-(K2-Pad4)"
+    "/motor_start" "/M_LED_b" "/M_LED_g" "/M_LED_r" "/B_LED_b" "/B_LED_g" "/B_LED_r" /Pot
+    "Net-(U1-Pad1)" "Net-(U1-Pad2)" "Net-(U1-Pad3)" "Net-(U1-Pad9)" "Net-(U1-Pad10)" "Net-(U1-Pad12)" "Net-(U1-Pad13)" "Net-(U1-Pad14)"
+    "Net-(U1-Pad15)" "Net-(U1-Pad16)" "Net-(U1-Pad17)" "Net-(U1-Pad18)" "Net-(U1-Pad19)" "Net-(U1-Pad20)" "Net-(U1-Pad22)" "Net-(U1-Pad25)"
+    "Net-(U1-Pad26)" "Net-(U1-Pad27)" "Net-(U1-Pad28)" "Net-(U1-Pad29)" "Net-(U1-Pad30)" "Net-(U1-Pad31)" "Net-(U1-Pad34)" "Net-(U1-Pad35)"
+    "Net-(U1-Pad36)" "Net-(U1-Pad37)" "Net-(U1-Pad38)" "Net-(U1-Pad39)" "Net-(U1-Pad40)" "Net-(U1-Pad41)" "Net-(U1-Pad42)" "Net-(U1-Pad43)"
+    "Net-(U1-Pad44)" "Net-(D1-Pad1)" "Net-(J1-Pad1)" "Net-(U3-Pad1)"
     (clearance_class default)
     (via_rule default)
     (rule
@@ -109,7 +109,6 @@
     )
   )
   (class Power
-    "Net-(J1-Pad2)" "Net-(J1-Pad1)"
     (clearance_class Power)
     (via_rule Power)
     (rule
