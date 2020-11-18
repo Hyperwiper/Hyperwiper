@@ -8,6 +8,7 @@
  contact rob@yr-design.biz
  
  revisions:
+ V2.1.1   2020-11-18  Added start_motor_reach_magnet timeing 
  V2.1.0   2020-10-24 Made minloop longer for easier checking and 
  V2.0.9   2020-10-20 Updated for tests for magnet timing/leaving variables.
  V2.0.8   2020-10-17 intergrated lastest beat detection from Julian and Camilo
@@ -48,6 +49,8 @@ To be done (2020-10-18):
       - one wipe pluse length                                          one_wipe_time
       - windows beats number for sliding window                       
       - start time pulse and actual reed relay signal receiving       run_reed_leave_time
+      - add stop motor time with the pass magnet information that is calculated from the start-motor-reach-magnet time in the setup
+        also need to be changed for one pas and a return PLUS adding te run_reed_leave_time to be sure the wiper is back in the resting postion
 
       Done:
       - acquired reed relay signal and stoptime                        return_reed_rest_time
@@ -63,7 +66,7 @@ To be done (2020-10-18):
 
  */
 
-static char VERSION[] = "V2.1.0";;
+static char VERSION[] = "V2.1.1";;
 
 //set drivers 
   #include <SPI.h>
@@ -203,6 +206,7 @@ static char VERSION[] = "V2.1.0";;
     void stop_motor() {
             rgbLedMotor.writeRGB(255,0,0);
             motorOn= false; 
+
             digitalWrite(motorPin, HIGH);
             Serial.println("motor_stopped");
     }
@@ -273,6 +277,7 @@ static char VERSION[] = "V2.1.0";;
               run_reed_leave_time=millis();
             }
             //display motor passed reed switch and stop motor
+            //need to be changed for one pas and a return PLS adding te run_reed_leave_time to be sure the wiper is back in the resting postion
               rgbLedMotor.writeRGB(255,0,0);
              digitalWrite(motorPin, HIGH);
 
