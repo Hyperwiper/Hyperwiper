@@ -120,12 +120,12 @@
         "solder_paste_margin_ratio": -0.0
       },
       "track_widths": [
-        0.25
+        0.0
       ],
       "via_dimensions": [
         {
-          "diameter": 0.8,
-          "drill": 0.4
+          "diameter": 0.0,
+          "drill": 0.0
         }
       ],
       "zones_allow_external_fillets": false,
@@ -349,7 +349,14 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "Power",
-        "nets": [],
+        "nets": [
+          "+3V3",
+          "/5V",
+          "GND",
+          "Net-(D4-Pad1)",
+          "Net-(J1-Pad1)",
+          "Net-(J1-Pad2)"
+        ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.75,
@@ -406,7 +413,7 @@
   },
   "sheets": [
     [
-      "268f5f84-e58a-4e68-91be-b42c9314e87d",
+      "bd4ae7d2-c3d6-4402-9dc2-16cef8bccf9d",
       ""
     ]
   ],
