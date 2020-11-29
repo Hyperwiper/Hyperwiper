@@ -6,6 +6,10 @@
 */
 #include <RGBLED.h>
 #include <Arduino.h>
+ #include <SPI.h>
+   #include <Audio.h>
+  #include <Wire.h>
+  #include <SD.h>
 
 RGBLED rgbLedBeat(2,3,4,COMMON_CATHODE);
 RGBLED rgbLedMotor(5,6,9,COMMON_CATHODE);
@@ -18,12 +22,12 @@ void setup() {
 
 void loop() {
   //Orange
-  rgbLedBeat.writeRGB(255,60,0);
+  rgbLedBeat.writeRGB(0,0,255);
   delay(delayMs);
   rgbLedBeat.writeRGB(0,0,0);
 
   // light green
-  rgbLedMotor.writeRGB(80,0,128);
+  rgbLedMotor.writeRGB(0,0,255);
   delay(delayMs);
   rgbLedMotor.writeRGB(0,0,0);
 

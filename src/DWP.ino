@@ -206,7 +206,6 @@ static char VERSION[] = "V2.1.1";;
     void stop_motor() {
             rgbLedMotor.writeRGB(255,0,0);
             motorOn= false; 
-
             digitalWrite(motorPin, HIGH);
             Serial.println("motor_stopped");
     }
@@ -218,10 +217,11 @@ static char VERSION[] = "V2.1.1";;
         if(currentMillis - previousMillis > (unsigned)minTime) {
           previousMillis = currentMillis;  
           // run motor
-            rgbLedMotor.writeRGB(255,255,0);
+            // rgbLedMotor.writeRGB(255,255,0);
             motorOn= true;
-            digitalWrite(motorPin, LOW);
+            // digitalWrite(motorPin, LOW);
             Serial.println("minloop");
+            run_motor;
         }
       }
 
@@ -229,8 +229,9 @@ static char VERSION[] = "V2.1.1";;
          
    void setup() {
           //serial start 
-            Serial.begin(115200);
+            Serial.begin(9600);
             delay(1000);
+            Serial.println("Start serial");
           
           //EEPROM setup for Teensy4
             EEPROM.setMemPool(memBase, EEPROMSizeTeensy40);
@@ -272,6 +273,7 @@ static char VERSION[] = "V2.1.1";;
               rgbLedMotor.writeRGB(0,255,0);
               motorOn= true;
               digitalWrite(motorPin, LOW);
+              Serial.println("Start motor");
             //calculate time for reaching reedswitch
             while (digitalRead(magnetPin)==1){
               run_reed_leave_time=millis();
@@ -301,7 +303,6 @@ static char VERSION[] = "V2.1.1";;
 
 void loop() {
 
-
  // display magnet status
   if (pushbutton.update()) {
     if (pushbutton.risingEdge()) {
@@ -328,7 +329,6 @@ void loop() {
   }
   // read potmeter value for setup delay of beat in main loop
   potRead = analogRead(potPin);
-
   //convert posRead to half of one_wipe_time
   //subtract from calculated expected beat
 
@@ -397,6 +397,7 @@ void loop() {
       //better delay function, so we do not miss any beats (rob)
       if (currentMillis - ledStarted >= ONtime_mills) {
         ledStarted = currentMillis;
+        Serial.println("beat detected-1");
         if (ledState == LOW) {
           rgbLedBeat.writeRGB(255,255,0);   // turn the LED on (HIGH is the voltage level)
         } else {
@@ -409,7 +410,7 @@ void loop() {
     if ((curDel >= 2.0 * round(avgDelay)) && (curDel > minDelay) && (sum >= minLevel)) { // There's a beat
       curDel = 0;
       guess = 1;
-
+      Serial.println("beat detected-2");
       //better delay function, so we do not miss any beats (rob)
       if (currentMillis - ledStarted >= ONtime_mills) {
         ledStarted = currentMillis;
@@ -421,24 +422,24 @@ void loop() {
         run_motor();
      }
     }
-    int magnet_show =(!magnetOn*10)+5;
-    int motor_show =(motorOn*20)+10;
-    Serial.print(sum, 5);
-    Serial.print("\t");
-    Serial.print(thr, 5);
-    Serial.print("\t");
-    Serial.print(guess == 1 ? -200 : 0);
-    Serial.print("\t");
-    Serial.print(curDel == 0 ? 200 : 0);
-    Serial.print("\t");
-    Serial.print("count: ");
-    Serial.print(count);
-    Serial.print("\t");
-    Serial.print("magnet: ");
-    Serial.print(magnet_show);
-    Serial.print("\t");
-    Serial.print("motor: ");
-    Serial.println(motor_show);
+    // int magnet_show =(!magnetOn*10)+5;
+    // int motor_show =(motorOn*20)+10;
+    // Serial.print(sum, 5);
+    // Serial.print("\t");
+    // Serial.print(thr, 5);
+    // Serial.print("\t");
+    // Serial.print(guess == 1 ? -200 : 0);
+    // Serial.print("\t");
+    // Serial.print(curDel == 0 ? 200 : 0);
+    // Serial.print("\t");
+    // Serial.print("count: ");
+    // Serial.print(count);
+    // Serial.print("\t");
+    // Serial.print("magnet: ");
+    // Serial.print(magnet_show);
+    // Serial.print("\t");
+    // Serial.print("motor: ");
+    // Serial.println(motor_show);
   }
 }
 
