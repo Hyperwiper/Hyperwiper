@@ -92,11 +92,13 @@ static char VERSION[] = "V2.1.1";;
           boolean motorOn= false;
           boolean magnetOn= false;
           long previousMillis = 0;
+          unsigned long previous_beatled_Millis = 0;        // will store last time LED was updated
+          int beatcount =1;
           int ledState = LOW;  
           int beatPulse=0;
           int trigger_level = 0;
           int run_reed_leave_time = 0;
-          long minTimeSet=12000;
+          long minTimeSet=6000;
 
         //EEPROM setup
           const int maxAllowedWrites = 80;
@@ -217,14 +219,12 @@ static char VERSION[] = "V2.1.1";;
         if(currentMillis - previousMillis > (unsigned)minTime) {
           previousMillis = currentMillis;  
           // run motor
-            // rgbLedMotor.writeRGB(255,255,0);
+            rgbLedMotor.writeRGB(255,0,60);
             motorOn= true;
-            // digitalWrite(motorPin, LOW);
+            digitalWrite(motorPin, LOW);
             Serial.println("minloop");
-            run_motor;
-        }
+        } 
       }
-
 
          
    void setup() {
@@ -303,6 +303,27 @@ static char VERSION[] = "V2.1.1";;
 
 void loop() {
 
+//display LED beats
+    if (ledState) {
+        rgbLedBeat.writeRGB(0,0,255);
+    }
+    else{
+        rgbLedBeat.writeRGB(0,0,0);
+    }
+
+//logic for switching on the beat led only once
+    unsigned long beatledMillis = millis();
+
+    if (beatledMillis - previous_beatled_Millis >= ONtime_mills) {
+      previous_beatled_Millis = beatledMillis;
+      if (beatcount==1) {
+        ledState=true;
+        beatcount++;
+      }else{
+        ledState=false;
+      }
+    }
+
  // display magnet status
   if (pushbutton.update()) {
     if (pushbutton.risingEdge()) {
@@ -348,7 +369,6 @@ void loop() {
   int guess = 0;
 
   double n;         // a float for reading each FFT bin magnitude
-  unsigned long currentMillis = millis();
 
   // is the FFT available?
   if (myFFT.available()) {
@@ -393,35 +413,19 @@ void loop() {
     if ((sum > thr) && (curDel >= minDelay) && (sum >= minLevel)) { // There's a beat
       avgDelay += ( curDel - avgDelay) / numReadings;
       curDel = 0; // restart the counter when the delay is at least the average
-
-      //better delay function, so we do not miss any beats (rob)
-      if (currentMillis - ledStarted >= ONtime_mills) {
-        ledStarted = currentMillis;
+        beatcount=1;
         Serial.println("beat detected-1");
-        // if (ledState == LOW) {
-        //   rgbLedBeat.writeRGB(255,255,0);   // turn the LED on (HIGH is the voltage level)
-        // } else {
-        //    rgbLedBeat.writeRGB(0,0,0);    // turn the LED off by making the voltage LOW
-        // }
         run_motor();
-     }
     }
 
     if ((curDel >= 2.0 * round(avgDelay)) && (curDel > minDelay) && (sum >= minLevel)) { // There's a beat
       curDel = 0;
       guess = 1;
+      beatcount=1;
       Serial.println("beat detected-2");
-      //better delay function, so we do not miss any beats (rob)
-      if (currentMillis - ledStarted >= ONtime_mills) {
-        ledStarted = currentMillis;
-        // if (ledState == LOW) {
-        //   rgbLedBeat.writeRGB(255,0,255);   // turn the LED on (HIGH is the voltage level)
-        // } else {
-        //    rgbLedBeat.writeRGB(0,0,0);    // turn the LED off by making the voltage LOW
-        // }
-        run_motor();
+      run_motor();
      }
-    }
+
     // int magnet_show =(!magnetOn*10)+5;
     // int motor_show =(motorOn*20)+10;
     // Serial.print(sum, 5);
