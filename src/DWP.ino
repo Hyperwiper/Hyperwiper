@@ -398,11 +398,11 @@ void loop() {
       if (currentMillis - ledStarted >= ONtime_mills) {
         ledStarted = currentMillis;
         Serial.println("beat detected-1");
-        if (ledState == LOW) {
-          rgbLedBeat.writeRGB(255,255,0);   // turn the LED on (HIGH is the voltage level)
-        } else {
-           rgbLedBeat.writeRGB(0,0,0);    // turn the LED off by making the voltage LOW
-        }
+        // if (ledState == LOW) {
+        //   rgbLedBeat.writeRGB(255,255,0);   // turn the LED on (HIGH is the voltage level)
+        // } else {
+        //    rgbLedBeat.writeRGB(0,0,0);    // turn the LED off by making the voltage LOW
+        // }
         run_motor();
      }
     }
@@ -414,11 +414,11 @@ void loop() {
       //better delay function, so we do not miss any beats (rob)
       if (currentMillis - ledStarted >= ONtime_mills) {
         ledStarted = currentMillis;
-        if (ledState == LOW) {
-          rgbLedBeat.writeRGB(255,0,255);   // turn the LED on (HIGH is the voltage level)
-        } else {
-           rgbLedBeat.writeRGB(0,0,0);    // turn the LED off by making the voltage LOW
-        }
+        // if (ledState == LOW) {
+        //   rgbLedBeat.writeRGB(255,0,255);   // turn the LED on (HIGH is the voltage level)
+        // } else {
+        //    rgbLedBeat.writeRGB(0,0,0);    // turn the LED off by making the voltage LOW
+        // }
         run_motor();
      }
     }
