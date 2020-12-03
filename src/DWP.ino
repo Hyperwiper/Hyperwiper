@@ -99,6 +99,7 @@ static char VERSION[] = "V2.1.1";;
           int trigger_level = 0;
           int run_reed_leave_time = 0;
           long minTimeSet=6000;
+          float pot_old_read;
 
         //EEPROM setup
           const int maxAllowedWrites = 80;
@@ -283,6 +284,9 @@ static char VERSION[] = "V2.1.1";;
               rgbLedMotor.writeRGB(255,0,0);
              digitalWrite(motorPin, HIGH);
 
+      //read potmeter 
+        potRead = analogRead(potPin);
+
       //display status on serial
           Serial.print("Version=");
           Serial.println(VERSION);
@@ -294,6 +298,8 @@ static char VERSION[] = "V2.1.1";;
           Serial.println(magnetOn);
           Serial.print("Time from startpulse to reaching magnet is:");
           Serial.println (run_reed_leave_time);
+          Serial.print("potential meter level =");
+          Serial.println(potRead);
           Serial.println("Audio setup finished");
           Serial.println("Init finished");
       delay(1000);
@@ -349,7 +355,17 @@ void loop() {
     }
   }
   // read potmeter value for setup delay of beat in main loop
-  potRead = analogRead(potPin);
+      int potRead = map(analogRead(potPin), 0, 1023, 1, 100);
+      if (abs(potRead-pot_old_read)>2){
+        pot_old_read=potRead;
+        Serial.print("new potential meter level =");
+        Serial.println(potRead);
+        int one_wipe_time_procentage= run_reed_leave_time*potRead/100;
+        Serial.print("one wipe time divided by potread =");
+        Serial.println(one_wipe_time_procentage);
+      }
+   
+ 
   //convert posRead to half of one_wipe_time
   //subtract from calculated expected beat
 
