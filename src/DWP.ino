@@ -360,13 +360,12 @@ void loop() {
         pot_old_read=potRead;
         Serial.print("new potential meter level =");
         Serial.println(potRead);
-        int one_wipe_time_procentage= run_reed_leave_time*potRead/100;
+  //convert run_reed_leave_time to half of one_wipe_time
+        int one_wipe_time_procentage= (run_reed_leave_time/2)*potRead/100;
         Serial.print("one wipe time divided by potread =");
         Serial.println(one_wipe_time_procentage);
       }
    
- 
-  //convert posRead to half of one_wipe_time
   //subtract from calculated expected beat
 
   // Main loop 
