@@ -11,7 +11,7 @@
     (via_costs 50)
     (plane_via_costs 5)
     (start_ripup_costs 100)
-    (start_pass_no 318)
+    (start_pass_no 361)
     (layer_rule F.Cu
       (active on)
       (preferred_direction horizontal)
@@ -81,14 +81,18 @@
     Power "Via[0-1]_1200:400_um-Power"
   )
   (class default
-    GND /5V "Net-(J1-Pad4)" "Net-(D4-Pad1)" "Net-(K2-Pad2)" "Net-(Q1-Pad2)" "Net-(D1-Pad4)" "Net-(D1-Pad3)"
-    "Net-(D2-Pad4)" "Net-(D2-Pad3)" "Net-(D2-Pad1)" "Net-(D3-Pad2)" /reed "Net-(J1-Pad2)" "Net-(K1-Pad2)" "Net-(K2-Pad4)"
-    "/motor_start" "/M_LED_b" "/M_LED_g" "/M_LED_r" "/B_LED_b" "/B_LED_g" "/B_LED_r" /Pot
-    "Net-(U1-Pad1)" "Net-(U1-Pad2)" "Net-(U1-Pad3)" "Net-(U1-Pad9)" "Net-(U1-Pad10)" "Net-(U1-Pad12)" "Net-(U1-Pad13)" "Net-(U1-Pad14)"
-    "Net-(U1-Pad15)" "Net-(U1-Pad16)" "Net-(U1-Pad17)" "Net-(U1-Pad18)" "Net-(U1-Pad19)" "Net-(U1-Pad20)" "Net-(U1-Pad22)" "Net-(U1-Pad25)"
-    "Net-(U1-Pad26)" "Net-(U1-Pad27)" "Net-(U1-Pad28)" "Net-(U1-Pad29)" "Net-(U1-Pad30)" "Net-(U1-Pad31)" "Net-(U1-Pad34)" "Net-(U1-Pad35)"
-    "Net-(U1-Pad36)" "Net-(U1-Pad37)" "Net-(U1-Pad38)" "Net-(U1-Pad39)" "Net-(U1-Pad40)" "Net-(U1-Pad41)" "Net-(U1-Pad42)" "Net-(U1-Pad43)"
-    "Net-(U1-Pad44)" "Net-(D1-Pad1)" "Net-(J1-Pad1)" "Net-(D4-Pad2)"
+    "Net-(J1-Pad4)" "Net-(K2-Pad2)" "Net-(Q1-Pad2)" "Net-(D1-Pad4)" "Net-(D1-Pad3)" "Net-(D2-Pad4)" "Net-(D2-Pad3)" "Net-(D2-Pad1)"
+    "Net-(D3-Pad2)" /reed "Net-(K1-Pad2)" "Net-(K2-Pad4)" "/motor_start" "/M_LED_b" "/M_LED_g" "/M_LED_r"
+    "/B_LED_b" "/B_LED_g" "/B_LED_r" /Pot "Net-(U1-Pad1)" "Net-(U1-Pad2)" "Net-(U1-Pad3)" "Net-(U1-Pad9)"
+    "Net-(U1-Pad10)" "Net-(U1-Pad12)" "Net-(U1-Pad13)" "Net-(U1-Pad14)" "Net-(U1-Pad15)" "Net-(U1-Pad16)" "Net-(U1-Pad17)" "Net-(U1-Pad18)"
+    "Net-(U1-Pad19)" "Net-(U1-Pad20)" "Net-(U1-Pad22)" "Net-(U1-Pad25)" "Net-(U1-Pad26)" "Net-(U1-Pad27)" "Net-(U1-Pad28)" "Net-(U1-Pad29)"
+    "Net-(U1-Pad30)" "Net-(U1-Pad34)" "Net-(U1-Pad35)" "Net-(U1-Pad36)" "Net-(U1-Pad37)" "Net-(U1-Pad38)" "Net-(U1-Pad39)" "Net-(U1-Pad40)"
+    "Net-(U1-Pad41)" "Net-(U1-Pad42)" "Net-(U1-Pad43)" "Net-(U1-Pad44)" "Net-(D1-Pad1)" "Net-(JP1-Pad20)" "Net-(JP1-Pad19)" "Net-(JP1-Pad18)"
+    "Net-(JP1-Pad17)" "Net-(JP1-Pad16)" "Net-(JP1-Pad15)" "Net-(JP1-Pad14)" "Net-(JP1-Pad13)" "Net-(JP1-Pad12)" "Net-(JP1-Pad11)" "Net-(JP1-Pad9)"
+    "Net-(JP1-Pad8)" "Net-(JP1-Pad7)" "Net-(JP1-Pad6)" "Net-(JP1-Pad5)" "Net-(JP1-Pad4)" "Net-(JP1-Pad3)" "Net-(JP1-Pad2)" "Net-(JP2-Pad20)"
+    "Net-(JP2-Pad19)" "Net-(JP2-Pad18)" "Net-(JP2-Pad17)" "Net-(JP2-Pad16)" "Net-(JP2-Pad15)" "Net-(JP2-Pad14)" "Net-(JP2-Pad13)" "Net-(JP2-Pad12)"
+    "Net-(JP2-Pad11)" "Net-(JP2-Pad9)" "Net-(JP2-Pad8)" "Net-(JP2-Pad7)" "Net-(JP2-Pad6)" "Net-(JP2-Pad5)" "Net-(JP2-Pad4)" "Net-(JP2-Pad3)"
+    "Net-(JP2-Pad2)"
     (clearance_class default)
     (via_rule default)
     (rule
@@ -109,6 +113,7 @@
     )
   )
   (class Power
+    GND /5V "Net-(D4-Pad1)" "Net-(J1-Pad2)" "Net-(J1-Pad1)" "Net-(D4-Pad2)" +3V3
     (clearance_class Power)
     (via_rule Power)
     (rule
