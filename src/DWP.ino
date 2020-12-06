@@ -8,7 +8,9 @@
  contact rob@yr-design.biz
  
  revisions:
- V2.1.1   2020-11-18  Added start_motor_reach_magnet timeing 
+ V2.1.3   2020-12-06 Setup for calculate one full test wipe.
+ V2.1.2   2020-12-05 Setup for potmenter halving the wipe time
+ V2.1.1   2020-11-18 Added start_motor_reach_magnet timeing 
  V2.1.0   2020-10-24 Made minloop longer for easier checking and 
  V2.0.9   2020-10-20 Updated for tests for magnet timing/leaving variables.
  V2.0.8   2020-10-17 intergrated lastest beat detection from Julian and Camilo
@@ -53,6 +55,8 @@ To be done (2020-10-18):
         also need to be changed for one pas and a return PLUS adding te run_reed_leave_time to be sure the wiper is back in the resting postion
 
       Done:
+      - read potmeter value for setup delay of beat in main loop
+      - convert run_reed_leave_time to half of one_wipe_time
       - acquired reed relay signal and stoptime                        return_reed_rest_time
       - Pot timing -                                                  pot_time
 
@@ -66,7 +70,7 @@ To be done (2020-10-18):
 
  */
 
-static char VERSION[] = "V2.1.1";;
+static char VERSION[] = "V2.1.3";;
 
 //set drivers 
   #include <SPI.h>
@@ -97,9 +101,11 @@ static char VERSION[] = "V2.1.1";;
           int ledState = LOW;  
           int beatPulse=0;
           int trigger_level = 0;
-          int run_reed_leave_time = 0;
+          long run_reed_leave_time = 0;
+          long run_reed_return_time = 0;
           long minTimeSet=6000;
           float pot_old_read;
+          long stop_time =0;
 
         //EEPROM setup
           const int maxAllowedWrites = 80;
@@ -270,17 +276,28 @@ static char VERSION[] = "V2.1.1";;
           delayForR.delay(0, 1000 * noBins / 44100);
     
 
-    //test for collecting time for delay start_motor and reed_read (new name for reed activity.)
+         //test for collecting time for delay start_motor and reed_read (new name for reed activity.)
               rgbLedMotor.writeRGB(0,255,0);
               motorOn= true;
               digitalWrite(motorPin, LOW);
               Serial.println("Start motor");
             //calculate time for reaching reedswitch
-            while (digitalRead(magnetPin)==1){
+            while (pushbutton.risingEdge()) {
+              Serial.println("Magnet leaves the start position and passesthe reed switch");
               run_reed_leave_time=millis();
             }
-            //display motor passed reed switch and stop motor
-            //need to be changed for one pas and a return PLS adding te run_reed_leave_time to be sure the wiper is back in the resting postion
+            while (pushbutton.fallingEdge()) {
+              Serial.println("Magnet_passes the red swtch on the way back");
+              rgbLedMotor.writeRGB(0,0,255);
+              run_reed_return_time=millis();
+            }
+            //stop motor after it passes the magnet switch with the time calculated when the motor started up and passed magnet switch
+            long stop_time = millis()+run_reed_leave_time;
+            while(millis()-stop_time>=0){
+            }
+            stop_motor();
+
+            //need to be changed for one pass and a return PLS adding te run_reed_leave_time to be sure the wiper is back in the resting postion
               rgbLedMotor.writeRGB(255,0,0);
              digitalWrite(motorPin, HIGH);
 
@@ -292,12 +309,16 @@ static char VERSION[] = "V2.1.1";;
           Serial.println(VERSION);
           Serial.print("Setup Mode=");
           Serial.println(setupmode);
-          Serial.print("Trigger_level=");
-          Serial.println((trigger_level)*10000);
+          // Serial.print("Trigger_level=");
+          // Serial.println((trigger_level)*10000);
           Serial.print("magnetOn=");
           Serial.println(magnetOn);
           Serial.print("Time from startpulse to reaching magnet is:");
           Serial.println (run_reed_leave_time);
+          Serial.print("Time from magnet leaving till coming back is:");
+          Serial.println (run_reed_return_time);
+          Serial.print("One test wipe time is:");
+          Serial.println (run_reed_leave_time*2+run_reed_return_time);
           Serial.print("potential meter level =");
           Serial.println(potRead);
           Serial.println("Audio setup finished");
@@ -358,17 +379,15 @@ void loop() {
       int potRead = map(analogRead(potPin), 0, 1023, 1, 100);
       if (abs(potRead-pot_old_read)>2){
         pot_old_read=potRead;
-        Serial.print("new potential meter level =");
-        Serial.println(potRead);
-        Serial.print("\t");
-  //convert run_reed_leave_time to half of one_wipe_time
+      //convert run_reed_leave_time to half of one_wipe_time
         int one_wipe_time_procentage= (run_reed_leave_time/2)*potRead/100;
-        Serial.print("one wipe time divided by potread =");
+        Serial.print("procentage of the wip time is = ");
         Serial.println(one_wipe_time_procentage);
-        Serial.print("\t");
       }
    
   //subtract from calculated expected beat
+
+
 
   // Main loop 
   if(magnetOn){
