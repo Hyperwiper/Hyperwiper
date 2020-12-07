@@ -8,6 +8,7 @@
  contact rob@yr-design.biz
  
  revisions:
+ V2.1.5   2929-11-07 Fixed stop motor after returning wiper delay.
  V2.1.4   2020-11-07 Fixe d startup bug that would not allow to function to be called before setup.
  V2.1.3   2020-12-06 Setup for calculate one full test wipe.
  V2.1.2   2020-12-05 Setup for potmenter halving the wipe time
@@ -71,7 +72,7 @@ To be done (2020-10-18):
 
  */
 
-static char VERSION[] = "V2.1.4";;
+static char VERSION[] = "V2.1.5";;
 
 //set drivers 
   #include <SPI.h>
@@ -84,6 +85,10 @@ static char VERSION[] = "V2.1.4";;
   #include <Wire.h>
   #include <SD.h>
 
+
+
+// Start init's -------------------------------------------------------------------------------------------------------------------------------------------------
+
 //Pins setup
         int magnetPin = 14;
         int motorPin = 16;
@@ -91,120 +96,123 @@ static char VERSION[] = "V2.1.4";;
         int potRead;
         int potTime;
 
+//display magnet info  setup 
+        byte previousState = HIGH;         // what state was the button last time
+        unsigned int count = 0;            // how many times has it changed to low
+        unsigned long countAt = 0;         // when count changed
+        unsigned int countPrinted = 0;     // last count printed
 
 //init variables setup
-          Bounce pushbutton = Bounce(magnetPin, 10);  
-          boolean motorOn= false;
-          boolean magnetOn= false;
-          long previousMillis = 0;
-          unsigned long previous_beatled_Millis = 0;        // will store last time LED was updated
-          int beatcount =1;
-          int ledState = LOW;  
-          int beatPulse=0;
-          int trigger_level = 0;
-          long run_reed_leave_time = 0;
-          long run_reed_return_time = 0;
-          long minTimeSet=6000;
-          float pot_old_read;
-          long stop_time =0;
+        Bounce pushbutton = Bounce(magnetPin, 10);  
+        boolean motorOn= false;
+        boolean magnetOn= false;
+        long previousMillis = 0;
+        unsigned long previous_beatled_Millis = 0;        // will store last time LED was updated
+        int beatcount =1;
+        int ledState = LOW;  
+        int beatPulse=0;
+        int trigger_level = 0;
+        long run_reed_leave_time = 0;
+        long run_reed_return_time = 0;
+        long minTimeSet=6000;
+        float pot_old_read;
+        long stop_time =0;
 
-        //EEPROM setup
-          const int maxAllowedWrites = 80;
-          const int memBase          = 120;
-          int addressLong;
-          int runpassed_interval= 180;
-          boolean setupmode = false;
+      //EEPROM setup
+        const int maxAllowedWrites = 80;
+        const int memBase          = 120;
+        int addressLong;
+        int runpassed_interval= 180;
+        boolean setupmode = false;
 
-        //RGB LED pins setup
-          RGBLED rgbLedBeat(2,3,4,COMMON_CATHODE);
-          RGBLED rgbLedMotor(5,6,9,COMMON_CATHODE);
+      //RGB LED pins setup
+        RGBLED rgbLedBeat(2,3,4,COMMON_CATHODE);
+        RGBLED rgbLedMotor(5,6,9,COMMON_CATHODE);
 
-        //Audio setup
-          AudioInputI2S       audioInput;
-          AudioOutputI2S      headphones;
-          AudioMixer4         monoMix;
-          AudioFilterBiquad   LPfilter;
-          AudioAnalyzeFFT1024  myFFT;
-          AudioEffectDelay    delayForL;
-          AudioEffectDelay    delayForR;
+      //Audio setup
+        AudioInputI2S       audioInput;
+        AudioOutputI2S      headphones;
+        AudioMixer4         monoMix;
+        AudioFilterBiquad   LPfilter;
+        AudioAnalyzeFFT1024  myFFT;
+        AudioEffectDelay    delayForL;
+        AudioEffectDelay    delayForR;
 
-          AudioConnection c0(audioInput, 0, monoMix, 0);
-          AudioConnection c1(audioInput, 1, monoMix, 1);
-          AudioConnection c2(monoMix, 0, LPfilter, 0);
-          AudioConnection c3(LPfilter, 0, myFFT, 0);
-          AudioConnection c4(audioInput, 0, delayForL, 0);
-          AudioConnection c5(audioInput, 1, delayForR, 1);
-          AudioConnection c6(delayForL, 0, headphones, 0);
-          AudioConnection c7(delayForR, 0, headphones, 1);
+        AudioConnection c0(audioInput, 0, monoMix, 0);
+        AudioConnection c1(audioInput, 1, monoMix, 1);
+        AudioConnection c2(monoMix, 0, LPfilter, 0);
+        AudioConnection c3(LPfilter, 0, myFFT, 0);
+        AudioConnection c4(audioInput, 0, delayForL, 0);
+        AudioConnection c5(audioInput, 1, delayForR, 1);
+        AudioConnection c6(delayForL, 0, headphones, 0);
+        AudioConnection c7(delayForR, 0, headphones, 1);
 
-          // Specify which audio card we're using
-          AudioControlSGTL5000 audioShield;
+      // Specify which audio card we're using
+        AudioControlSGTL5000 audioShield;
 
-        // Define global constants here
-          const int myInput = AUDIO_INPUT_LINEIN; // Are we using mic or line?
-          const int numReadings = 7; // How many ODFs are we using for average?
-          const int noBins = 512; // number of real bins used in the FFT (total number of bins should be double this)
-          const int LPorder = 7; // Linear predictor order
-          // const int led = 13;
-          const int ONtime_mills = 10;   // time for better delay function
-          unsigned long ledStarted = 0;
+      // Define global constants here
+        const int myInput = AUDIO_INPUT_LINEIN; // Are we using mic or line?
+        const int numReadings = 7; // How many ODFs are we using for average?
+        const int noBins = 512; // number of real bins used in the FFT (total number of bins should be double this)
+        const int LPorder = 7; // Linear predictor order
+        // const int led = 13;
+        const int ONtime_mills = 10;   // time for better delay function
+        unsigned long ledStarted = 0;
 
-          // Specify global variables here
-          unsigned long curDel = 0;     // Current delay
-          double avgDelay = 0.0;  // Average delay
-          float prevMags[noBins][LPorder]; // Previous magnitudes for LP prediction
-          double ks[LPorder]; // weights of the previous samples in the prediction of the current
-          float minLevel = 20; //signal must be higher that 1% to report a beat
+        // Specify global variables here
+        unsigned long curDel = 0;     // Current delay
+        double avgDelay = 0.0;  // Average delay
+        float prevMags[noBins][LPorder]; // Previous magnitudes for LP prediction
+        double ks[LPorder]; // weights of the previous samples in the prediction of the current
+        float minLevel = 20; //signal must be higher that 1% to report a beat
 
-          unsigned int minDelay = 29;   // How long should we wait at least before the next beat?
-          double lambda = .6; // weight of the median
-          double alpha = .6;  // weight of the mean
-          double m = 0.0;     // the mean of the previous ODFs
-          double median = 0.0;     // the median of the previous ODFs
+        unsigned int minDelay = 29;   // How long should we wait at least before the next beat?
+        double lambda = .6; // weight of the median
+        double alpha = .6;  // weight of the mean
+        double m = 0.0;     // the mean of the previous ODFs
+        double median = 0.0;     // the median of the previous ODFs
 
-        void lp(int k) {
-          // Computes the linear prediction weights for the previous values of a given bin k
-          float wk1[LPorder];
-          float wk2[LPorder];
-          float wkm[LPorder];
+      void lp(int k) {
+        // Computes the linear prediction weights for the previous values of a given bin k
+        float wk1[LPorder];
+        float wk2[LPorder];
+        float wkm[LPorder];
 
-          wk1[0] = prevMags[k][0];
-          wk2[LPorder - 2] = prevMags[k][LPorder - 1];
+        wk1[0] = prevMags[k][0];
+        wk2[LPorder - 2] = prevMags[k][LPorder - 1];
 
-          for (int i = 1; i < LPorder - 1; ++i) {
-            wk1[i] = prevMags[k][i];
-            wk2[i - 1] = prevMags[k][i];
-          }
-
-          for (int i = 0; i < LPorder; ++i) {
-            double num = 0.0;
-            double denom = 0.0000000000000001; // to avoid NaNs
-
-            for (int j = 0; j < (LPorder - i); ++j) {
-              num += wk1[j] * wk2[j];
-              denom += wk1[j] * wk1[j] + wk2[j] * wk2[j];
-            }
-            ks[i] = 2.0 * num / denom;
-
-            for (int j = 0; j < i; ++j) {
-              ks[j] = wkm[j] - ks[i] * wkm[i - j];
-            }
-            for (int j = 0; j <= i; ++j) {
-              wkm[j] = ks[j];
-            }
-            for (int j = 0; j < (LPorder - i - 1); ++j) {
-              wk1[j] -= wkm[i] * wk2[j];
-              wk2[j] = wk2[j + 1] - wkm[i] * wk1[j + 1];
-            }
-          }
+        for (int i = 1; i < LPorder - 1; ++i) {
+          wk1[i] = prevMags[k][i];
+          wk2[i - 1] = prevMags[k][i];
         }
 
-            //display magnet info  setup 
-              byte previousState = HIGH;         // what state was the button last time
-              unsigned int count = 0;            // how many times has it changed to low
-              unsigned long countAt = 0;         // when count changed
-              unsigned int countPrinted = 0;     // last count printed
+        for (int i = 0; i < LPorder; ++i) {
+          double num = 0.0;
+          double denom = 0.0000000000000001; // to avoid NaNs
 
+          for (int j = 0; j < (LPorder - i); ++j) {
+            num += wk1[j] * wk2[j];
+            denom += wk1[j] * wk1[j] + wk2[j] * wk2[j];
+          }
+          ks[i] = 2.0 * num / denom;
+
+          for (int j = 0; j < i; ++j) {
+            ks[j] = wkm[j] - ks[i] * wkm[i - j];
+          }
+          for (int j = 0; j <= i; ++j) {
+            wkm[j] = ks[j];
+          }
+          for (int j = 0; j < (LPorder - i - 1); ++j) {
+            wk1[j] -= wkm[i] * wk2[j];
+            wk2[j] = wk2[j + 1] - wkm[i] * wk1[j + 1];
+          }
+        }
+      }
+
+
+
+
+// end init -------------------------------------------------------------------------------------------------------------------------------------------------
 
     void run_motor() {
             rgbLedMotor.writeRGB(0,255,0);
@@ -234,6 +242,7 @@ static char VERSION[] = "V2.1.4";;
         } 
       }
 
+// start setup  -------------------------------------------------------------------------------------------------------------------------------------------------
          
    void setup() {
           //serial start 
@@ -284,53 +293,57 @@ static char VERSION[] = "V2.1.4";;
               Serial.println("Start motor");
             //calculate time for reaching reedswitch
             while (digitalRead(magnetPin)==1) {
+              rgbLedMotor.writeRGB(0,0,255);
               run_reed_leave_time=millis();
             }
-            Serial.println("Magnet leaves the start position and passesthe reed switch");
+            Serial.println("Magnet leaves the start position and passes the reed switch");
             delay(1000);
+            rgbLedMotor.writeRGB(0,255,255);
            while (digitalRead(magnetPin)==1) {
               rgbLedMotor.writeRGB(0,0,255);
               run_reed_return_time=millis();
             }
             Serial.println("Magnet_passes the reed switch on the way back");
             //stop motor after it passes the magnet switch with the time calculated when the motor started up and passed magnet switch
-            long stop_time = millis();
+            unsigned stop_time = millis();
+              // Serial.print("Stop time = ");
+              // Serial.println(stop_time);
             stop_time=stop_time+run_reed_leave_time;
-              Serial.println(stop_time);
-            // while(millis()-stop_time>=0){
-            // }
-            // stop_motor();
-
-            //need to be changed for one pass and a return PLS adding te run_reed_leave_time to be sure the wiper is back in the resting postion
+              // Serial.print("Stop time plus run_reed_leave_time=");
+              // Serial.println(stop_time);
+            //add start up leaving time to the stop the motor at the parking space
+            while(stop_time>millis()){
+            }
               rgbLedMotor.writeRGB(255,0,0);
-             digitalWrite(motorPin, HIGH);
+              motorOn= false;
+              digitalWrite(motorPin, HIGH);
 
-      //read potmeter 
-        potRead = analogRead(potPin);
+            //read potmeter 
+              potRead = analogRead(potPin);
 
-      //display status on serial
-          Serial.print("Version=");
-          Serial.println(VERSION);
-          Serial.print("Setup Mode=");
-          Serial.println(setupmode);
-          // Serial.print("Trigger_level=");
-          // Serial.println((trigger_level)*10000);
-          Serial.print("magnetOn=");
-          Serial.println(magnetOn);
-          Serial.print("Time from startpulse to reaching magnet is:");
-          Serial.println (run_reed_leave_time);
-          Serial.print("Time from magnet leaving till coming back is:");
-          Serial.println (run_reed_return_time);
-          Serial.print("One test wipe time is:");
-          Serial.println (run_reed_leave_time*2+run_reed_return_time);
-          Serial.print("potential meter level =");
-          Serial.println(potRead);
-          Serial.println("Audio setup finished");
-          Serial.println("Init finished");
+            //display status on serial
+                Serial.print("Version=");
+                Serial.println(VERSION);
+                Serial.print("Setup Mode=");
+                Serial.println(setupmode);
+                // Serial.print("Trigger_level=");
+                // Serial.println((trigger_level)*10000);
+                Serial.print("magnetOn=");
+                Serial.println(magnetOn);
+                Serial.print("Time from startpulse to reaching magnet is:");
+                Serial.println (run_reed_leave_time);
+                Serial.print("Time from magnet leaving till coming back is:");
+                Serial.println (run_reed_return_time);
+                Serial.print("One test wipe time is:");
+                Serial.println (run_reed_leave_time*2+run_reed_return_time);
+                Serial.print("potential meter level =");
+                Serial.println(potRead);
+                Serial.println("Audio setup finished");
+                Serial.println("Init finished");
       delay(1000);
-
 }
 
+// end setup -------------------------------------------------------------------------------------------------------------------------------------------------
 
 void loop() {
 
@@ -385,7 +398,7 @@ void loop() {
         pot_old_read=potRead;
       //convert run_reed_leave_time to half of one_wipe_time
         int one_wipe_time_procentage= (run_reed_leave_time/2)*potRead/100;
-        Serial.print("procentage of the wip time is = ");
+        Serial.print("procentage of the wipe time is = ");
         Serial.println(one_wipe_time_procentage);
       }
    
@@ -486,7 +499,7 @@ void loop() {
     // Serial.println(motor_show);
   }
 }
-
+// end loop -------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
