@@ -8,7 +8,8 @@
  contact rob@yr-design.biz
  
  revisions:
- V2.1.5   2929-11-07 Fixed stop motor after returning wiper delay.
+ V2.1.6   2020-11-07 Longer displaying beat detection in loop.
+ V2.1.5   2020-11-07 Fixed stop motor after returning wiper delay.
  V2.1.4   2020-11-07 Fixe d startup bug that would not allow to function to be called before setup.
  V2.1.3   2020-12-06 Setup for calculate one full test wipe.
  V2.1.2   2020-12-05 Setup for potmenter halving the wipe time
@@ -72,7 +73,7 @@ To be done (2020-10-18):
 
  */
 
-static char VERSION[] = "V2.1.5";;
+static char VERSION[] = "V2.1.6";;
 
 //set drivers 
   #include <SPI.h>
