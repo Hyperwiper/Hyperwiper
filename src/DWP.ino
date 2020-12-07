@@ -306,11 +306,11 @@ static char VERSION[] = "V2.1.5";;
             Serial.println("Magnet_passes the reed switch on the way back");
             //stop motor after it passes the magnet switch with the time calculated when the motor started up and passed magnet switch
             unsigned stop_time = millis();
-              // Serial.print("Stop time = ");
-              // Serial.println(stop_time);
+              Serial.print("Stop time = ");
+              Serial.println(stop_time);
             stop_time=stop_time+run_reed_leave_time;
-              // Serial.print("Stop time plus run_reed_leave_time=");
-              // Serial.println(stop_time);
+              Serial.print("Stop time plus run_reed_leave_time=");
+              Serial.println(stop_time);
             //add start up leaving time to the stop the motor at the parking space
             while(stop_time>millis()){
             }
@@ -322,6 +322,8 @@ static char VERSION[] = "V2.1.5";;
               potRead = analogRead(potPin);
 
             //display status on serial
+                Serial.println();
+                Serial.println("-------- Set up info --------------------");
                 Serial.print("Version=");
                 Serial.println(VERSION);
                 Serial.print("Setup Mode=");
@@ -339,7 +341,8 @@ static char VERSION[] = "V2.1.5";;
                 Serial.print("potential meter level =");
                 Serial.println(potRead);
                 Serial.println("Audio setup finished");
-                Serial.println("Init finished");
+                Serial.println("-------- End Set up info ----------------");
+                Serial.println();
       delay(1000);
 }
 
