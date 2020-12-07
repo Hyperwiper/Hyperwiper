@@ -8,18 +8,19 @@
  contact rob@yr-design.biz
  
  revisions:
+ V2.1.4   2020-11-07 Fixe d startup bug that would not allow to function to be called before setup.
  V2.1.3   2020-12-06 Setup for calculate one full test wipe.
  V2.1.2   2020-12-05 Setup for potmenter halving the wipe time
  V2.1.1   2020-11-18 Added start_motor_reach_magnet timeing 
  V2.1.0   2020-10-24 Made minloop longer for easier checking and 
  V2.0.9   2020-10-20 Updated for tests for magnet timing/leaving variables.
  V2.0.8   2020-10-17 intergrated lastest beat detection from Julian and Camilo
- V2.0.7   2020-10-08 added test for startup calculating the startup deley ansd storing in EEPROM
+ V2.0.7   2020-10-08 added test for startup calculating the startup delay and storing in EEPROM
  V2.0.6   2020-17-09 added debouncer for cleaner signal of red switch
  V2.0.5   2020-13-09 pin assigned for other pins
  V2.0.4   2020-09-11 pin assigned for RGB LEDs
  V2.0.3   2020-08-19 changed pins for production prototype setup.
- V2.0.2   2020-07-29 disabled joy swtices, disable screen
+ V2.0.2   2020-07-29 disabled joy switches, disable screen
  V2.0.1   2020-06-22 rotate the screen 180 degree
  V2.0.0   2020-06-08 reflected hardware changes for Teensy 4
  V1.2.6   2020-06-05 setup for Teensy 4
@@ -70,7 +71,7 @@ To be done (2020-10-18):
 
  */
 
-static char VERSION[] = "V2.1.3";;
+static char VERSION[] = "V2.1.4";;
 
 //set drivers 
   #include <SPI.h>
@@ -276,29 +277,33 @@ static char VERSION[] = "V2.1.3";;
           delayForR.delay(0, 1000 * noBins / 44100);
     
 
-        //test for collecting time for delay start_motor and reed_read (new name for reed activity.)
+         //test for collecting time for delay start_motor and reed_read (new name for reed activity.)
               rgbLedMotor.writeRGB(0,255,0);
               motorOn= true;
               digitalWrite(motorPin, LOW);
               Serial.println("Start motor");
-        //calculate time for reaching reedswitch
-            while (pushbutton.risingEdge()) {
-              Serial.println("Magnet leaves the start position and passesthe reed switch");
+            //calculate time for reaching reedswitch
+            while (digitalRead(magnetPin)==1) {
               run_reed_leave_time=millis();
             }
-            while (pushbutton.fallingEdge()) {
-              Serial.println("Magnet_passes the red swtch on the way back");
+            Serial.println("Magnet leaves the start position and passesthe reed switch");
+            delay(1000);
+           while (digitalRead(magnetPin)==1) {
               rgbLedMotor.writeRGB(0,0,255);
               run_reed_return_time=millis();
             }
-        //stop motor after it passes the magnet switch with the time calculated when the motor started up and passed magnet switch
-            long stop_time = millis()+run_reed_leave_time;
-            while(millis()-stop_time>=0){
-            }
+            Serial.println("Magnet_passes the reed switch on the way back");
+            //stop motor after it passes the magnet switch with the time calculated when the motor started up and passed magnet switch
+            long stop_time = millis();
+            stop_time=stop_time+run_reed_leave_time;
+              Serial.println(stop_time);
+            // while(millis()-stop_time>=0){
+            // }
+            // stop_motor();
 
-        //Motor stops
-            rgbLedMotor.writeRGB(255,0,0);
-            digitalWrite(motorPin, HIGH);
+            //need to be changed for one pass and a return PLS adding te run_reed_leave_time to be sure the wiper is back in the resting postion
+              rgbLedMotor.writeRGB(255,0,0);
+             digitalWrite(motorPin, HIGH);
 
       //read potmeter 
         potRead = analogRead(potPin);
