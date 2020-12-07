@@ -276,12 +276,12 @@ static char VERSION[] = "V2.1.3";;
           delayForR.delay(0, 1000 * noBins / 44100);
     
 
-         //test for collecting time for delay start_motor and reed_read (new name for reed activity.)
+        //test for collecting time for delay start_motor and reed_read (new name for reed activity.)
               rgbLedMotor.writeRGB(0,255,0);
               motorOn= true;
               digitalWrite(motorPin, LOW);
               Serial.println("Start motor");
-            //calculate time for reaching reedswitch
+        //calculate time for reaching reedswitch
             while (pushbutton.risingEdge()) {
               Serial.println("Magnet leaves the start position and passesthe reed switch");
               run_reed_leave_time=millis();
@@ -291,15 +291,14 @@ static char VERSION[] = "V2.1.3";;
               rgbLedMotor.writeRGB(0,0,255);
               run_reed_return_time=millis();
             }
-            //stop motor after it passes the magnet switch with the time calculated when the motor started up and passed magnet switch
+        //stop motor after it passes the magnet switch with the time calculated when the motor started up and passed magnet switch
             long stop_time = millis()+run_reed_leave_time;
             while(millis()-stop_time>=0){
             }
-            stop_motor();
 
-            //need to be changed for one pass and a return PLS adding te run_reed_leave_time to be sure the wiper is back in the resting postion
-              rgbLedMotor.writeRGB(255,0,0);
-             digitalWrite(motorPin, HIGH);
+        //Motor stops
+            rgbLedMotor.writeRGB(255,0,0);
+            digitalWrite(motorPin, HIGH);
 
       //read potmeter 
         potRead = analogRead(potPin);

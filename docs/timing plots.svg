@@ -261,10 +261,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.1200694"
-     inkscape:cx="1697.7715"
-     inkscape:cy="194.04426"
+     inkscape:cx="363.03278"
+     inkscape:cy="586.87706"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1142"
@@ -655,32 +655,32 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.25;font-family:serif;-inkscape-font-specification:'serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:0.750347;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="19.741102"
-       y="-51.139935"
+       x="9.187335"
+       y="-49.164276"
        id="text858-3-6"><tspan
          sodipodi:role="line"
          id="tspan856-5-7"
-         x="19.741102"
-         y="-51.139935"
+         x="9.187335"
+         y="-49.164276"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:serif;-inkscape-font-specification:'serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.264583">start/stop motor</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.25;font-family:serif;-inkscape-font-specification:'serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:0.734445;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="20.376673"
-       y="-27.785202"
+       x="9.8229055"
+       y="-25.809544"
        id="text858-3-6-5"><tspan
          sodipodi:role="line"
-         x="20.376673"
-         y="-27.785202"
+         x="9.8229055"
+         y="-25.809544"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:serif;-inkscape-font-specification:'serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.264583"
          id="tspan1104">magnet pulse </tspan><tspan
          sodipodi:role="line"
-         x="20.376673"
-         y="-21.611591"
+         x="9.8229055"
+         y="-19.635931"
          id="tspan1108" /><tspan
          sodipodi:role="line"
-         x="20.376673"
-         y="-15.43798"
+         x="9.8229055"
+         y="-13.462319"
          id="tspan1102" /></text>
     <text
        xml:space="preserve"
@@ -699,19 +699,19 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.25;font-family:serif;-inkscape-font-specification:'serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:0.750347;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="20.209482"
-       y="-22.597794"
+       x="9.655715"
+       y="-20.622135"
        id="text1112"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:serif;-inkscape-font-specification:'serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.264583"
          sodipodi:role="line"
          id="tspan1131"
-         x="20.209482"
-         y="-22.597794">(red if magnet is in </tspan><tspan
+         x="9.655715"
+         y="-20.622135">(red line if magnet </tspan><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:serif;-inkscape-font-specification:'serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.264583"
          sodipodi:role="line"
          id="tspan1133"
-         x="20.209482"
-         y="-17.306133">resting positions)</tspan></text>
+         x="9.655715"
+         y="-14.448524">is in resting positions)</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.25;font-family:serif;-inkscape-font-specification:'serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:0.750347;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
