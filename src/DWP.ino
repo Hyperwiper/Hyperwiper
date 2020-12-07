@@ -156,7 +156,7 @@ static char VERSION[] = "V2.1.5";;
         const int noBins = 512; // number of real bins used in the FFT (total number of bins should be double this)
         const int LPorder = 7; // Linear predictor order
         // const int led = 13;
-        const int ONtime_mills = 10;   // time for better delay function
+        const int ONtime_mills = 1000;   // time for better delay function
         unsigned long ledStarted = 0;
 
         // Specify global variables here
@@ -352,7 +352,7 @@ void loop() {
 
 //display LED beats
     if (ledState) {
-        rgbLedBeat.writeRGB(0,0,255);
+        rgbLedBeat.writeRGB(255,40,0);
     }
     else{
         rgbLedBeat.writeRGB(0,0,0);
@@ -366,6 +366,8 @@ void loop() {
       if (beatcount==1) {
         ledState=true;
         beatcount++;
+        Serial.print ("Beatcount added to =");
+        Serial.println(beatcount);
       }else{
         ledState=false;
       }
@@ -443,7 +445,7 @@ void loop() {
       n = myFFT.read(i);
       prevMags[i][LPorder - 1] = n;
 
-      lp(i); // Compute the weigths for prediction
+      lp(i); // Compute the weights for prediction
 
       // predict the value of this bin
       for (int j = 0; j < LPorder; j++) {
@@ -469,9 +471,9 @@ void loop() {
     if ((sum > thr) && (curDel >= minDelay) && (sum >= minLevel)) { // There's a beat
       avgDelay += ( curDel - avgDelay) / numReadings;
       curDel = 0; // restart the counter when the delay is at least the average
-        beatcount=1;
-        Serial.println("beat detected-1");
-        run_motor();
+      beatcount=1;
+      Serial.println("beat detected-1");
+      run_motor();
     }
 
     if ((curDel >= 2.0 * round(avgDelay)) && (curDel > minDelay) && (sum >= minLevel)) { // There's a beat
