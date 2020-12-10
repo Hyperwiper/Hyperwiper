@@ -8,9 +8,10 @@
  contact rob@yr-design.biz
  
  revisions:
- V2.1.6   2020-11-07 Longer displaying beat detection in loop.
- V2.1.5   2020-11-07 Fixed stop motor after returning wiper delay.
- V2.1.4   2020-11-07 Fixe d startup bug that would not allow to function to be called before setup.
+ V2.1.7   2020-12-10 Started beat timing array construction.
+ V2.1.6   2020-12-07 Longer displaying beat detection in loop.
+ V2.1.5   2020-12-07 Fixed stop motor after returning wiper delay.
+ V2.1.4   2020-12-07 Fixe d startup bug that would not allow to function to be called before setup.
  V2.1.3   2020-12-06 Setup for calculate one full test wipe.
  V2.1.2   2020-12-05 Setup for potmenter halving the wipe time
  V2.1.1   2020-11-18 Added start_motor_reach_magnet timeing 
@@ -73,7 +74,7 @@ To be done (2020-10-18):
 
  */
 
-static char VERSION[] = "V2.1.6";;
+static char VERSION[] = "V2.1.7";;
 
 //set drivers 
   #include <SPI.h>
@@ -118,6 +119,8 @@ static char VERSION[] = "V2.1.6";;
         long minTimeSet=6000;
         float pot_old_read;
         long stop_time =0;
+        int beat_array_count = 0;
+        int beatPulseArray[4]={0,0,0,0};
 
       //EEPROM setup
         const int maxAllowedWrites = 80;
@@ -351,13 +354,6 @@ static char VERSION[] = "V2.1.6";;
 
 void loop() {
 
-//display LED beats
-    if (ledState) {
-        rgbLedBeat.writeRGB(255,40,0);
-    }
-    else{
-        rgbLedBeat.writeRGB(0,0,0);
-    }
 
 //logic for switching on the beat led only once
     unsigned long beatledMillis = millis();
@@ -372,6 +368,15 @@ void loop() {
       }else{
         ledState=false;
       }
+    }
+
+
+//display LED beats
+    if (ledState) {
+        rgbLedBeat.writeRGB(255,40,0);
+    }
+    else{
+        rgbLedBeat.writeRGB(0,0,0);
     }
 
  // display magnet status
@@ -472,16 +477,26 @@ void loop() {
     if ((sum > thr) && (curDel >= minDelay) && (sum >= minLevel)) { // There's a beat
       avgDelay += ( curDel - avgDelay) / numReadings;
       curDel = 0; // restart the counter when the delay is at least the average
-      beatcount=1;
-      Serial.println("beat detected-1");
+      //set beat count and flash led for 1 second
+        beatcount=1;
+        beat_array_count++;
+      //set time for the beat array 
+        beatPulseArray[beat_array_count]=millis();
+        Serial.println(beatPulseArray[beat_array_count]);
+        Serial.println("beat detected-1");
       run_motor();
     }
 
     if ((curDel >= 2.0 * round(avgDelay)) && (curDel > minDelay) && (sum >= minLevel)) { // There's a beat
       curDel = 0;
       guess = 1;
-      beatcount=1;
-      Serial.println("beat detected-2");
+      //set beat count and flash led for 1 second
+        beatcount=1;
+        beat_array_count++;
+      //set time for the beat array 1
+        beatPulseArray[beat_array_count]=millis();
+        Serial.println(beatPulseArray[beat_array_count]);
+        Serial.println("beat detected-2");
       run_motor();
      }
 
