@@ -291,7 +291,7 @@ static char VERSION[] = "V2.1.7";;
     
 
          //test for collecting time for delay start_motor and reed_read (new name for reed activity.)
-              rgbLedMotor.writeRGB(0,255,0);
+              rgbLedMotor.writeRGB(255,40,0);
               motorOn= true;
               digitalWrite(motorPin, LOW);
               Serial.println("Start motor");
