@@ -54,11 +54,12 @@ To be done (2020-10-18):
      
       - one wipe pluse length                                          one_wipe_time
       - windows beats number for sliding window                       
-      - start time pulse and actual reed relay signal receiving       run_reed_leave_time
+
       - add stop motor time with the pass magnet information that is calculated from the start-motor-reach-magnet time in the setup
         also need to be changed for one pas and a return PLUS adding te run_reed_leave_time to be sure the wiper is back in the resting postion
 
       Done:
+      - start time pulse and actual reed relay signal receiving       run_reed_leave_time
       - read potmeter value for setup delay of beat in main loop
       - convert run_reed_leave_time to half of one_wipe_time
       - acquired reed relay signal and stoptime                        return_reed_rest_time
@@ -332,8 +333,6 @@ static char VERSION[] = "V2.1.7";;
                 Serial.println(VERSION);
                 Serial.print("Setup Mode=");
                 Serial.println(setupmode);
-                // Serial.print("Trigger_level=");
-                // Serial.println((trigger_level)*10000);
                 Serial.print("magnetOn=");
                 Serial.println(magnetOn);
                 Serial.print("Time from startpulse to reaching magnet is:");

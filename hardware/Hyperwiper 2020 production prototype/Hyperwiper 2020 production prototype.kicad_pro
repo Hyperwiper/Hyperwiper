@@ -375,7 +375,7 @@
       "specctra_dsn": "Hyperwiper 2020 production prototype.dsn",
       "step": "Hyperwiper 2020 production prototype.step",
       "vmrl": "Hyperwiper 2020 production prototype.wrl",
-      "vrml": "../../../../../../Downloads/temp/test.wrl"
+      "vrml": "test.wrl"
     },
     "page_layout_descr_file": ""
   },
