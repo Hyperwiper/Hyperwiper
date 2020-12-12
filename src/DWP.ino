@@ -8,6 +8,7 @@
  contact rob@yr-design.biz
  
  revisions:
+ v2.1.8   2020-12-12 Updated beat LED displaying and level addjusted for dipsling serial out.
  V2.1.7   2020-12-10 Started beat timing array construction.
  V2.1.6   2020-12-07 Longer displaying beat detection in loop.
  V2.1.5   2020-12-07 Fixed stop motor after returning wiper delay.
@@ -75,7 +76,7 @@ To be done (2020-10-18):
 
  */
 
-static char VERSION[] = "V2.1.7";;
+static char VERSION[] = "V2.1.8";;
 
 //set drivers 
   #include <SPI.h>
@@ -409,7 +410,7 @@ void loop() {
         pot_old_read=potRead;
       //convert run_reed_leave_time to half of one_wipe_time
         int one_wipe_time_procentage= (run_reed_leave_time/2)*potRead/100;
-        Serial.print("procentage of the wipe time is = ");
+        Serial.print("one wipe time is = ");
         Serial.println(one_wipe_time_procentage);
       }
    
@@ -500,24 +501,24 @@ void loop() {
       run_motor();
      }
 
-    int magnet_show =(!magnetOn*10)+5;
-    int motor_show =(motorOn*20)+10;
-    Serial.print(sum, 5);
-    Serial.print("\t");
-    Serial.print(thr, 5);
-    Serial.print("\t");
-    Serial.print(guess == 1 ? -200 : 0);
-    Serial.print("\t");
-    Serial.print(curDel == 0 ? 200 : 0);
-    Serial.print("\t");
-    Serial.print("count: ");
-    Serial.print(count);
-    Serial.print("\t");
-    Serial.print("magnet: ");
-    Serial.print(magnet_show);
-    Serial.print("\t");
-    Serial.print("motor: ");
-    Serial.println(motor_show);
+    // int magnet_show =(!magnetOn*10)+5;
+    // int motor_show =(motorOn*20)+10;
+    // Serial.print(sum, 5);
+    // Serial.print("\t");
+    // Serial.print(thr, 5);
+    // Serial.print("\t");
+    // Serial.print(guess == 1 ? -200 : 0);
+    // Serial.print("\t");
+    // Serial.println(curDel == 0 ? 200 : 0);
+    // Serial.print("\t");
+    // Serial.print("count: ");
+    // Serial.print(count);
+    // Serial.print("\t");
+    // Serial.print("magnet: ");
+    // Serial.print(magnet_show);
+    // Serial.print("\t");
+    // Serial.print("motor: ");
+    // Serial.println(motor_show);
   }
 }
 // end loop -------------------------------------------------------------------------------------------------------------------------------------------------
