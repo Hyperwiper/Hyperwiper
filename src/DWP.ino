@@ -161,7 +161,7 @@ static char VERSION[] = "V2.1.7";;
         const int noBins = 512; // number of real bins used in the FFT (total number of bins should be double this)
         const int LPorder = 7; // Linear predictor order
         // const int led = 13;
-        const int ONtime_mills = 1000;   // time for better delay function
+        const int ONtime_mills = 100;   // time for better delay function
         unsigned long ledStarted = 0;
 
         // Specify global variables here
@@ -275,7 +275,7 @@ static char VERSION[] = "V2.1.7";;
           audioShield.autoVolumeControl(2, 3, 0, -30, 5, 50); //enable compressor
 
           audioShield.inputSelect(myInput);
-          audioShield.volume(.3);  //0.8 is the max undistorted output on the headphones
+          audioShield.volume(0.8);  //0.8 is the max undistorted output on the headphones
 
           // reduce the gain on mixer channels
           monoMix.gain(0, 0.5);
@@ -292,20 +292,20 @@ static char VERSION[] = "V2.1.7";;
     
 
          //test for collecting time for delay start_motor and reed_read (new name for reed activity.)
-              rgbLedMotor.writeRGB(255,40,0);
+              rgbLedMotor.writeRGB(255,255,255);
               motorOn= true;
               digitalWrite(motorPin, LOW);
               Serial.println("Start motor");
             //calculate time for reaching reedswitch
             while (digitalRead(magnetPin)==1) {
-              rgbLedMotor.writeRGB(0,0,255);
+              rgbLedMotor.writeRGB(255,40,0);
               run_reed_leave_time=millis();
             }
             Serial.println("Magnet leaves the start position and passes the reed switch");
-            delay(1000);
-            rgbLedMotor.writeRGB(0,255,255);
+              rgbLedMotor.writeRGB(0,255,255);
+            delay(500);
            while (digitalRead(magnetPin)==1) {
-              rgbLedMotor.writeRGB(0,0,255);
+              rgbLedMotor.writeRGB(255,40,0);
               run_reed_return_time=millis();
             }
             Serial.println("Magnet_passes the reed switch on the way back");
@@ -317,10 +317,11 @@ static char VERSION[] = "V2.1.7";;
               Serial.print("Stop time plus run_reed_leave_time=");
               Serial.println(stop_time);
             //add start up leaving time to the stop the motor at the parking space
-            while(stop_time>millis()){
-            }
-              rgbLedMotor.writeRGB(255,0,0);
+              while(stop_time>millis()){
+                rgbLedMotor.writeRGB(255,40,0);
+              }
               motorOn= false;
+              rgbLedMotor.writeRGB(255,0,0);
               digitalWrite(motorPin, HIGH);
 
             //read potmeter 
@@ -362,8 +363,8 @@ void loop() {
       if (beatcount==1) {
         ledState=true;
         beatcount++;
-        Serial.print ("Beatcount added to =");
-        Serial.println(beatcount);
+        Serial.print ("Beat count =");
+        Serial.println(beat_array_count);
       }else{
         ledState=false;
       }
@@ -404,7 +405,7 @@ void loop() {
   }
   // read potmeter value for setup delay of beat in main loop
       int potRead = map(analogRead(potPin), 0, 1023, 1, 100);
-      if (abs(potRead-pot_old_read)>2){
+      if (abs(potRead-pot_old_read)>5){
         pot_old_read=potRead;
       //convert run_reed_leave_time to half of one_wipe_time
         int one_wipe_time_procentage= (run_reed_leave_time/2)*potRead/100;
@@ -476,47 +477,47 @@ void loop() {
     if ((sum > thr) && (curDel >= minDelay) && (sum >= minLevel)) { // There's a beat
       avgDelay += ( curDel - avgDelay) / numReadings;
       curDel = 0; // restart the counter when the delay is at least the average
-      //set beat count and flash led for 1 second
+      // //set beat count and flash led for 1 second
         beatcount=1;
         beat_array_count++;
-      //set time for the beat array 
-        beatPulseArray[beat_array_count]=millis();
-        Serial.println(beatPulseArray[beat_array_count]);
-        Serial.println("beat detected-1");
+      // //set time for the beat array 
+      //   beatPulseArray[beat_array_count]=millis();
+      //   Serial.println(beatPulseArray[beat_array_count]);
+      //   Serial.println("beat detected-1");
       run_motor();
     }
 
     if ((curDel >= 2.0 * round(avgDelay)) && (curDel > minDelay) && (sum >= minLevel)) { // There's a beat
       curDel = 0;
       guess = 1;
-      //set beat count and flash led for 1 second
+      // //set beat count and flash led for 1 second
         beatcount=1;
         beat_array_count++;
-      //set time for the beat array 1
-        beatPulseArray[beat_array_count]=millis();
-        Serial.println(beatPulseArray[beat_array_count]);
-        Serial.println("beat detected-2");
+      // //set time for the beat array 1
+      //   beatPulseArray[beat_array_count]=millis();
+      //   Serial.println(beatPulseArray[beat_array_count]);
+      //   Serial.println("beat detected-2");
       run_motor();
      }
 
-    // int magnet_show =(!magnetOn*10)+5;
-    // int motor_show =(motorOn*20)+10;
-    // Serial.print(sum, 5);
-    // Serial.print("\t");
-    // Serial.print(thr, 5);
-    // Serial.print("\t");
-    // Serial.print(guess == 1 ? -200 : 0);
-    // Serial.print("\t");
-    // Serial.print(curDel == 0 ? 200 : 0);
-    // Serial.print("\t");
-    // Serial.print("count: ");
-    // Serial.print(count);
-    // Serial.print("\t");
-    // Serial.print("magnet: ");
-    // Serial.print(magnet_show);
-    // Serial.print("\t");
-    // Serial.print("motor: ");
-    // Serial.println(motor_show);
+    int magnet_show =(!magnetOn*10)+5;
+    int motor_show =(motorOn*20)+10;
+    Serial.print(sum, 5);
+    Serial.print("\t");
+    Serial.print(thr, 5);
+    Serial.print("\t");
+    Serial.print(guess == 1 ? -200 : 0);
+    Serial.print("\t");
+    Serial.print(curDel == 0 ? 200 : 0);
+    Serial.print("\t");
+    Serial.print("count: ");
+    Serial.print(count);
+    Serial.print("\t");
+    Serial.print("magnet: ");
+    Serial.print(magnet_show);
+    Serial.print("\t");
+    Serial.print("motor: ");
+    Serial.println(motor_show);
   }
 }
 // end loop -------------------------------------------------------------------------------------------------------------------------------------------------

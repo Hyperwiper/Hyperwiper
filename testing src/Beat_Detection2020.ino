@@ -31,7 +31,7 @@ const int myInput = AUDIO_INPUT_LINEIN; // Are we using mic or line?
 const int numReadings = 7; // How many ODFs are we using for average?
 const int noBins = 512; // number of real bins used in the FFT (total number of bins should be double this)
 const int LPorder = 7; // Linear predictor order
-const int led = 13;
+const int led = 2;
 const int ONtime_mills = 10;   // time for better delay function
 int ledState = LOW;
 unsigned long ledStarted = 0;
@@ -100,7 +100,7 @@ void setup() {
   audioShield.autoVolumeControl(2, 3, 0, -30, 5, 50); //enable compressor
 
   audioShield.inputSelect(myInput);
-  audioShield.volume(.3);  //0.8 is the max undistorted output on the headphones
+  audioShield.volume(.8);  //0.8 is the max undistorted output on the headphones
 
   // reduce the gain on mixer channels
   monoMix.gain(0, 0.5);
