@@ -484,7 +484,7 @@ void loop() {
       // //set time for the beat array 
       //   beatPulseArray[beat_array_count]=millis();
       //   Serial.println(beatPulseArray[beat_array_count]);
-      //   Serial.println("beat detected-1");
+        Serial.println("beat detected-1");
       run_motor();
     }
 
@@ -497,7 +497,7 @@ void loop() {
       // //set time for the beat array 1
       //   beatPulseArray[beat_array_count]=millis();
       //   Serial.println(beatPulseArray[beat_array_count]);
-      //   Serial.println("beat detected-2");
+        Serial.println("beat detected-2");
       run_motor();
      }
 
