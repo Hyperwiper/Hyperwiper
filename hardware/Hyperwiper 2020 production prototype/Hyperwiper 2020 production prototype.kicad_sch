@@ -1801,25 +1801,49 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
   )
 
-  (global_label "TX" (shape input) (at 43.815 116.84 180)    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 37.7008 116.7606 0)
+  (global_label "TX-1" (shape input) (at 43.815 116.84 180)    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 34.9189 116.7606 0)
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
 
     (effects (font (size 1.27 1.27)) (justify right))
   )
-  (global_label "RX" (shape input) (at 43.815 119.38 180)    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 37.3984 119.3006 0)
+  (global_label "RX-1" (shape input) (at 43.815 119.38 180)    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 34.6165 119.3006 0)
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
 
     (effects (font (size 1.27 1.27)) (justify right))
   )
-  (global_label "RX" (shape input) (at 107.95 60.96 0)    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 114.3666 61.0394 0)
+  (global_label "RX-2" (shape input) (at 52.07 45.72 180)    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 42.8715 45.6406 0)
+      (effects (font (size 1.27 1.27)) (justify right) hide)
+    )
+
+    (effects (font (size 1.27 1.27)) (justify right))
+  )
+  (global_label "TX-2" (shape input) (at 52.07 48.26 180)    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 43.1739 48.1806 0)
+      (effects (font (size 1.27 1.27)) (justify right) hide)
+    )
+
+    (effects (font (size 1.27 1.27)) (justify right))
+  )
+  (global_label "TX-2" (shape input) (at 99.06 116.84 180)    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 90.1639 116.7606 0)
+      (effects (font (size 1.27 1.27)) (justify right) hide)
+    )
+
+    (effects (font (size 1.27 1.27)) (justify right))
+  )
+  (global_label "RX-2" (shape input) (at 99.06 119.38 180)    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 89.8615 119.3006 0)
+      (effects (font (size 1.27 1.27)) (justify right) hide)
+    )
+
+    (effects (font (size 1.27 1.27)) (justify right))
+  )
+  (global_label "RX-1" (shape input) (at 107.95 60.96 0)    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 117.1485 60.8806 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
 
     (effects (font (size 1.27 1.27)) (justify left))
   )
-  (global_label "TX" (shape input) (at 107.95 63.5 0)    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 114.0642 63.5794 0)
+  (global_label "TX-1" (shape input) (at 107.95 63.5 0)    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 116.8461 63.4206 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
 
