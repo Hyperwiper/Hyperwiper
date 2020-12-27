@@ -287,7 +287,6 @@
       ]
     ],
     "rule_severities": {
-      "": "error",
       "bus_definition_conflict": "error",
       "bus_label_syntax": "error",
       "bus_to_bus_conflict": "error",
@@ -352,11 +351,7 @@
         "nets": [
           "+3V3",
           "/5V",
-          "GND",
-          "Net-(J1-Pad1)",
-          "Net-(J1-Pad2)",
-          "Net-(JP1-Pad11)",
-          "Net-(JP1-Pad12)"
+          "GND"
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
@@ -414,7 +409,7 @@
   },
   "sheets": [
     [
-      "37c17e78-082b-4a36-9c17-441a3a2c2958",
+      "f7aa8584-d49d-4358-9aa4-be3b934a5325",
       ""
     ]
   ],

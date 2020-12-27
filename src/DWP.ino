@@ -8,7 +8,8 @@
  contact rob@yr-design.biz
  
  revisions:
- v2.1.8   2020-12-12 Updated beat LED displaying and level addjusted for dipsling serial out.
+ V2.1.9   2020-12-21 Audiomix disabled and pot level detect adjusted.
+ V2.1.8   2020-12-12 Updated beat LED displaying and level addjusted for dispayling serial out.
  V2.1.7   2020-12-10 Started beat timing array construction.
  V2.1.6   2020-12-07 Longer displaying beat detection in loop.
  V2.1.5   2020-12-07 Fixed stop motor after returning wiper delay.
@@ -76,7 +77,7 @@ To be done (2020-10-18):
 
  */
 
-static char VERSION[] = "V2.1.8";;
+static char VERSION[] = "V2.1.9";;
 
 //set drivers 
   #include <SPI.h>
@@ -155,6 +156,7 @@ static char VERSION[] = "V2.1.8";;
 
       // Specify which audio card we're using
         AudioControlSGTL5000 audioShield;
+
 
       // Define global constants here
         const int myInput = AUDIO_INPUT_LINEIN; // Are we using mic or line?
@@ -483,7 +485,7 @@ void loop() {
         beat_array_count++;
       // //set time for the beat array 
       //   beatPulseArray[beat_array_count]=millis();
-      //   Serial.println(beatPulseArray[beat_array_count]);
+        Serial.println(beatPulseArray[beat_array_count]);
         Serial.println("beat detected-1");
       run_motor();
     }
@@ -496,13 +498,13 @@ void loop() {
         beat_array_count++;
       // //set time for the beat array 1
       //   beatPulseArray[beat_array_count]=millis();
-      //   Serial.println(beatPulseArray[beat_array_count]);
+        Serial.println(beatPulseArray[beat_array_count]);
         Serial.println("beat detected-2");
       run_motor();
      }
 
-    // int magnet_show =(!magnetOn*10)+5;
-    // int motor_show =(motorOn*20)+10;
+    int magnet_show =(!magnetOn*10)+5;
+    int motor_show =(motorOn*20)+10;
     // Serial.print(sum, 5);
     // Serial.print("\t");
     // Serial.print(thr, 5);
