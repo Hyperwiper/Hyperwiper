@@ -8,6 +8,8 @@
  contact rob@yr-design.biz
  
  revisions:
+
+ V2.2.1   2020-12-32 Modified reyurn wiper magnet code
  V2.2.0   2020-12-31 Added stoptime after wiper passes magnet switch on return pass
  V2.1.9   2020-12-21 Audiomix disabled and pot level detect adjusted.
  V2.1.8   2020-12-12 Updated beat LED displaying and level addjusted for dispayling serial out.
@@ -51,17 +53,15 @@
 
 
 
-To be done (2020-10-18):
-
-    Variables needed for storage:
+To be done (2020-12-31):
      
-      - one wipe pluse length                                          one_wipe_time
       - windows beats number for sliding window                       
 
-      - add stop motor time with the pass magnet information that is calculated from the start-motor-reach-magnet time in the setup
-        also need to be changed for one pas and a return PLUS adding te run_reed_leave_time to be sure the wiper is back in the resting postion
+      - if wiper leaves it should always diabled magnet switch for the time that the run_reed_leave_time is calculetted puls some extra (maybe 500mSec)
+      - add pot timing to the beat detect/start time
 
       Done:
+      - add stop motor time with the pass magnet information that is calculated from the start-motor-reach-magnet time in the setup
       - start time pulse and actual reed relay signal receiving       run_reed_leave_time
       - read potmeter value for setup delay of beat in main loop
       - convert run_reed_leave_time to half of one_wipe_time
@@ -301,11 +301,14 @@ static char VERSION[] = "V2.1.9";;
               digitalWrite(motorPin, LOW);
               Serial.println("Start motor");
             //calculate time for reaching reedswitch
-            while (digitalRead(magnetPin)==1) {
-              rgbLedMotor.writeRGB(255,40,0);
-              run_reed_leave_time=millis();
-            }
-            Serial.println("Magnet leaves the start position and passes the reed switch");
+                while (digitalRead(magnetPin)==1) {
+                  rgbLedMotor.writeRGB(255,40,0);
+                  run_reed_leave_time=millis();
+
+                }
+              Serial.print("run_reed_leave_time = ");
+              Serial.println(run_reed_leave_time);
+              Serial.println("Magnet leaves the start position and passes the reed switch");
               rgbLedMotor.writeRGB(0,255,255);
             delay(500);
            while (digitalRead(magnetPin)==1) {
@@ -314,7 +317,7 @@ static char VERSION[] = "V2.1.9";;
             }
             Serial.println("Magnet_passes the reed switch on the way back");
             //stop motor after it passes the magnet switch with the time calculated when the motor started up and passed magnet switch
-            unsigned stop_time = millis();
+            stop_time = millis();
               Serial.print("Stop time = ");
               Serial.println(stop_time);
             stop_time=stop_time+run_reed_leave_time;
@@ -387,21 +390,28 @@ void loop() {
   if (pushbutton.update()) {
     if (pushbutton.risingEdge()) {
       count = count + 1;
-    Serial.println("magnet_leaving");
+    Serial.println("Wiper magnet_leaving");
       rgbLedMotor.writeRGB(255,60,0);
       countAt = millis();
       magnetOn= true;
     }
     if (pushbutton.fallingEdge()) {
-    Serial.println("magnet_arrived");
+    Serial.println("Wiper magnet_arrived");
       rgbLedMotor.writeRGB(0,0,255);
       countAt = millis();
       magnetOn= false;
-      Serial.print(stop_time);
-      //time to stop after motor passes return magnet       
-      // while(stop_time>millis()){
-      //           rgbLedMotor.writeRGB(255,40,0);
-      //         }
+      // Serial.print("run_reed_leave_time=");
+      // Serial.println(run_reed_leave_time);
+      //time to stop after motor passes return magnet
+    long stop_after_return_time=millis();
+    stop_time=stop_after_return_time+run_reed_leave_time;
+    Serial.print("Stop_time =");
+    Serial.println(stop_time);
+    Serial.print("Millis =");
+    Serial.println(millis());
+      while(stop_time>millis()){
+                rgbLedMotor.writeRGB(255,40,0);
+              }
       stop_motor();
     }
   } else {
@@ -418,6 +428,8 @@ void loop() {
         pot_old_read=potRead;
       //convert run_reed_leave_time to half of one_wipe_time
         int one_wipe_time_procentage= (run_reed_leave_time/2)*potRead/100;
+        //display motor LED white if potmeter is changed for testing
+        rgbLedMotor.writeRGB(255,255,255);
         Serial.print("one wipe time is = ");
         Serial.println(one_wipe_time_procentage);
       }
