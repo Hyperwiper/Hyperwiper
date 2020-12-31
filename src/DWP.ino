@@ -8,6 +8,7 @@
  contact rob@yr-design.biz
  
  revisions:
+ V2.2.0   2020-12-31 Added stoptime after wiper passes magnet switch on return pass
  V2.1.9   2020-12-21 Audiomix disabled and pot level detect adjusted.
  V2.1.8   2020-12-12 Updated beat LED displaying and level addjusted for dispayling serial out.
  V2.1.7   2020-12-10 Started beat timing array construction.
@@ -396,6 +397,11 @@ void loop() {
       rgbLedMotor.writeRGB(0,0,255);
       countAt = millis();
       magnetOn= false;
+      Serial.print(stop_time);
+      //time to stop after motor passes return magnet       
+      // while(stop_time>millis()){
+      //           rgbLedMotor.writeRGB(255,40,0);
+      //         }
       stop_motor();
     }
   } else {
