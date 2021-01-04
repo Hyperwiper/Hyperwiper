@@ -8,6 +8,7 @@
  contact rob@yr-design.biz
  
  revisions:
+ V2.2.3   2021-01-04 Fixed code for correctly pot meter change reading.
  V2.2.2   2021-01-04 Remove code for wipe test at startup and added pot delay for run_motor function.
  V2.2.1   2020-12-32 Modified reyurn wiper magnet code
  V2.2.0   2020-12-31 Added stoptime after wiper passes magnet switch on return pass
@@ -53,14 +54,13 @@
 
 
 
-To be done (2020-12-31):
+To be done (2021-01-04):
      
       - windows beats number for sliding window                       
-
-      - if wiper leaves it should always diabled magnet switch for the time that the run_reed_leave_time is calculetted puls some extra (maybe 500mSec)
       - add pot timing to the beat detect/start time
 
       Done:
+      - if wiper leaves it should always diabled magnet switch for the time that the run_reed_leave_time is calculetted puls some extra (maybe 500mSec)
       - add stop motor time with the pass magnet information that is calculated from the start-motor-reach-magnet time in the setup
       - start time pulse and actual reed relay signal receiving       run_reed_leave_time
       - read potmeter value for setup delay of beat in main loop
@@ -434,7 +434,7 @@ void loop() {
       if (abs(potRead-pot_old_read)>5){
         pot_old_read=potRead;
       //convert run_reed_leave_time to half of one_wipe_time
-        int one_wipe_time_procentage= (run_reed_leave_time/2)*potRead/100;
+        int one_wipe_time_procentage= potRead;
         //display motor LED white if potmeter is changed for testing
         rgbLedMotor.writeRGB(255,255,255);
         Serial.print("one wipe time is = ");
