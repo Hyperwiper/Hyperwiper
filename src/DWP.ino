@@ -78,7 +78,7 @@ To be done (2020-12-31):
 
  */
 
-static char VERSION[] = "V2.1.9";;
+static char VERSION[] = "V2.2.1";;
 
 //set drivers 
   #include <SPI.h>
@@ -99,7 +99,7 @@ static char VERSION[] = "V2.1.9";;
         int magnetPin = 14;
         int motorPin = 16;
         int potPin=17;
-        int potRead;
+        unsigned potRead;
         int potTime;
 
 //display magnet info  setup 
@@ -180,6 +180,7 @@ static char VERSION[] = "V2.1.9";;
         double alpha = .6;  // weight of the mean
         double m = 0.0;     // the mean of the previous ODFs
         double median = 0.0;     // the median of the previous ODFs
+        int guess = 0;
 
       void lp(int k) {
         // Computes the linear prediction weights for the previous values of a given bin k
@@ -224,7 +225,13 @@ static char VERSION[] = "V2.1.9";;
 // end init -------------------------------------------------------------------------------------------------------------------------------------------------
 
     void run_motor() {
+      //add pot delay
+            potRead = potRead+ millis();
+            while(potRead>millis()){
+                rgbLedMotor.writeRGB(255,40,0);
+              }
             rgbLedMotor.writeRGB(0,255,0);
+       //start motor     
             motorOn= true;
             digitalWrite(motorPin, LOW);
             Serial.println("motor_running");
@@ -295,41 +302,41 @@ static char VERSION[] = "V2.1.9";;
           delayForR.delay(0, 1000 * noBins / 44100);
     
 
-         //test for collecting time for delay start_motor and reed_read (new name for reed activity.)
-              rgbLedMotor.writeRGB(255,255,255);
-              motorOn= true;
-              digitalWrite(motorPin, LOW);
-              Serial.println("Start motor");
-            //calculate time for reaching reedswitch
-                while (digitalRead(magnetPin)==1) {
-                  rgbLedMotor.writeRGB(255,40,0);
-                  run_reed_leave_time=millis();
+        //  //test for collecting time for delay start_motor and reed_read (new name for reed activity.)
+        //       rgbLedMotor.writeRGB(255,255,255);
+        //       motorOn= true;
+        //       digitalWrite(motorPin, LOW);
+        //       Serial.println("Start motor");
+        //     //calculate time for reaching reedswitch
+        //         while (digitalRead(magnetPin)==1) {
+        //           rgbLedMotor.writeRGB(255,40,0);
+        //           run_reed_leave_time=millis();
 
-                }
-              Serial.print("run_reed_leave_time = ");
-              Serial.println(run_reed_leave_time);
-              Serial.println("Magnet leaves the start position and passes the reed switch");
-              rgbLedMotor.writeRGB(0,255,255);
-            delay(500);
-           while (digitalRead(magnetPin)==1) {
-              rgbLedMotor.writeRGB(255,40,0);
-              run_reed_return_time=millis();
-            }
-            Serial.println("Magnet_passes the reed switch on the way back");
-            //stop motor after it passes the magnet switch with the time calculated when the motor started up and passed magnet switch
-            stop_time = millis();
-              Serial.print("Stop time = ");
-              Serial.println(stop_time);
-            stop_time=stop_time+run_reed_leave_time;
-              Serial.print("Stop time plus run_reed_leave_time=");
-              Serial.println(stop_time);
-            //add start up leaving time to the stop the motor at the parking space
-              while(stop_time>millis()){
-                rgbLedMotor.writeRGB(255,40,0);
-              }
-              motorOn= false;
-              rgbLedMotor.writeRGB(255,0,0);
-              digitalWrite(motorPin, HIGH);
+        //         }
+        //       Serial.print("run_reed_leave_time = ");
+        //       Serial.println(run_reed_leave_time);
+        //       Serial.println("Magnet leaves the start position and passes the reed switch");
+        //       rgbLedMotor.writeRGB(0,255,255);
+        //     delay(500);
+        //    while (digitalRead(magnetPin)==1) {
+        //       rgbLedMotor.writeRGB(255,40,0);
+        //       run_reed_return_time=millis();
+        //     }
+        //     Serial.println("Magnet_passes the reed switch on the way back");
+        //     //stop motor after it passes the magnet switch with the time calculated when the motor started up and passed magnet switch
+        //     stop_time = millis();
+        //       Serial.print("Stop time = ");
+        //       Serial.println(stop_time);
+        //     stop_time=stop_time+run_reed_leave_time;
+        //       Serial.print("Stop time plus run_reed_leave_time=");
+        //       Serial.println(stop_time);
+        //     //add start up leaving time to the stop the motor at the parking space
+        //       while(stop_time>millis()){
+        //         rgbLedMotor.writeRGB(255,40,0);
+        //       }
+        //       motorOn= false;
+        //       rgbLedMotor.writeRGB(255,0,0);
+        //       digitalWrite(motorPin, HIGH);
 
             //read potmeter 
               potRead = analogRead(potPin);
@@ -343,12 +350,12 @@ static char VERSION[] = "V2.1.9";;
                 Serial.println(setupmode);
                 Serial.print("magnetOn=");
                 Serial.println(magnetOn);
-                Serial.print("Time from startpulse to reaching magnet is:");
-                Serial.println (run_reed_leave_time);
-                Serial.print("Time from magnet leaving till coming back is:");
-                Serial.println (run_reed_return_time);
-                Serial.print("One test wipe time is:");
-                Serial.println (run_reed_leave_time*2+run_reed_return_time);
+                // Serial.print("Time from startpulse to reaching magnet is:");
+                // Serial.println (run_reed_leave_time);
+                // Serial.print("Time from magnet leaving till coming back is:");
+                // Serial.println (run_reed_return_time);
+                // Serial.print("One test wipe time is:");
+                // Serial.println (run_reed_leave_time*2+run_reed_return_time);
                 Serial.print("potential meter level =");
                 Serial.println(potRead);
                 Serial.println("Audio setup finished");
@@ -403,15 +410,15 @@ void loop() {
       // Serial.print("run_reed_leave_time=");
       // Serial.println(run_reed_leave_time);
       //time to stop after motor passes return magnet
-    long stop_after_return_time=millis();
-    stop_time=stop_after_return_time+run_reed_leave_time;
-    Serial.print("Stop_time =");
-    Serial.println(stop_time);
-    Serial.print("Millis =");
-    Serial.println(millis());
-      while(stop_time>millis()){
-                rgbLedMotor.writeRGB(255,40,0);
-              }
+    // long stop_after_return_time=millis();
+    // stop_time=stop_after_return_time+run_reed_leave_time;
+    // Serial.print("Stop_time =");
+    // Serial.println(stop_time);
+    // Serial.print("Millis =");
+    // Serial.println(millis());
+    //   while(stop_time>millis()){
+    //             rgbLedMotor.writeRGB(255,40,0);
+    //           }
       stop_motor();
     }
   } else {
@@ -434,7 +441,7 @@ void loop() {
         Serial.println(one_wipe_time_procentage);
       }
    
-  //subtract from calculated expected beat
+
 
 
 
@@ -451,7 +458,7 @@ void loop() {
   double sum = 0.0;   // a float to store the sum of all the OFTs bin magnitudes
   double thr = 0.0;  // a threshold to issue a beat, e.g., a frame must be 150% louder than the average
   double psd = 0.0;  //the predicted value
-  int guess = 0;
+
 
   double n;         // a float for reading each FFT bin magnitude
 
@@ -521,8 +528,8 @@ void loop() {
       run_motor();
      }
 
-    int magnet_show =(!magnetOn*10)+5;
-    int motor_show =(motorOn*20)+10;
+    // int magnet_show =(!magnetOn*10)+5;
+    // int motor_show =(motorOn*20)+10;
     // Serial.print(sum, 5);
     // Serial.print("\t");
     // Serial.print(thr, 5);
