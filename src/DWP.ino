@@ -8,7 +8,7 @@
  contact rob@yr-design.biz
  
  revisions:
-
+ V2.2.2   2021-01-04 Remove code for wipe test at startup and added pot delay for run_motor function.
  V2.2.1   2020-12-32 Modified reyurn wiper magnet code
  V2.2.0   2020-12-31 Added stoptime after wiper passes magnet switch on return pass
  V2.1.9   2020-12-21 Audiomix disabled and pot level detect adjusted.
@@ -78,7 +78,7 @@ To be done (2020-12-31):
 
  */
 
-static char VERSION[] = "V2.2.1";;
+static char VERSION[] = "V2.2.2";;
 
 //set drivers 
   #include <SPI.h>
