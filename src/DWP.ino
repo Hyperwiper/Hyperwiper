@@ -58,6 +58,7 @@ To be done (2021-01-04):
      
       - windows beats number for sliding window                       
       - add pot timing to the beat detect/start time
+      BPM should be between 60 and 130. So 1000ms till 460ms
 
       Done:
       - if wiper leaves it should always diabled magnet switch for the time that the run_reed_leave_time is calculetted puls some extra (maybe 500mSec)
@@ -78,7 +79,7 @@ To be done (2021-01-04):
 
  */
 
-static char VERSION[] = "V2.2.2";;
+static char VERSION[] = "V2.2.3";;
 
 //set drivers 
   #include <SPI.h>
@@ -430,7 +431,7 @@ void loop() {
     }
   }
   // read potmeter value for setup delay of beat in main loop
-      int potRead = map(analogRead(potPin), 0, 1023, 1, 100);
+      int potRead = map(analogRead(potPin), 0, 1023, 460, 1000);
       if (abs(potRead-pot_old_read)>5){
         pot_old_read=potRead;
       //convert run_reed_leave_time to half of one_wipe_time
