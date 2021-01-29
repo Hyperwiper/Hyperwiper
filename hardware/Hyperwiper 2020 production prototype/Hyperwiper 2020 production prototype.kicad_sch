@@ -2473,7 +2473,7 @@
     (in_bom yes) (on_board yes)
     (uuid "f9d2509a-a206-4349-9d2a-528f7b1ec6de")
     (property "Reference" "U3" (id 0) (at 241.3 21.59 0))
-    (property "Value" "XBEE-socket" (id 1) (at 241.3 24.13 0))
+    (property "Value" "Voltage regulator" (id 1) (at 241.3 24.13 0))
     (property "Footprint" "Package_TO_SOT_THT:TO-220-3_Vertical" (id 2) (at 241.935 33.02 0)
       (effects (font (size 1.27 1.27) italic) (justify left) hide)
     )
@@ -2730,7 +2730,7 @@
       (reference "U1") (unit 1) (value "Teensy4.0") (footprint "Teensy:Teensy40")
     )
     (path "/f9d2509a-a206-4349-9d2a-528f7b1ec6de"
-      (reference "U3") (unit 1) (value "XBEE-socket") (footprint "Package_TO_SOT_THT:TO-220-3_Vertical")
+      (reference "U3") (unit 1) (value "Voltage regulator") (footprint "Package_TO_SOT_THT:TO-220-3_Vertical")
     )
   )
 )
