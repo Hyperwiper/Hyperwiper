@@ -380,7 +380,11 @@
         "nets": [
           "+3V3",
           "/5V",
-          "GND"
+          "GND",
+          "Net-(D4-Pad1)",
+          "Net-(D4-Pad2)",
+          "Net-(J1-Pad1)",
+          "Net-(J1-Pad2)"
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
@@ -438,7 +442,7 @@
   },
   "sheets": [
     [
-      "4823eed1-bcd8-42e9-b5e9-18178e2ecd27",
+      "50036ec7-e988-40c5-a7ec-978f46a1a525",
       ""
     ]
   ],
