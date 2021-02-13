@@ -5,7 +5,7 @@
   (title_block
     (title "Prototype board")
     (date "2020-08-19")
-    (rev "V2.1.6")
+    (rev "V2.2.6")
   )
 
   (lib_symbols
@@ -2110,7 +2110,7 @@
   (symbol (lib_id "power:+3V3") (at 127.635 88.9 270) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid babc2518-5094-496e-9bdc-d94851cfa9c2)
-    (property "Reference" "#PWR?" (id 0) (at 123.825 88.9 0)
+    (property "Reference" "#PWR0113" (id 0) (at 123.825 88.9 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3" (id 1) (at 131.4451 88.6333 90)
@@ -2194,7 +2194,7 @@
   (symbol (lib_id "power:GND") (at 127.635 99.695 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 10c7def5-12ac-453c-9a34-a49b0704d7bd)
-    (property "Reference" "#PWR?" (id 0) (at 127.635 106.045 0)
+    (property "Reference" "#PWR0103" (id 0) (at 127.635 106.045 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (id 1) (at 130.81 100.965 0))
@@ -2660,7 +2660,7 @@
     (property "Value" "SW_DPDT_x2" (id 1) (at 247.8787 94.4943 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Footprint" "" (id 2) (at 245.745 92.075 0)
+    (property "Footprint" "Button_Switch_THT:SW_CuK_JS202011CQN_DPDT_Straight" (id 2) (at 245.745 92.075 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 245.745 92.075 0)
@@ -2680,7 +2680,7 @@
     (property "Value" "SW_DPDT_x2" (id 1) (at 252.3237 58.2993 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Footprint" "" (id 2) (at 247.65 57.15 0)
+    (property "Footprint" "Button_Switch_THT:SW_CuK_JS202011CQN_DPDT_Straight" (id 2) (at 247.65 57.15 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 247.65 57.15 0)
@@ -2964,6 +2964,9 @@
     (path "/31b77129-d219-4fa6-a3fb-a3e174db35c6"
       (reference "#PWR0102") (unit 1) (value "GND") (footprint "")
     )
+    (path "/10c7def5-12ac-453c-9a34-a49b0704d7bd"
+      (reference "#PWR0103") (unit 1) (value "GND") (footprint "")
+    )
     (path "/dc0b0cf5-d714-43fd-906e-7e8ba2bf804e"
       (reference "#PWR0104") (unit 1) (value "GND") (footprint "")
     )
@@ -2991,6 +2994,9 @@
     (path "/e3ca2e0c-6071-4015-947c-e8e925adcf57"
       (reference "#PWR0112") (unit 1) (value "+3V3") (footprint "")
     )
+    (path "/babc2518-5094-496e-9bdc-d94851cfa9c2"
+      (reference "#PWR0113") (unit 1) (value "+3V3") (footprint "")
+    )
     (path "/46d8eafb-00fd-4bdf-87b9-dd5898c2f937"
       (reference "#PWR0114") (unit 1) (value "GND") (footprint "")
     )
@@ -2999,12 +3005,6 @@
     )
     (path "/767b37fe-2445-4ff7-86c2-b8fae626c28d"
       (reference "#PWR0116") (unit 1) (value "+3V3") (footprint "")
-    )
-    (path "/10c7def5-12ac-453c-9a34-a49b0704d7bd"
-      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/babc2518-5094-496e-9bdc-d94851cfa9c2"
-      (reference "#PWR?") (unit 1) (value "+3V3") (footprint "")
     )
     (path "/bc80e3ce-b48d-40fd-b22c-6384e7899540"
       (reference "C1") (unit 1) (value "0.1uF") (footprint "Capacitor_THT:C_Rect_L7.0mm_W2.5mm_P5.00mm")
@@ -3076,10 +3076,10 @@
       (reference "RV1") (unit 1) (value "R_POT_TRIM") (footprint "Potentiometer_THT:Potentiometer_Piher_PT-10-V05_Vertical")
     )
     (path "/708522b5-f48c-473c-8635-21f9ec15887b"
-      (reference "SW1") (unit 1) (value "SW_DPDT_x2") (footprint "")
+      (reference "SW1") (unit 1) (value "SW_DPDT_x2") (footprint "Button_Switch_THT:SW_CuK_JS202011CQN_DPDT_Straight")
     )
     (path "/06382058-0dbb-497c-b69a-5fa0882a27c2"
-      (reference "SW1") (unit 2) (value "SW_DPDT_x2") (footprint "")
+      (reference "SW1") (unit 2) (value "SW_DPDT_x2") (footprint "Button_Switch_THT:SW_CuK_JS202011CQN_DPDT_Straight")
     )
     (path "/dbeb2dea-7d69-49c5-950e-aaa8e36682a0"
       (reference "SW2") (unit 1) (value "SW_Reed") (footprint "Button_Switch_SMD:SW_SPST_REED_CT10-XXXX-G1")
