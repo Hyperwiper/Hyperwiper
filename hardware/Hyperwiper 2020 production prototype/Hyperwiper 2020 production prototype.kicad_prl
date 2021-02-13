@@ -1,7 +1,7 @@
 {
   "board": {
-    "active_layer": 0,
-    "active_layer_preset": "All Layers",
+    "active_layer": 40,
+    "active_layer_preset": "",
     "auto_track_width": true,
     "hidden_nets": [],
     "high_contrast_mode": 0,
@@ -53,6 +53,7 @@
       24,
       25,
       26,
+      27,
       29,
       30,
       31,
@@ -63,8 +64,8 @@
       39,
       40
     ],
-    "visible_layers": "fffffff_ffffffff",
-    "zone_display_mode": 0
+    "visible_layers": "ffffeff_ffffffff",
+    "zone_display_mode": 2
   },
   "meta": {
     "filename": "Hyperwiper 2020 production prototype.kicad_prl",
@@ -72,18 +73,6 @@
   },
   "project": {
     "files": [
-      {
-        "name": "Hyperwiper 2020 production prototype.kicad_pcb",
-        "open": false,
-        "window": {
-          "display": 0,
-          "maximized": true,
-          "pos_x": 0,
-          "pos_y": 60,
-          "size_x": 1280,
-          "size_y": 459
-        }
-      },
       {
         "name": "Hyperwiper 2020 production prototype.kicad_sch",
         "open": false,
@@ -93,7 +82,7 @@
           "pos_x": 110,
           "pos_y": 561,
           "size_x": 1280,
-          "size_y": 486
+          "size_y": 382
         }
       }
     ]
