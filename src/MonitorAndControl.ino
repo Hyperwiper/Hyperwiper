@@ -32,22 +32,21 @@ void setup(void)
 {
   // start serial port
   Serial.begin(9600);
-  Serial.println("PWM Controller Library Test");
+  delay(1000);
+  Serial.println("PWM Controller ready");
 
   // Start up the library
   fan.begin();
+      fan.setDutyCycle(100);
+
+  // Get duty cycle
+    byte dutyCycle = fan.getDutyCycle();
+    Serial.print("Start Duty cycle: ");
+    Serial.println(dutyCycle, DEC);
 }
 
-/*
-   Main function, get and show the temperature
-*/
 void loop(void)
 {
-  // // Call fan.getSpeed() to get fan RPM.
-  // Serial.print("Current speed: ");
-  // unsigned int rpms = fan.getSpeed(); // Send the command to get RPM
-  // Serial.print(rpms);
-  // Serial.println("RPM");
 
   // Get new speed from Serial (0-100%)
   if (Serial.available() > 0) {
@@ -72,5 +71,5 @@ void loop(void)
 
   // Not really needed, just avoiding spamming the monitor,
   // readings will be performed no faster than once every THRESHOLD ms anyway
-  delay(1000);
+  delay(100);
 }
