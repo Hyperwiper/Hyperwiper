@@ -64,7 +64,7 @@
       40
     ],
     "visible_layers": "fffffff_ffffffff",
-    "zone_display_mode": 0
+    "zone_display_mode": 1
   },
   "meta": {
     "filename": "Hyperwiper 2020 production prototype.kicad_prl",
@@ -81,7 +81,7 @@
           "pos_x": 0,
           "pos_y": 60,
           "size_x": 1280,
-          "size_y": 563
+          "size_y": 537
         }
       },
       {
@@ -93,7 +93,7 @@
           "pos_x": 110,
           "pos_y": 480,
           "size_x": 1280,
-          "size_y": 668
+          "size_y": 538
         }
       }
     ]
