@@ -43,11 +43,11 @@ void setup(void)
 */
 void loop(void)
 {
-  // Call fan.getSpeed() to get fan RPM.
-  Serial.print("Current speed: ");
-  unsigned int rpms = fan.getSpeed(); // Send the command to get RPM
-  Serial.print(rpms);
-  Serial.println("RPM");
+  // // Call fan.getSpeed() to get fan RPM.
+  // Serial.print("Current speed: ");
+  // unsigned int rpms = fan.getSpeed(); // Send the command to get RPM
+  // Serial.print(rpms);
+  // Serial.println("RPM");
 
   // Get new speed from Serial (0-100%)
   if (Serial.available() > 0) {
