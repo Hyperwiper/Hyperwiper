@@ -30,7 +30,8 @@ FanController fan(SENSOR_PIN, SENSOR_THRESHOLD, PWM_PIN);
 */
 void setup(void)
 {
-  // start serial port
+  digitalWrite(PWM_PIN, LOW);
+  // start serial portIRF4905
   Serial.begin(9600);
   delay(1000);
   Serial.println("PWM Controller ready");
