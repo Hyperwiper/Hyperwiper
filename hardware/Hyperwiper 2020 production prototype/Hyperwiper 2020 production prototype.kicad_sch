@@ -4,7 +4,7 @@
 
   (title_block
     (title "Prototype board")
-    (date "2020-08-19")
+    (date "2021-02-18")
     (rev "V2.2.6")
   )
 
@@ -2154,7 +2154,7 @@
   (symbol (lib_id "power:GND") (at 45.72 26.67 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 1de92fbf-77eb-4ed4-b7b4-d77d913de456)
-    (property "Reference" "#PWR?" (id 0) (at 45.72 33.02 0)
+    (property "Reference" "#PWR0117" (id 0) (at 45.72 33.02 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (id 1) (at 48.895 27.94 0))
@@ -2607,7 +2607,7 @@
     (property "Value" "100uF" (id 1) (at 130.5561 94.4943 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Capacitor_THT:CP_Radial_D12.5mm_P7.50mm" (id 2) (at 128.6002 97.155 0)
+    (property "Footprint" "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm" (id 2) (at 128.6 97.155 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 127.635 93.345 0)
@@ -2626,7 +2626,7 @@
     (property "Value" "100uF" (id 1) (at 195.9611 56.3943 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Capacitor_THT:CP_Radial_D12.5mm_P7.50mm" (id 2) (at 194.005 59.055 0)
+    (property "Footprint" "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm" (id 2) (at 194.005 59.055 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 193.04 55.245 0)
@@ -3031,16 +3031,16 @@
       (reference "#PWR0116") (unit 1) (value "+3V3") (footprint "")
     )
     (path "/1de92fbf-77eb-4ed4-b7b4-d77d913de456"
-      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+      (reference "#PWR0117") (unit 1) (value "GND") (footprint "")
     )
     (path "/bc80e3ce-b48d-40fd-b22c-6384e7899540"
       (reference "C1") (unit 1) (value "0.1uF") (footprint "Capacitor_THT:C_Rect_L7.0mm_W2.5mm_P5.00mm")
     )
     (path "/a3df5c38-cb40-4288-94fc-7fa0713cdfdf"
-      (reference "C2") (unit 1) (value "100uF") (footprint "Capacitor_THT:CP_Radial_D12.5mm_P7.50mm")
+      (reference "C2") (unit 1) (value "100uF") (footprint "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm")
     )
     (path "/845347af-56a0-4cb3-b8db-952808318f9a"
-      (reference "C3") (unit 1) (value "100uF") (footprint "Capacitor_THT:CP_Radial_D12.5mm_P7.50mm")
+      (reference "C3") (unit 1) (value "100uF") (footprint "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm")
     )
     (path "/2723ac12-21fb-4eb0-b91d-4ea3a28c8ae0"
       (reference "D1") (unit 1) (value "Motor LED") (footprint "LED_THT:LED_D5.0mm-4_RGB")
