@@ -58,10 +58,10 @@
 
 
 
-To be done (2021-01-04):
+To be done (2021-03-14):
      
-      - windows beats number for sliding window                       
-      - info:BPM should be between 60 and 130. So 1000ms till 460ms
+      - windows beats number for sliding window                      
+      info: BPM should be between 60 and 130. So 1000ms till 460ms
 
       Done:
       - add pot timing to the beat detect/start time
@@ -369,7 +369,6 @@ void loop() {
       rgbLedMotor.writeRGB(0,0,255);
       countAt = millis();
       magnetOn= false;
-        }
       stop_motor();
     }
   } else {
