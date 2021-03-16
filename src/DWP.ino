@@ -235,6 +235,8 @@ static char VERSION[] = "V2.2.7";;
             while(potRead>millis()){
                 rgbLedMotor.writeRGB(255,40,0);
               }
+            Serial.print("pot delay time=");
+            Serial.println(potRead);
             rgbLedMotor.writeRGB(0,255,0);
        //start motor     
             motorOn= true;
@@ -392,9 +394,6 @@ void loop() {
         Serial.println(one_wipe_time_procentage);
       }
    
-
-
-
 
   // Main loop 
   if(magnetOn){
