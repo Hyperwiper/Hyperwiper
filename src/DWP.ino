@@ -8,6 +8,7 @@
  contact rob@yr-design.biz
  
  revisions:
+ V2.2.8   2021-03-18 code fixing for start/stop start bug
  V2.2.7   2021-02-13 Cleaned up code.
  V2.2.6   2021-02-13 Changed schematic Kicad to MOSFET only.
  V2.2.5   2021-02-09 Prepare for PWM and MOSFETS for controling power
@@ -83,7 +84,7 @@ To be done (2021-03-14):
 
  */
 
-static char VERSION[] = "V2.2.7";;
+static char VERSION[] = "V2.2.8";;
 
 //set drivers 
   #include <SPI.h>
@@ -112,6 +113,8 @@ static char VERSION[] = "V2.2.7";;
         unsigned int count = 0;            // how many times has it changed to low
         unsigned long countAt = 0;         // when count changed
         unsigned int countPrinted = 0;     // last count printed
+        unsigned int magnet_delay = 2000;  // delay for after starting magnet leave to prefent stopping directly after start
+        boolean justStart=false;
 
 //init variables setup
         Bounce pushbutton = Bounce(magnetPin, 10);  
@@ -370,18 +373,8 @@ void loop() {
     if (pushbutton.fallingEdge()) {
     Serial.println("Wiper magnet_arrived");
       rgbLedMotor.writeRGB(0,0,255);
-      countAt = millis();
-      if (magnetOn) {
-          unsigned long nowMillis = millis();
-          while(nowMillis - countAt > 100){
-          }
-          magnetOn= false;
-          stop_motor();
-        }
-        else{
-            magnetOn= false;
-            stop_motor();
-        }
+        magnetOn= false;
+        stop_motor();
     }
   } else {
     if (count != countPrinted) {
