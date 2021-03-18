@@ -366,12 +366,22 @@ void loop() {
       countAt = millis();
       magnetOn= true;
     }
+    
     if (pushbutton.fallingEdge()) {
     Serial.println("Wiper magnet_arrived");
       rgbLedMotor.writeRGB(0,0,255);
       countAt = millis();
-      magnetOn= false;
-      stop_motor();
+      if (magnetOn) {
+          unsigned long nowMillis = millis();
+          while(nowMillis - countAt > 100){
+          }
+          magnetOn= false;
+          stop_motor();
+        }
+        else{
+            magnetOn= false;
+            stop_motor();
+        }
     }
   } else {
     if (count != countPrinted) {
@@ -383,7 +393,7 @@ void loop() {
   }
   // read potmeter value for setup delay of beat in main loop
       int potRead = map(analogRead(potPin), 0, 1023, 460, 1000);
-      if (abs(potRead-pot_old_read)>5){
+      if (abs(potRead-pot_old_read)>10){
         pot_old_read=potRead;
       //convert run_reed_leave_time to half of one_wipe_time
         int one_wipe_time_procentage= potRead;
@@ -396,14 +406,17 @@ void loop() {
    
 
   // Main loop 
+
+  // minloop timer
   if(magnetOn){
       minloop(minTimeSet);
-      magnetOn= true;
+      motorOn= true;
       rgbLedMotor.writeRGB(0,255,0);
       }else{        
       minloop(minTimeSet);
       } 
-      
+    
+
   //Main audio beat detection
   double sum = 0.0;   // a float to store the sum of all the OFTs bin magnitudes
   double thr = 0.0;  // a threshold to issue a beat, e.g., a frame must be 150% louder than the average
