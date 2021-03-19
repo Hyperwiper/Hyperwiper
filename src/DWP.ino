@@ -8,7 +8,8 @@
  contact rob@yr-design.biz
  
  revisions:
- V2.2.8   2021-03-18 code fixing for start/stop start bug
+ V2.2.9   2021-03-19 Moved pot delay timing from run routine to between the beat detections and run motor routine
+ V2.2.8   2021-03-18 Code fixing for start/stop start bug
  V2.2.7   2021-02-13 Cleaned up code.
  V2.2.6   2021-02-13 Changed schematic Kicad to MOSFET only.
  V2.2.5   2021-02-09 Prepare for PWM and MOSFETS for controling power
@@ -84,7 +85,7 @@ To be done (2021-03-14):
 
  */
 
-static char VERSION[] = "V2.2.8";;
+static char VERSION[] = "V2.2.9";;
 
 //set drivers 
   #include <SPI.h>
