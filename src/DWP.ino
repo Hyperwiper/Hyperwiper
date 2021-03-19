@@ -233,13 +233,6 @@ static char VERSION[] = "V2.2.8";;
 // end init -------------------------------------------------------------------------------------------------------------------------------------------------
 
     void run_motor() {
-      //add pot delay
-            potRead = potRead+ millis();
-            while(potRead>millis()){
-                rgbLedMotor.writeRGB(255,40,0);
-              }
-            Serial.print("pot delay time=");
-            Serial.println(potRead);
             rgbLedMotor.writeRGB(0,255,0);
        //start motor     
             motorOn= true;
@@ -468,6 +461,13 @@ void loop() {
       //   beatPulseArray[beat_array_count]=millis();
         Serial.println(beatPulseArray[beat_array_count]);
         Serial.println("beat detected-1");
+      //add pot delay
+          potRead = potRead+ millis();
+          while(potRead>millis()){
+              rgbLedMotor.writeRGB(255,40,0);
+            }
+          Serial.print("pot delay time=");
+          Serial.println(potRead);
       run_motor();
     }
 
@@ -481,6 +481,13 @@ void loop() {
       //   beatPulseArray[beat_array_count]=millis();
         Serial.println(beatPulseArray[beat_array_count]);
         Serial.println("beat detected-2");
+      //add pot delay
+          potRead = potRead+ millis();
+          while(potRead>millis()){
+              rgbLedMotor.writeRGB(255,40,0);
+            }
+          Serial.print("pot delay time=");
+          Serial.println(potRead);
       run_motor();
      }
   }
