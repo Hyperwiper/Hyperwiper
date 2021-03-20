@@ -60,8 +60,10 @@
 
 
 
-To be done (2021-03-14):
+To be done (2021-03-20):
      
+      -add new variables for delay_time_run in init, beatdetect part run command remove and replaced with set delay_time_run boolean, make a routine with timing in loop to let it always run though the routine to check the time and trigger the run_motor command and also set the delay_time_run boolean to false.
+
       - windows beats number for sliding window                      
       info: BPM should be between 60 and 130. So 1000ms till 460ms
 
@@ -392,6 +394,10 @@ void loop() {
       }
    
 
+  // /setup delay_run_motor routine (see notes in header)
+
+
+
   // Main loop 
 
   // minloop timer
@@ -469,6 +475,8 @@ void loop() {
             }
           Serial.print("pot delay time=");
           Serial.println(potRead);
+
+      //add delay_run_motor boolean set here delete run_motor routine
       run_motor();
     }
 
