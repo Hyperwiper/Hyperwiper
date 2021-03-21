@@ -87,7 +87,7 @@ To be done (2021-03-20):
 
  */
 
-static char VERSION[] = "V2.2.9";;
+static char VERSION[] = "V2.3.0";;
 
 //set drivers 
   #include <SPI.h>
@@ -264,6 +264,21 @@ static char VERSION[] = "V2.2.9";;
         } 
       }
 
+
+    void delay_run_motor(long delay_time)
+      {
+      // create the minimum timing for the wiper motor to wait for next beat
+         unsigned long currentMillis = millis();  
+        if(currentMillis - previousMillis > (unsigned)delay_time) {
+          previousMillis = currentMillis;  
+          // run motor
+            rgbLedMotor.writeRGB(255,0,60);
+            motorOn= true;
+            digitalWrite(motorPin, LOW);
+            Serial.println("delay time run");
+        } 
+      }
+
 // start setup  -------------------------------------------------------------------------------------------------------------------------------------------------
          
    void setup() {
@@ -394,10 +409,6 @@ void loop() {
       }
    
 
-  // /setup delay_run_motor routine (see notes in header)
-
-
-
   // Main loop 
 
   // minloop timer
@@ -477,7 +488,8 @@ void loop() {
           Serial.println(potRead);
 
       //add delay_run_motor boolean set here delete run_motor routine
-      run_motor();
+      delay_run_motor(potRead);
+      // run_motor();
     }
 
     if ((curDel >= 2.0 * round(avgDelay)) && (curDel > minDelay) && (sum >= minLevel)) { // There's a beat
@@ -497,7 +509,10 @@ void loop() {
             }
           Serial.print("pot delay time=");
           Serial.println(potRead);
-      run_motor();
+
+      //add delay_run_motor boolean set here delete run_motor routine
+          delay_run_motor(potRead);
+      // run_motor();
      }
   }
 }
