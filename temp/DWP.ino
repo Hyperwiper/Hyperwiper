@@ -89,6 +89,7 @@ static char VERSION[] = "V2.2.6";;
   #include <EEPROMex.h>
   #include <Bounce.h>
   #include <RGBLED.h>
+  #include <FanController.h>
 
 //audio setup
   #include <Audio.h>
@@ -105,6 +106,7 @@ static char VERSION[] = "V2.2.6";;
         int potPin=17;
         unsigned potRead;
         int potTime;
+        #define PWM_PIN 10 // pin D10
 
 //display magnet info  setup 
         byte previousState = HIGH;         // what state was the button last time
