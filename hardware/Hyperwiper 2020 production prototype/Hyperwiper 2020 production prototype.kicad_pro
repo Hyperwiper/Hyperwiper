@@ -379,8 +379,8 @@
           "GND",
           "Net-(D4-Pad1)",
           "Net-(D4-Pad2)",
-          "Net-(D5-Pad1)",
-          "Net-(D5-Pad2)"
+          "Net-(J1-Pad1)",
+          "Net-(J1-Pad2)"
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
@@ -429,7 +429,7 @@
     "meta": {
       "version": 0
     },
-    "net_format_name": "Pcbnew",
+    "net_format_name": "KiCad",
     "ngspice": {
       "meta": {
         "version": 0
@@ -445,7 +445,7 @@
   },
   "sheets": [
     [
-      "c7ffc59c-47d3-4acf-b6fe-53fc1b916f0c",
+      "0e2e56a5-2348-4cfa-9318-b620f23c76f1",
       ""
     ]
   ],
