@@ -8,6 +8,7 @@
  contact rob@yr-design.biz
  
  revisions:
+ V2.3.0   2021-03-29 Added hardware and software changes for MOSFET
  V2.2.6   2021-02-13 Changed schematic Kicad to MOSFET only.
  V2.2.5   2021-02-09 Prepare for PWM and MOSFETS for controling power
  V2.2.4   2021-01-07 Mapped the pot meter for timing of one beat 60-130BPM
@@ -82,7 +83,7 @@ To be done (2021-01-04):
 
  */
 
-static char VERSION[] = "V2.2.6";;
+static char VERSION[] = "V2.3.0";;
 
 //set drivers 
   #include <SPI.h>
