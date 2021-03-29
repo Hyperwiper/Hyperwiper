@@ -1,11 +1,18 @@
 // Include the library
 
+<<<<<<< HEAD
 //set drivers 
   #include <SPI.h>
   #include <Wire.h>
   #include <SD.h>
 
 
+=======
+//set drivers
+#include <SPI.h>
+#include <Wire.h>
+#include <SD.h>
+>>>>>>> MOSFET-branch
 
 #include <FanController.h>
 
@@ -38,19 +45,33 @@ void setup(void)
 
   // Start up the library
   fan.begin();
+<<<<<<< HEAD
       fan.setDutyCycle(100);
 
   // Get duty cycle
     byte dutyCycle = fan.getDutyCycle();
     Serial.print("Start Duty cycle: ");
     Serial.println(dutyCycle, DEC);
+=======
+  fan.setDutyCycle(100);
+
+  // Get duty cycle
+  byte dutyCycle = fan.getDutyCycle();
+  Serial.print("Start Duty cycle: ");
+  Serial.println(dutyCycle, DEC);
+>>>>>>> MOSFET-branch
 }
 
 void loop(void)
 {
 
   // Get new speed from Serial (0-100%)
+<<<<<<< HEAD
   if (Serial.available() > 0) {
+=======
+  if (Serial.available() > 0)
+  {
+>>>>>>> MOSFET-branch
     // Parse speed
     int input = Serial.parseInt();
 

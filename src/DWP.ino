@@ -8,6 +8,7 @@
  contact rob@yr-design.biz
  
  revisions:
+ V2.3.0   2021-03-29 Added hardware and software changes for MOSFET
  V2.2.6   2021-02-13 Changed schematic Kicad to MOSFET only.
  V2.2.5   2021-02-09 Prepare for PWM and MOSFETS for controling power
  V2.2.4   2021-01-07 Mapped the pot meter for timing of one beat 60-130BPM
@@ -82,7 +83,7 @@ To be done (2021-01-04):
 
  */
 
-static char VERSION[] = "V2.2.6";;
+static char VERSION[] = "V2.3.0";;
 
 //set drivers 
   #include <SPI.h>
@@ -96,7 +97,10 @@ static char VERSION[] = "V2.2.6";;
   #include <Wire.h>
   #include <SD.h>
 
-
+// setup for PWM 
+  #define SENSOR_THRESHOLD 1000
+  #define SENSOR_PIN A10 //pin IO04
+  #define PWM_PIN 10 // pin D10
 
 // Start init's -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -142,6 +146,9 @@ static char VERSION[] = "V2.2.6";;
       //RGB LED pins setup
         RGBLED rgbLedBeat(2,3,4,COMMON_CATHODE);
         RGBLED rgbLedMotor(5,6,9,COMMON_CATHODE);
+
+      // Initialize library
+        FanController fan(SENSOR_PIN, SENSOR_THRESHOLD, PWM_PIN);
 
       //Audio setup
         AudioInputI2S       audioInput;
@@ -239,14 +246,18 @@ static char VERSION[] = "V2.2.6";;
             rgbLedMotor.writeRGB(0,255,0);
        //start motor     
             motorOn= true;
-            digitalWrite(motorPin, LOW);
+            //for MOSFET
+            fan.setDutyCycle(100);
+            // digitalWrite(motorPin, LOW); for relay
             Serial.println("motor_running");
     }
 
     void stop_motor() {
             rgbLedMotor.writeRGB(255,0,0);
             motorOn= false; 
-            digitalWrite(motorPin, HIGH);
+            //for MOSFET
+            fan.setDutyCycle(0);
+            // digitalWrite(motorPin, HIGH); for relay
             Serial.println("motor_stopped");
     }
 
@@ -259,7 +270,9 @@ static char VERSION[] = "V2.2.6";;
           // run motor
             rgbLedMotor.writeRGB(255,0,60);
             motorOn= true;
-            digitalWrite(motorPin, LOW);
+            //for MOSFET
+            fan.setDutyCycle(0);
+            // digitalWrite(motorPin, LOW); for relay
             Serial.println("minloop");
         } 
       }
@@ -307,66 +320,39 @@ static char VERSION[] = "V2.2.6";;
           delayForL.delay(0, 1000 * noBins / 44100);
           delayForR.delay(0, 1000 * noBins / 44100);
     
+          //setup PWM pin
+            digitalWrite(PWM_PIN, LOW);
+          // Start up the library
+            fan.begin();
+            fan.setDutyCycle(0);
+          // Get duty cycle
+            byte dutyCycle = fan.getDutyCycle();
 
-        //  //test for collecting time for delay start_motor and reed_read (new name for reed activity.)
-        //       rgbLedMotor.writeRGB(255,255,255);
-        //       motorOn= true;
-        //       digitalWrite(motorPin, LOW);
-        //       Serial.println("Start motor");
-        //     //calculate time for reaching reedswitch
-        //         while (digitalRead(magnetPin)==1) {
-        //           rgbLedMotor.writeRGB(255,40,0);
-        //           run_reed_leave_time=millis();
+          //read potmeter 
+            potRead = analogRead(potPin);
 
-        //         }
-        //       Serial.print("run_reed_leave_time = ");
-        //       Serial.println(run_reed_leave_time);
-        //       Serial.println("Magnet leaves the start position and passes the reed switch");
-        //       rgbLedMotor.writeRGB(0,255,255);
-        //     delay(500);
-        //    while (digitalRead(magnetPin)==1) {
-        //       rgbLedMotor.writeRGB(255,40,0);
-        //       run_reed_return_time=millis();
-        //     }
-        //     Serial.println("Magnet_passes the reed switch on the way back");
-        //     //stop motor after it passes the magnet switch with the time calculated when the motor started up and passed magnet switch
-        //     stop_time = millis();
-        //       Serial.print("Stop time = ");
-        //       Serial.println(stop_time);
-        //     stop_time=stop_time+run_reed_leave_time;
-        //       Serial.print("Stop time plus run_reed_leave_time=");
-        //       Serial.println(stop_time);
-        //     //add start up leaving time to the stop the motor at the parking space
-        //       while(stop_time>millis()){
-        //         rgbLedMotor.writeRGB(255,40,0);
-        //       }
-        //       motorOn= false;
-        //       rgbLedMotor.writeRGB(255,0,0);
-        //       digitalWrite(motorPin, HIGH);
-
-            //read potmeter 
-              potRead = analogRead(potPin);
-
-            //display status on serial
-                Serial.println();
-                Serial.println("-------- Set up info --------------------");
-                Serial.print("Version=");
-                Serial.println(VERSION);
-                Serial.print("Setup Mode=");
-                Serial.println(setupmode);
-                Serial.print("magnetOn=");
-                Serial.println(magnetOn);
-                // Serial.print("Time from startpulse to reaching magnet is:");
-                // Serial.println (run_reed_leave_time);
-                // Serial.print("Time from magnet leaving till coming back is:");
-                // Serial.println (run_reed_return_time);
-                // Serial.print("One test wipe time is:");
-                // Serial.println (run_reed_leave_time*2+run_reed_return_time);
-                Serial.print("potential meter level =");
-                Serial.println(potRead);
-                Serial.println("Audio setup finished");
-                Serial.println("-------- End Set up info ----------------");
-                Serial.println();
+          //display status on serial
+              Serial.println();
+              Serial.println("-------- Set up info --------------------");
+              Serial.print("Version=");
+              Serial.println(VERSION);
+              Serial.print("Setup Mode=");
+              Serial.println(setupmode);
+              Serial.print("magnetOn=");
+              Serial.println(magnetOn);
+              Serial.print("Start Duty cycle: ");
+              Serial.println(dutyCycle, DEC);
+              // Serial.print("Time from startpulse to reaching magnet is:");
+              // Serial.println (run_reed_leave_time);
+              // Serial.print("Time from magnet leaving till coming back is:");
+              // Serial.println (run_reed_return_time);
+              // Serial.print("One test wipe time is:");
+              // Serial.println (run_reed_leave_time*2+run_reed_return_time);
+              Serial.print("potential meter level =");
+              Serial.println(potRead);
+              Serial.println("Audio setup finished");
+              Serial.println("-------- End Set up info ----------------");
+              Serial.println();
       delay(1000);
 }
 
@@ -447,9 +433,6 @@ void loop() {
         Serial.println(one_wipe_time_procentage);
       }
    
-
-
-
 
   // Main loop 
   if(magnetOn){
