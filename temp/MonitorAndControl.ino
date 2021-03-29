@@ -1,11 +1,9 @@
 // Include the library
 
-//set drivers 
-  #include <SPI.h>
-  #include <Wire.h>
-  #include <SD.h>
-
-
+//set drivers
+#include <SPI.h>
+#include <Wire.h>
+#include <SD.h>
 
 #include <FanController.h>
 
@@ -38,19 +36,20 @@ void setup(void)
 
   // Start up the library
   fan.begin();
-      fan.setDutyCycle(100);
+  fan.setDutyCycle(100);
 
   // Get duty cycle
-    byte dutyCycle = fan.getDutyCycle();
-    Serial.print("Start Duty cycle: ");
-    Serial.println(dutyCycle, DEC);
+  byte dutyCycle = fan.getDutyCycle();
+  Serial.print("Start Duty cycle: ");
+  Serial.println(dutyCycle, DEC);
 }
 
 void loop(void)
 {
 
   // Get new speed from Serial (0-100%)
-  if (Serial.available() > 0) {
+  if (Serial.available() > 0)
+  {
     // Parse speed
     int input = Serial.parseInt();
 
