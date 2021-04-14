@@ -110,7 +110,6 @@ static char VERSION[] = "V2.3.0";;
         int potPin=17;
         unsigned potRead;
         int potTime;
-        #define PWM_PIN 10 // pin D10
 
 //display magnet info  setup 
         byte previousState = HIGH;         // what state was the button last time
@@ -392,25 +391,13 @@ void loop() {
     Serial.println("Wiper magnet_leaving");
       rgbLedMotor.writeRGB(255,60,0);
       countAt = millis();
-      magnetOn= true;
+      magnetOn= false;
     }
     if (pushbutton.fallingEdge()) {
     Serial.println("Wiper magnet_arrived");
       rgbLedMotor.writeRGB(0,0,255);
       countAt = millis();
-      magnetOn= false;
-      // Serial.print("run_reed_leave_time=");
-      // Serial.println(run_reed_leave_time);
-      //time to stop after motor passes return magnet
-    // long stop_after_return_time=millis();
-    // stop_time=stop_after_return_time+run_reed_leave_time;
-    // Serial.print("Stop_time =");
-    // Serial.println(stop_time);
-    // Serial.print("Millis =");
-    // Serial.println(millis());
-    //   while(stop_time>millis()){
-    //             rgbLedMotor.writeRGB(255,40,0);
-    //           }
+      magnetOn= true;
       stop_motor();
     }
   } else {
