@@ -1,18 +1,10 @@
 // Include the library
 
-<<<<<<< HEAD
-//set drivers 
-  #include <SPI.h>
-  #include <Wire.h>
-  #include <SD.h>
-
-
-=======
 //set drivers
 #include <SPI.h>
 #include <Wire.h>
 #include <SD.h>
->>>>>>> MOSFET-branch
+
 
 #include <FanController.h>
 
@@ -45,38 +37,25 @@ void setup(void)
 
   // Start up the library
   fan.begin();
-<<<<<<< HEAD
-      fan.setDutyCycle(100);
+  fan.setDutyCycle(100);
 
   // Get duty cycle
     byte dutyCycle = fan.getDutyCycle();
     Serial.print("Start Duty cycle: ");
     Serial.println(dutyCycle, DEC);
-=======
-  fan.setDutyCycle(100);
 
-  // Get duty cycle
-  byte dutyCycle = fan.getDutyCycle();
-  Serial.print("Start Duty cycle: ");
-  Serial.println(dutyCycle, DEC);
->>>>>>> MOSFET-branch
 }
 
 void loop(void)
 {
 
   // Get new speed from Serial (0-100%)
-<<<<<<< HEAD
-  if (Serial.available() > 0) {
-=======
-  if (Serial.available() > 0)
-  {
->>>>>>> MOSFET-branch
+
     // Parse speed
     int input = Serial.parseInt();
 
     // Constrain a 0-100 range
-    byte target = max(min(input, 100), 0);
+    byte target = 100;
 
     // Print obtained value
     Serial.print("Setting duty cycle: ");
@@ -89,7 +68,7 @@ void loop(void)
     byte dutyCycle = fan.getDutyCycle();
     Serial.print("Duty cycle: ");
     Serial.println(dutyCycle, DEC);
-  }
+
 
   // Not really needed, just avoiding spamming the monitor,
   // readings will be performed no faster than once every THRESHOLD ms anyway

@@ -271,7 +271,7 @@ static char VERSION[] = "V2.3.0";;
             rgbLedMotor.writeRGB(255,0,60);
             motorOn= true;
             //for MOSFET
-            fan.setDutyCycle(0);
+            fan.setDutyCycle(100);
             // digitalWrite(motorPin, LOW); for relay
             Serial.println("minloop");
         } 
