@@ -380,7 +380,7 @@
           "Net-(D4-Pad1)",
           "Net-(D4-Pad2)",
           "Net-(J1-Pad1)",
-          "Net-(J1-Pad2)"
+          "Net-(RLY1-Pad4)"
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",

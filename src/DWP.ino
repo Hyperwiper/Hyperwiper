@@ -99,7 +99,7 @@ static char VERSION[] = "V2.3.0";;
 
 // setup for PWM 
   #define SENSOR_THRESHOLD 1000
-  #define SENSOR_PIN A10 //pin IO04
+  #define SENSOR_PIN A10 //pin IO04 not used.
   #define PWM_PIN 10 // pin D10
 
 // Start init's -------------------------------------------------------------------------------------------------------------------------------------------------
