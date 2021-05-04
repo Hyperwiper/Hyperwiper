@@ -7,7 +7,9 @@
  
  contact rob@yr-design.biz
  
+
  revisions:
+ V2.3.1   2021-05-04 Test for hardware.
  V2.3.0   2021-03-29 Added hardware and software changes for MOSFET
  V2.2.6   2021-02-13 Changed schematic Kicad to MOSFET only.
  V2.2.5   2021-02-09 Prepare for PWM and MOSFETS for controling power
@@ -83,7 +85,7 @@ To be done (2021-01-04):
 
  */
 
-static char VERSION[] = "V2.3.0";;
+static char VERSION[] = "V2.3.1";;
 
 //set drivers 
   #include <SPI.h>
