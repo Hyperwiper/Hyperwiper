@@ -8,6 +8,7 @@
  contact rob@yr-design.biz
  
  revisions:
+ V2.3.2   2021-05-05 Fixed PWM issue and delay issues
  V2.3.1   2921-05-05 Update version numbering
  V2.3.0   2021-05-05 Beat detction not locking up (need still PWM going)
  V2.2.9   2021-03-19 Moved pot delay timing from run routine to between the beat detections and run motor routine
@@ -89,20 +90,24 @@ To be done (2021-03-20):
 
  */
 
-static char VERSION[] = "V2.3.1";;
+static char VERSION[] = "V2.3.2";;
 
 //set drivers 
   #include <SPI.h>
   #include <EEPROMex.h>
   #include <Bounce.h>
   #include <RGBLED.h>
+  #include <FanController.h>
 
 //audio setup
   #include <Audio.h>
   #include <Wire.h>
   #include <SD.h>
 
-
+// setup for PWM 
+  #define SENSOR_THRESHOLD 1000
+  #define SENSOR_PIN A10 //pin IO04
+  #define PWM_PIN 10 // pin D10
 
 // Start init's -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -136,7 +141,7 @@ static char VERSION[] = "V2.3.1";;
         int trigger_level = 0;
         long run_reed_leave_time = 0;
         long run_reed_return_time = 0;
-        long minTimeSet=6000;
+        long minTimeSet=20000;
         float pot_old_read;
         long stop_time =0;
         int beat_array_count = 0;
@@ -152,6 +157,9 @@ static char VERSION[] = "V2.3.1";;
       //RGB LED pins setup
         RGBLED rgbLedBeat(2,3,4,COMMON_CATHODE);
         RGBLED rgbLedMotor(5,6,9,COMMON_CATHODE);
+
+      // Initialize library
+        FanController fan(SENSOR_PIN, SENSOR_THRESHOLD, PWM_PIN);
 
       //Audio setup
         AudioInputI2S       audioInput;
@@ -243,15 +251,16 @@ static char VERSION[] = "V2.3.1";;
     void run_motor() {
             rgbLedMotor.writeRGB(0,255,0);
        //start motor     
-            motorOn= true;
-            digitalWrite(motorPin, LOW);
+            //for MOSFET
+            fan.setDutyCycle(100);
+            // digitalWrite(motorPin, LOW); for relay
             Serial.println("motor_running");
     }
 
     void stop_motor() {
-            rgbLedMotor.writeRGB(255,0,0);
-            motorOn= false; 
-            digitalWrite(motorPin, HIGH);
+            //for MOSFET
+            fan.setDutyCycle(0);
+            // digitalWrite(motorPin, HIGH); for relay
             Serial.println("motor_stopped");
     }
 
@@ -264,7 +273,8 @@ static char VERSION[] = "V2.3.1";;
           // run motor
             rgbLedMotor.writeRGB(255,0,60);
             motorOn= true;
-            digitalWrite(motorPin, LOW);
+            // digitalWrite(motorPin, LOW);
+            run_motor();
             Serial.println("minloop_motor_started");
         } 
       }
@@ -281,7 +291,7 @@ static char VERSION[] = "V2.3.1";;
           // run motor
             rgbLedMotor.writeRGB(255,0,60);
             motorOn= true;
-            digitalWrite(motorPin, LOW);
+            run_motor();
             Serial.println();
             Serial.println("---------------------------------");
             Serial.println("delay time run");
@@ -422,7 +432,7 @@ void loop() {
   }
   // read potmeter value for setup delay of beat in main loop
       int potRead = map(analogRead(potPin), 0, 1023, 460, 1000);
-      if (abs(potRead-pot_old_read)>10){
+      if (abs(potRead-pot_old_read)>20){
         pot_old_read=potRead;
       //convert run_reed_leave_time to half of one_wipe_time
         one_wipe_time_procentage= potRead;

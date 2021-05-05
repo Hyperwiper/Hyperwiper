@@ -55,7 +55,7 @@ void loop(void)
     int input = Serial.parseInt();
 
     // Constrain a 0-100 range
-    byte target = 100;
+    byte target = 80;
 
     // Print obtained value
     Serial.print("Setting duty cycle: ");
@@ -72,5 +72,5 @@ void loop(void)
 
   // Not really needed, just avoiding spamming the monitor,
   // readings will be performed no faster than once every THRESHOLD ms anyway
-  delay(100);
+  delay(1000);
 }
