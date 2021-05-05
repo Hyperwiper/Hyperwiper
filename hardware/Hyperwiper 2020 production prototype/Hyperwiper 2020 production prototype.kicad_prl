@@ -37,7 +37,6 @@
       8,
       9,
       10,
-      11,
       12,
       13,
       14,
@@ -64,7 +63,7 @@
       36
     ],
     "visible_layers": "fffffff_ffffffff",
-    "zone_display_mode": 1
+    "zone_display_mode": 0
   },
   "meta": {
     "filename": "Hyperwiper 2020 production prototype.kicad_prl",
@@ -78,10 +77,10 @@
         "window": {
           "display": 0,
           "maximized": true,
-          "pos_x": 110,
-          "pos_y": 558,
+          "pos_x": 320,
+          "pos_y": 369,
           "size_x": 1280,
-          "size_y": 486
+          "size_y": 438
         }
       },
       {
@@ -91,9 +90,9 @@
           "display": 0,
           "maximized": true,
           "pos_x": 0,
-          "pos_y": 25,
-          "size_x": 1920,
-          "size_y": 1011
+          "pos_y": 0,
+          "size_x": 1280,
+          "size_y": 548
         }
       }
     ]

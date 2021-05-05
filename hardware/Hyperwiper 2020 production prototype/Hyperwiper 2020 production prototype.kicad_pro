@@ -377,8 +377,6 @@
           "+3V3",
           "/5V",
           "GND",
-          "Net-(D4-Pad1)",
-          "Net-(D4-Pad2)",
           "Net-(J1-Pad1)"
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
