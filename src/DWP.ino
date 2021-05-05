@@ -8,6 +8,8 @@
  contact rob@yr-design.biz
  
  revisions:
+ V2.3.1   2921-05-05 Update version numbering
+ V2.3.0   2021-05-05 Beat detction not locking up (need still PWM going)
  V2.2.9   2021-03-19 Moved pot delay timing from run routine to between the beat detections and run motor routine
  V2.2.8   2021-03-18 Code fixing for start/stop start bug
  V2.2.7   2021-02-13 Cleaned up code.
@@ -87,7 +89,7 @@ To be done (2021-03-20):
 
  */
 
-static char VERSION[] = "V2.3.0";;
+static char VERSION[] = "V2.3.1";;
 
 //set drivers 
   #include <SPI.h>
