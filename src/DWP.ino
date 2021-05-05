@@ -514,7 +514,11 @@ void loop() {
     // Serial.print("\t");
     // Serial.print(guess == 1 ? -200 : 0);
     // Serial.print("\t");
+<<<<<<< Updated upstream
     // Serial.println(curDel == 0 ? 200 : 0);
+=======
+    // Serial.print(curDel == 0 ? 200 : 0);
+>>>>>>> Stashed changes
     // Serial.print("\t");
     // Serial.print("count: ");
     // Serial.print(count);
