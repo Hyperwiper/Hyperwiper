@@ -1,9 +1,14 @@
 {
   "board": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "active_layer": 40,
     "active_layer_preset": "",
     "auto_track_width": true,
+=======
+    "active_layer": 0,
+    "active_layer_preset": "All Layers",
+>>>>>>> parent of 8235357... V2.2.4
 =======
     "active_layer": 0,
     "active_layer_preset": "All Layers",
@@ -69,8 +74,12 @@
       36
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
     "visible_layers": "ffffeff_ffffffff",
     "zone_display_mode": 1
+=======
+    "visible_layers": "fffffff_ffffffff"
+>>>>>>> parent of 8235357... V2.2.4
 =======
     "visible_layers": "fffffff_ffffffff"
 >>>>>>> parent of 8235357... V2.2.4
@@ -80,6 +89,7 @@
     "version": 3
   },
   "project": {
+<<<<<<< HEAD
 <<<<<<< HEAD
     "files": [
       {
@@ -107,6 +117,9 @@
         }
       }
     ]
+=======
+    "files": []
+>>>>>>> parent of 8235357... V2.2.4
 =======
     "files": []
 >>>>>>> parent of 8235357... V2.2.4
