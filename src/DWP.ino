@@ -412,15 +412,15 @@ void loop() {
   }
   // read potmeter value for setup delay of beat in main loop
       int potRead = map(analogRead(potPin), 0, 1023, 460, 1000);
-      if (abs(potRead-pot_old_read)>5){
-        pot_old_read=potRead;
-      //convert run_reed_leave_time to half of one_wipe_time
-        int one_wipe_time_procentage= potRead;
-        //display motor LED white if potmeter is changed for testing
-        rgbLedMotor.writeRGB(255,255,255);
-        Serial.print("one wipe time is = ");
-        Serial.println(one_wipe_time_procentage);
-      }
+      // if (abs(potRead-pot_old_read)>20){
+      //   pot_old_read=potRead;
+      // //convert run_reed_leave_time to half of one_wipe_time
+      //   int one_wipe_time_procentage= potRead;
+      //   //display motor LED white if potmeter is changed for testing
+      //   rgbLedMotor.writeRGB(255,255,255);
+      //   Serial.print("one wipe time is = ");
+      //   Serial.println(one_wipe_time_procentage);
+      // }
    
 
   // Main loop 
@@ -514,11 +514,6 @@ void loop() {
     // Serial.print("\t");
     // Serial.print(guess == 1 ? -200 : 0);
     // Serial.print("\t");
-<<<<<<< Updated upstream
-    // Serial.println(curDel == 0 ? 200 : 0);
-=======
-    // Serial.print(curDel == 0 ? 200 : 0);
->>>>>>> Stashed changes
     // Serial.print("\t");
     // Serial.print("count: ");
     // Serial.print(count);
