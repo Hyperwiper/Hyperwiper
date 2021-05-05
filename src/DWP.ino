@@ -7,10 +7,10 @@
  
  contact rob@yr-design.biz
  
-
  revisions:
- V2.3.1   2021-05-04 Test for hardware.
- V2.3.0   2021-03-29 Added hardware and software changes for MOSFET
+ V2.2.9   2021-03-19 Moved pot delay timing from run routine to between the beat detections and run motor routine
+ V2.2.8   2021-03-18 Code fixing for start/stop start bug
+ V2.2.7   2021-02-13 Cleaned up code.
  V2.2.6   2021-02-13 Changed schematic Kicad to MOSFET only.
  V2.2.5   2021-02-09 Prepare for PWM and MOSFETS for controling power
  V2.2.4   2021-01-07 Mapped the pot meter for timing of one beat 60-130BPM
@@ -60,13 +60,15 @@
 
 
 
-To be done (2021-01-04):
+To be done (2021-03-20):
      
-      - windows beats number for sliding window                       
-      - add pot timing to the beat detect/start time
-      BPM should be between 60 and 130. So 1000ms till 460ms
+      -add new variables for delay_time_run in init, beatdetect part run command remove and replaced with set delay_time_run boolean, make a routine with timing in loop to let it always run though the routine to check the time and trigger the run_motor command and also set the delay_time_run boolean to false.
+
+      - windows beats number for sliding window                      
+      info: BPM should be between 60 and 130. So 1000ms till 460ms
 
       Done:
+      - add pot timing to the beat detect/start time
       - if wiper leaves it should always diabled magnet switch for the time that the run_reed_leave_time is calculetted puls some extra (maybe 500mSec)
       - add stop motor time with the pass magnet information that is calculated from the start-motor-reach-magnet time in the setup
       - start time pulse and actual reed relay signal receiving       run_reed_leave_time
@@ -85,24 +87,20 @@ To be done (2021-01-04):
 
  */
 
-static char VERSION[] = "V2.3.1";;
+static char VERSION[] = "V2.3.0";;
 
 //set drivers 
   #include <SPI.h>
   #include <EEPROMex.h>
   #include <Bounce.h>
   #include <RGBLED.h>
-  #include <FanController.h>
 
 //audio setup
   #include <Audio.h>
   #include <Wire.h>
   #include <SD.h>
 
-// setup for PWM 
-  #define SENSOR_THRESHOLD 1000
-  #define SENSOR_PIN A10 //pin IO04 not used.
-  #define PWM_PIN 10 // pin D10
+
 
 // Start init's -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -111,6 +109,7 @@ static char VERSION[] = "V2.3.1";;
         int motorPin = 16;
         int potPin=17;
         unsigned potRead;
+        int one_wipe_time_procentage;
         int potTime;
 
 //display magnet info  setup 
@@ -118,12 +117,16 @@ static char VERSION[] = "V2.3.1";;
         unsigned int count = 0;            // how many times has it changed to low
         unsigned long countAt = 0;         // when count changed
         unsigned int countPrinted = 0;     // last count printed
+        unsigned int magnet_delay = 2000;  // delay for after starting magnet leave to prefent stopping directly after start
+        boolean justStart=false;
 
 //init variables setup
         Bounce pushbutton = Bounce(magnetPin, 10);  
         boolean motorOn= false;
         boolean magnetOn= false;
         long previousMillis = 0;
+        long previousMillis_test = 0;
+        long previousMillis_delay = 0;
         unsigned long previous_beatled_Millis = 0;        // will store last time LED was updated
         int beatcount =1;
         int ledState = LOW;  
@@ -147,9 +150,6 @@ static char VERSION[] = "V2.3.1";;
       //RGB LED pins setup
         RGBLED rgbLedBeat(2,3,4,COMMON_CATHODE);
         RGBLED rgbLedMotor(5,6,9,COMMON_CATHODE);
-
-      // Initialize library
-        FanController fan(SENSOR_PIN, SENSOR_THRESHOLD, PWM_PIN);
 
       //Audio setup
         AudioInputI2S       audioInput;
@@ -239,26 +239,17 @@ static char VERSION[] = "V2.3.1";;
 // end init -------------------------------------------------------------------------------------------------------------------------------------------------
 
     void run_motor() {
-      //add pot delay
-            potRead = potRead+ millis();
-            while(potRead>millis()){
-                rgbLedMotor.writeRGB(255,40,0);
-              }
             rgbLedMotor.writeRGB(0,255,0);
        //start motor     
             motorOn= true;
-            //for MOSFET
-            fan.setDutyCycle(100);
-            // digitalWrite(motorPin, LOW); for relay
+            digitalWrite(motorPin, LOW);
             Serial.println("motor_running");
     }
 
     void stop_motor() {
             rgbLedMotor.writeRGB(255,0,0);
             motorOn= false; 
-            //for MOSFET
-            fan.setDutyCycle(0);
-            // digitalWrite(motorPin, HIGH); for relay
+            digitalWrite(motorPin, HIGH);
             Serial.println("motor_stopped");
     }
 
@@ -271,10 +262,42 @@ static char VERSION[] = "V2.3.1";;
           // run motor
             rgbLedMotor.writeRGB(255,0,60);
             motorOn= true;
-            //for MOSFET
-            fan.setDutyCycle(100);
-            // digitalWrite(motorPin, LOW); for relay
-            Serial.println("minloop");
+            digitalWrite(motorPin, LOW);
+            Serial.println("minloop_motor_started");
+        } 
+      }
+
+
+    void delay_run_motor(long delay_time)
+      {
+      // create the minimum timing for the wiper motor to wait for next beat
+         unsigned long currentMillis_delay = millis();  
+        Serial.print("Delay Time is =");
+        Serial.println(delay_time);
+        if(currentMillis_delay - previousMillis_delay > (unsigned)delay_time) {
+          previousMillis_delay = currentMillis_delay;  
+          // run motor
+            rgbLedMotor.writeRGB(255,0,60);
+            motorOn= true;
+            digitalWrite(motorPin, LOW);
+            Serial.println();
+            Serial.println("---------------------------------");
+            Serial.println("delay time run");
+            Serial.println("---------------------------------");
+            Serial.println();
+        } 
+      }
+
+
+    void test_beat(long delay_time_test)
+      {
+      // create the minimum timing for the wiper motor to wait for next beat
+         unsigned long currentMillis_test = millis();  
+        if(currentMillis_test - previousMillis_test > (unsigned)delay_time_test) {
+          previousMillis_test = currentMillis_test;  
+          // run motor
+            rgbLedMotor.writeRGB(255,255,255);
+            Serial.println("test beat");
         } 
       }
 
@@ -321,45 +344,30 @@ static char VERSION[] = "V2.3.1";;
           delayForL.delay(0, 1000 * noBins / 44100);
           delayForR.delay(0, 1000 * noBins / 44100);
     
-          //setup PWM pin
-            digitalWrite(PWM_PIN, LOW);
-          // Start up the library
-            fan.begin();
-            fan.setDutyCycle(0);
-          // Get duty cycle
-            byte dutyCycle = fan.getDutyCycle();
+            //read potmeter 
+              potRead = analogRead(potPin);
 
-          //read potmeter 
-            potRead = analogRead(potPin);
-
-          //display status on serial
-              Serial.println();
-              Serial.println("-------- Set up info --------------------");
-              Serial.print("Version=");
-              Serial.println(VERSION);
-              Serial.print("Setup Mode=");
-              Serial.println(setupmode);
-              Serial.print("magnetOn=");
-              Serial.println(magnetOn);
-              Serial.print("Start Duty cycle: ");
-              Serial.println(dutyCycle, DEC);
-              // Serial.print("Time from startpulse to reaching magnet is:");
-              // Serial.println (run_reed_leave_time);
-              // Serial.print("Time from magnet leaving till coming back is:");
-              // Serial.println (run_reed_return_time);
-              // Serial.print("One test wipe time is:");
-              // Serial.println (run_reed_leave_time*2+run_reed_return_time);
-              Serial.print("potential meter level =");
-              Serial.println(potRead);
-              Serial.println("Audio setup finished");
-              Serial.println("-------- End Set up info ----------------");
-              Serial.println();
+            //display status on serial
+                Serial.println();
+                Serial.println("-------- Set up info --------------------");
+                Serial.print("Version=");
+                Serial.println(VERSION);
+                Serial.print("Setup Mode=");
+                Serial.println(setupmode);
+                Serial.print("magnetOn=");
+                Serial.println(magnetOn);
+                Serial.print("potential meter level =");
+                Serial.println(potRead);
+                Serial.println("Audio setup finished");
+                Serial.println("-------- End Set up info ----------------");
+                Serial.println();
       delay(1000);
 }
 
 // end setup -------------------------------------------------------------------------------------------------------------------------------------------------
 
 void loop() {
+
 
 
 //logic for switching on the beat led only once
@@ -395,12 +403,12 @@ void loop() {
       countAt = millis();
       magnetOn= false;
     }
+    
     if (pushbutton.fallingEdge()) {
     Serial.println("Wiper magnet_arrived");
       rgbLedMotor.writeRGB(0,0,255);
-      countAt = millis();
-      magnetOn= true;
-      stop_motor();
+        magnetOn= true;
+        stop_motor();
     }
   } else {
     if (count != countPrinted) {
@@ -412,26 +420,26 @@ void loop() {
   }
   // read potmeter value for setup delay of beat in main loop
       int potRead = map(analogRead(potPin), 0, 1023, 460, 1000);
-      // if (abs(potRead-pot_old_read)>20){
-      //   pot_old_read=potRead;
-      // //convert run_reed_leave_time to half of one_wipe_time
-      //   int one_wipe_time_procentage= potRead;
-      //   //display motor LED white if potmeter is changed for testing
-      //   rgbLedMotor.writeRGB(255,255,255);
-      //   Serial.print("one wipe time is = ");
-      //   Serial.println(one_wipe_time_procentage);
-      // }
+      if (abs(potRead-pot_old_read)>10){
+        pot_old_read=potRead;
+      //convert run_reed_leave_time to half of one_wipe_time
+        one_wipe_time_procentage= potRead;
+        //display motor LED white if potmeter is changed for testing
+        rgbLedMotor.writeRGB(255,255,255);
+        //serial print pecentage of the pot delay in relation to wipe
+        Serial.print("one wipe time is = ");
+        Serial.println(one_wipe_time_procentage);
+      }
    
 
   // Main loop 
-  if(magnetOn){
-      minloop(minTimeSet);
-      magnetOn= true;
-      rgbLedMotor.writeRGB(0,255,0);
-      }else{        
-      minloop(minTimeSet);
-      } 
-      
+
+  // minloop timer
+    minloop(minTimeSet);
+
+  //Test beat
+    // test_beat(890);
+
   //Main audio beat detection
   double sum = 0.0;   // a float to store the sum of all the OFTs bin magnitudes
   double thr = 0.0;  // a threshold to issue a beat, e.g., a frame must be 150% louder than the average
@@ -488,9 +496,12 @@ void loop() {
         beat_array_count++;
       // //set time for the beat array 
       //   beatPulseArray[beat_array_count]=millis();
-        Serial.println(beatPulseArray[beat_array_count]);
+      // Serial.println(beatPulseArray[beat_array_count]);
         Serial.println("beat detected-1");
-      run_motor();
+
+      //add delay_run_motor boolean set here delete run_motor routine
+      delay_run_motor(potRead);
+      // run_motor();
     }
 
     if ((curDel >= 2.0 * round(avgDelay)) && (curDel > minDelay) && (sum >= minLevel)) { // There's a beat
@@ -501,28 +512,12 @@ void loop() {
         beat_array_count++;
       // //set time for the beat array 1
       //   beatPulseArray[beat_array_count]=millis();
-        Serial.println(beatPulseArray[beat_array_count]);
+        // Serial.println(beatPulseArray[beat_array_count]);
         Serial.println("beat detected-2");
-      run_motor();
+      //add delay_run_motor boolean set here delete run_motor routine
+          delay_run_motor(potRead);
+      // run_motor();
      }
-
-    // int magnet_show =(!magnetOn*10)+5;
-    // int motor_show =(motorOn*20)+10;
-    // Serial.print(sum, 5);
-    // Serial.print("\t");
-    // Serial.print(thr, 5);
-    // Serial.print("\t");
-    // Serial.print(guess == 1 ? -200 : 0);
-    // Serial.print("\t");
-    // Serial.print("\t");
-    // Serial.print("count: ");
-    // Serial.print(count);
-    // Serial.print("\t");
-    // Serial.print("magnet: ");
-    // Serial.print(magnet_show);
-    // Serial.print("\t");
-    // Serial.print("motor: ");
-    // Serial.println(motor_show);
   }
 }
 // end loop -------------------------------------------------------------------------------------------------------------------------------------------------
