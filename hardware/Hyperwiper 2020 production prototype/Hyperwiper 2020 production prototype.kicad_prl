@@ -72,25 +72,13 @@
   "project": {
     "files": [
       {
-        "name": "Hyperwiper 2020 production prototype.kicad_sch",
-        "open": false,
-        "window": {
-          "display": 0,
-          "maximized": true,
-          "pos_x": 320,
-          "pos_y": 369,
-          "size_x": 1280,
-          "size_y": 438
-        }
-      },
-      {
         "name": "Hyperwiper 2020 production prototype.kicad_pcb",
         "open": false,
         "window": {
           "display": 0,
           "maximized": true,
-          "pos_x": 0,
-          "pos_y": 0,
+          "pos_x": 320,
+          "pos_y": 250,
           "size_x": 1280,
           "size_y": 548
         }
