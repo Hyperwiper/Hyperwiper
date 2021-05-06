@@ -1,18 +1,8 @@
 {
   "board": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "active_layer": 40,
-    "active_layer_preset": "",
-    "auto_track_width": true,
-=======
     "active_layer": 0,
     "active_layer_preset": "All Layers",
->>>>>>> parent of 8235357... V2.2.4
-=======
-    "active_layer": 0,
-    "active_layer_preset": "All Layers",
->>>>>>> parent of 8235357... V2.2.4
+    "auto_track_width": false,
     "hidden_nets": [],
     "high_contrast_mode": 0,
     "net_color_mode": 1,
@@ -28,7 +18,7 @@
       "footprints": true,
       "graphics": true,
       "keepouts": true,
-      "lockedItems": true,
+      "lockedItems": false,
       "otherItems": true,
       "pads": true,
       "text": true,
@@ -73,55 +63,27 @@
       35,
       36
     ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "visible_layers": "ffffeff_ffffffff",
-    "zone_display_mode": 1
-=======
-    "visible_layers": "fffffff_ffffffff"
->>>>>>> parent of 8235357... V2.2.4
-=======
-    "visible_layers": "fffffff_ffffffff"
->>>>>>> parent of 8235357... V2.2.4
+    "visible_layers": "fffffff_ffffffff",
+    "zone_display_mode": 0
   },
   "meta": {
     "filename": "Hyperwiper 2020 production prototype.kicad_prl",
     "version": 3
   },
   "project": {
-<<<<<<< HEAD
-<<<<<<< HEAD
     "files": [
-      {
-        "name": "Hyperwiper 2020 production prototype.kicad_pcb",
-        "open": false,
-        "window": {
-          "display": 0,
-          "maximized": true,
-          "pos_x": 0,
-          "pos_y": 60,
-          "size_x": 1280,
-          "size_y": 402
-        }
-      },
       {
         "name": "Hyperwiper 2020 production prototype.kicad_sch",
         "open": false,
         "window": {
           "display": 0,
           "maximized": true,
-          "pos_x": 110,
-          "pos_y": 558,
+          "pos_x": 320,
+          "pos_y": 369,
           "size_x": 1280,
-          "size_y": 480
+          "size_y": 438
         }
       }
     ]
-=======
-    "files": []
->>>>>>> parent of 8235357... V2.2.4
-=======
-    "files": []
->>>>>>> parent of 8235357... V2.2.4
   }
 }
