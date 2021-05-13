@@ -8,6 +8,7 @@
  contact rob@yr-design.biz
  
  revisions:
+ V2.3.3   2021-05-13 Setup for inbetween full wiper moves accent of beat
  V2.3.2   2021-05-05 Fixed PWM issue and delay issues
  V2.3.1   2921-05-05 Update version numbering
  V2.3.0   2021-05-05 Beat detction not locking up (need still PWM going)
@@ -90,7 +91,7 @@ To be done (2021-03-20):
 
  */
 
-static char VERSION[] = "V2.3.2";;
+static char VERSION[] = "V2.3.3";;
 
 //set drivers 
   #include <SPI.h>
