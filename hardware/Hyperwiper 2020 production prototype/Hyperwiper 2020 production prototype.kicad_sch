@@ -3170,7 +3170,7 @@
     (in_bom yes) (on_board yes)
     (uuid 1fcecf2b-4e2f-4005-a609-f08496f7cf92)
     (property "Reference" "R2" (id 0) (at 229.235 90.805 90))
-    (property "Value" "10k" (id 1) (at 229.235 88.265 90))
+    (property "Value" "1k" (id 1) (at 229.235 88.265 90))
     (property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" (id 2) (at 229.235 90.043 90)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -3185,7 +3185,7 @@
     (in_bom yes) (on_board yes)
     (uuid 262574bc-5200-41bf-819f-e4ebc4aa93eb)
     (property "Reference" "R10" (id 0) (at 251.46 71.755 90))
-    (property "Value" "10k" (id 1) (at 251.46 69.215 90))
+    (property "Value" "1k" (id 1) (at 251.46 69.215 90))
     (property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" (id 2) (at 251.46 70.993 90)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -3848,10 +3848,10 @@
       (reference "Q3") (unit 1) (value "IRF4905") (footprint "Package_TO_SOT_THT:TO-220-3_Vertical")
     )
     (path "/1fcecf2b-4e2f-4005-a609-f08496f7cf92"
-      (reference "R2") (unit 1) (value "10k") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+      (reference "R2") (unit 1) (value "1k") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
     )
     (path "/262574bc-5200-41bf-819f-e4ebc4aa93eb"
-      (reference "R10") (unit 1) (value "10k") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+      (reference "R10") (unit 1) (value "1k") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
     )
     (path "/9655f52e-d83d-4b34-981f-5781f9027fde"
       (reference "RLY1") (unit 1) (value "JSM1-12V-5") (footprint "Relay_THT:Relay_SPDT_SANYOU_SRD_Series_Form_C")

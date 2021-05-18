@@ -287,18 +287,19 @@ static char VERSION[] = "V2.3.3";;
          unsigned long currentMillis_delay = millis();  
         Serial.print("Delay Time is =");
         Serial.println(delay_time);
-        if(currentMillis_delay - previousMillis_delay > (unsigned)delay_time) {
+        while(currentMillis_delay - previousMillis_delay > (unsigned)delay_time) {
           previousMillis_delay = currentMillis_delay;  
-          // run motor
-            rgbLedMotor.writeRGB(255,0,60);
-            motorOn= true;
-            run_motor();
-            Serial.println();
-            Serial.println("---------------------------------");
-            Serial.println("delay time run");
-            Serial.println("---------------------------------");
-            Serial.println();
         } 
+      // run motor
+        rgbLedMotor.writeRGB(255,0,60);
+        motorOn= true;
+        run_motor();
+        Serial.println();
+        Serial.println("---------------------------------");
+        Serial.println("delay time run");
+        Serial.println("---------------------------------");
+        Serial.println();
+  
       }
 
 
