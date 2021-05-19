@@ -147,6 +147,8 @@ static char VERSION[] = "V2.3.3";;
         long stop_time =0;
         int beat_array_count = 0;
         int beatPulseArray[4]={0,0,0,0};
+        int inter_wipe_beat_delay_time=250; //250msec 1/4 of a sec
+        bool beatdeted=false;
 
       //EEPROM setup
         const int maxAllowedWrites = 80;
@@ -399,6 +401,14 @@ void loop() {
       }
     }
 
+// interbeat setup. 
+if(motorOn& beatdeted){
+  //set speed to 80% duty cycle
+   fan.setDutyCycle(80);
+   delay (inter_wipe_beat_delay_time);
+   fan.setDutyCycle(100);
+}
+//
 
 //display LED beats
     if (ledState) {
@@ -523,6 +533,7 @@ void loop() {
       guess = 1;
       // //set beat count and flash led for 1 second
         beatcount=1;
+        beatdeted=true;
         beat_array_count++;
       // //set time for the beat array 1
       //   beatPulseArray[beat_array_count]=millis();
