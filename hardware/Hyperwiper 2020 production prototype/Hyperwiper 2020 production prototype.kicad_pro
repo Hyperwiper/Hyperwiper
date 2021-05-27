@@ -379,6 +379,7 @@
           "/5V",
           "GND",
           "Net-(C4-Pad2)",
+          "Net-(D5-Pad1)",
           "Net-(J1-Pad2)",
           "Net-(J2-Pad1)"
         ],
