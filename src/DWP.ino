@@ -8,10 +8,11 @@
  contact rob@yr-design.biz
  
  revisions:
- V2.3.3   2021-05-13 Setup for inbetween full wiper moves accent of beat
+ V2.4.1   2021-05-27  Updated hardware board for IRF3205
+ V2.3.3   2021-05-13 Setup for in between full wiper moves accent of beat
  V2.3.2   2021-05-05 Fixed PWM issue and delay issues
  V2.3.1   2921-05-05 Update version numbering
- V2.3.0   2021-05-05 Beat detction not locking up (need still PWM going)
+ V2.3.0   2021-05-05 Beat detection not locking up (need still PWM going)
  V2.2.9   2021-03-19 Moved pot delay timing from run routine to between the beat detections and run motor routine
  V2.2.8   2021-03-18 Code fixing for start/stop start bug
  V2.2.7   2021-02-13 Cleaned up code.
