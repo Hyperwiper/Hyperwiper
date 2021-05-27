@@ -2,8 +2,17 @@
   "board": {
     "active_layer": 0,
     "active_layer_preset": "",
+    "auto_track_width": true,
     "hidden_nets": [],
     "high_contrast_mode": 0,
+    "net_color_mode": 1,
+    "opacity": {
+      "pads": 1.0,
+      "tracks": 1.0,
+      "vias": 1.0,
+      "zones": 0.6
+    },
+    "ratsnest_display_mode": 0,
     "selection_filter": {
       "dimensions": true,
       "footprints": true,
@@ -44,16 +53,33 @@
       24,
       25,
       26,
-      27,
-      28,
-      29,
-      30,
-      31
+      34,
+      35,
+      36,
+      37,
+      38
     ],
-    "visible_layers": "7ffff_ffffffff"
+    "visible_layers": "007ffff_ffffffff",
+    "zone_display_mode": 0
   },
   "meta": {
     "filename": "Hyperwiper 2020 prototype.kicad_prl",
-    "version": 1
+    "version": 3
+  },
+  "project": {
+    "files": [
+      {
+        "name": "Hyperwiper 2020 prototype.kicad_sch",
+        "open": false,
+        "window": {
+          "display": 0,
+          "maximized": true,
+          "pos_x": 110,
+          "pos_y": 552,
+          "size_x": 1280,
+          "size_y": 672
+        }
+      }
+    ]
   }
 }

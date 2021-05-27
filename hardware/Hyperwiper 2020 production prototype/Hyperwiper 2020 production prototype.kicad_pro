@@ -112,7 +112,8 @@
         "min_track_width": 0.19999999999999998,
         "min_via_annular_width": 0.049999999999999996,
         "min_via_annulus": 0.049999999999999996,
-        "min_via_diameter": 0.39999999999999997
+        "min_via_diameter": 0.39999999999999997,
+        "use_height_for_length_calcs": true
       },
       "track_widths": [
         0.0
@@ -377,7 +378,9 @@
           "+3V3",
           "/5V",
           "GND",
-          "Net-(J1-Pad1)"
+          "Net-(C4-Pad2)",
+          "Net-(J1-Pad2)",
+          "Net-(J2-Pad1)"
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
@@ -431,7 +434,8 @@
       "meta": {
         "version": 0
       },
-      "model_mode": 0
+      "model_mode": 0,
+      "workbook_filename": ""
     },
     "page_layout_descr_file": "",
     "plot_directory": "./",
