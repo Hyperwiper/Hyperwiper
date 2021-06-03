@@ -8,6 +8,8 @@
  contact rob@yr-design.biz
  
  revisions:
+
+ V2.4.2   2021-06-03  Switched code to be used with N-Channel MOSFET IRF3205
  V2.4.1   2021-05-27  Updated hardware board for IRF3205
  V2.3.3   2021-05-13 Setup for in between full wiper moves accent of beat
  V2.3.2   2021-05-05 Fixed PWM issue and delay issues
@@ -92,7 +94,7 @@ To be done (2021-03-20):
 
  */
 
-static char VERSION[] = "V2.3.3";;
+static char VERSION[] = "V2.4.2";;
 
 //set drivers 
   #include <SPI.h>
@@ -256,14 +258,14 @@ static char VERSION[] = "V2.3.3";;
             rgbLedMotor.writeRGB(0,255,0);
        //start motor     
             //for MOSFET
-            fan.setDutyCycle(100);
+            fan.setDutyCycle(0);
             // digitalWrite(motorPin, LOW); for relay
             Serial.println("motor_running");
     }
 
     void stop_motor() {
             //for MOSFET
-            fan.setDutyCycle(0);
+            fan.setDutyCycle(100);
             // digitalWrite(motorPin, HIGH); for relay
             Serial.println("motor_stopped");
     }
