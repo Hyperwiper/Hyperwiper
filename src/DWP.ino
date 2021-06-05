@@ -9,8 +9,9 @@
  
  revisions:
 
- V2.4.2   2021-06-03  Switched code to be used with N-Channel MOSFET IRF3205
- V2.4.1   2021-05-27  Updated hardware board for IRF3205
+ V2.4.3   2021-06-05 Changed the inter beat setup. Works now correctly
+ V2.4.2   2021-06-03 Switched code to be used with N-Channel MOSFET IRF3205
+ V2.4.1   2021-05-27 Updated hardware board for IRF3205
  V2.3.3   2021-05-13 Setup for in between full wiper moves accent of beat
  V2.3.2   2021-05-05 Fixed PWM issue and delay issues
  V2.3.1   2921-05-05 Update version numbering
@@ -94,7 +95,7 @@ To be done (2021-03-20):
 
  */
 
-static char VERSION[] = "V2.4.2";;
+static char VERSION[] = "V2.4.3";;
 
 //set drivers 
   #include <SPI.h>
@@ -151,7 +152,7 @@ static char VERSION[] = "V2.4.2";;
         int beat_array_count = 0;
         int beatPulseArray[4]={0,0,0,0};
         int inter_wipe_beat_delay_time=250; //250msec 1/4 of a sec
-        bool beatdeted=false;
+        bool beatdetected=false;
 
       //EEPROM setup
         const int maxAllowedWrites = 80;
@@ -404,12 +405,16 @@ void loop() {
       }
     }
 
-// interbeat setup. 
-if(motorOn& beatdeted){
+// interbeat. 
+if(motorOn& beatdetected){
   //set speed to 80% duty cycle
-   fan.setDutyCycle(80);
-   delay (inter_wipe_beat_delay_time);
+  Serial.println("interbeat start");
+   //delay start of the interbeat setup with potmeter same as beat start
+   delay(potRead);
    fan.setDutyCycle(100);
+   delay (inter_wipe_beat_delay_time);
+   fan.setDutyCycle(0);
+   beatdetected=false;
 }
 //
 
@@ -520,6 +525,7 @@ if(motorOn& beatdeted){
       curDel = 0; // restart the counter when the delay is at least the average
       // //set beat count and flash led for 1 second
         beatcount=1;
+        beatdetected=true;
         beat_array_count++;
       // //set time for the beat array 
       //   beatPulseArray[beat_array_count]=millis();
@@ -536,7 +542,7 @@ if(motorOn& beatdeted){
       guess = 1;
       // //set beat count and flash led for 1 second
         beatcount=1;
-        beatdeted=true;
+        beatdetected=true;
         beat_array_count++;
       // //set time for the beat array 1
       //   beatPulseArray[beat_array_count]=millis();
