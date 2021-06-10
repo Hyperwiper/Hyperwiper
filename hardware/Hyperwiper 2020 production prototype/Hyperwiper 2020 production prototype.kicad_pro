@@ -328,7 +328,7 @@
       "no_connect_dangling": "error",
       "pin_not_connected": "error",
       "pin_not_driven": "error",
-      "pin_to_pin": "warning",
+      "pin_to_pin": "error",
       "power_pin_not_driven": "error",
       "similar_labels": "error",
       "unannotated": "error",
@@ -379,6 +379,7 @@
           "/5V",
           "GND",
           "Net-(C4-Pad2)",
+          "Net-(D4-Pad2)",
           "Net-(D5-Pad1)",
           "Net-(J2-Pad1)"
         ],
@@ -410,7 +411,7 @@
   "schematic": {
     "drawing": {
       "default_bus_thickness": 12.0,
-      "default_junction_size": 0.0,
+      "default_junction_size": 54.0,
       "default_line_thickness": 6.0,
       "default_text_size": 50.0,
       "default_wire_thickness": 6.0,
@@ -420,7 +421,7 @@
       "intersheets_ref_short": false,
       "intersheets_ref_show": false,
       "intersheets_ref_suffix": "",
-      "junction_size_choice": 3,
+      "junction_size_choice": 4,
       "pin_symbol_size": 25.0,
       "text_offset_ratio": 0.3
     },
