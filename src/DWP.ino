@@ -118,8 +118,8 @@ static char VERSION[] = "V2.4.3";;
 
 //Pins setup
         int magnetPin = 14;
-        int motorPin = 16;
-        int potPin=17;
+        // int motorPin = 15;
+        int potPin=16;//normally for test units pin 17 this is only for Teensy with pin 17 burned out, probally due to touching 12V somewhere.
         unsigned potRead;
         int one_wipe_time_procentage;
         int potTime;
@@ -336,7 +336,7 @@ static char VERSION[] = "V2.4.3";;
             trigger_level = EEPROM.readLong(addressLong);
 
           // setup pins for switches
-              pinMode(motorPin, OUTPUT);
+              // pinMode(motorPin, OUTPUT); only need for relay only setup
               pinMode(magnetPin, INPUT_PULLUP);
               pinMode(potPin, INPUT);
 
