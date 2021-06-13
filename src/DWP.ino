@@ -9,6 +9,8 @@
  
  revisions:
 
+ V2.4.4   2021-06-13 Switched pot back to pin 17 for other units.
+ V2.4.3a  2021-06-13 Moved pot from pin 17 to pin 16 on "broken" teensy (had pin 17 burned out") to use for testing and rewires the board.
  V2.4.3   2021-06-05 Changed the inter beat setup. Works now correctly
  V2.4.2   2021-06-03 Switched code to be used with N-Channel MOSFET IRF3205
  V2.4.1   2021-05-27 Updated hardware board for IRF3205
@@ -95,7 +97,7 @@ To be done (2021-03-20):
 
  */
 
-static char VERSION[] = "V2.4.3";;
+static char VERSION[] = "V2.4.4";;
 
 //set drivers 
   #include <SPI.h>
