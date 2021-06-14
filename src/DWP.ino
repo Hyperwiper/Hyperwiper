@@ -260,15 +260,14 @@ static char VERSION[] = "V2.4.4";;
     void run_motor() {
             rgbLedMotor.writeRGB(0,255,0);
        //start motor     
-            //for MOSFET
-            fan.setDutyCycle(0);
+            fan.setDutyCycle(0); //for P-MOSFET
             // digitalWrite(motorPin, LOW); for relay
             Serial.println("motor_running");
     }
 
     void stop_motor() {
-            //for MOSFET
-            fan.setDutyCycle(100);
+
+            fan.setDutyCycle(100);//for P-MOSFET
             // digitalWrite(motorPin, HIGH); for relay
             Serial.println("motor_stopped");
     }
@@ -300,14 +299,13 @@ static char VERSION[] = "V2.4.4";;
         } 
       // run motor
         rgbLedMotor.writeRGB(255,0,60);
-        motorOn= true;
-        run_motor();
         Serial.println();
         Serial.println("---------------------------------");
         Serial.println("delay time run");
         Serial.println("---------------------------------");
         Serial.println();
-  
+        run_motor();
+        motorOn= true;
       }
 
 
