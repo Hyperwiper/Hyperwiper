@@ -9,6 +9,7 @@
  
  revisions:
 
+ V2.4.5   2021-06-17 Test for better timing of beats with serial plotter.
  V2.4.4   2021-06-13 Switched pot back to pin 17 for other units.
  V2.4.3a  2021-06-13 Moved pot from pin 17 to pin 16 on "broken" teensy (had pin 17 burned out") to use for testing and rewires the board.
  V2.4.3   2021-06-05 Changed the inter beat setup. Works now correctly
@@ -553,6 +554,24 @@ if(motorOn& beatdetected){
       // run_motor();
      }
   }
+    int magnet_show =(!magnetOn*10)+5;
+    int motor_show =(motorOn*20)+10;
+    // Serial.print(sum, 5);
+    // Serial.print("\t");
+    // Serial.print(thr, 5);
+    Serial.print("\t");
+    Serial.print(guess == 1 ? -200 : 0);
+    Serial.print("\t");
+    Serial.print(curDel == 0 ? 200 : 0);
+    Serial.print("\t");
+    Serial.print("count: ");
+    Serial.print(beat_array_count);
+    Serial.print("\t");
+    Serial.print("magnet: ");
+    Serial.print(magnet_show);
+    Serial.print("\t");
+    Serial.print("motor: ");
+    Serial.println(motor_show);
 }
 // end loop -------------------------------------------------------------------------------------------------------------------------------------------------
 
