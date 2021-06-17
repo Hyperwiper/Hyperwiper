@@ -98,7 +98,7 @@ To be done (2021-03-20):
 
  */
 
-static char VERSION[] = "V2.4.4";;
+static char VERSION[] = "V2.4.5";;
 
 //set drivers 
   #include <SPI.h>
@@ -122,7 +122,7 @@ static char VERSION[] = "V2.4.4";;
 //Pins setup
         int magnetPin = 14;
         // int motorPin = 15;
-        int potPin=16;//normally for test units pin 17 this is only for Teensy with pin 17 burned out, probally due to touching 12V somewhere.
+        int potPin=17;//normally for test units pin 17 this is only for Teensy with pin 17 burned out, probally due to touching 12V somewhere.
         unsigned potRead;
         int one_wipe_time_procentage;
         int potTime;
@@ -441,6 +441,7 @@ if(motorOn& beatdetected){
     Serial.println("Wiper magnet_arrived");
       rgbLedMotor.writeRGB(0,0,255);
         magnetOn= true;
+        minloop(minTimeSet);
         stop_motor();
     }
   } else {
@@ -554,24 +555,24 @@ if(motorOn& beatdetected){
       // run_motor();
      }
   }
-    int magnet_show =(!magnetOn*10)+5;
-    int motor_show =(motorOn*20)+10;
+    // int magnet_show =(!magnetOn*10)+5;
+    // int motor_show =(motorOn*20)+10;
     // Serial.print(sum, 5);
     // Serial.print("\t");
     // Serial.print(thr, 5);
-    Serial.print("\t");
-    Serial.print(guess == 1 ? -200 : 0);
-    Serial.print("\t");
-    Serial.print(curDel == 0 ? 200 : 0);
-    Serial.print("\t");
-    Serial.print("count: ");
-    Serial.print(beat_array_count);
-    Serial.print("\t");
-    Serial.print("magnet: ");
-    Serial.print(magnet_show);
-    Serial.print("\t");
-    Serial.print("motor: ");
-    Serial.println(motor_show);
+    // Serial.print("\t");
+    // Serial.print(guess == 1 ? -200 : 0);
+    // Serial.print("\t");
+    // Serial.print(curDel == 0 ? 200 : 0);
+    // Serial.print("\t");
+    // Serial.print("count: ");
+    // Serial.print(beat_array_count);
+    // Serial.print("\t");
+    // Serial.print("magnet: ");
+    // Serial.print(magnet_show);
+    // Serial.print("\t");
+    // Serial.print("motor: ");
+    // Serial.println(motor_show);
 }
 // end loop -------------------------------------------------------------------------------------------------------------------------------------------------
 
