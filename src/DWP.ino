@@ -416,7 +416,7 @@ if(motorOn& beatdetected){
    delay (inter_wipe_beat_delay_time);
    fan.setDutyCycle(0);
    beatdetected=false;
-   minloop(minTimeSet);
+  //  minloop(minTimeSet);
 }
 //
 
@@ -442,7 +442,7 @@ if(motorOn& beatdetected){
     Serial.println("Wiper magnet_arrived");
       rgbLedMotor.writeRGB(0,0,255);
         magnetOn= true;
-        minloop(minTimeSet);
+        // minloop(minTimeSet);
         stop_motor();
     }
   } else {
