@@ -310,6 +310,7 @@
     ],
     "rule_severities": {
       "bus_definition_conflict": "error",
+      "bus_entry_needed": "error",
       "bus_label_syntax": "error",
       "bus_to_bus_conflict": "error",
       "bus_to_net_conflict": "error",
@@ -378,9 +379,8 @@
           "+3V3",
           "/5V",
           "GND",
-          "Net-(C4-Pad2)",
-          "Net-(D4-Pad2)",
-          "Net-(D5-Pad1)",
+          "Net-(J1-Pad1)",
+          "Net-(J1-Pad2)",
           "Net-(J2-Pad1)"
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
@@ -409,6 +409,7 @@
     "page_layout_descr_file": ""
   },
   "schematic": {
+    "annotate_start_num": 0,
     "drawing": {
       "default_bus_thickness": 12.0,
       "default_junction_size": 54.0,
@@ -432,6 +433,8 @@
     },
     "net_format_name": "KiCad",
     "ngspice": {
+      "fix_include_paths": true,
+      "fix_passive_vals": false,
       "meta": {
         "version": 0
       },
