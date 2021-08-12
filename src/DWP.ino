@@ -8,7 +8,7 @@
  contact rob@yr-design.biz
  
  revisions:
-
+ V2.5.0   2021-08-12  Switched to use relays again(now double relays)
  V2.4.5   2021-06-17 Test for better timing of beats with serial plotter.
  V2.4.4   2021-06-13 Switched pot back to pin 17 for other units.
  V2.4.3a  2021-06-13 Moved pot from pin 17 to pin 16 on "broken" teensy (had pin 17 burned out") to use for testing and rewires the board.
