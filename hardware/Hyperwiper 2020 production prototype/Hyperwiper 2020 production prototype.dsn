@@ -3,7 +3,7 @@
     (string_quote ")
     (space_in_quoted_tokens on)
     (host_cad "KiCad's Pcbnew")
-    (host_version "5.99.0-unknown-11becc5a68~131~ubuntu20.04.1")
+    (host_version "5.99.0-unknown-8aea2cbd03~131~ubuntu20.04.1")
   )
   (resolution um 10)
   (unit um)
@@ -117,14 +117,11 @@
     )
   )
   (placement
-    (component Relay_THT:SRA12VDCCL
-      (place RLY4 169545.000000 -62653.300000 front 0.000000 (PN "JSM1-12V-5"))
-      (place RLY3 169545.000000 -76200.000000 front 0.000000 (PN "JSM1-12V-5"))
-      (place RLY2 169545.000000 -97790.000000 front 0.000000 (PN "JSM1-12V-5"))
-      (place RLY1 169545.000000 -111548.300000 front 0.000000 (PN "JSM1-12V-5"))
-    )
     (component "LED_THT:LED_D5.0mm-4_RGB_Wide_Pins"
       (place D2 184150.000000 -81472.000000 front 90.000000 (PN "Beat LED"))
+    )
+    (component Relay_THT:SRA12VDCCL
+      (place RLY2 169545.000000 -97790.000000 front 0.000000 (PN "JSM1-12V-5"))
     )
     (component TerminalBlock_MetzConnect:TerminalBlock_MetzConnect_Type011_RT05505HBWC_1x05_P5.00mm_Horizontal
       (place J1 196396.000000 -92195.500000 front 90.000000 (PN Conn_01x05))
@@ -134,6 +131,9 @@
     )
     (component Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal
       (place R2 98415.000000 -116864.000000 front 0.000000 (PN 10k))
+    )
+    (component Relay_THT:SRA12VDCCL::1
+      (place RLY4 169545.000000 -62653.300000 front 0.000000 (PN "JSM1-12V-5"))
     )
     (component "Package_TO_SOT_THT:TO-92_Inline"
       (place Q2 153035.000000 -114037.500000 front 0.000000 (PN 2N3904))
@@ -156,6 +156,9 @@
     (component "Hyperwiper 2020 production prototype all:Teensy40"
       (place U1 105664.000000 -87503.000000 front -90.000000 (PN Teensy4.0))
     )
+    (component Relay_THT:SRA12VDCCL::2
+      (place RLY3 169545.000000 -76200.000000 front 0.000000 (PN "JSM1-12V-5"))
+    )
     (component Capacitor_THT:CP_Radial_D5.0mm_P2.50mm::1
       (place C3 114046.000000 -115824.000000 front 0.000000 (PN 100uF))
     )
@@ -164,6 +167,9 @@
     )
     (component LED_THT:LED_D5.0mm_Clear
       (place D3 187198.000000 -100589.000000 front 90.000000 (PN "Power ON LED"))
+    )
+    (component Relay_THT:SRA12VDCCL::3
+      (place RLY1 169545.000000 -111548.300000 front 0.000000 (PN "JSM1-12V-5"))
     )
     (component "LED_THT:LED_D5.0mm-4_RGB_Wide_Pins::1"
       (place D1 184150.000000 -72074.000000 front 90.000000 (PN "Motor LED"))
@@ -179,27 +185,6 @@
     )
   )
   (library
-    (image Relay_THT:SRA12VDCCL
-      (outline (path signal 200  -7750 6150  7750 6150))
-      (outline (path signal 200  7750 6150  7750 -6150))
-      (outline (path signal 200  7750 -6150  -7750 -6150))
-      (outline (path signal 200  -7750 -6150  -7750 6150))
-      (outline (path signal 100  -8750 7150  8750 7150))
-      (outline (path signal 100  8750 7150  8750 -7150))
-      (outline (path signal 100  8750 -7150  -8750 -7150))
-      (outline (path signal 100  -8750 -7150  -8750 7150))
-      (outline (path signal 100  -5000 6150  -7750 6150))
-      (outline (path signal 100  -7750 6150  -7750 -6150))
-      (outline (path signal 100  -7750 -6150  -5000 -6150))
-      (outline (path signal 100  7750 -6150  7750 6150))
-      (outline (path signal 100  -3000 6150  5500 6150))
-      (outline (path signal 100  -3000 -6150  5500 -6150))
-      (pin Round[A]Pad_2100_um 1 -3850 -5000)
-      (pin Round[A]Pad_2100_um 2 6350 -5000)
-      (pin Round[A]Pad_2100_um 3 6350 5000)
-      (pin Round[A]Pad_2100_um 4 -3850 5000)
-      (pin Round[A]Pad_2100_um 5 -6350 0)
-    )
     (image "LED_THT:LED_D5.0mm-4_RGB_Wide_Pins"
       (outline (path signal 120  678.5 1545  678.5 1080))
       (outline (path signal 120  678.5 -1080  678.5 -1545))
@@ -306,6 +291,27 @@
       (pin Round[A]Pad_1800_um 2 2159 0)
       (pin Round[A]Pad_1800_um 3 4318 0)
       (pin Round[A]Pad_1800_um 4 6477 0)
+    )
+    (image Relay_THT:SRA12VDCCL
+      (outline (path signal 100  7750 -6150  7750 6150))
+      (outline (path signal 100  -5000 6150  -7750 6150))
+      (outline (path signal 100  -3000 -6150  5500 -6150))
+      (outline (path signal 100  -3000 6150  5500 6150))
+      (outline (path signal 100  -7750 -6150  -5000 -6150))
+      (outline (path signal 100  -7750 6150  -7750 -6150))
+      (outline (path signal 100  -8750 -7150  -8750 7150))
+      (outline (path signal 100  8750 7150  8750 -7150))
+      (outline (path signal 100  8750 -7150  -8750 -7150))
+      (outline (path signal 100  -8750 7150  8750 7150))
+      (outline (path signal 200  -7750 -6150  -7750 6150))
+      (outline (path signal 200  7750 6150  7750 -6150))
+      (outline (path signal 200  7750 -6150  -7750 -6150))
+      (outline (path signal 200  -7750 6150  7750 6150))
+      (pin Round[A]Pad_2100_um 1 -3850 -5000)
+      (pin Round[A]Pad_2100_um 2 6350 -5000)
+      (pin Round[A]Pad_2100_um 3 6350 5000)
+      (pin Round[A]Pad_2100_um 4 -3850 5000)
+      (pin Round[A]Pad_2100_um 5 -6350 0)
     )
     (image TerminalBlock_MetzConnect:TerminalBlock_MetzConnect_Type011_RT05505HBWC_1x05_P5.00mm_Horizontal
       (outline (path signal 120  6350 1133  6301 1083))
@@ -529,6 +535,27 @@
       (outline (path signal 100  10160 0  8230 0))
       (pin Round[A]Pad_1600_um 1 0 0)
       (pin Oval[A]Pad_1600x1600_um 2 10160 0)
+    )
+    (image Relay_THT:SRA12VDCCL::1
+      (outline (path signal 100  -7750 6150  -7750 -6150))
+      (outline (path signal 100  -7750 -6150  -5000 -6150))
+      (outline (path signal 100  -3000 -6150  5500 -6150))
+      (outline (path signal 100  7750 -6150  7750 6150))
+      (outline (path signal 100  -3000 6150  5500 6150))
+      (outline (path signal 100  -5000 6150  -7750 6150))
+      (outline (path signal 100  -8750 7150  8750 7150))
+      (outline (path signal 100  8750 -7150  -8750 -7150))
+      (outline (path signal 100  8750 7150  8750 -7150))
+      (outline (path signal 100  -8750 -7150  -8750 7150))
+      (outline (path signal 200  7750 -6150  -7750 -6150))
+      (outline (path signal 200  -7750 -6150  -7750 6150))
+      (outline (path signal 200  7750 6150  7750 -6150))
+      (outline (path signal 200  -7750 6150  7750 6150))
+      (pin Round[A]Pad_2100_um 1 -3850 -5000)
+      (pin Round[A]Pad_2100_um 2 6350 -5000)
+      (pin Round[A]Pad_2100_um 3 6350 5000)
+      (pin Round[A]Pad_2100_um 4 -3850 5000)
+      (pin Round[A]Pad_2100_um 5 -6350 0)
     )
     (image "Package_TO_SOT_THT:TO-92_Inline"
       (outline (path signal 120  -530 -1850  3070 -1850))
@@ -978,6 +1005,27 @@
       (pin Round[A]Pad_1600_um 43 11430 -5080)
       (pin Round[A]Pad_1600_um 44 8890 -5080)
     )
+    (image Relay_THT:SRA12VDCCL::2
+      (outline (path signal 100  -5000 6150  -7750 6150))
+      (outline (path signal 100  -3000 -6150  5500 -6150))
+      (outline (path signal 100  -7750 -6150  -5000 -6150))
+      (outline (path signal 100  -3000 6150  5500 6150))
+      (outline (path signal 100  -7750 6150  -7750 -6150))
+      (outline (path signal 100  7750 -6150  7750 6150))
+      (outline (path signal 100  8750 -7150  -8750 -7150))
+      (outline (path signal 100  -8750 -7150  -8750 7150))
+      (outline (path signal 100  -8750 7150  8750 7150))
+      (outline (path signal 100  8750 7150  8750 -7150))
+      (outline (path signal 200  -7750 6150  7750 6150))
+      (outline (path signal 200  7750 6150  7750 -6150))
+      (outline (path signal 200  -7750 -6150  -7750 6150))
+      (outline (path signal 200  7750 -6150  -7750 -6150))
+      (pin Round[A]Pad_2100_um 1 -3850 -5000)
+      (pin Round[A]Pad_2100_um 2 6350 -5000)
+      (pin Round[A]Pad_2100_um 3 6350 5000)
+      (pin Round[A]Pad_2100_um 4 -3850 5000)
+      (pin Round[A]Pad_2100_um 5 -6350 0)
+    )
     (image Capacitor_THT:CP_Radial_D5.0mm_P2.50mm::1
       (outline (path signal 120  2371 -1040  2371 -2329))
       (outline (path signal 120  2371 2329  2371 1040))
@@ -1259,6 +1307,27 @@
       (outline (path signal 50  -1950 3250  -1950 -3250))
       (pin Rect[A]Pad_1800x1800_um 1 0 0)
       (pin Round[A]Pad_1800_um 2 2540 0)
+    )
+    (image Relay_THT:SRA12VDCCL::3
+      (outline (path signal 100  -7750 6150  -7750 -6150))
+      (outline (path signal 100  -7750 -6150  -5000 -6150))
+      (outline (path signal 100  -3000 -6150  5500 -6150))
+      (outline (path signal 100  7750 -6150  7750 6150))
+      (outline (path signal 100  -5000 6150  -7750 6150))
+      (outline (path signal 100  -3000 6150  5500 6150))
+      (outline (path signal 100  8750 7150  8750 -7150))
+      (outline (path signal 100  -8750 -7150  -8750 7150))
+      (outline (path signal 100  -8750 7150  8750 7150))
+      (outline (path signal 100  8750 -7150  -8750 -7150))
+      (outline (path signal 200  -7750 6150  7750 6150))
+      (outline (path signal 200  7750 6150  7750 -6150))
+      (outline (path signal 200  7750 -6150  -7750 -6150))
+      (outline (path signal 200  -7750 -6150  -7750 6150))
+      (pin Round[A]Pad_2100_um 1 -3850 -5000)
+      (pin Round[A]Pad_2100_um 2 6350 -5000)
+      (pin Round[A]Pad_2100_um 3 6350 5000)
+      (pin Round[A]Pad_2100_um 4 -3850 5000)
+      (pin Round[A]Pad_2100_um 5 -6350 0)
     )
     (image "LED_THT:LED_D5.0mm-4_RGB_Wide_Pins::1"
       (outline (path signal 120  678.5 1545  678.5 1080))
@@ -1568,8 +1637,8 @@
       (pins SW1-4)
     )
     (net GND
-      (pins RLY4-2 RLY1-2 D2-2 J1-5 SW2-2 Q2-1 RV1-1 C1-2 C2-2 JP1-10 U1-1 U1-32 C3-2
-        D3-1 D1-2 JP2-10 J2-5 U2-2)
+      (pins D2-2 J1-5 SW2-2 RLY4-2 Q2-1 RV1-1 C1-2 C2-2 JP1-10 U1-1 U1-32 C3-2 D3-1
+        RLY1-2 D1-2 JP2-10 J2-5 U2-2)
     )
     (net "Net-(D1-Pad4)"
       (pins RN1-7 D1-4)
@@ -1836,25 +1905,25 @@
       (pins U1-44)
     )
     (net "Net-(J1-Pad1)"
-      (pins RLY4-1 RLY1-1 J1-1 SW1-5)
+      (pins J1-1 RLY4-1 SW1-5 RLY1-1)
     )
     (net "Net-(J1-Pad2)"
-      (pins RLY4-4 RLY3-1 RLY3-4 RLY2-1 RLY2-4 RLY1-4 J1-2)
+      (pins RLY2-1 RLY2-3 J1-2 RLY4-4 RLY3-1 RLY3-3 RLY1-4)
     )
     (net "Net-(Q2-Pad3)"
-      (pins RLY3-2 RLY2-2 Q2-3)
+      (pins RLY2-2 Q2-3 RLY3-2)
     )
-    (net "unconnected-(RLY2-Pad3)"
-      (pins RLY2-3)
+    (net "unconnected-(RLY2-Pad4)"
+      (pins RLY2-4)
     )
-    (net "unconnected-(RLY3-Pad3)"
-      (pins RLY3-3)
+    (net "unconnected-(RLY3-Pad4)"
+      (pins RLY3-4)
     )
     (net "unconnected-(RLY4-Pad3)"
       (pins RLY4-3)
     )
     (net "Net-(RLY1-Pad5)"
-      (pins RLY4-5 RLY3-5 RLY2-5 RLY1-5 SW1-6 U2-1)
+      (pins RLY2-5 RLY4-5 RLY3-5 SW1-6 RLY1-5 U2-1)
     )
     (class kicad_default
       (circuit

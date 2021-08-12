@@ -98,7 +98,7 @@ To be done (2021-03-20):
 
  */
 
-static char VERSION[] = "V2.4.5";;
+static char VERSION[] = "V2.5.0";;
 
 //set drivers 
   #include <SPI.h>
@@ -116,6 +116,7 @@ static char VERSION[] = "V2.4.5";;
   #define SENSOR_THRESHOLD 1000
   #define SENSOR_PIN A10 //pin IO04
   #define PWM_PIN 10 // pin D10
+  #define motorPin 10 // pin D10 for relay
 
 // Start init's -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -261,15 +262,15 @@ static char VERSION[] = "V2.4.5";;
     void run_motor() {
             rgbLedMotor.writeRGB(0,255,0);
        //start motor     
-            fan.setDutyCycle(0); //for P-MOSFET
-            // digitalWrite(motorPin, LOW); for relay
+            // fan.setDutyCycle(0); //for P-MOSFET
+            digitalWrite(motorPin, LOW); //for relay
             Serial.println("motor_running");
     }
 
     void stop_motor() {
 
-            fan.setDutyCycle(100);//for P-MOSFET
-            // digitalWrite(motorPin, HIGH); for relay
+            // fan.setDutyCycle(100);//for P-MOSFET
+            digitalWrite(motorPin, HIGH); //for relay
             Serial.println("motor_stopped");
     }
 
@@ -412,9 +413,11 @@ if(motorOn& beatdetected){
   Serial.println("interbeat start");
    //delay start of the interbeat setup with potmeter same as beat start
    delay(potRead);
-   fan.setDutyCycle(100);
+  //  fan.setDutyCycle(100);// for PWM
+   digitalWrite(motorPin, HIGH); //for relay
    delay (inter_wipe_beat_delay_time);
-   fan.setDutyCycle(0);
+  //  fan.setDutyCycle(0);// for PWM
+   digitalWrite(motorPin, LOW); //for relay
    beatdetected=false;
   //  minloop(minTimeSet);
 }
