@@ -98,7 +98,7 @@ To be done (2021-03-20):
 
  */
 
-static char VERSION[] = "V2.5.0";;
+static char VERSION[] = "V2.5.1";;
 
 //set drivers 
   #include <SPI.h>
@@ -263,14 +263,14 @@ static char VERSION[] = "V2.5.0";;
             rgbLedMotor.writeRGB(0,255,0);
        //start motor     
             // fan.setDutyCycle(0); //for P-MOSFET
-            digitalWrite(motorPin, LOW); //for relay
+            digitalWrite(motorPin, HIGH); //for relay
             Serial.println("motor_running");
     }
 
     void stop_motor() {
 
             // fan.setDutyCycle(100);//for P-MOSFET
-            digitalWrite(motorPin, HIGH); //for relay
+            digitalWrite(motorPin, LOW); //for relay
             Serial.println("motor_stopped");
     }
 
@@ -338,7 +338,7 @@ static char VERSION[] = "V2.5.0";;
             trigger_level = EEPROM.readLong(addressLong);
 
           // setup pins for switches
-              // pinMode(motorPin, OUTPUT); only need for relay only setup
+              pinMode(motorPin, OUTPUT); //only need for relay only setup
               pinMode(magnetPin, INPUT_PULLUP);
               pinMode(potPin, INPUT);
 
@@ -414,10 +414,10 @@ if(motorOn& beatdetected){
    //delay start of the interbeat setup with potmeter same as beat start
    delay(potRead);
   //  fan.setDutyCycle(100);// for PWM
-   digitalWrite(motorPin, HIGH); //for relay
+   digitalWrite(motorPin, LOW); //for relay
    delay (inter_wipe_beat_delay_time);
   //  fan.setDutyCycle(0);// for PWM
-   digitalWrite(motorPin, LOW); //for relay
+   digitalWrite(motorPin, HIGH); //for relay
    beatdetected=false;
   //  minloop(minTimeSet);
 }
