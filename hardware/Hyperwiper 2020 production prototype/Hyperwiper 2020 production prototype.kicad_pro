@@ -380,8 +380,7 @@
           "/5V",
           "GND",
           "Net-(J1-Pad1)",
-          "Net-(J1-Pad2)",
-          "Net-(J2-Pad1)"
+          "Net-(J1-Pad2)"
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
@@ -423,13 +422,14 @@
       "intersheets_ref_show": false,
       "intersheets_ref_suffix": "",
       "junction_size_choice": 4,
+      "label_size_ratio": 0.3,
       "pin_symbol_size": 25.0,
       "text_offset_ratio": 0.3
     },
     "legacy_lib_dir": "",
     "legacy_lib_list": [],
     "meta": {
-      "version": 0
+      "version": 1
     },
     "net_format_name": "KiCad",
     "ngspice": {
