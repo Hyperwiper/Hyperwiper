@@ -3842,7 +3842,7 @@
     (property "Reference" "Q4" (id 0) (at 245.5165 222.3706 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "2N3904" (id 1) (at 244.8815 224.6693 0)
+    (property "Value" "2N2222" (id 1) (at 244.8815 224.6693 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Package_TO_SOT_THT:TO-92_Inline" (id 2) (at 255.905 220.345 0)
@@ -3862,7 +3862,7 @@
     (property "Reference" "Q2" (id 0) (at 296.9515 106.8006 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "2N3904" (id 1) (at 296.3165 109.0993 0)
+    (property "Value" "2N2222" (id 1) (at 296.3165 109.0993 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Package_TO_SOT_THT:TO-92_Inline" (id 2) (at 307.34 104.775 0)
@@ -3882,7 +3882,7 @@
     (property "Reference" "Q3" (id 0) (at 331.8765 238.8806 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "2N3904" (id 1) (at 331.2415 241.1793 0)
+    (property "Value" "2N2222" (id 1) (at 331.2415 241.1793 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Package_TO_SOT_THT:TO-92_Inline" (id 2) (at 342.265 236.855 0)
@@ -4478,13 +4478,13 @@
       (reference "Q1") (unit 1) (value "IRF3205") (footprint "Package_TO_SOT_THT:TO-220-3_Vertical")
     )
     (path "/6318e5ba-d851-4b22-a87c-1d3af44d9c31"
-      (reference "Q2") (unit 1) (value "2N3904") (footprint "Package_TO_SOT_THT:TO-92_Inline")
+      (reference "Q2") (unit 1) (value "2N2222") (footprint "Package_TO_SOT_THT:TO-92_Inline")
     )
     (path "/5dd88fcc-854f-4968-bd6e-12ca4124333e"
-      (reference "Q3") (unit 1) (value "2N3904") (footprint "Package_TO_SOT_THT:TO-92_Inline")
+      (reference "Q3") (unit 1) (value "2N2222") (footprint "Package_TO_SOT_THT:TO-92_Inline")
     )
     (path "/d79d71d6-0025-4926-88c2-39543a764c02"
-      (reference "Q4") (unit 1) (value "2N3904") (footprint "Package_TO_SOT_THT:TO-92_Inline")
+      (reference "Q4") (unit 1) (value "2N2222") (footprint "Package_TO_SOT_THT:TO-92_Inline")
     )
     (path "/17775ba4-a7f4-4bd1-a555-e273f2fa16b7"
       (reference "R1") (unit 1) (value "10k") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
