@@ -116,6 +116,7 @@ static char VERSION[] = "V2.5.1";;
   #define SENSOR_THRESHOLD 1000
   #define SENSOR_PIN A10 //pin IO04
   #define PWM_PIN 10 // pin D10
+  #define PWM2_PIN 16 // pin D16 for 30volt power creations.
   #define motorPin 10 // pin D10 for relay
 
 // Start init's -------------------------------------------------------------------------------------------------------------------------------------------------
@@ -127,6 +128,7 @@ static char VERSION[] = "V2.5.1";;
         unsigned potRead;
         int one_wipe_time_procentage;
         int potTime;
+
 
 //display magnet info  setup 
         byte previousState = HIGH;         // what state was the button last time
@@ -171,6 +173,7 @@ static char VERSION[] = "V2.5.1";;
 
       // Initialize library
         FanController fan(SENSOR_PIN, SENSOR_THRESHOLD, PWM_PIN);
+        FanController fan2(SENSOR_PIN, SENSOR_THRESHOLD, PWM2_PIN);
 
       //Audio setup
         AudioInputI2S       audioInput;
@@ -331,6 +334,10 @@ static char VERSION[] = "V2.5.1";;
             delay(1000);
             Serial.println("Start serial");
           
+          // start PWM2 for power cycle 50%
+            fan2.setDutyCycle(50); //for 30 volt power 
+            Serial.println("Start 30V power");
+
           //EEPROM setup for Teensy4
             EEPROM.setMemPool(memBase, EEPROMSizeTeensy40);
             EEPROM.setMaxAllowedWrites(maxAllowedWrites);    
