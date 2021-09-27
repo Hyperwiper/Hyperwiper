@@ -2610,7 +2610,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid b6598807-04b1-4fbe-8861-77cffc056185)
   )
-  (text "Teensy4 digital in/outs:\n\nOUT:\nrelay_on_off	=10\nPWM1			=\nPWM2(30V power)	=16\nMotor LED B 	=9\nMotor LED G 	=6\nMotor LED R 	=5\nBeat B 			=4\nBeat G			=3\nBeat R			=2\n\n\nIN:\nReed-switch		=14\nPotentMeter		=17"
+  (text "Teensy4 digital in/outs:\n\nOUT:\nrelay_on_off	=10\nPWM1			=11\nPWM2(30V power)	=16\nMotor LED B 	=9\nMotor LED G 	=6\nMotor LED R 	=5\nBeat B 			=4\nBeat G			=3\nBeat R			=2\n\n\nIN:\nReed-switch		=14\nPotentMeter		=17"
     (at 65.405 148.59 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid fbb97450-b07b-4771-bfcf-d741be615ff6)
