@@ -81,19 +81,7 @@
           "pos_x": 0,
           "pos_y": 215,
           "size_x": 1280,
-          "size_y": 696
-        }
-      },
-      {
-        "name": "Hyperwiper 2020 production prototype.kicad_sch",
-        "open": false,
-        "window": {
-          "display": 0,
-          "maximized": true,
-          "pos_x": 320,
-          "pos_y": 240,
-          "size_x": 1280,
-          "size_y": 648
+          "size_y": 672
         }
       }
     ]

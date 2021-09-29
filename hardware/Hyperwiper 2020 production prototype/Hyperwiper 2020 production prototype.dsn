@@ -3,7 +3,7 @@
     (string_quote ")
     (space_in_quoted_tokens on)
     (host_cad "KiCad's Pcbnew")
-    (host_version "5.99.0-unknown-ff9612b6da~131~ubuntu20.04.1")
+    (host_version "5.99.0-unknown-9f841da98e~134~ubuntu20.04.1")
   )
   (resolution um 10)
   (unit um)
@@ -117,18 +117,22 @@
     )
   )
   (placement
-    (component "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
-      (place D11 191770.000000 -105410.000000 front 180.000000 (PN D))
-      (place D10 140335.000000 -62865.000000 front 0.000000 (PN D))
+    (component "Hyperwiper 2020 production prototype all:Relay_SPDT_SANYOU_SRA_Series_Form_C"
+      (place RLY4 158750.000000 -113891.700000 front 0.000000 (PN "JSM1-12V-5"))
+      (place RLY3 158750.000000 -99286.700000 front 0.000000 (PN "JSM1-12V-5"))
+      (place RLY2 159210.000000 -77485.000000 front 0.000000 (PN "JSM1-12V-5"))
+    )
+    (component "Hyperwiper 2020 production prototype all:Relay_SPDT_SANYOU_SRA_Series_Form_C::1"
+      (place RLY1 159210.000000 -62880.000000 front 0.000000 (PN "JSM1-12V-5"))
     )
     (component "LED_THT:LED_D5.0mm-4_RGB_Wide_Pins"
       (place D2 184150.000000 -81472.000000 front 90.000000 (PN "Beat LED"))
     )
+    (component "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+      (place D10 140335.000000 -62865.000000 front 0.000000 (PN D))
+    )
     (component Capacitor_THT:C_Rect_L7.0mm_W2.5mm_P5.00mm
       (place C7 139192.000000 -93980.000000 front 90.000000 (PN 0.1uF))
-    )
-    (component Relay_THT:SRA12VDCCL
-      (place RLY2 170180.000000 -63119.000000 front 0.000000 (PN "JSM1-12V-5"))
     )
     (component Capacitor_THT:C_Rect_L7.0mm_W2.5mm_P5.00mm::1
       (place C9 139192.000000 -84796.000000 front 90.000000 (PN 0.1uF))
@@ -152,36 +156,36 @@
       (place R2 109601.000000 -112395.000000 front 0.000000 (PN 10k))
     )
     (component "Package_TO_SOT_THT:TO-92_Inline"
-      (place Q3 150114.000000 -114418.500000 front 0.000000 (PN 2N3904))
+      (place Q3 145415.000000 -114418.500000 front 0.000000 (PN 2N2222))
     )
     (component "Package_TO_SOT_THT:TO-220-3_Vertical"
-      (place Q1 143891.000000 -113990.000000 front 180.000000 (PN IRF3205))
+      (place Q1 139192.000000 -113990.000000 front 180.000000 (PN IRF3205))
+    )
+    (component "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal::3"
+      (place D11 191770.000000 -105410.000000 front 180.000000 (PN D))
     )
     (component Capacitor_THT:C_Rect_L7.0mm_W2.5mm_P5.00mm::2
       (place C5 135636.000000 -104120.000000 front 90.000000 (PN 0.1uF))
-    )
-    (component Relay_THT:SRA12VDCCL::1
-      (place RLY4 170180.000000 -97790.000000 front 0.000000 (PN "JSM1-12V-5"))
     )
     (component Capacitor_THT:C_Rect_L7.0mm_W2.5mm_P5.00mm::3
       (place C4 143256.000000 -104267.000000 front 90.000000 (PN 0.1uF))
     )
     (component "Package_TO_SOT_THT:TO-92_Inline::1"
-      (place Q2 156464.000000 -114418.500000 front 0.000000 (PN 2N3904))
+      (place Q2 151765.000000 -114418.500000 front 0.000000 (PN 2N2222))
     )
     (component "Potentiometer_THT:Potentiometer_Piher_PT-10-V05_Vertical"
-      (place RV1 151805.000000 -98360.000000 front 0.000000 (PN R_POT_TRIM))
+      (place RV1 149225.000000 -98360.000000 front 0.000000 (PN R_POT_TRIM))
     )
     (component "Package_DIP:DIP-16_W7.62mm_LongPads"
-      (place RN1 149860.000000 -69850.000000 front 0.000000 (PN R_Pack08))
+      (place RN1 147955.000000 -68580.000000 front 0.000000 (PN R_Pack08))
     )
     (component Capacitor_THT:C_Rect_L7.0mm_W2.5mm_P5.00mm::4
       (place C1 185420.000000 -92797.000000 front 90.000000 (PN 0.1uF))
     )
-    (component "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal::3"
+    (component "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal::4"
       (place D7 143256.000000 -78486.000000 front -90.000000 (PN D))
     )
-    (component "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal::4"
+    (component "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal::5"
       (place D8 135636.000000 -78232.000000 front -90.000000 (PN D))
     )
     (component Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal::2
@@ -202,13 +206,10 @@
     (component Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal::4
       (place R1 109855.000000 -108585.000000 front 0.000000 (PN 10k))
     )
-    (component Relay_THT:SRA12VDCCL::2
-      (place RLY3 170180.000000 -77470.000000 front 0.000000 (PN "JSM1-12V-5"))
-    )
     (component "Package_TO_SOT_THT:TO-92_Inline::2"
-      (place Q4 150495.000000 -106680.000000 front 0.000000 (PN 2N3904))
+      (place Q4 150495.000000 -106680.000000 front 0.000000 (PN 2N2222))
     )
-    (component "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal::5"
+    (component "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal::6"
       (place D4 139192.000000 -98044.000000 front -90.000000 (PN D))
     )
     (component Capacitor_THT:CP_Radial_D5.0mm_P2.50mm::1
@@ -226,13 +227,10 @@
     (component LED_THT:LED_D5.0mm_Clear
       (place D3 187198.000000 -100589.000000 front 90.000000 (PN "Power ON LED"))
     )
-    (component Relay_THT:SRA12VDCCL::3
-      (place RLY1 170180.000000 -111760.000000 front 0.000000 (PN "JSM1-12V-5"))
-    )
     (component "LED_THT:LED_D5.0mm-4_RGB_Wide_Pins::1"
       (place D1 184150.000000 -72074.000000 front 90.000000 (PN "Motor LED"))
     )
-    (component "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal::6"
+    (component "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal::7"
       (place D6 135636.000000 -88900.000000 front -90.000000 (PN D))
     )
     (component "Converter_DCDC:Converter_DCDC_muRata_OKI-78SR_Horizontal"
@@ -240,31 +238,81 @@
     )
   )
   (library
-    (image "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
-      (outline (path signal 50  8670 1250  -1050 1250))
-      (outline (path signal 50  8670 -1250  8670 1250))
-      (outline (path signal 50  -1050 -1250  8670 -1250))
-      (outline (path signal 50  -1050 1250  -1050 -1250))
-      (outline (path signal 120  2290 1120  2290 -1120))
-      (outline (path signal 120  2530 1120  2530 -1120))
-      (outline (path signal 120  2410 1120  2410 -1120))
-      (outline (path signal 120  6580 0  5930 0))
-      (outline (path signal 120  1040 0  1690 0))
-      (outline (path signal 120  5930 1120  1690 1120))
-      (outline (path signal 120  5930 -1120  5930 1120))
-      (outline (path signal 120  1690 -1120  5930 -1120))
-      (outline (path signal 120  1690 1120  1690 -1120))
-      (outline (path signal 100  2310 1000  2310 -1000))
-      (outline (path signal 100  2510 1000  2510 -1000))
-      (outline (path signal 100  2410 1000  2410 -1000))
-      (outline (path signal 100  7620 0  5810 0))
-      (outline (path signal 100  0 0  1810 0))
-      (outline (path signal 100  5810 1000  1810 1000))
-      (outline (path signal 100  5810 -1000  5810 1000))
-      (outline (path signal 100  1810 -1000  5810 -1000))
-      (outline (path signal 100  1810 1000  1810 -1000))
-      (pin Oval[A]Pad_1600x1600_um 2 7620 0)
-      (pin Rect[A]Pad_1600x1600_um 1 0 0)
+    (image "Hyperwiper 2020 production prototype all:Relay_SPDT_SANYOU_SRA_Series_Form_C"
+      (outline (path signal 120  12500 -1900  6200 -1900))
+      (outline (path signal 120  6200 600  5700 600))
+      (outline (path signal 100  5850 6800  3100 6800))
+      (outline (path signal 120  9100 5715.22  8200 5700))
+      (outline (path signal 100  18600 -5500  18600 6800))
+      (outline (path signal 100  3100 6800  3100 -5500))
+      (outline (path signal 120  14000 500  18000 2700))
+      (outline (path signal 100  7850 -5500  16350 -5500))
+      (outline (path signal 120  11100 2300  11100 -1300))
+      (outline (path signal 120  8300 -4300  9100 -4300))
+      (outline (path signal 100  7850 6800  16350 6800))
+      (outline (path signal 120  9100 5715.22  9100 2300))
+      (outline (path signal 120  6200 600  6200 -1900))
+      (outline (path signal 120  17200 -3100  17200 -1200))
+      (outline (path signal 120  12500 500  12500 -1900))
+      (outline (path signal 120  12500 500  14000 500))
+      (outline (path signal 120  11100 -1300  7100 -1300))
+      (outline (path signal 100  3100 -5500  5850 -5500))
+      (outline (path signal 120  11100 -1300  7100 2300))
+      (outline (path signal 120  17200 4200  17200 2250))
+      (outline (path signal 120  7100 2300  11100 2300))
+      (outline (path signal 120  7100 -1300  7100 2300))
+      (outline (path signal 120  9100 -1300  9100 -4300))
+      (outline (path signal 100  19600 -6500  2100 -6500))
+      (outline (path signal 100  2100 7800  19600 7800))
+      (outline (path signal 100  19600 7800  19600 -6500))
+      (outline (path signal 100  2100 -6500  2100 7800))
+      (outline (path signal 200  3100 -5500  3100 6800))
+      (outline (path signal 200  18600 6800  18600 -5500))
+      (outline (path signal 200  18600 -5500  3100 -5500))
+      (outline (path signal 200  3100 6800  18600 6800))
+      (pin Round[A]Pad_2100_um 1 4500 700)
+      (pin Round[A]Pad_2100_um 2 7000 -4300)
+      (pin Round[A]Pad_2100_um 3 17200 -4300)
+      (pin Round[A]Pad_2100_um 4 17200 5700)
+      (pin Round[A]Pad_2100_um 5 7000 5700)
+    )
+    (image "Hyperwiper 2020 production prototype all:Relay_SPDT_SANYOU_SRA_Series_Form_C::1"
+      (outline (path signal 200  3100 6800  18600 6800))
+      (outline (path signal 200  18600 -5500  3100 -5500))
+      (outline (path signal 200  18600 6800  18600 -5500))
+      (outline (path signal 200  3100 -5500  3100 6800))
+      (outline (path signal 100  2100 -6500  2100 7800))
+      (outline (path signal 100  19600 7800  19600 -6500))
+      (outline (path signal 100  2100 7800  19600 7800))
+      (outline (path signal 100  19600 -6500  2100 -6500))
+      (outline (path signal 120  9100 -1300  9100 -4300))
+      (outline (path signal 120  7100 -1300  7100 2300))
+      (outline (path signal 120  7100 2300  11100 2300))
+      (outline (path signal 120  17200 4200  17200 2250))
+      (outline (path signal 120  11100 -1300  7100 2300))
+      (outline (path signal 100  3100 -5500  5850 -5500))
+      (outline (path signal 120  11100 -1300  7100 -1300))
+      (outline (path signal 120  12500 500  14000 500))
+      (outline (path signal 120  12500 500  12500 -1900))
+      (outline (path signal 120  17200 -3100  17200 -1200))
+      (outline (path signal 120  6200 600  6200 -1900))
+      (outline (path signal 120  9100 5715.22  9100 2300))
+      (outline (path signal 100  7850 6800  16350 6800))
+      (outline (path signal 120  8300 -4300  9100 -4300))
+      (outline (path signal 120  11100 2300  11100 -1300))
+      (outline (path signal 100  7850 -5500  16350 -5500))
+      (outline (path signal 120  14000 500  18000 2700))
+      (outline (path signal 100  3100 6800  3100 -5500))
+      (outline (path signal 100  18600 -5500  18600 6800))
+      (outline (path signal 120  9100 5715.22  8200 5700))
+      (outline (path signal 100  5850 6800  3100 6800))
+      (outline (path signal 120  6200 600  5700 600))
+      (outline (path signal 120  12500 -1900  6200 -1900))
+      (pin Round[A]Pad_2100_um 5 7000 5700)
+      (pin Round[A]Pad_2100_um 4 17200 5700)
+      (pin Round[A]Pad_2100_um 3 17200 -4300)
+      (pin Round[A]Pad_2100_um 2 7000 -4300)
+      (pin Round[A]Pad_2100_um 1 4500 700)
     )
     (image "LED_THT:LED_D5.0mm-4_RGB_Wide_Pins"
       (outline (path signal 120  678.5 1545  678.5 1080))
@@ -373,6 +421,32 @@
       (pin Round[A]Pad_1800_um 3 4318 0)
       (pin Round[A]Pad_1800_um 4 6477 0)
     )
+    (image "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+      (outline (path signal 120  5930 1120  1690 1120))
+      (outline (path signal 120  6580 0  5930 0))
+      (outline (path signal 120  1690 1120  1690 -1120))
+      (outline (path signal 120  1040 0  1690 0))
+      (outline (path signal 120  2530 1120  2530 -1120))
+      (outline (path signal 120  1690 -1120  5930 -1120))
+      (outline (path signal 120  5930 -1120  5930 1120))
+      (outline (path signal 120  2410 1120  2410 -1120))
+      (outline (path signal 120  2290 1120  2290 -1120))
+      (outline (path signal 50  -1050 -1250  8670 -1250))
+      (outline (path signal 50  8670 1250  -1050 1250))
+      (outline (path signal 50  -1050 1250  -1050 -1250))
+      (outline (path signal 50  8670 -1250  8670 1250))
+      (outline (path signal 100  0 0  1810 0))
+      (outline (path signal 100  7620 0  5810 0))
+      (outline (path signal 100  1810 -1000  5810 -1000))
+      (outline (path signal 100  1810 1000  1810 -1000))
+      (outline (path signal 100  2510 1000  2510 -1000))
+      (outline (path signal 100  5810 -1000  5810 1000))
+      (outline (path signal 100  5810 1000  1810 1000))
+      (outline (path signal 100  2410 1000  2410 -1000))
+      (outline (path signal 100  2310 1000  2310 -1000))
+      (pin Rect[A]Pad_1600x1600_um 1 0 0)
+      (pin Oval[A]Pad_1600x1600_um 2 7620 0)
+    )
     (image Capacitor_THT:C_Rect_L7.0mm_W2.5mm_P5.00mm
       (outline (path signal 120  -1120 1370  6120 1370))
       (outline (path signal 120  6120 1370  6120 -1370))
@@ -388,27 +462,6 @@
       (outline (path signal 100  -1000 -1250  6000 -1250))
       (pin Round[A]Pad_1600_um 1 0 0)
       (pin Round[A]Pad_1600_um 2 5000 0)
-    )
-    (image Relay_THT:SRA12VDCCL
-      (outline (path signal 100  7750 -6150  7750 6150))
-      (outline (path signal 100  -5000 6150  -7750 6150))
-      (outline (path signal 100  -3000 -6150  5500 -6150))
-      (outline (path signal 100  -3000 6150  5500 6150))
-      (outline (path signal 100  -7750 -6150  -5000 -6150))
-      (outline (path signal 100  -7750 6150  -7750 -6150))
-      (outline (path signal 100  -8750 -7150  -8750 7150))
-      (outline (path signal 100  8750 7150  8750 -7150))
-      (outline (path signal 100  8750 -7150  -8750 -7150))
-      (outline (path signal 100  -8750 7150  8750 7150))
-      (outline (path signal 200  -7750 -6150  -7750 6150))
-      (outline (path signal 200  7750 6150  7750 -6150))
-      (outline (path signal 200  7750 -6150  -7750 -6150))
-      (outline (path signal 200  -7750 6150  7750 6150))
-      (pin Round[A]Pad_2100_um 1 -3850 -5000)
-      (pin Round[A]Pad_2100_um 2 6350 -5000)
-      (pin Round[A]Pad_2100_um 3 6350 5000)
-      (pin Round[A]Pad_2100_um 4 -3850 5000)
-      (pin Round[A]Pad_2100_um 5 -6350 0)
     )
     (image Capacitor_THT:C_Rect_L7.0mm_W2.5mm_P5.00mm::1
       (outline (path signal 120  -1120 1370  6120 1370))
@@ -804,6 +857,32 @@
       (pin Oval[A]Pad_1905x2000_um 2 2540 0)
       (pin Oval[A]Pad_1905x2000_um 3 5080 0)
     )
+    (image "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal::3"
+      (outline (path signal 120  6580 0  5930 0))
+      (outline (path signal 120  2410 1120  2410 -1120))
+      (outline (path signal 120  5930 -1120  5930 1120))
+      (outline (path signal 120  1040 0  1690 0))
+      (outline (path signal 120  2530 1120  2530 -1120))
+      (outline (path signal 120  2290 1120  2290 -1120))
+      (outline (path signal 120  5930 1120  1690 1120))
+      (outline (path signal 120  1690 -1120  5930 -1120))
+      (outline (path signal 120  1690 1120  1690 -1120))
+      (outline (path signal 50  8670 -1250  8670 1250))
+      (outline (path signal 50  -1050 1250  -1050 -1250))
+      (outline (path signal 50  -1050 -1250  8670 -1250))
+      (outline (path signal 50  8670 1250  -1050 1250))
+      (outline (path signal 100  2410 1000  2410 -1000))
+      (outline (path signal 100  1810 -1000  5810 -1000))
+      (outline (path signal 100  5810 1000  1810 1000))
+      (outline (path signal 100  1810 1000  1810 -1000))
+      (outline (path signal 100  0 0  1810 0))
+      (outline (path signal 100  2310 1000  2310 -1000))
+      (outline (path signal 100  7620 0  5810 0))
+      (outline (path signal 100  5810 -1000  5810 1000))
+      (outline (path signal 100  2510 1000  2510 -1000))
+      (pin Rect[A]Pad_1600x1600_um 1 0 0)
+      (pin Oval[A]Pad_1600x1600_um 2 7620 0)
+    )
     (image Capacitor_THT:C_Rect_L7.0mm_W2.5mm_P5.00mm::2
       (outline (path signal 120  6120 1370  6120 -1370))
       (outline (path signal 120  -1120 1370  -1120 -1370))
@@ -819,27 +898,6 @@
       (outline (path signal 100  -1000 1250  -1000 -1250))
       (pin Round[A]Pad_1600_um 1 0 0)
       (pin Round[A]Pad_1600_um 2 5000 0)
-    )
-    (image Relay_THT:SRA12VDCCL::1
-      (outline (path signal 100  -7750 6150  -7750 -6150))
-      (outline (path signal 100  -7750 -6150  -5000 -6150))
-      (outline (path signal 100  -3000 -6150  5500 -6150))
-      (outline (path signal 100  7750 -6150  7750 6150))
-      (outline (path signal 100  -3000 6150  5500 6150))
-      (outline (path signal 100  -5000 6150  -7750 6150))
-      (outline (path signal 100  -8750 7150  8750 7150))
-      (outline (path signal 100  8750 -7150  -8750 -7150))
-      (outline (path signal 100  8750 7150  8750 -7150))
-      (outline (path signal 100  -8750 -7150  -8750 7150))
-      (outline (path signal 200  7750 -6150  -7750 -6150))
-      (outline (path signal 200  -7750 -6150  -7750 6150))
-      (outline (path signal 200  7750 6150  7750 -6150))
-      (outline (path signal 200  -7750 6150  7750 6150))
-      (pin Round[A]Pad_2100_um 1 -3850 -5000)
-      (pin Round[A]Pad_2100_um 2 6350 -5000)
-      (pin Round[A]Pad_2100_um 3 6350 5000)
-      (pin Round[A]Pad_2100_um 4 -3850 5000)
-      (pin Round[A]Pad_2100_um 5 -6350 0)
     )
     (image Capacitor_THT:C_Rect_L7.0mm_W2.5mm_P5.00mm::3
       (outline (path signal 120  -1120 1370  -1120 -1370))
@@ -1031,7 +1089,7 @@
       (pin Round[A]Pad_1600_um 1 0 0)
       (pin Round[A]Pad_1600_um 2 5000 0)
     )
-    (image "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal::3"
+    (image "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal::4"
       (outline (path signal 120  1690 1120  1690 -1120))
       (outline (path signal 120  1690 -1120  5930 -1120))
       (outline (path signal 120  2290 1120  2290 -1120))
@@ -1057,7 +1115,7 @@
       (pin Rect[A]Pad_1600x1600_um 1 0 0)
       (pin Oval[A]Pad_1600x1600_um 2 7620 0)
     )
-    (image "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal::4"
+    (image "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal::5"
       (outline (path signal 120  1690 -1120  5930 -1120))
       (outline (path signal 120  6580 0  5930 0))
       (outline (path signal 120  2410 1120  2410 -1120))
@@ -1446,27 +1504,6 @@
       (pin Round[A]Pad_1600_um 1 0 0)
       (pin Oval[A]Pad_1600x1600_um 2 10160 0)
     )
-    (image Relay_THT:SRA12VDCCL::2
-      (outline (path signal 100  -5000 6150  -7750 6150))
-      (outline (path signal 100  -3000 -6150  5500 -6150))
-      (outline (path signal 100  -7750 -6150  -5000 -6150))
-      (outline (path signal 100  -3000 6150  5500 6150))
-      (outline (path signal 100  -7750 6150  -7750 -6150))
-      (outline (path signal 100  7750 -6150  7750 6150))
-      (outline (path signal 100  8750 -7150  -8750 -7150))
-      (outline (path signal 100  -8750 -7150  -8750 7150))
-      (outline (path signal 100  -8750 7150  8750 7150))
-      (outline (path signal 100  8750 7150  8750 -7150))
-      (outline (path signal 200  -7750 6150  7750 6150))
-      (outline (path signal 200  7750 6150  7750 -6150))
-      (outline (path signal 200  -7750 -6150  -7750 6150))
-      (outline (path signal 200  7750 -6150  -7750 -6150))
-      (pin Round[A]Pad_2100_um 1 -3850 -5000)
-      (pin Round[A]Pad_2100_um 2 6350 -5000)
-      (pin Round[A]Pad_2100_um 3 6350 5000)
-      (pin Round[A]Pad_2100_um 4 -3850 5000)
-      (pin Round[A]Pad_2100_um 5 -6350 0)
-    )
     (image "Package_TO_SOT_THT:TO-92_Inline::2"
       (outline (path signal 120  -530 -1850  3070 -1850))
       (outline (path signal 0  -998.023 -1389.85  -1145.66 -1113.63  -1259.81 -821.985
@@ -1527,7 +1564,7 @@
       (pin Oval[A]Pad_1050x1500_um 2 1270 0)
       (pin Oval[A]Pad_1050x1500_um 3 2540 0)
     )
-    (image "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal::5"
+    (image "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal::6"
       (outline (path signal 120  1690 -1120  5930 -1120))
       (outline (path signal 120  5930 -1120  5930 1120))
       (outline (path signal 120  5930 1120  1690 1120))
@@ -1867,27 +1904,6 @@
       (pin Rect[A]Pad_1800x1800_um 1 0 0)
       (pin Round[A]Pad_1800_um 2 2540 0)
     )
-    (image Relay_THT:SRA12VDCCL::3
-      (outline (path signal 100  -7750 6150  -7750 -6150))
-      (outline (path signal 100  -7750 -6150  -5000 -6150))
-      (outline (path signal 100  -3000 -6150  5500 -6150))
-      (outline (path signal 100  7750 -6150  7750 6150))
-      (outline (path signal 100  -5000 6150  -7750 6150))
-      (outline (path signal 100  -3000 6150  5500 6150))
-      (outline (path signal 100  8750 7150  8750 -7150))
-      (outline (path signal 100  -8750 -7150  -8750 7150))
-      (outline (path signal 100  -8750 7150  8750 7150))
-      (outline (path signal 100  8750 -7150  -8750 -7150))
-      (outline (path signal 200  -7750 6150  7750 6150))
-      (outline (path signal 200  7750 6150  7750 -6150))
-      (outline (path signal 200  7750 -6150  -7750 -6150))
-      (outline (path signal 200  -7750 -6150  -7750 6150))
-      (pin Round[A]Pad_2100_um 1 -3850 -5000)
-      (pin Round[A]Pad_2100_um 2 6350 -5000)
-      (pin Round[A]Pad_2100_um 3 6350 5000)
-      (pin Round[A]Pad_2100_um 4 -3850 5000)
-      (pin Round[A]Pad_2100_um 5 -6350 0)
-    )
     (image "LED_THT:LED_D5.0mm-4_RGB_Wide_Pins::1"
       (outline (path signal 120  678.5 1545  678.5 1080))
       (outline (path signal 120  678.5 -1080  678.5 -1545))
@@ -1995,7 +2011,7 @@
       (pin Round[A]Pad_1800_um 3 4318 0)
       (pin Round[A]Pad_1800_um 4 6477 0)
     )
-    (image "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal::6"
+    (image "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal::7"
       (outline (path signal 120  2530 1120  2530 -1120))
       (outline (path signal 120  5930 1120  1690 1120))
       (outline (path signal 120  1690 1120  1690 -1120))
@@ -2149,8 +2165,8 @@
       (pins SW1-4)
     )
     (net GND
-      (pins D2-2 J1-5 SW2-2 Q3-1 RLY4-2 C4-1 Q2-1 RV1-1 C1-2 C2-2 U1-1 U1-32 U3-1
-        U3-32 Q4-1 D4-2 C3-2 D3-1 RLY1-2 D1-2 U2-2)
+      (pins RLY2-2 RLY1-2 D2-2 J1-5 SW2-2 Q3-1 C4-1 Q2-1 RV1-1 C1-2 C2-2 U1-1 U1-32
+        U3-1 U3-32 Q4-1 D4-2 C3-2 D3-1 D1-2 U2-2)
     )
     (net "Net-(D1-Pad4)"
       (pins RN1-7 D1-4)
@@ -2242,14 +2258,14 @@
     (net "Net-(C5-Pad2)"
       (pins C7-1 C5-2 D7-2 D6-1)
     )
-    (net "unconnected-(RLY2-Pad4)"
-      (pins RLY2-4)
+    (net "unconnected-(RLY2-Pad3)"
+      (pins RLY2-3)
     )
     (net "unconnected-(RLY3-Pad4)"
       (pins RLY3-4)
     )
-    (net "unconnected-(RLY4-Pad3)"
-      (pins RLY4-3)
+    (net "unconnected-(RLY4-Pad4)"
+      (pins RLY4-4)
     )
     (net "Net-(C5-Pad1)"
       (pins C9-2 D5-2 C5-1 D4-1)
@@ -2387,24 +2403,24 @@
       (pins U3-19)
     )
     (net "Net-(Q2-Pad3)"
-      (pins RLY2-2 Q2-3 RLY3-2)
+      (pins RLY4-2 RLY3-2 Q2-3)
     )
     (net "Net-(Q3-Pad2)"
       (pins R3-2 Q3-2)
     )
-    (net "Net-(J1-Pad1)"
-      (pins D11-1 J1-1 Q1-3 RLY4-1 SW1-5 RLY1-1)
+    (net "Net-(D11-Pad1)"
+      (pins RLY4-3 RLY3-3 RLY2-1 RLY1-1 J1-1 Q1-3 D11-1 SW1-5)
     )
-    (net "Net-(J1-Pad2)"
-      (pins D11-2 RLY2-1 RLY2-3 J1-2 Q1-2 RLY4-4 RLY3-1 RLY3-3 RLY1-4)
+    (net "Net-(D11-Pad2)"
+      (pins RLY4-1 RLY3-1 RLY2-4 RLY1-4 J1-2 Q1-2 D11-2)
     )
     (net "Net-(Q4-Pad2)"
       (pins R4-2 Q4-2)
     )
     (net /12V
-      (pins D10-2 RLY2-5 RLY4-5 R5-2 RLY3-5 SW1-6 RLY1-5)
+      (pins RLY4-5 RLY3-5 RLY2-5 RLY1-5 D10-2 R5-2 SW1-6)
     )
-    (net "Net-(U2-Pad1)"
+    (net "Net-(D10-Pad1)"
       (pins D10-1 U2-1)
     )
     (class kicad_default
@@ -2416,7 +2432,7 @@
         (clearance 200.1)
       )
     )
-    (class Power +3V3 /5V GND "Net-(J1-Pad1)" "Net-(J1-Pad2)"
+    (class Power +3V3 /5V GND "Net-(D11-Pad1)" "Net-(D11-Pad2)"
       (circuit
         (use_via Via[0-1]_1200:400_um)
       )
