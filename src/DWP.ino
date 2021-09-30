@@ -8,6 +8,7 @@
  contact rob@yr-design.biz
  
  revisions:
+ V2.5.1   2021-09-30  Added proper MOSFET switching log and disbaled the MOSFET in software for faster deployment of interbeat tests.
  V2.5.0   2021-08-12  Switched to use relays again(now double relays)
  V2.4.5   2021-06-17 Test for better timing of beats with serial plotter.
  V2.4.4   2021-06-13 Switched pot back to pin 17 for other units.
@@ -265,14 +266,14 @@ static char VERSION[] = "V2.5.1";;
     void run_motor() {
             rgbLedMotor.writeRGB(0,255,0);
        //start motor     
-            fan.setDutyCycle(0); //for P-MOSFET
+            // fan.setDutyCycle(0); //for P-MOSFET
             digitalWrite(motorPin, HIGH); //for relay
             Serial.println("motor_running");
     }
 
     void stop_motor() {
 
-            fan.setDutyCycle(100);//for P-MOSFET
+            // fan.setDutyCycle(100);//for P-MOSFET
             digitalWrite(motorPin, LOW); //for relay
             Serial.println("motor_stopped");
     }
@@ -335,7 +336,7 @@ static char VERSION[] = "V2.5.1";;
             Serial.println("Start serial");
           
           // start PWM2 for power cycle 50%
-            fan2.setDutyCycle(50); //for 30 volt power 
+            // fan2.setDutyCycle(50); //for 30 volt power 
             Serial.println("Start on pin 12 for 30V power");
 
           //EEPROM setup for Teensy4
@@ -420,10 +421,10 @@ if(motorOn& beatdetected){
   Serial.println("interbeat start");
    //delay start of the interbeat setup with potmeter same as beat start
    delay(potRead);
-   fan.setDutyCycle(100);// for PWM
+  //  fan.setDutyCycle(100);// for PWM
    digitalWrite(motorPin, LOW); //for relay
    delay (inter_wipe_beat_delay_time);
-   fan.setDutyCycle(0);// for PWM
+  //  fan.setDutyCycle(0);// for PWM
    digitalWrite(motorPin, HIGH); //for relay
    beatdetected=false;
   //  minloop(minTimeSet);
