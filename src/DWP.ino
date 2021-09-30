@@ -115,8 +115,8 @@ static char VERSION[] = "V2.5.1";;
 // setup for PWM 
   #define SENSOR_THRESHOLD 1000
   #define SENSOR_PIN A10 //pin IO04
-  #define PWM_PIN 10 // pin D10
-  #define PWM2_PIN 16 // pin D16 for 30volt power creations.
+  #define PWM_PIN 11 // pin D11
+  #define PWM2_PIN 12 // pin D12 for 30volt power creations.
   #define motorPin 10 // pin D10 for relay
 
 // Start init's -------------------------------------------------------------------------------------------------------------------------------------------------
@@ -265,14 +265,14 @@ static char VERSION[] = "V2.5.1";;
     void run_motor() {
             rgbLedMotor.writeRGB(0,255,0);
        //start motor     
-            // fan.setDutyCycle(0); //for P-MOSFET
+            fan.setDutyCycle(0); //for P-MOSFET
             digitalWrite(motorPin, HIGH); //for relay
             Serial.println("motor_running");
     }
 
     void stop_motor() {
 
-            // fan.setDutyCycle(100);//for P-MOSFET
+            fan.setDutyCycle(100);//for P-MOSFET
             digitalWrite(motorPin, LOW); //for relay
             Serial.println("motor_stopped");
     }
@@ -336,7 +336,7 @@ static char VERSION[] = "V2.5.1";;
           
           // start PWM2 for power cycle 50%
             fan2.setDutyCycle(50); //for 30 volt power 
-            Serial.println("Start 30V power");
+            Serial.println("Start on pin 12 for 30V power");
 
           //EEPROM setup for Teensy4
             EEPROM.setMemPool(memBase, EEPROMSizeTeensy40);
@@ -420,10 +420,10 @@ if(motorOn& beatdetected){
   Serial.println("interbeat start");
    //delay start of the interbeat setup with potmeter same as beat start
    delay(potRead);
-  //  fan.setDutyCycle(100);// for PWM
+   fan.setDutyCycle(100);// for PWM
    digitalWrite(motorPin, LOW); //for relay
    delay (inter_wipe_beat_delay_time);
-  //  fan.setDutyCycle(0);// for PWM
+   fan.setDutyCycle(0);// for PWM
    digitalWrite(motorPin, HIGH); //for relay
    beatdetected=false;
   //  minloop(minTimeSet);

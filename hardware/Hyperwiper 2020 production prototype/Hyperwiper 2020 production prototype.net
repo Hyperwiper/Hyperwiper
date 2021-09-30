@@ -1,8 +1,8 @@
 (export (version "E")
   (design
     (source "/home/rob/Documents/PlatformIO/Projects/hyperwiper/hardware/Hyperwiper 2020 production prototype/Hyperwiper 2020 production prototype.kicad_sch")
-    (date "Wed 29 Sep 2021 05:04:41 PM JST")
-    (tool "Eeschema 5.99.0-unknown-9f841da98e~134~ubuntu20.04.1")
+    (date "Wed 29 Sep 2021 11:42:00 PM JST")
+    (tool "Eeschema 5.99.0-unknown-07e01e6297~134~ubuntu20.04.1")
     (sheet (number "1") (name "/") (tstamps "/")
       (title_block
         (title "Prototype board")
@@ -341,7 +341,7 @@
       (tstamps "1752c1e0-52c6-4015-b0d4-8767bee5af16"))
     (comp (ref "RLY1")
       (value "JSM1-12V-5")
-      (footprint "Relay_THT:Relay_SPDT_SANYOU_SRD_Series_Form_C")
+      (footprint "Hyperwiper 2020 production prototype all:SRA12VDCCL")
       (datasheet "http://www.sanyourelay.ca/public/products/pdf/SRD.pdf")
       (fields
         (field (name "Category") "Relays")
@@ -369,7 +369,7 @@
       (tstamps "b504cfc2-05e3-448e-89c4-f725e3e3a508"))
     (comp (ref "RLY2")
       (value "JSM1-12V-5")
-      (footprint "Relay_THT:Relay_SPDT_SANYOU_SRD_Series_Form_C")
+      (footprint "Hyperwiper 2020 production prototype all:SRA12VDCCL")
       (datasheet "http://www.sanyourelay.ca/public/products/pdf/SRD.pdf")
       (fields
         (field (name "Category") "Relays")
@@ -397,7 +397,7 @@
       (tstamps "9655f52e-d83d-4b34-981f-5781f9027fde"))
     (comp (ref "RLY3")
       (value "JSM1-12V-5")
-      (footprint "Relay_THT:Relay_SPDT_SANYOU_SRD_Series_Form_C")
+      (footprint "Hyperwiper 2020 production prototype all:SRA12VDCCL")
       (datasheet "http://www.sanyourelay.ca/public/products/pdf/SRD.pdf")
       (fields
         (field (name "Category") "Relays")
@@ -425,7 +425,7 @@
       (tstamps "cbd5716c-aafc-4ace-86c4-b66ca01b98bc"))
     (comp (ref "RLY4")
       (value "JSM1-12V-5")
-      (footprint "Relay_THT:Relay_SPDT_SANYOU_SRD_Series_Form_C")
+      (footprint "Hyperwiper 2020 production prototype all:SRA12VDCCL")
       (datasheet "http://www.sanyourelay.ca/public/products/pdf/SRD.pdf")
       (fields
         (field (name "Category") "Relays")
@@ -1038,6 +1038,8 @@
       (node (ref "Q1") (pin "3") (pinfunction "S") (pintype "bidirectional"))
       (node (ref "RLY1") (pin "1") (pintype "passive"))
       (node (ref "RLY2") (pin "1") (pintype "passive"))
+      (node (ref "RLY3") (pin "3") (pintype "passive"))
+      (node (ref "RLY4") (pin "3") (pintype "passive"))
       (node (ref "SW1") (pin "5") (pinfunction "B") (pintype "passive")))
     (net (code "57") (name "Net-(D11-Pad2)")
       (node (ref "D11") (pin "2") (pinfunction "A") (pintype "passive"))
@@ -1046,9 +1048,7 @@
       (node (ref "RLY1") (pin "4") (pintype "passive"))
       (node (ref "RLY2") (pin "4") (pintype "passive"))
       (node (ref "RLY3") (pin "1") (pintype "passive"))
-      (node (ref "RLY3") (pin "3") (pintype "passive"))
-      (node (ref "RLY4") (pin "1") (pintype "passive"))
-      (node (ref "RLY4") (pin "3") (pintype "passive")))
+      (node (ref "RLY4") (pin "1") (pintype "passive")))
     (net (code "58") (name "Net-(Q1-Pad1)")
       (node (ref "Q1") (pin "1") (pinfunction "G") (pintype "bidirectional"))
       (node (ref "Q3") (pin "3") (pinfunction "C") (pintype "passive"))

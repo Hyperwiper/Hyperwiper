@@ -1,4 +1,4 @@
-17008631614718987
+17010264550533166
 BK-53
 BAT_BK-53
 
@@ -46971,8 +46971,8 @@ Resistor Axial_DIN0207 series Axial Horizontal pin pitch 10.16mm 0.25W = 1/4W le
 2
 Hyperwiper 2020 production prototype all
 Relay_SPDT_SANYOU_SRA_Series_Form_C
-relay Sanyou SRD series Form C http://www.sanyourelay.ca/public/products/pdf/SRD.pdf
-relay Sanyu SRD form C
+relay Sanyou SRA series Form C http://www.sanyourelay.ca/public/products/pdf/SRA.pdf
+relay Sanyu SRA form C
 0
 5
 5
@@ -46980,6 +46980,13 @@ Hyperwiper 2020 production prototype all
 Relay_SPDT_SANYOU_SRD_Series_Form_C
 relay Sanyou SRD series Form C http://www.sanyourelay.ca/public/products/pdf/SRD.pdf
 relay Sanyu SRD form C
+0
+5
+5
+Hyperwiper 2020 production prototype all
+SRA12VDCCL
+SRA-12VDC-CL
+Relay or Contactor
 0
 5
 5
