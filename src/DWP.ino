@@ -8,7 +8,9 @@
  contact rob@yr-design.biz
  
  revisions:
- V2.5.1   2021-09-30  Added proper MOSFET switching log and disbaled the MOSFET in software for faster deployment of interbeat tests.
+ 
+ V2.5.2   2021-10-19  Switched to all relays.
+ V2.5.1   2021-09-30  Added proper MOSFET switching log and disabled the MOSFET in software for faster deployment of interbeat tests.
  V2.5.0   2021-08-12  Switched to use relays again(now double relays)
  V2.4.5   2021-06-17 Test for better timing of beats with serial plotter.
  V2.4.4   2021-06-13 Switched pot back to pin 17 for other units.
@@ -99,7 +101,7 @@ To be done (2021-03-20):
 
  */
 
-static char VERSION[] = "V2.5.1";;
+static char VERSION[] = "V2.5.2";;
 
 //set drivers 
   #include <SPI.h>
