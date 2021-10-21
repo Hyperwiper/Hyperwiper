@@ -101,7 +101,7 @@ To be done (2021-03-20):
 
  */
 
-static char VERSION[] = "V2.5.3"
+static char VERSION[] = "V2.5.4";
 
 //set drivers 
   #include <SPI.h>
@@ -280,6 +280,30 @@ static char VERSION[] = "V2.5.3"
             Serial.println("motor_stopped");
     }
 
+
+   void delay_run_motor(long delay_time)
+      {
+      // create the minimum timing for the wiper motor to wait for next beat
+         unsigned long currentMillis_delay = millis();  
+        Serial.println();
+        Serial.println("---------------------------------");
+        Serial.print("Delay Time is =");
+        Serial.println(delay_time);
+        while(currentMillis_delay - previousMillis_delay > (unsigned)delay_time) {
+          previousMillis_delay = currentMillis_delay;  
+        } 
+      // run motor
+        Serial.println("delay time run");
+
+        //run the motor
+          rgbLedMotor.writeRGB(0,255,0);//green    
+          // fan.setDutyCycle(0); //for P-MOSFET
+          digitalWrite(motorPin, HIGH); //for relay
+          Serial.println("motor_running");
+          Serial.println("---------------------------------");
+        motorOn= true;
+      }
+
     void minloop(long minTime)
       {
       // create the minimum timing for the wiper motor to wait for next beat
@@ -290,43 +314,29 @@ static char VERSION[] = "V2.5.3"
             rgbLedMotor.writeRGB(255,0,60); // light blue
             motorOn= true;
             // digitalWrite(motorPin, LOW);
-            run_motor();
+            long runtimezero= 0;
+            delay_run_motor(runtimezero);
+            Serial.println();
+            Serial.println("---------------------------------");
             Serial.println("minloop_motor_started");
+            Serial.println("---------------------------------");
+            Serial.println();
         } 
       }
 
+ 
 
-    void delay_run_motor(long delay_time)
-      {
-      // create the minimum timing for the wiper motor to wait for next beat
-         unsigned long currentMillis_delay = millis();  
-        Serial.print("Delay Time is =");
-        Serial.println(delay_time);
-        while(currentMillis_delay - previousMillis_delay > (unsigned)delay_time) {
-          previousMillis_delay = currentMillis_delay;  
-        } 
-      // run motor
-        Serial.println();
-        Serial.println("---------------------------------");
-        Serial.println("delay time run");
-        Serial.println("---------------------------------");
-        Serial.println();
-        run_motor();
-        motorOn= true;
-      }
-
-
-    void test_beat(long delay_time_test)
-      {
-      // create the minimum timing for the wiper motor to wait for next beat
-         unsigned long currentMillis_test = millis();  
-        if(currentMillis_test - previousMillis_test > (unsigned)delay_time_test) {
-          previousMillis_test = currentMillis_test;  
-          // run motor
-            rgbLedMotor.writeRGB(255,255,255);
-            Serial.println("test beat");
-        } 
-      }
+    // void test_beat(long delay_time_test)
+    //   {
+    //   // create the minimum timing for the wiper motor to wait for next beat
+    //      unsigned long currentMillis_test = millis();  
+    //     if(currentMillis_test - previousMillis_test > (unsigned)delay_time_test) {
+    //       previousMillis_test = currentMillis_test;  
+    //       // run motor
+    //         rgbLedMotor.writeRGB(255,255,255);
+    //         Serial.println("test beat");
+    //     } 
+    //   }
 
 // start setup  -------------------------------------------------------------------------------------------------------------------------------------------------
          
@@ -338,7 +348,7 @@ static char VERSION[] = "V2.5.3"
           
           // start PWM2 for power cycle 50%
             // fan2.setDutyCycle(50); //for 30 volt power 
-            Serial.println("Start on pin 12 for 30V power");
+            // Serial.println("Start on pin 12 for 30V power");
 
           //EEPROM setup for Teensy4
             EEPROM.setMemPool(memBase, EEPROMSizeTeensy40);
@@ -392,6 +402,7 @@ static char VERSION[] = "V2.5.3"
                 Serial.println("Audio setup finished");
                 Serial.println("-------- End Set up info ----------------");
                 Serial.println();
+                // run_motor();
       delay(1000);
 }
 
@@ -417,16 +428,18 @@ void loop() {
     }
 
 // interbeat. 
-if(motorOn& beatdetected){
+if(motorOn & beatdetected){
   //set speed to 100% duty cycle(meaning stop) and the after inter_wipe_beat_delay_time 0% dutycycle (meaning run)
   Serial.println("interbeat start");
    //delay start of the interbeat setup with potmeter same as beat start
    delay(potRead);
   //  fan.setDutyCycle(100);// for PWM
    digitalWrite(motorPin, LOW); //for relay
+   Serial.println("interbeat motor stop");
    delay (inter_wipe_beat_delay_time);
   //  fan.setDutyCycle(0);// for PWM
    digitalWrite(motorPin, HIGH); //for relay
+   Serial.println("interbeat motor start");
    beatdetected=false;
   //  minloop(minTimeSet);
 }
@@ -444,18 +457,20 @@ if(motorOn& beatdetected){
   if (pushbutton.update()) {
     if (pushbutton.risingEdge()) {
       count = count + 1;
-    Serial.println("Wiper magnet_leaving");
+      Serial.println();
+      Serial.println("Wiper magnet_leaving");
       rgbLedMotor.writeRGB(255,60,0);// magnet leaves purple
       countAt = millis();
       magnetOn= false;
     }
     
     if (pushbutton.fallingEdge()) {
-    Serial.println("Wiper magnet_arrived");
+      Serial.println();
+      Serial.println("Wiper magnet_arrived");
       rgbLedMotor.writeRGB(0,0,255); // blue 
-        magnetOn= true;
-        // minloop(minTimeSet);
-        stop_motor();
+      magnetOn= true;
+      // minloop(minTimeSet);
+      stop_motor();
     }
   } else {
     if (count != countPrinted) {
@@ -467,12 +482,12 @@ if(motorOn& beatdetected){
   }
   // read potmeter value for setup delay of beat in main loop
       int potRead = map(analogRead(potPin), 0, 1023, 0, 1000);
-      if (abs(potRead-pot_old_read)>20){
+      if (abs(potRead-pot_old_read)>60){
         pot_old_read=potRead;
       //convert run_reed_leave_time to half of one_wipe_time
         one_wipe_time_procentage= potRead;
         //display motor LED white if potmeter is changed for testing
-        rgbLedMotor.writeRGB(255,255,255);
+        rgbLedMotor.writeRGB(255,255,255);//white
         //serial print pecentage of the pot delay in relation to wipe
         Serial.print("one wipe time is = ");
         Serial.println(one_wipe_time_procentage);
