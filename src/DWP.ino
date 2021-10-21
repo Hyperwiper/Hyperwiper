@@ -101,7 +101,7 @@ To be done (2021-03-20):
 
  */
 
-static char VERSION[] = "V2.5.2";;
+static char VERSION[] = "V2.5.3"
 
 //set drivers 
   #include <SPI.h>
@@ -266,7 +266,7 @@ static char VERSION[] = "V2.5.2";;
 // end init -------------------------------------------------------------------------------------------------------------------------------------------------
 
     void run_motor() {
-            rgbLedMotor.writeRGB(0,255,0);
+            rgbLedMotor.writeRGB(0,255,0);//green
        //start motor     
             // fan.setDutyCycle(0); //for P-MOSFET
             digitalWrite(motorPin, HIGH); //for relay
@@ -287,7 +287,7 @@ static char VERSION[] = "V2.5.2";;
         if(currentMillis - previousMillis > (unsigned)minTime) {
           previousMillis = currentMillis;  
           // run motor
-            rgbLedMotor.writeRGB(255,0,60);
+            rgbLedMotor.writeRGB(255,0,60); // light blue
             motorOn= true;
             // digitalWrite(motorPin, LOW);
             run_motor();
@@ -306,7 +306,6 @@ static char VERSION[] = "V2.5.2";;
           previousMillis_delay = currentMillis_delay;  
         } 
       // run motor
-        rgbLedMotor.writeRGB(255,0,60);
         Serial.println();
         Serial.println("---------------------------------");
         Serial.println("delay time run");
@@ -446,14 +445,14 @@ if(motorOn& beatdetected){
     if (pushbutton.risingEdge()) {
       count = count + 1;
     Serial.println("Wiper magnet_leaving");
-      rgbLedMotor.writeRGB(255,60,0);
+      rgbLedMotor.writeRGB(255,60,0);// magnet leaves purple
       countAt = millis();
       magnetOn= false;
     }
     
     if (pushbutton.fallingEdge()) {
     Serial.println("Wiper magnet_arrived");
-      rgbLedMotor.writeRGB(0,0,255);
+      rgbLedMotor.writeRGB(0,0,255); // blue 
         magnetOn= true;
         // minloop(minTimeSet);
         stop_motor();
@@ -467,7 +466,7 @@ if(motorOn& beatdetected){
     }
   }
   // read potmeter value for setup delay of beat in main loop
-      int potRead = map(analogRead(potPin), 0, 1023, 460, 1000);
+      int potRead = map(analogRead(potPin), 0, 1023, 0, 1000);
       if (abs(potRead-pot_old_read)>20){
         pot_old_read=potRead;
       //convert run_reed_leave_time to half of one_wipe_time
