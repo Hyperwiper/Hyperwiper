@@ -8,7 +8,7 @@
  contact rob@yr-design.biz
  
  revisions:
-
+ V2.5.5   2021-10-24 Debugging the in between beat pulses code with disbaling some parts  of the code.
  V2.5.4   2021-10-23 Debugging code for interbeat pulses.
  V2.5.2   2021-10-19 Switched to all relays.
  V2.5.1   2021-09-30 Added proper MOSFET switching log and disabled the MOSFET in software for faster deployment of interbeat tests.
@@ -102,7 +102,7 @@ To be done (2021-03-20):
 
  */
 
-static char VERSION[] = "V2.5.4";
+static char VERSION[] = "V2.5.5";
 
 //set drivers 
   #include <SPI.h>
@@ -290,9 +290,9 @@ static char VERSION[] = "V2.5.4";
         Serial.println("---------------------------------");
         Serial.print("Delay Time is =");
         Serial.println(delay_time);
-        while(currentMillis_delay - previousMillis_delay > (unsigned)delay_time) {
-          previousMillis_delay = currentMillis_delay;  
-        } 
+        // while(currentMillis_delay - previousMillis_delay > (unsigned)delay_time) {
+        //   previousMillis_delay = currentMillis_delay;  
+        // } 
       // run motor
         Serial.println("delay time run");
 
@@ -326,18 +326,6 @@ static char VERSION[] = "V2.5.4";
       }
 
  
-
-    // void test_beat(long delay_time_test)
-    //   {
-    //   // create the minimum timing for the wiper motor to wait for next beat
-    //      unsigned long currentMillis_test = millis();  
-    //     if(currentMillis_test - previousMillis_test > (unsigned)delay_time_test) {
-    //       previousMillis_test = currentMillis_test;  
-    //       // run motor
-    //         rgbLedMotor.writeRGB(255,255,255);
-    //         Serial.println("test beat");
-    //     } 
-    //   }
 
 // start setup  -------------------------------------------------------------------------------------------------------------------------------------------------
          
@@ -403,7 +391,7 @@ static char VERSION[] = "V2.5.4";
                 Serial.println("Audio setup finished");
                 Serial.println("-------- End Set up info ----------------");
                 Serial.println();
-                // run_motor();
+                run_motor();
       delay(1000);
 }
 
