@@ -285,7 +285,7 @@ static char VERSION[] = "V2.5.5";
    void delay_run_motor(long delay_time)
       {
       // create the minimum timing for the wiper motor to wait for next beat
-         unsigned long currentMillis_delay = millis();  
+        //  unsigned long currentMillis_delay = millis();  
         Serial.println();
         Serial.println("---------------------------------");
         Serial.print("Delay Time is =");

@@ -12,11 +12,15 @@
 #include <RGBLED.h>
 #include <FanController.h>
 
-RGBLED rgbLedMotor(5,6,9,COMMON_CATHODE);
+        RGBLED rgbLedBeat(2,3,4,COMMON_CATHODE);
+        RGBLED rgbLedMotor(5,6,9,COMMON_CATHODE);
 
 void setup() {
   // put your setup code here, to run once:
-  rgbLedMotor.writeRGB(0,255,0);//green
+  rgbLedMotor.writeRGB(255,0,0);//green
+  rgbLedBeat.writeRGB(255,0,0);//green
+//   rgbLedBeat.writeColorWheel(0);
+//   rgbLedMotor.writeColorWheel(0);
 }
 
 void loop() {
