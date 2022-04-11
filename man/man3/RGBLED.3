@@ -1,0 +1,171 @@
+.TH "RGBLED" 3 "Sat Mar 12 2022" "HypwerWiper" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RGBLED
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <RGBLED\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRGBLED\fP (int \fBredPin\fP, int \fBgreenPin\fP, int \fBbluePin\fP, \fBcommon_type\fP \fBcommonType\fP)"
+.br
+.ti -1c
+.RI "void \fBwriteRGB\fP (int red, int green, int blue)"
+.br
+.ti -1c
+.RI "void \fBwriteRed\fP (int red)"
+.br
+.ti -1c
+.RI "void \fBwriteGreen\fP (int green)"
+.br
+.ti -1c
+.RI "void \fBwriteBlue\fP (int blue)"
+.br
+.ti -1c
+.RI "void \fBturnOff\fP (void)"
+.br
+.ti -1c
+.RI "void \fBwriteRandom\fP (void)"
+.br
+.ti -1c
+.RI "void \fBwriteHSV\fP (int h, double s, double v)"
+.br
+.ti -1c
+.RI "void \fBwriteColorWheel\fP (int dly)"
+.br
+.ti -1c
+.RI "int \fBmapValue\fP (int value)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBredPin\fP"
+.br
+.ti -1c
+.RI "int \fBgreenPin\fP"
+.br
+.ti -1c
+.RI "int \fBbluePin\fP"
+.br
+.ti -1c
+.RI "int \fBredValue\fP"
+.br
+.ti -1c
+.RI "int \fBgreenValue\fP"
+.br
+.ti -1c
+.RI "int \fBblueValue\fP"
+.br
+.ti -1c
+.RI "\fBcommon_type\fP \fBcommonType\fP"
+.br
+.ti -1c
+.RI "int \fBredMappedValue\fP"
+.br
+.ti -1c
+.RI "int \fBgreenMappedValue\fP"
+.br
+.ti -1c
+.RI "int \fBblueMappedValue\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 46 of file RGBLED\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RGBLED::RGBLED (int redPin, int greenPin, int bluePin, \fBcommon_type\fP commonType)"
+
+.PP
+Definition at line 5 of file RGBLED\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int RGBLED::mapValue (int value)"
+
+.PP
+Definition at line 53 of file RGBLED\&.cpp\&.
+.SS "void RGBLED::turnOff (void)"
+
+.PP
+Definition at line 39 of file RGBLED\&.cpp\&.
+.SS "void RGBLED::writeBlue (int blue)"
+
+.PP
+Definition at line 32 of file RGBLED\&.cpp\&.
+.SS "void RGBLED::writeColorWheel (int dly)"
+
+.PP
+Definition at line 124 of file RGBLED\&.cpp\&.
+.SS "void RGBLED::writeGreen (int green)"
+
+.PP
+Definition at line 26 of file RGBLED\&.cpp\&.
+.SS "void RGBLED::writeHSV (int h, double s, double v)"
+
+.PP
+Definition at line 65 of file RGBLED\&.cpp\&.
+.SS "void RGBLED::writeRandom (void)"
+
+.PP
+Definition at line 45 of file RGBLED\&.cpp\&.
+.SS "void RGBLED::writeRed (int red)"
+
+.PP
+Definition at line 20 of file RGBLED\&.cpp\&.
+.SS "void RGBLED::writeRGB (int red, int green, int blue)"
+
+.PP
+Definition at line 14 of file RGBLED\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int RGBLED::blueMappedValue"
+
+.PP
+Definition at line 66 of file RGBLED\&.h\&.
+.SS "int RGBLED::bluePin"
+
+.PP
+Definition at line 53 of file RGBLED\&.h\&.
+.SS "int RGBLED::blueValue"
+
+.PP
+Definition at line 58 of file RGBLED\&.h\&.
+.SS "\fBcommon_type\fP RGBLED::commonType"
+
+.PP
+Definition at line 61 of file RGBLED\&.h\&.
+.SS "int RGBLED::greenMappedValue"
+
+.PP
+Definition at line 65 of file RGBLED\&.h\&.
+.SS "int RGBLED::greenPin"
+
+.PP
+Definition at line 52 of file RGBLED\&.h\&.
+.SS "int RGBLED::greenValue"
+
+.PP
+Definition at line 57 of file RGBLED\&.h\&.
+.SS "int RGBLED::redMappedValue"
+
+.PP
+Definition at line 64 of file RGBLED\&.h\&.
+.SS "int RGBLED::redPin"
+
+.PP
+Definition at line 51 of file RGBLED\&.h\&.
+.SS "int RGBLED::redValue"
+
+.PP
+Definition at line 56 of file RGBLED\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for HypwerWiper from the source code\&.

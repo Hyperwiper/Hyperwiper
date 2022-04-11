@@ -1,0 +1,62 @@
+.TH "AudioAnalysisPeaks" 3 "Sat Mar 12 2022" "HypwerWiper" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AudioAnalysisPeaks
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <peaks\&.h>\fP
+.PP
+Inherits AudioStream\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAudioAnalysisPeaks\fP (void)"
+.br
+.ti -1c
+.RI "bool \fBavailable\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBupdate\fP (void)"
+.br
+.ti -1c
+.RI "uint32_t \fBisPeak\fP (void)"
+.br
+.ti -1c
+.RI "void \fBupdatePast\fP (uint32_t newValue)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 33 of file peaks\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AudioAnalysisPeaks::AudioAnalysisPeaks (void)\fC [inline]\fP"
+
+.PP
+Definition at line 35 of file peaks\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool AudioAnalysisPeaks::available ()\fC [inline]\fP"
+
+.PP
+Definition at line 37 of file peaks\&.h\&.
+.SS "uint32_t AudioAnalysisPeaks::isPeak (void)"
+
+.PP
+Definition at line 233 of file peaks\&.cpp\&.
+.SS "void AudioAnalysisPeaks::update (void)\fC [virtual]\fP"
+
+.PP
+Definition at line 89 of file peaks\&.cpp\&.
+.SS "void AudioAnalysisPeaks::updatePast (uint32_t newValue)"
+
+.PP
+Definition at line 53 of file peaks\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for HypwerWiper from the source code\&.

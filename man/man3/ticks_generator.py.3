@@ -1,0 +1,61 @@
+.TH "ticks_generator/ticks_generator.py" 3 "Sat Mar 12 2022" "HypwerWiper" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ticks_generator/ticks_generator.py
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBticks_generator\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "list \fBticks_generator\&.rythms\fP = [[0,0\&.33,0\&.33],[0,0\&.5],[0,0\&.25,0\&.25,0\&.25]]"
+.br
+.ti -1c
+.RI "list \fBticks_generator\&.measures\fP = [4,4,4,4]"
+.br
+.ti -1c
+.RI "list \fBticks_generator\&.names\fP = ['ternary','binary','quaternary']"
+.br
+.ti -1c
+.RI "list \fBticks_generator\&.bpm\fP = [60,120,240]"
+.br
+.ti -1c
+.RI "int \fBticks_generator\&.sr\fP = 44100"
+.br
+.ti -1c
+.RI "int \fBticks_generator\&.i\fP = 0"
+.br
+.ti -1c
+.RI "list \fBticks_generator\&.beat_times\fP = []"
+.br
+.ti -1c
+.RI "int \fBticks_generator\&.c\fP = 0"
+.br
+.ti -1c
+.RI "list \fBticks_generator\&.measure\fP = measures[i]*(60/j)"
+.br
+.ti -1c
+.RI "\fBticks_generator\&.click\fP = librosa\&.clicks(times=beat_times[0],click_freq=1000, sr=sr,length=round(sr*measure))"
+.br
+.ti -1c
+.RI "\fBticks_generator\&.clicks\fP = librosa\&.clicks(times=beat_times[1:len(beat_times)],click_freq=500, sr=sr,length=round(sr*measure))"
+.br
+.ti -1c
+.RI "\fBticks_generator\&.s\fP = click+clicks"
+.br
+.ti -1c
+.RI "list \fBticks_generator\&.signal\fP = []"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for HypwerWiper from the source code\&.

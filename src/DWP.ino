@@ -8,6 +8,7 @@
  contact rob@yr-design.biz
  
  revisions:
+ V2.5.6   2021-10-27 Test version send to Aizu by Rob 
  V2.5.5   2021-10-24 Debugging the in between beat pulses code with disbaling some parts  of the code.
  V2.5.4   2021-10-23 Debugging code for interbeat pulses.
  V2.5.2   2021-10-19 Switched to all relays.
@@ -102,7 +103,7 @@ To be done (2021-03-20):
 
  */
 
-static char VERSION[] = "V2.5.5";
+static char VERSION[] = "V2.5.6";
 
 //set drivers 
   #include <SPI.h>
@@ -285,15 +286,14 @@ static char VERSION[] = "V2.5.5";
    void delay_run_motor(long delay_time)
       {
       // create the minimum timing for the wiper motor to wait for next beat
-        //  unsigned long currentMillis_delay = millis();  
+         unsigned long currentMillis_delay = millis();  
         Serial.println();
         Serial.println("---------------------------------");
         Serial.print("Delay Time is =");
         Serial.println(delay_time);
-        // while(currentMillis_delay - previousMillis_delay > (unsigned)delay_time) {
-        //   previousMillis_delay = currentMillis_delay;  
-        // } 
-      // run motor
+        while(currentMillis_delay - previousMillis_delay > (unsigned)delay_time) {
+          previousMillis_delay = currentMillis_delay;  
+        } 
         Serial.println("delay time run");
 
         //run the motor

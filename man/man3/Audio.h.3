@@ -1,0 +1,92 @@
+.TH "lib/old_libs/Audio.h" 3 "Sat Mar 12 2022" "HypwerWiper" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/old_libs/Audio.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'analyze_fft256\&.h'\fP
+.br
+\fC#include 'analyze_fft1024\&.h'\fP
+.br
+\fC#include 'analyze_print\&.h'\fP
+.br
+\fC#include 'analyze_tonedetect\&.h'\fP
+.br
+\fC#include 'analyze_peakdetect\&.h'\fP
+.br
+\fC#include 'analyze_frameEnergy_128\&.h'\fP
+.br
+\fC#include 'analyze_frameEnergy_256\&.h'\fP
+.br
+\fC#include 'analyze_frameEnergy_2048\&.h'\fP
+.br
+\fC#include 'analyze_peaks\&.h'\fP
+.br
+\fC#include 'analyze_beatEstimation\&.h'\fP
+.br
+\fC#include 'control_sgtl5000\&.h'\fP
+.br
+\fC#include 'control_wm8731\&.h'\fP
+.br
+\fC#include 'effect_chorus\&.h'\fP
+.br
+\fC#include 'effect_fade\&.h'\fP
+.br
+\fC#include 'effect_flange\&.h'\fP
+.br
+\fC#include 'filter_biquad\&.h'\fP
+.br
+\fC#include 'filter_fir\&.h'\fP
+.br
+\fC#include 'input_adc\&.h'\fP
+.br
+\fC#include 'input_i2s\&.h'\fP
+.br
+\fC#include 'mixer\&.h'\fP
+.br
+\fC#include 'output_dac\&.h'\fP
+.br
+\fC#include 'output_i2s\&.h'\fP
+.br
+\fC#include 'output_pwm\&.h'\fP
+.br
+\fC#include 'play_memory\&.h'\fP
+.br
+\fC#include 'play_queue\&.h'\fP
+.br
+\fC#include 'play_sd_raw\&.h'\fP
+.br
+\fC#include 'play_sd_wav\&.h'\fP
+.br
+\fC#include 'synth_tonesweep\&.h'\fP
+.br
+\fC#include 'synth_sine\&.h'\fP
+.br
+\fC#include 'synth_waveform\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBAudioNoInterrupts\fP()   (NVIC_DISABLE_IRQ(IRQ_SOFTWARE))"
+.br
+.ti -1c
+.RI "#define \fBAudioInterrupts\fP()   (NVIC_ENABLE_IRQ(IRQ_SOFTWARE))"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define AudioInterrupts()   (NVIC_ENABLE_IRQ(IRQ_SOFTWARE))"
+
+.PP
+Definition at line 42 of file Audio\&.h\&.
+.SS "#define AudioNoInterrupts()   (NVIC_DISABLE_IRQ(IRQ_SOFTWARE))"
+
+.PP
+Definition at line 41 of file Audio\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for HypwerWiper from the source code\&.

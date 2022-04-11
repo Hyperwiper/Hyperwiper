@@ -1,0 +1,108 @@
+.TH "ticks_generator" 3 "Sat Mar 12 2022" "HypwerWiper" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ticks_generator
+.SH SYNOPSIS
+.br
+.PP
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "list \fBrythms\fP = [[0,0\&.33,0\&.33],[0,0\&.5],[0,0\&.25,0\&.25,0\&.25]]"
+.br
+.ti -1c
+.RI "list \fBmeasures\fP = [4,4,4,4]"
+.br
+.ti -1c
+.RI "list \fBnames\fP = ['ternary','binary','quaternary']"
+.br
+.ti -1c
+.RI "list \fBbpm\fP = [60,120,240]"
+.br
+.ti -1c
+.RI "int \fBsr\fP = 44100"
+.br
+.ti -1c
+.RI "int \fBi\fP = 0"
+.br
+.ti -1c
+.RI "list \fBbeat_times\fP = []"
+.br
+.ti -1c
+.RI "int \fBc\fP = 0"
+.br
+.ti -1c
+.RI "list \fBmeasure\fP = \fBmeasures\fP[\fBi\fP]*(60/j)"
+.br
+.ti -1c
+.RI "\fBclick\fP = librosa\&.clicks(times=\fBbeat_times\fP[0],click_freq=1000, \fBsr\fP=\fBsr\fP,length=round(\fBsr\fP*\fBmeasure\fP))"
+.br
+.ti -1c
+.RI "\fBclicks\fP = librosa\&.clicks(times=\fBbeat_times\fP[1:len(\fBbeat_times\fP)],click_freq=500, \fBsr\fP=\fBsr\fP,length=round(\fBsr\fP*\fBmeasure\fP))"
+.br
+.ti -1c
+.RI "\fBs\fP = \fBclick\fP+\fBclicks\fP"
+.br
+.ti -1c
+.RI "list \fBsignal\fP = []"
+.br
+.in -1c
+.SH "Variable Documentation"
+.PP 
+.SS "list ticks_generator\&.beat_times = []"
+
+.PP
+Definition at line 15 of file ticks_generator\&.py\&.
+.SS "list ticks_generator\&.bpm = [60,120,240]"
+
+.PP
+Definition at line 10 of file ticks_generator\&.py\&.
+.SS "int ticks_generator\&.c = 0"
+
+.PP
+Definition at line 16 of file ticks_generator\&.py\&.
+.SS "ticks_generator\&.click = librosa\&.clicks(times=\fBbeat_times\fP[0],click_freq=1000, \fBsr\fP=\fBsr\fP,length=round(\fBsr\fP*\fBmeasure\fP))"
+
+.PP
+Definition at line 21 of file ticks_generator\&.py\&.
+.SS "ticks_generator\&.clicks = librosa\&.clicks(times=\fBbeat_times\fP[1:len(\fBbeat_times\fP)],click_freq=500, \fBsr\fP=\fBsr\fP,length=round(\fBsr\fP*\fBmeasure\fP))"
+
+.PP
+Definition at line 22 of file ticks_generator\&.py\&.
+.SS "int ticks_generator\&.i = 0"
+
+.PP
+Definition at line 12 of file ticks_generator\&.py\&.
+.SS "list ticks_generator\&.measure = \fBmeasures\fP[\fBi\fP]*(60/j)"
+
+.PP
+Definition at line 17 of file ticks_generator\&.py\&.
+.SS "list ticks_generator\&.measures = [4,4,4,4]"
+
+.PP
+Definition at line 8 of file ticks_generator\&.py\&.
+.SS "list ticks_generator\&.names = ['ternary','binary','quaternary']"
+
+.PP
+Definition at line 9 of file ticks_generator\&.py\&.
+.SS "list ticks_generator\&.rythms = [[0,0\&.33,0\&.33],[0,0\&.5],[0,0\&.25,0\&.25,0\&.25]]"
+
+.PP
+Definition at line 7 of file ticks_generator\&.py\&.
+.SS "ticks_generator\&.s = \fBclick\fP+\fBclicks\fP"
+
+.PP
+Definition at line 23 of file ticks_generator\&.py\&.
+.SS "list ticks_generator\&.signal = []"
+
+.PP
+Definition at line 24 of file ticks_generator\&.py\&.
+.SS "int ticks_generator\&.sr = 44100"
+
+.PP
+Definition at line 11 of file ticks_generator\&.py\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for HypwerWiper from the source code\&.
