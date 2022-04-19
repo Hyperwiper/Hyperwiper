@@ -36,6 +36,7 @@
       8,
       9,
       10,
+      11,
       12,
       13,
       14,
@@ -59,41 +60,17 @@
       33,
       34,
       35,
-      36
+      36,
+      39
     ],
     "visible_layers": "fffffff_ffffffff",
-    "zone_display_mode": 0
+    "zone_display_mode": 1
   },
   "meta": {
     "filename": "Hyperwiper 2020 production prototype.kicad_prl",
     "version": 3
   },
   "project": {
-    "files": [
-      {
-        "name": "Hyperwiper 2020 production prototype.kicad_sch",
-        "open": false,
-        "window": {
-          "display": 0,
-          "maximized": true,
-          "pos_x": 320,
-          "pos_y": 264,
-          "size_x": 1280,
-          "size_y": 552
-        }
-      },
-      {
-        "name": "Hyperwiper 2020 production prototype.kicad_pcb",
-        "open": false,
-        "window": {
-          "display": 0,
-          "maximized": true,
-          "pos_x": 0,
-          "pos_y": 215,
-          "size_x": 1280,
-          "size_y": 720
-        }
-      }
-    ]
+    "files": []
   }
 }
