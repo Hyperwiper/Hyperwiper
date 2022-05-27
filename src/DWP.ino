@@ -105,7 +105,7 @@ To be done (2021-03-20):
 
  */
 
-static char VERSION[] = "V2.5.7";
+static char VERSION[] = "V2.5.8";
 
 //set drivers 
   #include <SPI.h>
