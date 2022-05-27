@@ -8,6 +8,7 @@
  contact rob@yr-design.biz
  
  revisions:
+ V2.5.7   2022-05-27 Disabled delay functions and disabled serial print for faster BPM
  V2.5.6   2021-10-27 Test version send to Aizu by Rob 
  V2.5.5   2021-10-24 Debugging the in between beat pulses code with disbaling some parts  of the code.
  V2.5.4   2021-10-23 Debugging code for interbeat pulses.
