@@ -103,7 +103,7 @@ To be done (2021-03-20):
 
  */
 
-static char VERSION[] = "V2.5.6";
+static char VERSION[] = "V2.5.7";
 
 //set drivers 
   #include <SPI.h>
@@ -272,14 +272,14 @@ static char VERSION[] = "V2.5.6";
        //start motor     
             // fan.setDutyCycle(0); //for P-MOSFET
             digitalWrite(motorPin, HIGH); //for relay
-            Serial.println("motor_running");
+            //Serial.println("motor_running");
     }
 
     void stop_motor() {
 
             // fan.setDutyCycle(100);//for P-MOSFET
             digitalWrite(motorPin, LOW); //for relay
-            Serial.println("motor_stopped");
+            //Serial.println("motor_stopped");
     }
 
 
@@ -287,21 +287,21 @@ static char VERSION[] = "V2.5.6";
       {
       // create the minimum timing for the wiper motor to wait for next beat
          unsigned long currentMillis_delay = millis();  
-        Serial.println();
-        Serial.println("---------------------------------");
-        Serial.print("Delay Time is =");
-        Serial.println(delay_time);
+        // Serial.println();
+        // Serial.println("---------------------------------");
+        // Serial.print("Delay Time is =");
+        // Serial.println(delay_time);
         while(currentMillis_delay - previousMillis_delay > (unsigned)delay_time) {
           previousMillis_delay = currentMillis_delay;  
         } 
-        Serial.println("delay time run");
+        //Serial.println("delay time run");
 
         //run the motor
           rgbLedMotor.writeRGB(0,255,0);//green    
           // fan.setDutyCycle(0); //for P-MOSFET
           digitalWrite(motorPin, HIGH); //for relay
-          Serial.println("motor_running");
-          Serial.println("---------------------------------");
+          //Serial.println("motor_running");
+          //Serial.println("---------------------------------");
         motorOn= true;
       }
 
@@ -317,11 +317,11 @@ static char VERSION[] = "V2.5.6";
             // digitalWrite(motorPin, LOW);
             long runtimezero= 0;
             delay_run_motor(runtimezero);
-            Serial.println();
-            Serial.println("---------------------------------");
-            Serial.println("minloop_motor_started");
-            Serial.println("---------------------------------");
-            Serial.println();
+            // Serial.println();
+            // Serial.println("---------------------------------");
+            // Serial.println("minloop_motor_started");
+            // Serial.println("---------------------------------");
+            // Serial.println();
         } 
       }
 
@@ -409,8 +409,8 @@ void loop() {
       if (beatcount==1) {
         ledState=true;
         beatcount++;
-        Serial.print ("Beat count =");
-        Serial.println(beat_array_count);
+        // Serial.print ("Beat count =");
+        // Serial.println(beat_array_count);
       }else{
         ledState=false;
       }
@@ -419,16 +419,16 @@ void loop() {
 // interbeat. 
 if(motorOn & beatdetected){
   //set speed to 100% duty cycle(meaning stop) and the after inter_wipe_beat_delay_time 0% dutycycle (meaning run)
-  Serial.println("interbeat start");
+  // Serial.println("interbeat start");
    //delay start of the interbeat setup with potmeter same as beat start
-   delay(potRead);
+   //delay(potRead);
   //  fan.setDutyCycle(100);// for PWM
    digitalWrite(motorPin, LOW); //for relay
-   Serial.println("interbeat motor stop");
-   delay (inter_wipe_beat_delay_time);
+  //  Serial.println("interbeat motor stop");
+   //delay(inter_wipe_beat_delay_time);
   //  fan.setDutyCycle(0);// for PWM
    digitalWrite(motorPin, HIGH); //for relay
-   Serial.println("interbeat motor start");
+  //  Serial.println("interbeat motor start");
    beatdetected=false;
   //  minloop(minTimeSet);
 }
@@ -446,16 +446,16 @@ if(motorOn & beatdetected){
   if (pushbutton.update()) {
     if (pushbutton.risingEdge()) {
       count = count + 1;
-      Serial.println();
-      Serial.println("Wiper magnet_leaving");
+      // Serial.println();
+      // Serial.println("Wiper magnet_leaving");
       rgbLedMotor.writeRGB(255,60,0);// magnet leaves purple
       countAt = millis();
       magnetOn= false;
     }
     
     if (pushbutton.fallingEdge()) {
-      Serial.println();
-      Serial.println("Wiper magnet_arrived");
+      // Serial.println();
+      // Serial.println("Wiper magnet_arrived");
       rgbLedMotor.writeRGB(0,0,255); // blue 
       magnetOn= true;
       // minloop(minTimeSet);
@@ -478,8 +478,8 @@ if(motorOn & beatdetected){
         //display motor LED white if potmeter is changed for testing
         rgbLedMotor.writeRGB(255,255,255);//white
         //serial print pecentage of the pot delay in relation to wipe
-        Serial.print("one wipe time is = ");
-        Serial.println(one_wipe_time_procentage);
+        // Serial.print("one wipe time is = ");
+        // Serial.println(one_wipe_time_procentage);
       }
    
 
@@ -549,7 +549,7 @@ if(motorOn & beatdetected){
       // //set time for the beat array 
       //   beatPulseArray[beat_array_count]=millis();
       // Serial.println(beatPulseArray[beat_array_count]);
-        Serial.println("beat detected-1");
+      // Serial.println("beat detected-1");
 
       //add delay_run_motor boolean set here delete run_motor routine
       delay_run_motor(potRead);
@@ -566,7 +566,7 @@ if(motorOn & beatdetected){
       // //set time for the beat array 1
       //   beatPulseArray[beat_array_count]=millis();
         // Serial.println(beatPulseArray[beat_array_count]);
-        Serial.println("beat detected-2");
+        // Serial.println("beat detected-2");
       //add delay_run_motor boolean set here delete run_motor routine
           delay_run_motor(potRead);
       // run_motor();
