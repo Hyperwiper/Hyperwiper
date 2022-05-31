@@ -8,6 +8,7 @@
  contact rob@yr-design.biz
  
  revisions:
+ V2.5.9   2022-06-01 Setup test for interbeats
  V2.5.8   2022-05-27 Disabled interbeats for testing response
  V2.5.7   2022-05-27 Disabled delay functions and disabled serial print for faster BPM
  V2.5.6   2021-10-27 Test version send to Aizu by Rob 
@@ -105,7 +106,7 @@ To be done (2021-03-20):
 
  */
 
-static char VERSION[] = "V2.5.8";
+static char VERSION[] = "V2.5.9";
 
 //set drivers 
   #include <SPI.h>
@@ -425,11 +426,11 @@ if(motorOn & beatdetected){
    //delay start of the interbeat setup with potmeter same as beat start
    //delay(potRead);
   //  fan.setDutyCycle(100);// for PWM
-  //  digitalWrite(motorPin, LOW); //for relay
+   digitalWrite(motorPin, LOW); //for relay
   //  Serial.println("interbeat motor stop");
-   //delay(inter_wipe_beat_delay_time);
+   delay(inter_wipe_beat_delay_time);
   //  fan.setDutyCycle(0);// for PWM
-  //  digitalWrite(motorPin, HIGH); //for relay
+   digitalWrite(motorPin, HIGH); //for relay
   //  Serial.println("interbeat motor start");
    beatdetected=false;
   //  minloop(minTimeSet);
