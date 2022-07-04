@@ -78,6 +78,9 @@
  V0.98    2015-02-12 added LED controls and setup pins for Teensy
  V0.90    2015-02-05 init for hardware pins changes.
 
+To be done (2022-06-04)
+ Fix the delay in interbeat with new variable for millsec setup
+    "delay(inter_wipe_beat_delay_time);" problems!!!!!!"
 
 
 To be done (2021-03-20):
@@ -402,7 +405,6 @@ static char VERSION[] = "V2.6.0";
 // end setup -------------------------------------------------------------------------------------------------------------------------------------------------
 
 void loop() {
-
 
 
 //logic for switching on the beat led only once
