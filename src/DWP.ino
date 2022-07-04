@@ -8,6 +8,7 @@
  contact rob@yr-design.biz
  
  revisions:
+ V6.0.0   2022-06-04 Cleanup
  V2.5.9   2022-06-01 Setup test for interbeats
  V2.5.8   2022-05-27 Disabled interbeats for testing response
  V2.5.7   2022-05-27 Disabled delay functions and disabled serial print for faster BPM
@@ -106,7 +107,7 @@ To be done (2021-03-20):
 
  */
 
-static char VERSION[] = "V2.5.9";
+static char VERSION[] = "V2.6.0";
 
 //set drivers 
   #include <SPI.h>
@@ -459,8 +460,8 @@ if(motorOn & beatdetected){
     if (pushbutton.fallingEdge()) {
       // Serial.println();
       // Serial.println("Wiper magnet_arrived");
-      rgbLedMotor.writeRGB(0,0,255); // blue 
-      magnetOn= true;
+        rgbLedMotor.writeRGB(0,0,255); // blue 
+        magnetOn= true;
       // minloop(minTimeSet);
       stop_motor();
     }
@@ -476,8 +477,9 @@ if(motorOn & beatdetected){
       int potRead = map(analogRead(potPin), 0, 1023, 0, 1000);
       if (abs(potRead-pot_old_read)>60){
         pot_old_read=potRead;
-      //convert run_reed_leave_time to half of one_wipe_time
+        //convert run_reed_leave_time to half of one_wipe_time
         one_wipe_time_procentage= potRead;
+
         //display motor LED white if potmeter is changed for testing
         rgbLedMotor.writeRGB(255,255,255);//white
         //serial print pecentage of the pot delay in relation to wipe
@@ -549,10 +551,7 @@ if(motorOn & beatdetected){
         beatcount=1;
         beatdetected=true;
         beat_array_count++;
-      // //set time for the beat array 
-      //   beatPulseArray[beat_array_count]=millis();
-      // Serial.println(beatPulseArray[beat_array_count]);
-      // Serial.println("beat detected-1");
+
 
       //add delay_run_motor boolean set here delete run_motor routine
       delay_run_motor(potRead);
@@ -566,11 +565,6 @@ if(motorOn & beatdetected){
         beatcount=1;
         beatdetected=true;
         beat_array_count++;
-      // //set time for the beat array 1
-      //   beatPulseArray[beat_array_count]=millis();
-        // Serial.println(beatPulseArray[beat_array_count]);
-        // Serial.println("beat detected-2");
-      //add delay_run_motor boolean set here delete run_motor routine
           delay_run_motor(potRead);
       // run_motor();
      }
