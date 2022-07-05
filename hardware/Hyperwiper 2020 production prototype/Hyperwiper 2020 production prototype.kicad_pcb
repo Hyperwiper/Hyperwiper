@@ -1,4 +1,4 @@
-(kicad_pcb (version 20220417) (generator pcbnew)
+(kicad_pcb (version 20220609) (generator pcbnew)
 
   (general
     (thickness 1.6)
@@ -4382,7 +4382,7 @@
   (dimension (type aligned) (layer "Dwgs.User") (tstamp 1cab95ad-6b7b-4ed0-97b1-8ccab064415e)
     (pts (xy 201.02 113.965) (xy 77.395 113.965))
     (height -13.375)
-    (gr_text "123.6250  mm" (at 139.2075 126.19 180) (layer "Dwgs.User") (tstamp 1cab95ad-6b7b-4ed0-97b1-8ccab064415e)
+    (gr_text "123.6250 mm" (at 139.2075 126.19 180) (layer "Dwgs.User") (tstamp 1cab95ad-6b7b-4ed0-97b1-8ccab064415e)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (format (units 3) (units_format 1) (precision 4))
@@ -4391,7 +4391,7 @@
   (dimension (type aligned) (layer "Dwgs.User") (tstamp f82fd6a9-5ed5-4116-94fa-ed4bb50ebd27)
     (pts (xy 84.295 120.74) (xy 84.295 55.19))
     (height -18.4)
-    (gr_text "65.5500  mm" (at 64.745 87.965 90) (layer "Dwgs.User") (tstamp f82fd6a9-5ed5-4116-94fa-ed4bb50ebd27)
+    (gr_text "65.5500 mm" (at 64.745 87.965 90) (layer "Dwgs.User") (tstamp f82fd6a9-5ed5-4116-94fa-ed4bb50ebd27)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (format (units 2) (units_format 1) (precision 4))
