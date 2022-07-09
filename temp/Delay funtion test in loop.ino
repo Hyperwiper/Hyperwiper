@@ -3,17 +3,9 @@
 #define INTERVAL_MESSAGE3 11000
 #define INTERVAL_MESSAGE4 13000
 
-//set drivers 
-  #include <SPI.h>
-  #include <EEPROMex.h>
-  #include <Bounce.h>
-  #include <RGBLED.h>
-  #include <FanController.h>
 
-//audio setup
-  #include <Audio.h>
-  #include <Wire.h>
-  #include <SD.h>
+#include <Wire.h>
+
 
 unsigned long time_1 = 0;
 unsigned long time_2 = 0;

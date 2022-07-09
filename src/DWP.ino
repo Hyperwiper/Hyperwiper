@@ -171,6 +171,9 @@ static char VERSION[] = "V2.6.0";
         int beatPulseArray[4]={0,0,0,0};
         int inter_wipe_beat_delay_time=250; //250msec 1/4 of a sec
         bool beatdetected=false;
+        unsigned long time_pot = 0;
+        unsigned long time_interbeat = 0;
+
 
       //EEPROM setup
         const int maxAllowedWrites = 80;
@@ -427,11 +430,25 @@ if(motorOn & beatdetected){
   //set speed to 100% duty cycle(meaning stop) and the after inter_wipe_beat_delay_time 0% dutycycle (meaning run)
   Serial.println("interbeat start");
    //delay start of the interbeat setup with potmeter same as beat start
-   //delay(potRead);
-  //  fan.setDutyCycle(100);// for PWM
-   digitalWrite(motorPin, LOW); //for relay
-   Serial.println("interbeat motor stop");
-   delay(inter_wipe_beat_delay_time);
+  //  delay(potRead);
+
+      if(millis() >= time_pot + potRead){
+        time_pot += potRead;
+        digitalWrite(motorPin, LOW); //for relay
+          //  fan.setDutyCycle(100);// for PWM
+      }
+   Serial.print("interbeat motor stop. time_pot = ");
+   Serial.println(time_pot);
+
+      if(millis() >= time_interbeat + inter_wipe_beat_delay_time){
+        time_interbeat  += inter_wipe_beat_delay_time;
+        digitalWrite(motorPin, LOW); //for relay
+          //  fan.setDutyCycle(100);// for PWM
+      }
+   Serial.print("interbeat motor stop. time_interbeat = ");
+   Serial.println(time_interbeat);
+
+  //  delay(inter_wipe_beat_delay_time);
   //  fan.setDutyCycle(0);// for PWM
    digitalWrite(motorPin, HIGH); //for relay
    Serial.println("interbeat motor start");
