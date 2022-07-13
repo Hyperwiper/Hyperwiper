@@ -8,7 +8,7 @@
  contact rob@yr-design.biz
  
  revisions:
-
+ V2.6.2   2022-07-13 Reset time=po after delay is done same for time_interbeat
  V2.6.1   2022-07-12 Updated many file and started using VSCode instead of VSCodium.  
  V2.6.0   2022-06-04 Cleanup
  V2.5.9   2022-06-01 Setup test for interbeats
@@ -112,7 +112,7 @@ To be done (2021-03-20):
 
  */
 
-static char VERSION[] = "V2.6.1";
+static char VERSION[] = "V2.6.2";
 
 //set drivers 
   #include <SPI.h>
@@ -422,22 +422,22 @@ if(motorOn & beatdetected){
         time_pot += potRead;
         digitalWrite(motorPin, LOW); //for relay
           //  fan.setDutyCycle(100);// for PWM
-      }
-  //  Serial.print("interbeat motor stop. time_pot = ");
+      }    
+          time_pot = 0;
   //  Serial.println(time_pot);
 
       if(millis() >= time_interbeat + inter_wipe_beat_delay_time){
         time_interbeat  += inter_wipe_beat_delay_time;
         digitalWrite(motorPin, LOW); //for relay
           //  fan.setDutyCycle(100);// for PWM
+          time_interbeat=0;
       }
-  //  Serial.print("interbeat motor stop. time_interbeat = ");
-  //  Serial.println(time_interbeat);
+
 
   //  delay(inter_wipe_beat_delay_time);
   //  fan.setDutyCycle(0);// for PWM
    digitalWrite(motorPin, HIGH); //for relay
-  //  Serial.println("interbeat motor start");
+   Serial.println("interbeat motor start");
    beatdetected=false;
   //  minloop(minTimeSet);
 }
