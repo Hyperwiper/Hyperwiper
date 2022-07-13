@@ -414,7 +414,7 @@ void loop() {
 // interbeat. 
 if(motorOn & beatdetected){
   //set speed to 100% duty cycle(meaning stop) and the after inter_wipe_beat_delay_time 0% dutycycle (meaning run)
-  Serial.println("interbeat start");
+  // Serial.println("interbeat start");
    //delay start of the interbeat setup with potmeter same as beat start
   //  delay(potRead);
 
@@ -437,7 +437,7 @@ if(motorOn & beatdetected){
   //  delay(inter_wipe_beat_delay_time);
   //  fan.setDutyCycle(0);// for PWM
    digitalWrite(motorPin, HIGH); //for relay
-   Serial.println("interbeat motor start");
+  //  Serial.println("interbeat motor start");
    beatdetected=false;
   //  minloop(minTimeSet);
 }
