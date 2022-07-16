@@ -403,7 +403,7 @@ void loop() {
       previous_beatled_Millis = beatledMillis;
       if (beatcount==1) {
         ledState=true;
-        beatcount++;
+        // beatcount++;
         // Serial.print ("Beat count =");
         // Serial.println(beat_array_count);
       }else{
@@ -478,7 +478,7 @@ if(motorOn & beatdetected){
       if (abs(potRead-pot_old_read)>60){
         pot_old_read=potRead;
         //convert run_reed_leave_time to half of one_wipe_time
-        one_wipe_time_procentage= potRead;
+       // one_wipe_time_procentage= potRead;
         rgbLedMotor.writeRGB(255,255,255);//white
 
       }
@@ -544,8 +544,7 @@ if(motorOn & beatdetected){
       // //set beat count and flash led for 1 second
         beatcount=1;
         beatdetected=true;
-        beat_array_count++;
-
+        // beat_array_count++;
 
       //add delay_run_motor boolean set here delete run_motor routine
       delay_run_motor(potRead);
@@ -558,7 +557,7 @@ if(motorOn & beatdetected){
       // //set beat count and flash led for 1 second
         beatcount=1;
         beatdetected=true;
-        beat_array_count++;
+        // beat_array_count++;
           delay_run_motor(potRead);
       // run_motor();
      }
