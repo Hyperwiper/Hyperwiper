@@ -9,7 +9,7 @@
  
  revisions:
 
- test 
+ V2.6.4   2022-07-28 Updated audio output to output to headphone and analog audio output L and R
  V2.6.3   2022-07-19 Updated version number to reflect newest code
  V2.6.2   2022-07-13 Reset time=0 after delay is done same for time_interbeat
  V2.6.1   2022-07-12 Updated many file and started using VSCode instead of VSCodium.  
@@ -115,7 +115,7 @@ To be done (2021-03-20):
 
  */
 
-static char VERSION[] = "V2.6.3";
+static char VERSION[] = "V2.6.4";
 
 //set drivers 
   #include <SPI.h>
@@ -197,7 +197,8 @@ static char VERSION[] = "V2.6.3";
 
       //Audio setup
         AudioInputI2S       audioInput;
-        AudioOutputI2S      headphones;
+        // AudioOutputI2S      headphones; //headphones only out
+        AudioOutputI2S2     AudioOutput;//outputs audio to headphone and line out L and R
         AudioMixer4         monoMix;
         AudioFilterBiquad   LPfilter;
         AudioAnalyzeFFT1024  myFFT;
@@ -210,8 +211,8 @@ static char VERSION[] = "V2.6.3";
         AudioConnection c3(LPfilter, 0, myFFT, 0);
         AudioConnection c4(audioInput, 0, delayForL, 0);
         AudioConnection c5(audioInput, 1, delayForR, 1);
-        AudioConnection c6(delayForL, 0, headphones, 0);
-        AudioConnection c7(delayForR, 0, headphones, 1);
+        AudioConnection c6(delayForL, 0, AudioOutput, 0);
+        AudioConnection c7(delayForR, 0, AudioOutput, 1);
 
       // Specify which audio card we're using
         AudioControlSGTL5000 audioShield;
