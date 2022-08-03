@@ -6,8 +6,8 @@
 
   (paper "A4")
   (title_block
-    (date "2021-02-08")
-    (rev "V2.1.3")
+    (date "2022-08-03")
+    (rev "V2.6.5")
   )
 
   (layers
