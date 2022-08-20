@@ -411,7 +411,7 @@ void loop() {
         // beatcount++;
         // Serial.print ("Beat count =");
         // Serial.println(beat_array_count);
-        beatcount==0;
+        beatcount=0;
       }else{
         ledState=false;
       }
