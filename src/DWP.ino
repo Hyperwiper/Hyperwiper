@@ -7,7 +7,6 @@
  
  contact rob@yr-design.biz
  
- revisions:
  V2.6.6   2022-08-20 serial count display.
  V2.6.5   2022-07-31 Tested code and changed output from headphone only to AudioOut
  V2.6.2   2022-07-13 Reset time=po after delay is done same for time_interbeat
@@ -197,6 +196,7 @@ static char VERSION[] = "V2.6.6";
       //Audio setup
         AudioInputI2S       audioInput;
         AudioOutputI2S      audioOutput;
+
         AudioMixer4         monoMix;
         AudioFilterBiquad   LPfilter;
         AudioAnalyzeFFT1024  myFFT;
@@ -209,8 +209,11 @@ static char VERSION[] = "V2.6.6";
         AudioConnection c3(LPfilter, 0, myFFT, 0);
         AudioConnection c4(audioInput, 0, delayForL, 0);
         AudioConnection c5(audioInput, 1, delayForR, 1);
+
         AudioConnection c6(delayForL, 0, audioOutput, 0);
         AudioConnection c7(delayForR, 0, audioOutput, 1);
+
+
 
       // Specify which audio card we're using
         AudioControlSGTL5000 audioShield;
@@ -405,7 +408,7 @@ void loop() {
       previous_beatled_Millis = beatledMillis;
       if (beatcount==1) {
         ledState=true;
-        beatcount++;
+        // beatcount++;
         // Serial.print ("Beat count =");
         // Serial.println(beat_array_count);
       }else{
@@ -480,7 +483,7 @@ if(motorOn & beatdetected){
       if (abs(potRead-pot_old_read)>60){
         pot_old_read=potRead;
         //convert run_reed_leave_time to half of one_wipe_time
-        one_wipe_time_procentage= potRead;
+       // one_wipe_time_procentage= potRead;
         rgbLedMotor.writeRGB(255,255,255);//white
 
       }
@@ -546,8 +549,7 @@ if(motorOn & beatdetected){
       // //set beat count and flash led for 1 second
         beatcount=1;
         beatdetected=true;
-        beat_array_count++;
-
+        // beat_array_count++;
 
       //add delay_run_motor boolean set here delete run_motor routine
 
@@ -563,11 +565,13 @@ if(motorOn & beatdetected){
       // //set beat count and flash led for 1 second
         beatcount=1;
         beatdetected=true;
+
         beat_array_count++;
 
         Serial.print("count: ");
         Serial.println(beat_array_count);
-          delay_run_motor(potRead);
+        
+        delay_run_motor(potRead);
       // run_motor();
      }
   }
@@ -581,8 +585,8 @@ if(motorOn & beatdetected){
     // Serial.print("\t");
     // Serial.print(curDel == 0 ? 200 : 0);
     // Serial.print("\t");
-    // Serial.print("count: ");
-    // Serial.print(beat_array_count);
+    Serial.print("count: ");
+    Serial.println(beat_array_count);
     // Serial.print("\t");
     // Serial.print("magnet: ");
     // Serial.print(magnet_show);
