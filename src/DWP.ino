@@ -7,7 +7,7 @@
  
  contact rob@yr-design.biz
  
- V2.6.6   2022-08-20 serial count display.
+ V2.6.6   2022-08-20 serial count display ans output changed.
  V2.6.5   2022-07-31 Tested code and changed output from headphone only to AudioOut
  V2.6.2   2022-07-13 Reset time=po after delay is done same for time_interbeat
  V2.6.1   2022-07-12 Updated many file and started using VSCode instead of VSCodium.  
