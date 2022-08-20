@@ -585,8 +585,8 @@ if(motorOn & beatdetected){
     // Serial.print("\t");
     // Serial.print(curDel == 0 ? 200 : 0);
     // Serial.print("\t");
-    Serial.print("count: ");
-    Serial.println(beat_array_count);
+    // Serial.print("count: ");
+    // Serial.println(beat_array_count);
     // Serial.print("\t");
     // Serial.print("magnet: ");
     // Serial.print(magnet_show);
