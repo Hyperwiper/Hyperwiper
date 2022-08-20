@@ -411,6 +411,7 @@ void loop() {
         // beatcount++;
         // Serial.print ("Beat count =");
         // Serial.println(beat_array_count);
+        beatcount==0;
       }else{
         ledState=false;
       }
@@ -549,7 +550,7 @@ if(motorOn & beatdetected){
       // //set beat count and flash led for 1 second
         beatcount=1;
         beatdetected=true;
-        // beat_array_count++;
+        beat_array_count++;
 
       //add delay_run_motor boolean set here delete run_motor routine
 
@@ -565,7 +566,6 @@ if(motorOn & beatdetected){
       // //set beat count and flash led for 1 second
         beatcount=1;
         beatdetected=true;
-
         beat_array_count++;
 
         Serial.print("count: ");
