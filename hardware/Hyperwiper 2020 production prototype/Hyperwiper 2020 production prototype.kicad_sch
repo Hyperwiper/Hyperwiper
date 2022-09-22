@@ -1,4 +1,4 @@
-(kicad_sch (version 20220404) (generator eeschema)
+(kicad_sch (version 20220904) (generator eeschema)
 
   (uuid 6f950e2d-3acf-40a4-9a0b-60ec61cd603e)
 
@@ -12,27 +12,27 @@
 
   (lib_symbols
     (symbol "Connector_Generic:Conn_01x05" (pin_names hide) (in_bom yes) (on_board yes)
-      (property "Reference" "J" (id 0) (at 0 7.62 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Value" "Conn_01x05" (id 1) (at 0 -7.62 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (id 2) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "~" (id 3) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "connector" (id 4) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)" (id 5) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_fp_filters" "Connector*:*_1x??_*" (id 6) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
+      (property "Reference" "J" (id 0) (at 0 7.62 0)        (effects (font (size 1.27 1.27)))
+      
+)
+      (property "Value" "Conn_01x05" (id 1) (at 0 -7.62 0)        (effects (font (size 1.27 1.27)))
+      
+)
+      (property "Footprint" "" (id 2) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "Datasheet" "~" (id 3) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_keywords" "connector" (id 4) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_description" "Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)" (id 5) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_fp_filters" "Connector*:*_1x??_*" (id 6) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
       (symbol "Conn_01x05_1_1"
         (rectangle (start -1.27 -4.953) (end 0 -5.207)
           (stroke (width 0.1524) (type default))
@@ -81,27 +81,27 @@
       )
     )
     (symbol "Converter_DCDC:OKI-78SR-3.3_1.5-W36H-C" (in_bom yes) (on_board yes)
-      (property "Reference" "U" (id 0) (at -3.81 3.175 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Value" "OKI-78SR-3.3_1.5-W36H-C" (id 1) (at 0 3.175 0)
-        (effects (font (size 1.27 1.27)) (justify left))
-      )
-      (property "Footprint" "Converter_DCDC:Converter_DCDC_muRata_OKI-78SR_Horizontal" (id 2) (at 1.27 -6.35 0)
-        (effects (font (size 1.27 1.27) italic) (justify left) hide)
-      )
-      (property "Datasheet" "https://power.murata.com/data/power/oki-78sr.pdf" (id 3) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "dc-dc murata Step-Down DC/DC-Regulator" (id 4) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "1.5A Step-Down DC/DC-Regulator, 7-36V input, 3.3V fixed Output Voltage, LM78xx replacement, -40°C to +85°C, OKI-78SR_Horizontal" (id 5) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_fp_filters" "Converter*DCDC*muRata*OKI*78SR*Horizontal*" (id 6) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
+      (property "Reference" "U" (id 0) (at -3.81 3.175 0)        (effects (font (size 1.27 1.27)))
+      
+)
+      (property "Value" "OKI-78SR-3.3_1.5-W36H-C" (id 1) (at 0 3.175 0)        (effects (font (size 1.27 1.27)) (justify left))
+      
+)
+      (property "Footprint" "Converter_DCDC:Converter_DCDC_muRata_OKI-78SR_Horizontal" (id 2) (at 1.27 -6.35 0)        (effects (font (size 1.27 1.27) italic) (justify left) hide)
+      
+)
+      (property "Datasheet" "https://power.murata.com/data/power/oki-78sr.pdf" (id 3) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_keywords" "dc-dc murata Step-Down DC/DC-Regulator" (id 4) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_description" "1.5A Step-Down DC/DC-Regulator, 7-36V input, 3.3V fixed Output Voltage, LM78xx replacement, -40°C to +85°C, OKI-78SR_Horizontal" (id 5) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_fp_filters" "Converter*DCDC*muRata*OKI*78SR*Horizontal*" (id 6) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
       (symbol "OKI-78SR-3.3_1.5-W36H-C_0_1"
         (rectangle (start -5.08 1.905) (end 5.08 -5.08)
           (stroke (width 0.254) (type default))
@@ -124,27 +124,27 @@
       )
     )
     (symbol "Device:C" (pin_numbers hide) (pin_names (offset 0.254)) (in_bom yes) (on_board yes)
-      (property "Reference" "C" (id 0) (at 0.635 2.54 0)
-        (effects (font (size 1.27 1.27)) (justify left))
-      )
-      (property "Value" "C" (id 1) (at 0.635 -2.54 0)
-        (effects (font (size 1.27 1.27)) (justify left))
-      )
-      (property "Footprint" "" (id 2) (at 0.9652 -3.81 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "~" (id 3) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "cap capacitor" (id 4) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "Unpolarized capacitor" (id 5) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_fp_filters" "C_*" (id 6) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
+      (property "Reference" "C" (id 0) (at 0.635 2.54 0)        (effects (font (size 1.27 1.27)) (justify left))
+      
+)
+      (property "Value" "C" (id 1) (at 0.635 -2.54 0)        (effects (font (size 1.27 1.27)) (justify left))
+      
+)
+      (property "Footprint" "" (id 2) (at 0.9652 -3.81 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "Datasheet" "~" (id 3) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_keywords" "cap capacitor" (id 4) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_description" "Unpolarized capacitor" (id 5) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_fp_filters" "C_*" (id 6) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
       (symbol "C_0_1"
         (polyline
           (pts
@@ -175,27 +175,27 @@
       )
     )
     (symbol "Device:CP" (pin_numbers hide) (pin_names (offset 0.254)) (in_bom yes) (on_board yes)
-      (property "Reference" "C" (id 0) (at 0.635 2.54 0)
-        (effects (font (size 1.27 1.27)) (justify left))
-      )
-      (property "Value" "CP" (id 1) (at 0.635 -2.54 0)
-        (effects (font (size 1.27 1.27)) (justify left))
-      )
-      (property "Footprint" "" (id 2) (at 0.9652 -3.81 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "~" (id 3) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "cap capacitor" (id 4) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "Polarized capacitor" (id 5) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_fp_filters" "CP_*" (id 6) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
+      (property "Reference" "C" (id 0) (at 0.635 2.54 0)        (effects (font (size 1.27 1.27)) (justify left))
+      
+)
+      (property "Value" "CP" (id 1) (at 0.635 -2.54 0)        (effects (font (size 1.27 1.27)) (justify left))
+      
+)
+      (property "Footprint" "" (id 2) (at 0.9652 -3.81 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "Datasheet" "~" (id 3) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_keywords" "cap capacitor" (id 4) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_description" "Polarized capacitor" (id 5) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_fp_filters" "CP_*" (id 6) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
       (symbol "CP_0_1"
         (rectangle (start -2.286 0.508) (end 2.286 1.016)
           (stroke (width 0) (type default))
@@ -234,27 +234,27 @@
       )
     )
     (symbol "Device:D" (pin_numbers hide) (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
-      (property "Reference" "D" (id 0) (at 0 2.54 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Value" "D" (id 1) (at 0 -2.54 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (id 2) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "~" (id 3) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "diode" (id 4) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "Diode" (id 5) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*" (id 6) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
+      (property "Reference" "D" (id 0) (at 0 2.54 0)        (effects (font (size 1.27 1.27)))
+      
+)
+      (property "Value" "D" (id 1) (at 0 -2.54 0)        (effects (font (size 1.27 1.27)))
+      
+)
+      (property "Footprint" "" (id 2) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "Datasheet" "~" (id 3) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_keywords" "diode" (id 4) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_description" "Diode" (id 5) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*" (id 6) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
       (symbol "D_0_1"
         (polyline
           (pts
@@ -295,24 +295,24 @@
       )
     )
     (symbol "Device:HallGenerator" (pin_names (offset 0) hide) (in_bom yes) (on_board yes)
-      (property "Reference" "HG?" (id 0) (at -3.81 -4.445 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Value" "HallGenerator" (id 1) (at 15.24 -5.08 90)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (id 2) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "~" (id 3) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "Hall generator magnet" (id 4) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "Hall effect generator" (id 5) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
+      (property "Reference" "HG?" (id 0) (at -3.81 -4.445 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "Value" "HallGenerator" (id 1) (at 15.24 -5.08 90)        (effects (font (size 1.27 1.27)))
+      
+)
+      (property "Footprint" "" (id 2) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "Datasheet" "~" (id 3) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_keywords" "Hall generator magnet" (id 4) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_description" "Hall effect generator" (id 5) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
       (symbol "HallGenerator_0_1"
         (rectangle (start -1.016 2.54) (end 1.016 -2.54)
           (stroke (width 0.254) (type default))
@@ -359,27 +359,27 @@
       )
     )
     (symbol "Device:LED" (pin_numbers hide) (pin_names hide) (in_bom yes) (on_board yes)
-      (property "Reference" "D" (id 0) (at 0 2.54 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Value" "LED" (id 1) (at 0 -2.54 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (id 2) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "~" (id 3) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "LED diode" (id 4) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "Light emitting diode" (id 5) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*" (id 6) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
+      (property "Reference" "D" (id 0) (at 0 2.54 0)        (effects (font (size 1.27 1.27)))
+      
+)
+      (property "Value" "LED" (id 1) (at 0 -2.54 0)        (effects (font (size 1.27 1.27)))
+      
+)
+      (property "Footprint" "" (id 2) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "Datasheet" "~" (id 3) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_keywords" "LED diode" (id 4) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_description" "Light emitting diode" (id 5) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*" (id 6) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
       (symbol "LED_0_1"
         (polyline
           (pts
@@ -442,27 +442,27 @@
       )
     )
     (symbol "Device:LED_RCBG" (pin_names (offset 0) hide) (in_bom yes) (on_board yes)
-      (property "Reference" "D" (id 0) (at 0 9.398 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Value" "LED_RCBG" (id 1) (at 0 -8.89 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (id 2) (at 0 -1.27 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "~" (id 3) (at 0 -1.27 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "LED RGB diode" (id 4) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "RGB LED, red/cathode/blue/green" (id 5) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*" (id 6) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
+      (property "Reference" "D" (id 0) (at 0 9.398 0)        (effects (font (size 1.27 1.27)))
+      
+)
+      (property "Value" "LED_RCBG" (id 1) (at 0 -8.89 0)        (effects (font (size 1.27 1.27)))
+      
+)
+      (property "Footprint" "" (id 2) (at 0 -1.27 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "Datasheet" "~" (id 3) (at 0 -1.27 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_keywords" "LED RGB diode" (id 4) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_description" "RGB LED, red/cathode/blue/green" (id 5) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*" (id 6) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
       (symbol "LED_RCBG_0_0"
         (text "B" (at 1.905 -6.35 0)
           (effects (font (size 1.27 1.27)))
@@ -732,27 +732,27 @@
       )
     )
     (symbol "Device:R" (pin_numbers hide) (pin_names (offset 0)) (in_bom yes) (on_board yes)
-      (property "Reference" "R" (id 0) (at 2.032 0 90)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Value" "R" (id 1) (at 0 0 90)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (id 2) (at -1.778 0 90)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "~" (id 3) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "R res resistor" (id 4) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "Resistor" (id 5) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_fp_filters" "R_*" (id 6) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
+      (property "Reference" "R" (id 0) (at 2.032 0 90)        (effects (font (size 1.27 1.27)))
+      
+)
+      (property "Value" "R" (id 1) (at 0 0 90)        (effects (font (size 1.27 1.27)))
+      
+)
+      (property "Footprint" "" (id 2) (at -1.778 0 90)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "Datasheet" "~" (id 3) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_keywords" "R res resistor" (id 4) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_description" "Resistor" (id 5) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_fp_filters" "R_*" (id 6) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
       (symbol "R_0_1"
         (rectangle (start -1.016 -2.54) (end 1.016 2.54)
           (stroke (width 0.254) (type default))
@@ -771,27 +771,27 @@
       )
     )
     (symbol "Device:R_POT_TRIM" (pin_names hide) (in_bom yes) (on_board yes)
-      (property "Reference" "RV" (id 0) (at -4.445 0 90)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Value" "R_POT_TRIM" (id 1) (at -2.54 0 90)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (id 2) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "~" (id 3) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "resistor variable trimpot trimmer" (id 4) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "Trim-potentiometer" (id 5) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_fp_filters" "Potentiometer*" (id 6) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
+      (property "Reference" "RV" (id 0) (at -4.445 0 90)        (effects (font (size 1.27 1.27)))
+      
+)
+      (property "Value" "R_POT_TRIM" (id 1) (at -2.54 0 90)        (effects (font (size 1.27 1.27)))
+      
+)
+      (property "Footprint" "" (id 2) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "Datasheet" "~" (id 3) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_keywords" "resistor variable trimpot trimmer" (id 4) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_description" "Trim-potentiometer" (id 5) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_fp_filters" "Potentiometer*" (id 6) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
       (symbol "R_POT_TRIM_0_1"
         (polyline
           (pts
@@ -830,27 +830,27 @@
       )
     )
     (symbol "Device:R_Pack08" (pin_names (offset 0) hide) (in_bom yes) (on_board yes)
-      (property "Reference" "RN" (id 0) (at -12.7 0 90)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Value" "R_Pack08" (id 1) (at 10.16 0 90)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (id 2) (at 12.065 0 90)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "~" (id 3) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "R network parallel topology isolated" (id 4) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "8 resistor network, parallel topology, DIP package" (id 5) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_fp_filters" "DIP* SOIC*" (id 6) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
+      (property "Reference" "RN" (id 0) (at -12.7 0 90)        (effects (font (size 1.27 1.27)))
+      
+)
+      (property "Value" "R_Pack08" (id 1) (at 10.16 0 90)        (effects (font (size 1.27 1.27)))
+      
+)
+      (property "Footprint" "" (id 2) (at 12.065 0 90)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "Datasheet" "~" (id 3) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_keywords" "R network parallel topology isolated" (id 4) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_description" "8 resistor network, parallel topology, DIP package" (id 5) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_fp_filters" "DIP* SOIC*" (id 6) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
       (symbol "R_Pack08_0_1"
         (rectangle (start -11.43 -2.413) (end 8.89 2.413)
           (stroke (width 0.254) (type default))
@@ -1085,27 +1085,27 @@
       )
     )
     (symbol "Isolator:NSL-32" (pin_names (offset 0.762) hide) (in_bom yes) (on_board yes)
-      (property "Reference" "U" (id 0) (at 0 5.08 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Value" "NSL-32" (id 1) (at 0 -5.08 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "OptoDevice:Luna_NSL-32" (id 2) (at 0 -7.62 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "http://lunainc.com/wp-content/uploads/2016/06/NSL-32.pdf" (id 3) (at 1.27 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "optocoupler" (id 4) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "Optocoupler, LED Input, Photocell Output" (id 5) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_fp_filters" "Luna*NSL?32*" (id 6) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
+      (property "Reference" "U" (id 0) (at 0 5.08 0)        (effects (font (size 1.27 1.27)))
+      
+)
+      (property "Value" "NSL-32" (id 1) (at 0 -5.08 0)        (effects (font (size 1.27 1.27)))
+      
+)
+      (property "Footprint" "OptoDevice:Luna_NSL-32" (id 2) (at 0 -7.62 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "Datasheet" "http://lunainc.com/wp-content/uploads/2016/06/NSL-32.pdf" (id 3) (at 1.27 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_keywords" "optocoupler" (id 4) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_description" "Optocoupler, LED Input, Photocell Output" (id 5) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_fp_filters" "Luna*NSL?32*" (id 6) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
       (symbol "NSL-32_0_1"
         (rectangle (start -5.08 3.81) (end 5.08 -3.81)
           (stroke (width 0.254) (type default))
@@ -1239,27 +1239,27 @@
       )
     )
     (symbol "Relay:SANYOU_SRD_Form_C" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
-      (property "Reference" "K" (id 0) (at 11.43 3.81 0)
-        (effects (font (size 1.27 1.27)) (justify left))
-      )
-      (property "Value" "SANYOU_SRD_Form_C" (id 1) (at 11.43 1.27 0)
-        (effects (font (size 1.27 1.27)) (justify left))
-      )
-      (property "Footprint" "Relay_THT:Relay_SPDT_SANYOU_SRD_Series_Form_C" (id 2) (at 11.43 -1.27 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "Datasheet" "http://www.sanyourelay.ca/public/products/pdf/SRD.pdf" (id 3) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "Single Pole Relay SPDT" (id 4) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "Sanyo SRD relay, Single Pole Miniature Power Relay," (id 5) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_fp_filters" "Relay*SPDT*SANYOU*SRD*Series*Form*C*" (id 6) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
+      (property "Reference" "K" (id 0) (at 11.43 3.81 0)        (effects (font (size 1.27 1.27)) (justify left))
+      
+)
+      (property "Value" "SANYOU_SRD_Form_C" (id 1) (at 11.43 1.27 0)        (effects (font (size 1.27 1.27)) (justify left))
+      
+)
+      (property "Footprint" "Relay_THT:Relay_SPDT_SANYOU_SRD_Series_Form_C" (id 2) (at 11.43 -1.27 0)        (effects (font (size 1.27 1.27)) (justify left) hide)
+      
+)
+      (property "Datasheet" "http://www.sanyourelay.ca/public/products/pdf/SRD.pdf" (id 3) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_keywords" "Single Pole Relay SPDT" (id 4) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_description" "Sanyo SRD relay, Single Pole Miniature Power Relay," (id 5) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_fp_filters" "Relay*SPDT*SANYOU*SRD*Series*Form*C*" (id 6) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
       (symbol "SANYOU_SRD_Form_C_0_0"
         (polyline
           (pts
@@ -1420,27 +1420,27 @@
       )
     )
     (symbol "Switch:SW_DPDT_x2" (pin_names (offset 0) hide) (in_bom yes) (on_board yes)
-      (property "Reference" "SW" (id 0) (at 0 4.318 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Value" "SW_DPDT_x2" (id 1) (at 0 -5.08 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (id 2) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "~" (id 3) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "switch dual-pole double-throw DPDT spdt ON-ON" (id 4) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "Switch, dual pole double throw, separate symbols" (id 5) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_fp_filters" "SW*DPDT*" (id 6) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
+      (property "Reference" "SW" (id 0) (at 0 4.318 0)        (effects (font (size 1.27 1.27)))
+      
+)
+      (property "Value" "SW_DPDT_x2" (id 1) (at 0 -5.08 0)        (effects (font (size 1.27 1.27)))
+      
+)
+      (property "Footprint" "" (id 2) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "Datasheet" "~" (id 3) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_keywords" "switch dual-pole double-throw DPDT spdt ON-ON" (id 4) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_description" "Switch, dual pole double throw, separate symbols" (id 5) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_fp_filters" "SW*DPDT*" (id 6) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
       (symbol "SW_DPDT_x2_0_0"
         (circle (center -2.032 0) (radius 0.508)
           (stroke (width 0) (type default))
@@ -1495,24 +1495,24 @@
       )
     )
     (symbol "Switch:SW_Reed" (pin_numbers hide) (pin_names (offset 0) hide) (in_bom yes) (on_board yes)
-      (property "Reference" "SW" (id 0) (at 0 2.54 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Value" "SW_Reed" (id 1) (at 0 -2.54 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (id 2) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "~" (id 3) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "reed magnetic switch" (id 4) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "reed switch" (id 5) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
+      (property "Reference" "SW" (id 0) (at 0 2.54 0)        (effects (font (size 1.27 1.27)))
+      
+)
+      (property "Value" "SW_Reed" (id 1) (at 0 -2.54 0)        (effects (font (size 1.27 1.27)))
+      
+)
+      (property "Footprint" "" (id 2) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "Datasheet" "~" (id 3) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_keywords" "reed magnetic switch" (id 4) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_description" "reed switch" (id 5) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
       (symbol "SW_Reed_0_0"
         (arc (start -2.159 1.397) (mid -3.55 0) (end -2.159 -1.397)
           (stroke (width 0.254) (type default))
@@ -1567,18 +1567,18 @@
       )
     )
     (symbol "Teensy4:Teensy4.0" (in_bom yes) (on_board yes)
-      (property "Reference" "U" (id 0) (at 0 39.37 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Value" "Teensy4.0" (id 1) (at 0 -39.37 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (id 2) (at -10.16 5.08 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "" (id 3) (at -10.16 5.08 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
+      (property "Reference" "U" (id 0) (at 0 39.37 0)        (effects (font (size 1.27 1.27)))
+      
+)
+      (property "Value" "Teensy4.0" (id 1) (at 0 -39.37 0)        (effects (font (size 1.27 1.27)))
+      
+)
+      (property "Footprint" "" (id 2) (at -10.16 5.08 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "Datasheet" "" (id 3) (at -10.16 5.08 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
       (symbol "Teensy4.0_0_0"
         (text "3.6V to 5.5V" (at 11.43 -24.13 0)
           (effects (font (size 1.27 1.27)))
@@ -1817,27 +1817,27 @@
       )
     )
     (symbol "Transistor_BJT:2N3904" (pin_names (offset 0) hide) (in_bom yes) (on_board yes)
-      (property "Reference" "Q" (id 0) (at 5.08 1.905 0)
-        (effects (font (size 1.27 1.27)) (justify left))
-      )
-      (property "Value" "2N3904" (id 1) (at 5.08 0 0)
-        (effects (font (size 1.27 1.27)) (justify left))
-      )
-      (property "Footprint" "Package_TO_SOT_THT:TO-92_Inline" (id 2) (at 5.08 -1.905 0)
-        (effects (font (size 1.27 1.27) italic) (justify left) hide)
-      )
-      (property "Datasheet" "https://www.fairchildsemi.com/datasheets/2N/2N3904.pdf" (id 3) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "ki_keywords" "NPN Transistor" (id 4) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "0.2A Ic, 40V Vce, Small Signal NPN Transistor, TO-92" (id 5) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_fp_filters" "TO?92*" (id 6) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
+      (property "Reference" "Q" (id 0) (at 5.08 1.905 0)        (effects (font (size 1.27 1.27)) (justify left))
+      
+)
+      (property "Value" "2N3904" (id 1) (at 5.08 0 0)        (effects (font (size 1.27 1.27)) (justify left))
+      
+)
+      (property "Footprint" "Package_TO_SOT_THT:TO-92_Inline" (id 2) (at 5.08 -1.905 0)        (effects (font (size 1.27 1.27) italic) (justify left) hide)
+      
+)
+      (property "Datasheet" "https://www.fairchildsemi.com/datasheets/2N/2N3904.pdf" (id 3) (at 0 0 0)        (effects (font (size 1.27 1.27)) (justify left) hide)
+      
+)
+      (property "ki_keywords" "NPN Transistor" (id 4) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_description" "0.2A Ic, 40V Vce, Small Signal NPN Transistor, TO-92" (id 5) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_fp_filters" "TO?92*" (id 6) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
       (symbol "2N3904_0_1"
         (polyline
           (pts
@@ -1897,27 +1897,27 @@
       )
     )
     (symbol "Transistor_BJT:2N3906" (pin_names (offset 0) hide) (in_bom yes) (on_board yes)
-      (property "Reference" "Q" (id 0) (at 5.08 1.905 0)
-        (effects (font (size 1.27 1.27)) (justify left))
-      )
-      (property "Value" "2N3906" (id 1) (at 5.08 0 0)
-        (effects (font (size 1.27 1.27)) (justify left))
-      )
-      (property "Footprint" "Package_TO_SOT_THT:TO-92_Inline" (id 2) (at 5.08 -1.905 0)
-        (effects (font (size 1.27 1.27) italic) (justify left) hide)
-      )
-      (property "Datasheet" "https://www.fairchildsemi.com/datasheets/2N/2N3906.pdf" (id 3) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) (justify left) hide)
-      )
-      (property "ki_keywords" "PNP Transistor" (id 4) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "-0.2A Ic, -40V Vce, Small Signal PNP Transistor, TO-92" (id 5) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_fp_filters" "TO?92*" (id 6) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
+      (property "Reference" "Q" (id 0) (at 5.08 1.905 0)        (effects (font (size 1.27 1.27)) (justify left))
+      
+)
+      (property "Value" "2N3906" (id 1) (at 5.08 0 0)        (effects (font (size 1.27 1.27)) (justify left))
+      
+)
+      (property "Footprint" "Package_TO_SOT_THT:TO-92_Inline" (id 2) (at 5.08 -1.905 0)        (effects (font (size 1.27 1.27) italic) (justify left) hide)
+      
+)
+      (property "Datasheet" "https://www.fairchildsemi.com/datasheets/2N/2N3906.pdf" (id 3) (at 0 0 0)        (effects (font (size 1.27 1.27)) (justify left) hide)
+      
+)
+      (property "ki_keywords" "PNP Transistor" (id 4) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_description" "-0.2A Ic, -40V Vce, Small Signal PNP Transistor, TO-92" (id 5) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_fp_filters" "TO?92*" (id 6) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
       (symbol "2N3906_0_1"
         (polyline
           (pts
@@ -1977,51 +1977,51 @@
       )
     )
     (symbol "dk_Transistors-FETs-MOSFETs-Single:IRF510PBF" (pin_names (offset 0)) (in_bom yes) (on_board yes)
-      (property "Reference" "Q" (id 0) (at -2.6924 3.6322 0)
-        (effects (font (size 1.524 1.524)) (justify right))
-      )
-      (property "Value" "IRF510PBF" (id 1) (at 3.4544 0 90)
-        (effects (font (size 1.524 1.524)))
-      )
-      (property "Footprint" "digikey-footprints:TO-220-3" (id 2) (at 5.08 5.08 0)
-        (effects (font (size 1.524 1.524)) (justify left) hide)
-      )
-      (property "Datasheet" "http://www.vishay.com/docs/91015/sihf510.pdf" (id 3) (at 5.08 7.62 0)
-        (effects (font (size 1.524 1.524)) (justify left) hide)
-      )
-      (property "Digi-Key_PN" "IRF510PBF-ND" (id 4) (at 5.08 10.16 0)
-        (effects (font (size 1.524 1.524)) (justify left) hide)
-      )
-      (property "MPN" "IRF510PBF" (id 5) (at 5.08 12.7 0)
-        (effects (font (size 1.524 1.524)) (justify left) hide)
-      )
-      (property "Category" "Discrete Semiconductor Products" (id 6) (at 5.08 15.24 0)
-        (effects (font (size 1.524 1.524)) (justify left) hide)
-      )
-      (property "Family" "Transistors - FETs, MOSFETs - Single" (id 7) (at 5.08 17.78 0)
-        (effects (font (size 1.524 1.524)) (justify left) hide)
-      )
-      (property "DK_Datasheet_Link" "http://www.vishay.com/docs/91015/sihf510.pdf" (id 8) (at 5.08 20.32 0)
-        (effects (font (size 1.524 1.524)) (justify left) hide)
-      )
-      (property "DK_Detail_Page" "/product-detail/en/vishay-siliconix/IRF510PBF/IRF510PBF-ND/811710" (id 9) (at 5.08 22.86 0)
-        (effects (font (size 1.524 1.524)) (justify left) hide)
-      )
-      (property "Description" "MOSFET N-CH 100V 5.6A TO-220AB" (id 10) (at 5.08 25.4 0)
-        (effects (font (size 1.524 1.524)) (justify left) hide)
-      )
-      (property "Manufacturer" "Vishay Siliconix" (id 11) (at 5.08 27.94 0)
-        (effects (font (size 1.524 1.524)) (justify left) hide)
-      )
-      (property "Status" "Active" (id 12) (at 5.08 30.48 0)
-        (effects (font (size 1.524 1.524)) (justify left) hide)
-      )
-      (property "ki_keywords" "IRF510PBF-ND" (id 13) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "MOSFET N-CH 100V 5.6A TO-220AB" (id 14) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
+      (property "Reference" "Q" (id 0) (at -2.6924 3.6322 0)        (effects (font (size 1.524 1.524)) (justify right))
+      
+)
+      (property "Value" "IRF510PBF" (id 1) (at 3.4544 0 90)        (effects (font (size 1.524 1.524)))
+      
+)
+      (property "Footprint" "digikey-footprints:TO-220-3" (id 2) (at 5.08 5.08 0)        (effects (font (size 1.524 1.524)) (justify left) hide)
+      
+)
+      (property "Datasheet" "http://www.vishay.com/docs/91015/sihf510.pdf" (id 3) (at 5.08 7.62 0)        (effects (font (size 1.524 1.524)) (justify left) hide)
+      
+)
+      (property "Digi-Key_PN" "IRF510PBF-ND" (id 4) (at 5.08 10.16 0)        (effects (font (size 1.524 1.524)) (justify left) hide)
+      
+)
+      (property "MPN" "IRF510PBF" (id 5) (at 5.08 12.7 0)        (effects (font (size 1.524 1.524)) (justify left) hide)
+      
+)
+      (property "Category" "Discrete Semiconductor Products" (id 6) (at 5.08 15.24 0)        (effects (font (size 1.524 1.524)) (justify left) hide)
+      
+)
+      (property "Family" "Transistors - FETs, MOSFETs - Single" (id 7) (at 5.08 17.78 0)        (effects (font (size 1.524 1.524)) (justify left) hide)
+      
+)
+      (property "DK_Datasheet_Link" "http://www.vishay.com/docs/91015/sihf510.pdf" (id 8) (at 5.08 20.32 0)        (effects (font (size 1.524 1.524)) (justify left) hide)
+      
+)
+      (property "DK_Detail_Page" "/product-detail/en/vishay-siliconix/IRF510PBF/IRF510PBF-ND/811710" (id 9) (at 5.08 22.86 0)        (effects (font (size 1.524 1.524)) (justify left) hide)
+      
+)
+      (property "Description" "MOSFET N-CH 100V 5.6A TO-220AB" (id 10) (at 5.08 25.4 0)        (effects (font (size 1.524 1.524)) (justify left) hide)
+      
+)
+      (property "Manufacturer" "Vishay Siliconix" (id 11) (at 5.08 27.94 0)        (effects (font (size 1.524 1.524)) (justify left) hide)
+      
+)
+      (property "Status" "Active" (id 12) (at 5.08 30.48 0)        (effects (font (size 1.524 1.524)) (justify left) hide)
+      
+)
+      (property "ki_keywords" "IRF510PBF-ND" (id 13) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_description" "MOSFET N-CH 100V 5.6A TO-220AB" (id 14) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
       (symbol "IRF510PBF_0_1"
         (circle (center -1.27 0) (radius 3.302)
           (stroke (width 0) (type default))
@@ -2170,24 +2170,24 @@
       )
     )
     (symbol "power:+3V3" (power) (pin_names (offset 0)) (in_bom yes) (on_board yes)
-      (property "Reference" "#PWR" (id 0) (at 0 -3.81 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Value" "+3V3" (id 1) (at 0 3.556 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (id 2) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "" (id 3) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "power-flag" (id 4) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "Power symbol creates a global label with name \"+3V3\"" (id 5) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
+      (property "Reference" "#PWR" (id 0) (at 0 -3.81 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "Value" "+3V3" (id 1) (at 0 3.556 0)        (effects (font (size 1.27 1.27)))
+      
+)
+      (property "Footprint" "" (id 2) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "Datasheet" "" (id 3) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_keywords" "power-flag" (id 4) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_description" "Power symbol creates a global label with name \"+3V3\"" (id 5) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
       (symbol "+3V3_0_1"
         (polyline
           (pts
@@ -2222,24 +2222,24 @@
       )
     )
     (symbol "power:GND" (power) (pin_names (offset 0)) (in_bom yes) (on_board yes)
-      (property "Reference" "#PWR" (id 0) (at 0 -6.35 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Value" "GND" (id 1) (at 0 -3.81 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (id 2) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "" (id 3) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "power-flag" (id 4) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "Power symbol creates a global label with name \"GND\" , ground" (id 5) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
+      (property "Reference" "#PWR" (id 0) (at 0 -6.35 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "Value" "GND" (id 1) (at 0 -3.81 0)        (effects (font (size 1.27 1.27)))
+      
+)
+      (property "Footprint" "" (id 2) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "Datasheet" "" (id 3) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_keywords" "power-flag" (id 4) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
+      (property "ki_description" "Power symbol creates a global label with name \"GND\" , ground" (id 5) (at 0 0 0)        (effects (font (size 1.27 1.27)) hide)
+      
+)
       (symbol "GND_0_1"
         (polyline
           (pts
@@ -3810,7 +3810,7 @@
     (pin "4" (uuid 84851d20-a1fc-4635-9e1e-d22716e1665d))
   )
 
-  (symbol (lib_id "Switch:SW_DPDT_x2") (at 348.615 67.31 90) (unit 1)
+  (symbol (lib_id "Switch:SW_DPDT_x2") (at 348.615 67.31 90) (unit 2)
     (in_bom yes) (on_board yes)
     (uuid 06382058-0dbb-497c-b69a-5fa0882a27c2)
     (default_instance (reference "U") (unit 1) (value "") (footprint ""))
@@ -3826,12 +3826,12 @@
     (property "Datasheet" "~" (id 3) (at 348.615 67.31 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 60b2c5f5-74fe-4bbc-b054-bbb87e927134))
-    (pin "2" (uuid fcdd58b5-17ec-48d8-8855-86a62a652bd7))
-    (pin "3" (uuid 90d459bc-bc70-4f74-8516-f01d418a2459))
-    (pin "4" (uuid 42e76425-0e4d-4b71-bf74-5425880088cf))
-    (pin "5" (uuid 25216f08-8d3c-4d7f-9a84-5f122acb2765))
-    (pin "6" (uuid 3e024b28-8d30-4ca3-acba-7f4128765ff2))
+    (pin "1" (uuid fc7232ca-f2ed-48f2-b3c3-973fee86e1a5))
+    (pin "2" (uuid 2e37e308-55d0-4726-a147-2f21323394d0))
+    (pin "3" (uuid 7d70294f-513c-4e83-bc9c-f2d09663186a))
+    (pin "4" (uuid e2eff91b-4e4d-46d4-9649-01e72218a856))
+    (pin "5" (uuid 48f1e0d2-5061-4fcd-a07b-7882d1821c18))
+    (pin "6" (uuid 133f0172-d47f-49f0-90b7-ca31c300c458))
   )
 
   (symbol (lib_id "power:GND") (at 363.855 42.545 0) (unit 1)

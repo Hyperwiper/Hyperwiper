@@ -325,6 +325,7 @@ static char VERSION[] = "V2.6.6";
             motorOn= true;
           // digitalWrite(motorPin, LOW);
             long runtimezero= 0;
+            Serial.println("Min loop delay starts motor");
             delay_run_motor(runtimezero);
         } 
       }
